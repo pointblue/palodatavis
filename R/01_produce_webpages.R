@@ -12,6 +12,8 @@ rmarkdown::render(here::here('Rmd/README.Rmd'),
 
 # LANDING PAGE ------------------------------------------------------------
 
+rmarkdown::render(here::here('Rmd/index.Rmd'), 
+                  output_file = here::here('docs/index.html'))
 
 
 # HOW ARE THE BIRDS DOING -------------------------------------------------
