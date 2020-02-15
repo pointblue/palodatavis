@@ -66,3 +66,6 @@ figure {
   float: right;
   padding: 10px;
 }
+figcaption{
+  margin-top: 5px;
+}
