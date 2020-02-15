@@ -5,7 +5,13 @@ output:
     css: pointblue_page_style.css
 ---
 
-![imgwrap](../images/wren.jpg) The Palomarin Field Station, located at the south end of Point Reyes National Seashore, was established in 1966 and today remains an active field station year-round.
+<figure>
+![](../images/wren.jpg)
+<figcaption>
+*Color-banded wrentit. Photo by XXX. Testing.* 
+</figcaption>
+</figure>
+The Palomarin Field Station, located at the south end of Point Reyes National Seashore, was established in 1966 and today remains an active field station year-round.
 
 Point Blue staff train field biology interns, host organized groups and drop-in visitors, and collaborate on research with agency partners, graduate students, and others. 
 
