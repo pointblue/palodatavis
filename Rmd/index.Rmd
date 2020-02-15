@@ -6,9 +6,9 @@ output:
 ---
 
 <figure>
-![](../images/wren.jpg)
+![Color-banded Wrentit](../images/wren.jpg)
 <figcaption>
-*Color-banded wrentit. Photo by XXX. Testing.* 
+*Color-banded Wrentit. Photo by XXX. Testing.* 
 </figcaption>
 </figure>
 The Palomarin Field Station, located at the south end of Point Reyes National Seashore, was established in 1966 and today remains an active field station year-round.
