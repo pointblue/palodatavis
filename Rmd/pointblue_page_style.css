@@ -62,7 +62,7 @@ img[alt=icon] {
   width: 90px;
   padding-right: 10px;
 }
-img[alt=imgwrap] {
+figure {
   float: right;
   padding: 10px;
 }
