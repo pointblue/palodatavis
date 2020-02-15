@@ -20,19 +20,21 @@ With over 50 years of data, the Palomarin Field Station has made unique contribu
 
 <table style="table-layout: fixed; width:100%;">
 <tr>
-<th>![icon](https://data.pointblue.org/apps/assets/images/analyst.png) How are the birds doing?</th>
-<th>![icon](https://data.pointblue.org/apps/assets/images/datacatalog.png) Tracking a changing climate</th>
+<th>![icon](../images/icons/nature_stewardship.png) How are the birds doing?</th>
+<th>![icon](../images/icons/climate_change.png) Tracking a changing climate</th>
 </tr>
 <tr>
 <td>Explore some of the latest capture stats and how they change over time, at one of the oldest, continuously-running banding stations in the United States.</td>
 <td>Learn about weather patterns at Palo, and how weather and climate change affect bird populations through migration timing, body size, and more.</td>
 </tr>
 <tr>
-<th>![icon](https://data.pointblue.org/apps/assets/images/biologists-2.png) Habitat & community change</th>
-<th>![icon](https://data.pointblue.org/apps/assets/images/multimap.png) Crossroads & connections</th>
+<th>![icon](../images/icons/ghg.png) Habitat & community change</th>
+<th>![icon](../images/icons/conservation.png) Crossroads & connections</th>
 </tr>
 <tr>
 <td>Take a tour of the habitat changes in the Palomarin study area since 1966, and see how the bird community is responding.</p></td>
 <td>See how Palomarin is home to birds migrating from thousands of miles away, and how we find out where they come from to inform conservation.</td>
 </tr>
 </table>
+
+
