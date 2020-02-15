@@ -10,6 +10,8 @@ CURRENT STATUS
 --------------
 
 Phase 1 of the Data Explorer web pages are currently in development.
+Draft pages will be added to
+<a href="https://pointblue.github.io/palodatavis/" class="uri">https://pointblue.github.io/palodatavis/</a>
 
 CORE PROJECT TEAM
 -----------------
