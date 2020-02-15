@@ -6,7 +6,7 @@ output:
 ---
 
 <figure>
-![Color-banded Wrentit](../images/wren.jpg)
+![](../images/wren.jpg "Color-banded Wrentit")
 <figcaption>
 *Color-banded Wrentit. Photo by XXX. Testing.* 
 </figcaption>
@@ -17,24 +17,34 @@ Point Blue staff train field biology interns, host organized groups and drop-in 
 
 With over 50 years of data, the Palomarin Field Station has made unique contributions to the fields of ornithology, ecology, and conservation. Here, you can explore some of the latest data coming from the field station.
 
+<div class="col2">
+![](../images/icons/nature_stewardship.png "bird icon"){#icon}
 
-<table style="table-layout: fixed; width:100%;">
-<tr>
-<th>![icon](../images/icons/nature_stewardship.png) How are the birds doing?</th>
-<th>![icon](../images/icons/climate_change.png) Tracking a changing climate</th>
-</tr>
-<tr>
-<td>Explore some of the latest capture stats and how they change over time, at one of the oldest, continuously-running banding stations in the United States.</td>
-<td>Learn about weather patterns at Palo, and how weather and climate change affect bird populations through migration timing, body size, and more.</td>
-</tr>
-<tr>
-<th>![icon](../images/icons/ghg.png) Habitat & community change</th>
-<th>![icon](../images/icons/conservation.png) Crossroads & connections</th>
-</tr>
-<tr>
-<td>Take a tour of the habitat changes in the Palomarin study area since 1966, and see how the bird community is responding.</p></td>
-<td>See how Palomarin is home to birds migrating from thousands of miles away, and how we find out where they come from to inform conservation.</td>
-</tr>
-</table>
+### How are the birds doing?  
+
+Explore some of the latest capture stats and how they change over time, at one of the oldest, continuously-running banding stations in the United States.
+
+![](../images/icons/climate_change.png "climate icon"){#icon}
+
+### Tracking a changing climate  
+
+Learn about weather patterns at Palo, and how weather and climate change affect bird populations through migration timing, body size, and more.
+</div>
+
+<div class="col2">
+![](../images/icons/ghg.png "tree icon"){#icon}
+
+### Habitat & community change  
+
+Take a tour of the habitat changes in the Palomarin study area since 1966, and see how the bird community is responding.
+
+![](../images/icons/conservation.png "globe icon"){#icon}
+
+### Crossroads & connections  
+
+See how Palomarin is home to birds migrating from thousands of miles away, and how we find out where they come from to inform conservation.
+
+</div>
+
 
 

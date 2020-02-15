@@ -17,9 +17,10 @@ h2 {
 }
 h3 {
   font-family: "Franklin Gothic Medium",sans-serif;
-  font-size: 18px;
-  line-height: 24px;
+  font-size: 24px;
+  line-height: 36px;
   color: #005BAA;
+  margin-bottom: 10px;
 }
 body {
   font-family: "Franklin Gothic Book",sans-serif;
@@ -45,10 +46,10 @@ a {
   color: #005BAA !important;
   font-style: bold
 }
-img[alt=icon] {
-  display: inline;
+#icon {
   width: 90px;
-  padding-right: 10px;
+  height: 90px;
+  align: middle;
 }
 figure {
   float: right;
@@ -58,3 +59,10 @@ figcaption{
   font-size: 14px;
   margin-top: 5px;
 }
+.col2 {
+  clear: right;
+  -webkit-columns: 2 200px; /* chrome, safari */
+  -moz-columns: 2 200px;    /* firefox */
+  columns: 2 200px;         /* number of columns and width in pixels*/
+  margin-top: 20px;
+  }
