@@ -11,6 +11,9 @@ Point Blue staff train field biology interns, host organized groups and drop-in 
 
 With over 50 years of data, the Palomarin Field Station has made unique contributions to the fields of ornithology, ecology, and conservation. Here, you can explore some of the latest data coming from the field station.
 
+<img src="images/wren.jpg" alt="wrentit" class="inline"/>
+
+
 <table style="table-layout: fixed; width:100%;">
 <tr>
 <th><img src="https://data.pointblue.org/apps/assets/images/analyst.png" width="90px">How are the birds doing?</th>
