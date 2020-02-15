@@ -48,8 +48,8 @@ a {
 }
 #icon {
   width: 90px;
-  height: 90px;
-  align: middle;
+  height: 115px;
+  padding: 20px 0px 5px 0px;
 }
 figure {
   float: right;
@@ -64,5 +64,4 @@ figcaption{
   -webkit-columns: 2 200px; /* chrome, safari */
   -moz-columns: 2 200px;    /* firefox */
   columns: 2 200px;         /* number of columns and width in pixels*/
-  margin-top: 20px;
   }
