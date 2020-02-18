@@ -59,11 +59,22 @@ figcaption{
   font-size: 14px;
   margin-top: 5px;
 }
-.flex-container {
+.table-wrapper {
+  margin: 15px;
+}
+.row {
   clear: both;
   display: flex;
-  flex-flow: row wrap;
-  justify-content: center space-between;
-  align-items: flex-end;
-  align-content: space-between;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 100%;
+}
+@media screen and (min-width: 700px) {
+  .column {
+    display: flex;
+    flex-direction: column;
+    flex-basis: 100%;
+    flex: 1;
+    margin: 15px;
+  }
 }
