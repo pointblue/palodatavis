@@ -59,6 +59,18 @@ figcaption{
   font-size: 14px;
   margin-top: 5px;
 }
+.row {
+  clear: both;
+  display: flex;
+}
+.column2{
+  flex: 50%
+}
+@media screen and (max-width: 600px) {
+  .column2 {
+    width: 100%;
+  }
+}
 .col2 {
   clear: right;
   -webkit-columns: 2 200px; /* chrome, safari */
