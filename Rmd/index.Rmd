@@ -17,32 +17,29 @@ Point Blue staff train field biology interns, host organized groups and drop-in 
 
 With over 50 years of data, the Palomarin Field Station has made unique contributions to the fields of ornithology, ecology, and conservation. Here, you can explore some of the latest data coming from the field station.
 
-<div class="row">
-  <div class="column2">
+<div class="flex-container">
+  <div style="flex-basis: 400px">
 ![](../images/icons/nature_stewardship.png "bird icon"){#icon}
 
 ### How are the birds doing?  
 
 Explore some of the latest capture stats and how they change over time, at one of the oldest, continuously-running banding stations in the United States.
   </div>
-  <div class="column2"> 
+  <div style="flex-basis: 400px"> 
 ![](../images/icons/climate_change.png "climate icon"){#icon}
   
 ### Tracking a changing climate  
 
 Learn about weather patterns at Palo, and how weather and climate change affect bird populations through migration timing, body size, and more.
   </div>
-</div>
-
-<div class="row">
-  <div class="column2">
+  <div style="flex-basis: 400px">
 ![](../images/icons/ghg.png "tree icon"){#icon}
   
 ### Habitat & community change  
 
 Take a tour of the habitat changes in the Palomarin study area since 1966, and see how the bird community is responding.
   </div>
-  <div class="column2">  
+  <div style="flex-basis: 400px">  
 ![](../images/icons/conservation.png "globe icon"){#icon}
 
 ### Crossroads & connections  

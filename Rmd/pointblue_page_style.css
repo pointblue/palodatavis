@@ -59,21 +59,11 @@ figcaption{
   font-size: 14px;
   margin-top: 5px;
 }
-.row {
+.flex-container {
   clear: both;
   display: flex;
+  flex-flow: row wrap;
+  justify-content: center space-between;
+  align-items: flex-end;
+  align-content: space-between;
 }
-.column2{
-  flex: 50%
-}
-@media screen and (max-width: 600px) {
-  .column2 {
-    width: 100%;
-  }
-}
-.col2 {
-  clear: right;
-  -webkit-columns: 2 200px; /* chrome, safari */
-  -moz-columns: 2 200px;    /* firefox */
-  columns: 2 200px;         /* number of columns and width in pixels*/
-  }
