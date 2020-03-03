@@ -29,19 +29,6 @@ body {
   text-align: left;
   color: #666666;
 }
-th {
-  font-family: "Franklin Gothic Medium",sans-serif;
-  font-size: 24px;
-  line-height: 36px;
-  text-align: left;
-  vertical-align: bottom;
-  color: #005BAA;
-  padding: 10px;
-}
-td {
-  text-align: left;
-  padding: 10px;
-}
 a {
   color: #005BAA !important;
   font-style: bold
@@ -50,14 +37,6 @@ a {
   width: 90px;
   height: 90px;
   padding: 0px 0px 0px 0px;
-}
-figure {
-  float: right;
-  padding: 10px;
-}
-figcaption{
-  font-size: 14px;
-  margin-top: 5px;
 }
 .table-wrapper {
   margin: 15px;
@@ -77,4 +56,32 @@ figcaption{
     flex: 1;
     margin: 15px;
   }
+}
+figure {
+  display: inline;
+  padding: 0px;
+}
+figcaption{
+  font-size: 14px;
+  margin-top: 5px;
+  margin-bottom: 15px;
+  text-align: left;
+}
+#photobar {
+  width: 100%;
+  padding: 0px 0px 0px 0px;
+}
+#photoleft {
+  width: 50%;
+  float: left;
+  padding: 0px 10px 0px 0px;
+}
+#photoright {
+  width: 50%;
+  float: right;
+  padding: 0px 0px 0px 0px;
+}
+#portrait {
+  height: 350px;
+  padding: 0px 0px 0px 0px;
 }
