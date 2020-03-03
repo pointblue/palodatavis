@@ -36,7 +36,7 @@ Learn about weather patterns at Palo, and how weather and climate change affect 
 </div>  
 <div class="row">  
 <div class="column">  
-![](../images/icons/ghg.png "tree icon"){#icon}
+[![](../images/icons/ghg.png "tree icon"){#icon}](habitat.html)
   
 ### Habitat & community change  
 
