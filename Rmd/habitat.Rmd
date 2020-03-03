@@ -54,7 +54,7 @@ The figure below shows how the breeding bird community has changed over time sin
 Extra attention is paid to four primary focal species, which are color-banded so we can more easily identify individuals in the field: Song Sparrows, Nuttall’s White-crowned Sparrows, Wrentits, and Wilson’s Warblers. 
 
 <figure>
-<iframe src="figs/territory_trends_focal.html" style="border: none;" width = 100%; height = 450px;></iframe>
+<iframe src="territory_trends_focal.html" style="border: none;" width = 100%; height = 450px;></iframe>
 </figure>
 <figcaption>
 Number of territories of our primary 4 focal species at Palomarin since 1982. The number of Song Sparrows and Nuttall’s White-crowned Sparrows have declined, while Wilson’s Warblers have increased since the 80s. Number of Wrentit territories has fluctuated over time.
