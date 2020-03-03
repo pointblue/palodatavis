@@ -26,6 +26,8 @@ rmarkdown::render(here::here('Rmd/index.Rmd'),
 
 # HABITAT & COMMUNITY CHANGE ----------------------------------------------
 
+rmarkdown::render(here::here('Rmd/habitat.Rmd'), 
+                  output_file = here::here('docs/habitat.html'))
 
 
 # CROSSROADS & CONNECTIONS ------------------------------------------------
