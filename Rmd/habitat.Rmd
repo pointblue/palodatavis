@@ -6,19 +6,23 @@ output:
     css: pointblue_page_style.css
 ---
 
-```{r setup, echo=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
+```{r setup}
+knitr::opts_chunk$set(echo = FALSE, warning = FALSE, message = FALSE, 
+                      out.width="95%", fig.asp=0.6)
 
 #PACKAGES
 library(tidyverse)
-library(zoo)
+library(foreign)
 library(plotly)
 
 #INPUT DATA
-# original copy:
+# original copies:
+# vegpath <- 'Z:/Terrestrial/programs_and_projects/palomarin/Palodata/Veg/VegTrans/Compiled/for _Palo_visualizations/allpsme_thru2018.dbf'
+# 
 # terrpath <- 'Z:/Terrestrial/programs_and_projects/palomarin/Palodata/territories/palo_breeding_territories.csv'
 
-# local copy:
+# local copies:
+vegpath <- "../rawdat/allpsme_thru2018.dbf"
 terrpath <- "../rawdat/palo_breeding_territories.csv"
 
 # PALETTE
@@ -40,12 +44,61 @@ During the 15 years before the field station began, the land around Palomarin wa
 
 In the earlier years of our study, the landscape at the field station was comprised of two distinct habitat types: the mist-netting and banding site was largely forested while the area adjacent was dominated by short, open coastal scrub.  
 
-Now, the vegetation across the study area has grown in size and structure and has become a complex mix of mature scrub with tall coyote brush, poison pak, California blackberry, and a young, dense Douglas fir forest.
+Now, the vegetation across the study area has grown in size and structure and has become a complex mix of mature scrub with tall coyote brush, poison pak, California blackberry, and a young, dense Douglas fir forest. We have documented the change in the average height of these firs over time, as well as an increase in the number of trees in the study area, and the height of shrub species like coyote brush.
 
-**(Insert figure)**  
+```{r vegtrends}
 
-*This figure shows the mean height of Douglas fir trees at Palomarin since 1983. Not only have these firs grown in size, our other vegetation data show that the number of trees in the study area, and the height of shrub species like coyote brush, have increased dramatically as well.*
+# summarize mean and SE for tree height in each year
+veg <- foreign::read.dbf(vegpath) %>% 
+  mutate(HEIGHT_M = case_when(HEIGHT_M > 100 ~ HEIGHT_M / 100,
+                              TRUE ~ HEIGHT_M)) %>% 
+  filter(YEAR >= 1983) %>% 
+  group_by(YEAR) %>% 
+  summarize(n = length(HEIGHT_M),
+            height = mean(HEIGHT_M),
+            se = sd(HEIGHT_M)/sqrt(n))
 
+# get values for smoothed trend line
+mod <- loess(height ~ YEAR, data = veg)
+veg$smooth <- predict(mod)
+
+# build interactive plot
+veg %>%  
+  plot_ly(x = ~YEAR) %>%
+  add_markers(y = ~height,
+              marker = list(size = 8),
+              showlegend = F,
+              hoverinfo = 'y',
+              error_y = list(type = 'data',
+                             symmetric = TRUE,
+                             array = ~se)) %>%
+  add_lines(y = ~smooth,
+            line = list(width = 3),
+            hoverinfo = 'none') %>% 
+  layout(yaxis = list(title = 'Douglas fir height (meters)',
+                      font = list(size = 14),
+                      showline = TRUE,
+                      ticks = 'outside',
+                      tick0 = 0,
+                      range = c(0,13),
+                      showgrid = FALSE,
+                      automargin = TRUE,
+                      hoverformat = '.2f'),
+         xaxis = list(title = NA,
+                      showline = TRUE,
+                      ticks = 'outside',
+                      # range = c(1980,maxyear+4),
+                      showgrid = FALSE),
+         margin = list(r = 0, b = 10, t = 10)) %>%
+  config(displaylogo = FALSE, showTips = FALSE,
+         modeBarButtonsToRemove = list('zoom2d', 'select2d', 'lasso2d',
+                                       'zoomIn2d', 'zoomOut2d',
+                                       'pan2d', 'toggleSpikelines'))
+
+```
+<figcaption>
+*Mean height (and standard error) of Douglas fir trees at Palomarin since 1983.*
+</figcaption>
 
 ### How has the breeding bird community changed?
 <div class="row">  
@@ -78,8 +131,8 @@ Your browser does not support the video tag.
 
 Extra attention is paid to four primary focal species, which are color-banded so we can more easily identify individuals in the field: Song Sparrows, Nuttall’s White-crowned Sparrows, Wrentits, and Wilson’s Warblers. The number of Song Sparrow and Nuttall’s White-crowned Sparrow territories have declined, while Wilson’s Warblers and Wrentits have greatly increased.
 
-```{r focaltrends, echo=FALSE, warning=FALSE, message=FALSE, out.width="95%", fig.asp=0.7}
-# FOCAL SPECIES TERRITORIES -----------------------------------------------
+```{r focaltrends}
+
 terrdat <- read_csv(terrpath, col_types = cols()) %>% 
   select(year = YEAR, wiwa, sosp, wren, nwcs) %>% 
   pivot_longer(-year, values_to = 'territories', names_to = 'species') %>% 
@@ -106,7 +159,7 @@ terrdat %>% left_join(res, by = c('species', 'year')) %>%
   add_markers(y = ~territories,
             marker = list(size = 8),
             text = ~territories,
-            hoverinfo = 'x+text',
+            hoverinfo = 'x+y',
             legendgroup = ~species2,
             showlegend = F) %>% 
   add_lines(y = ~smooth,
@@ -118,7 +171,7 @@ terrdat %>% left_join(res, by = c('species', 'year')) %>%
                       showline = TRUE,
                       ticks = 'outside',
                       tick0 = 0,
-                      range = c(0,85),
+                      range = c(0,90),
                       showgrid = FALSE,
                       automargin = TRUE),
          xaxis = list(title = NA,
