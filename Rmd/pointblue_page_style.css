@@ -59,27 +59,26 @@ a {
 }
 figure {
   display: inline;
-  padding: 0px;
+  padding: 0;
 }
-figcaption{
+figcaption {
   font-size: 14px;
   margin-top: 5px;
   margin-bottom: 15px;
-  text-align: left;
+  text-align: center;
 }
 #photobar {
   width: 100%;
-  padding: 0px 0px 0px 0px;
 }
 #photoleft {
   width: 50%;
   float: left;
-  padding: 0px 10px 0px 0px;
+  padding: 0 10px 0 0;
 }
 #photoright {
   width: 50%;
   float: right;
-  padding: 0px 0px 0px 0px;
+  padding: 0;
 }
 #portrait {
   height: 350px;
