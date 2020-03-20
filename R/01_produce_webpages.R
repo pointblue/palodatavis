@@ -32,5 +32,7 @@ rmarkdown::render(here::here('Rmd/habitat.Rmd'),
 
 # CROSSROADS & CONNECTIONS ------------------------------------------------
 
+rmarkdown::render(here::here('Rmd/connections.Rmd'), 
+                  output_file = here::here('docs/connections.html'))
 
 
