@@ -1,0 +1,218 @@
+---
+title: "Crossroads & Connections"
+output: 
+  html_document:
+    theme: default
+    css: pointblue_page_style.css
+---
+
+```{r setup, echo = FALSE, warning = FALSE, message = FALSE}
+knitr::opts_chunk$set(echo = FALSE, warning = FALSE, message = FALSE, 
+                      out.width="95%", fig.asp=0.6)
+
+#PACKAGES
+library(tidyverse)
+library(plotly)
+
+#INPUT DATA
+# original copies:
+# nethrspath <- 'Z:/Terrestrial/band/nethrs/allpalonethrs.dbf'
+# bandpath <- 'Z:/Terrestrial/programs_and_projects/palomarin/Palodata/Band/allbandpalo.dbf'
+
+# local copies:
+nethrspath <- "../rawdat/allpalonthrs_through2018.CSV"
+bandpath <- "../rawdat/allbandpalo_through2018.CSV"
+
+# PALETTE
+pointblue.palette <- c('#4495d1', '#74b743', '#f7941d', '#005baa', '#bfd730',
+                       '#a7a9ac', '#666666')
+```
+
+The seasonal changes in the bird community make Palomarin a fascinating place to study birds year-round. Some species are present all year, while others are only here for a few months, or even a few days each year as they travel thousands of miles on migration. These comings and goings are always an exciting event as we welcome back and then say farewell to these seasonal animals each year - and in some cases, get to learn where they’ve been. Similarly, we cherish the connections with interns who come to Palomarin for a “bird season” from all over the country and the world!
+
+<figure>
+```{r captures}
+
+# calculate average net hours per month
+effort <- read_csv(nethrspath, 
+                   col_types = cols_only(location = col_factor(), 
+                                         date = col_date(format = '%m/%d/%Y'), 
+                                         nethours = col_number())) %>% 
+  filter(location == 'PN') %>% 
+  mutate(year = format(date, '%Y'),
+         month = format(date, '%m'),
+         monthlab = format(date, '%b')) %>% 
+  filter(year > 2008) %>% #cleaner data?
+  # total by year and month:
+  group_by(year, month, monthlab) %>% 
+  summarize(nethours = sum(nethours)) %>% 
+  ungroup()
+  
+# banding data
+captures <- read_csv(bandpath, col_types = cols_only(loc = 'f',
+                                         date = col_date(format = '%m/%d/%Y'),
+                                         size = 'f',
+                                         code = 'f',
+                                         bandnumb = 'n',
+                                         spec = 'f',
+                                         age = 'n',
+                                         sex = 'f')) %>% 
+  mutate(year = format(date, '%Y'),
+         month = format(date, '%m')) %>% 
+  filter(loc == 'PN' & year > 2008 & 
+           spec %in% c('WIWA', 'SWTH', 'HETH', 'GCSP', 'WREN')) %>% 
+  # count total captures for each species by year and month
+  group_by(spec, year, month) %>% 
+  count() %>% 
+  ungroup() %>% 
+  mutate(spec = as.factor(as.character(spec))) %>% 
+  complete(spec, year, month, fill = list(n = 0))
+
+# calculate capture rate per 1000 net hours, and fit smoothed line
+dat <- left_join(captures, effort, by = c('month', 'year')) %>% 
+  mutate(rate = n / nethours * 1000,
+         month = as.numeric(month),
+         monthlab = factor(monthlab, levels = unique(monthlab))) %>% 
+  select(spec, monthlab, month, rate) %>% 
+  # calculate loess by species
+  nest(data = c(monthlab, month, rate)) %>% 
+  mutate(mod = purrr::map(data, loess, formula = rate ~ month, span = 0.55),
+         smooth = purrr::map(mod, `[[`, 'fitted')) %>% 
+  select(-mod) %>% 
+  unnest(cols = c(data, smooth)) %>% 
+  group_by(spec, monthlab, month, smooth) %>% 
+  summarize(maxrate = max(rate),
+            meanrate = mean(rate)) %>% 
+  ungroup() %>% 
+  mutate(smooth = case_when(maxrate == 0 ~ 0,
+                            smooth < 0 ~ 0,
+                            TRUE ~ smooth),
+         spec = factor(spec, levels = c('WREN', 'SWTH', 'WIWA', 'HETH', 'GCSP')),
+         speclab = recode(spec, 
+                       GCSP = 'Golden-crowned Sparrow',
+                       WIWA = "Wilson's Warbler",
+                       SWTH = "Swainson's Thrush",
+                       HETH = "Hermit Thrush",
+                       WREN = 'Wrentit'))
+
+# build interactive plot
+pal <- setNames(pointblue.palette[1:5], 
+                c("Wrentit", "Swainson's Thrush", "Wilson's Warbler",
+                  "Hermit Thrush", "Golden-crowned Sparrow"))
+dat %>%
+  plot_ly(x = ~monthlab) %>%
+  # add_markers(y = ~meanrate,
+  #             color = ~speclab,
+  #             colors = pal,
+  #             marker = list(size = 8),
+  #             showlegend = F,
+  #             hoverinfo = 'y') %>%
+  add_lines(y = ~smooth,
+            color = ~speclab,
+            colors = pal,
+            line = list(width = 3),
+            hoverinfo = 'y') %>%
+  layout(yaxis = list(title = 'Capture rate (per 1000 net hours)',
+                      font = list(size = 14),
+                      showline = TRUE,
+                      ticks = 'outside',
+                      tick0 = 0,
+                      # range = c(0,20),
+                      showgrid = FALSE,
+                      automargin = TRUE,
+                      hoverformat = '.2f'),
+         xaxis = list(title = NA,
+                      showline = TRUE,
+                      ticks = 'outside',
+                      # range = c(1980,maxyear+4),
+                      showgrid = FALSE),
+         margin = list(r = 0, b = 10, t = 10)) %>%
+  config(displaylogo = FALSE, showTips = FALSE,
+         modeBarButtonsToRemove = list('zoom2d', 'select2d', 'lasso2d',
+                                       'zoomIn2d', 'zoomOut2d',
+                                       'pan2d', 'toggleSpikelines'))
+
+```
+<figcaption>
+*Seasonal shifts in the bird community at Palomarin. Some species are here year-round (like Wrentit), while others are only here during certain months. (One net hour is equal to 1 net being open for 1 hour).*
+</figcaption>
+</figure>
+
+### Where do the birds go?
+Since the founding of the Palomarin Field Station in 1966, we have wanted to know where birds go when they leave. Banding birds was the first stage of exploring these connections, but banding stations are uncommon and it's rare that birds we band get recaptured at another station far away. 
+
+<div class="table-wrapper">
+<div class="row">  
+<div class="column">
+<figure>
+![](../images/gcsp_gls_annotated.jpg "Golden-crowned Sparrow carrying a light-level geolocator")
+<figcaption>
+*A banded Golden-crowned Sparrow carries a light-level geolocator (note the small antenna on the back). Photo by John Ranlett.*
+</figcaption>
+</figure>
+</div>
+<div class="column">  
+Now, miniaturized technologies have finally helped us unlock the mysteries, by tracking birds throughout the year. The birds are outfitted with tiny backpacks, called geolocators, that collect data on their locations. And when birds return to Palomarin after migrating, we can remove the backpacks, download the data, and find out where they went!
+
+Light-level geolocators collect data on light intensity, and along with their internal clocks, allow us to determine sunrise and sunset times. With those data, we can estimate their latitude and longitude to determine their location each day. We also use another type of geolocator that collects GPS data.
+</div>
+</div>
+</div>
+
+We have discovered that some birds travel to Palomarin from thousands of miles away. Golden-crowned Sparrows nest in southern Alaska before spending the fall, winter, and early spring at Palomarin while Swainson’s Thrushes that nest near Palomarin leave us to spend the winter in Mexico, primarily on the West Coast.
+
+[Add maps here]
+```{r maps}
+
+```
+
+
+### Why is tracking migratory pathways important for bird conservation?
+Learning where birds go is not only exciting, it can help us better understand the challenges birds face, and how best to conserve them. Each of these bird seasons plays an important role in the lives of the species we study, and events and conditions (good vs. poor) at one location can carry over to affect birds during other periods of their lives. By understanding the connections these birds have to other places, and the different challenges they may face in each region, we can collaborate with partners along their migratory pathways to conserve these species, well into the future. 
+
+### How did we collect these data?
+All birds fitted with geolocator tags (GPS and light-level tags) are captured during our normal long-term banding study, or during other banding operations using mist nets or potter traps. Figure 1 data showing seasonal timing of when species are at Palo are also from the banding study.
+
+<div class="table-wrapper">
+<div class="row">
+<div class="column">
+<figure>
+![](../images/banding_lab.jpg "Palomarin biologists recording data in the banding lab")
+<figcaption>
+*Palomarin biologists collect long-term banding data in our banding lab*
+</figcaption>
+</figure>
+</div>
+<div class="column">
+<figure>
+![](../images/MGWA-with-band_by-Stefanie-Krantz.jpg "A banded MacGillivray’s Warbler")
+<figcaption>
+*A banded MacGillivray’s Warbler. Photo by Stefanie Krantz*
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+
+### Palomarin connects humans too!
+One of the most special things about the Palomarin Field Station is the people. Specifically, the interns who come to learn, and live there each season make the field station a home, and one where lasting relationships are made. Since our founding, Palomarin has hosted over <b>XXX</b> interns and volunteers from over 20 countries. And just like the birds, many of these biologists leave, but their connections to the place remain. 
+
+<figure>
+![](../images/KTCH2018_summer.jpg "Palomarin interns and staff, spring/summer 2018")
+<figcaption>
+*Palomarin interns & staff pose for the tri-annual crew photo, spring/summer 2018.*
+</figcaption>
+</figure>
+
+### Meet our biologists!
+Visitors can drop in at Palomarin to join our intern and staff biologists, learn how we collect this data, and hopefully see a bird in the hand! More information on visiting and scheduling groups is available [here](https://www.pointblue.org/about-us/contact-visit-us/){target="_blank"}.
+
+
+### More information
+* Migratory geography of Golden-crowned Sparrows from two wintering regions. Published in *Animal Migration*. [[View PDF](http://www.prbo.org/refs/files/12429_CormierRL2016.pdf)] [[Read summary](http://rdjzr2agvvkijm6n3b66365n-wpengine.netdna-ssl.com/wp-content/uploads/2018/06/2016_pubbrief_GCSPmigration_Cormier_etal_AnimalMigration.pdf)]  
+
+* When birds of a feather don’t flock together: Hermit Thrushes across the San Francisco Bay region migrate to different breeding locations. Published in *Animal Migration*. [[View PDF](http://www.prbo.org/refs/files/12393_Nelson_etal2016.pdf)] [[Read summary](http://pointblue.org/wp-content/uploads/2018/06/2016_pubbrief_BirdsDontFlock_Nelson_etal_AnimalMigration.pdf)]  
+
+* Geolocator tags reveal strong migratory connectivity and within-winter movements for coastal California Swainson’s Thrushes. Published in *Auk*. [[View PDF](http://www.prbo.org/refs/files/12248_Cormier2013.pdf)] [[Read summary](http://pointblue.org/wp-content/uploads/2018/06/2013_pubbrief_swthgeolocator_Cormieretal_June2013.pdf)]  
+
+
