@@ -161,11 +161,12 @@ Light-level geolocators collect data on light intensity, and along with their in
 
 We have discovered that some birds travel to Palomarin from thousands of miles away. Golden-crowned Sparrows nest in southern Alaska before spending the fall, winter, and early spring at Palomarin while Swainson’s Thrushes that nest near Palomarin leave us to spend the winter in Mexico, primarily on the West Coast.
 
-[Add maps here]
-```{r maps}
-
-```
-
+<figure>
+<iframe src="migration_map.html" style="border: none;" width = 95%; height = 450px;></iframe>
+<figcaption>
+*Each point represents an individual bird we tracked on their migration. The coordinates are the average of several points collected throughout the season they were away from Palomarin.*
+</figcaption>
+</figure>
 
 ### Why is tracking migratory pathways important for bird conservation?
 Learning where birds go is not only exciting, it can help us better understand the challenges birds face, and how best to conserve them. Each of these bird seasons plays an important role in the lives of the species we study, and events and conditions (good vs. poor) at one location can carry over to affect birds during other periods of their lives. By understanding the connections these birds have to other places, and the different challenges they may face in each region, we can collaborate with partners along their migratory pathways to conserve these species, well into the future. 
