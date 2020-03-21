@@ -178,7 +178,7 @@ All birds fitted with geolocator tags (GPS and light-level tags) are captured du
 <div class="row">
 <div class="column">
 <figure>
-![](../images/banding_lab.jpg "Palomarin biologists recording data in the banding lab")
+![](../images/banding_lab_crop.jpg "Palomarin biologists recording data in the banding lab")
 <figcaption>
 *Palomarin biologists collect long-term banding data in our banding lab*
 </figcaption>
@@ -186,7 +186,7 @@ All birds fitted with geolocator tags (GPS and light-level tags) are captured du
 </div>
 <div class="column">
 <figure>
-![](../images/MGWA-with-band_by-Stefanie-Krantz.jpg "A banded MacGillivray’s Warbler")
+![](../images/MGWA-with-band_by-Stefanie-Krantz_compressed.jpg "A banded MacGillivray’s Warbler")
 <figcaption>
 *A banded MacGillivray’s Warbler. Photo by Stefanie Krantz*
 </figcaption>
@@ -199,7 +199,7 @@ All birds fitted with geolocator tags (GPS and light-level tags) are captured du
 One of the most special things about the Palomarin Field Station is the people. Specifically, the interns who come to learn, and live there each season make the field station a home, and one where lasting relationships are made. Since our founding, Palomarin has hosted over <b>XXX</b> interns and volunteers from over 20 countries. And just like the birds, many of these biologists leave, but their connections to the place remain. 
 
 <figure>
-![](../images/KTCH2018_summer.jpg "Palomarin interns and staff, spring/summer 2018")
+![](../images/KTCH2018_summer_compressed.jpg "Palomarin interns and staff, spring/summer 2018")
 <figcaption>
 *Palomarin interns & staff pose for the tri-annual crew photo, spring/summer 2018.*
 </figcaption>
