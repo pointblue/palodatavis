@@ -32,6 +32,10 @@ rmarkdown::render(here::here('Rmd/habitat.Rmd'),
 
 # CROSSROADS & CONNECTIONS ------------------------------------------------
 
+source('R/graph_seasonal_capturestats.R')
+
+source('R/map_migration_data.R')
+
 rmarkdown::render(here::here('Rmd/connections.Rmd'), 
                   output_file = here::here('docs/connections.html'))
 
