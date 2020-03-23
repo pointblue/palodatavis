@@ -9,130 +9,13 @@ output:
 ```{r setup, echo = FALSE, warning = FALSE, message = FALSE}
 knitr::opts_chunk$set(echo = FALSE, warning = FALSE, message = FALSE, 
                       out.width="95%", fig.asp=0.6)
-
-#PACKAGES
-library(tidyverse)
-library(plotly)
-
-#INPUT DATA
-# original copies:
-# nethrspath <- 'Z:/Terrestrial/band/nethrs/allpalonethrs.dbf'
-# bandpath <- 'Z:/Terrestrial/programs_and_projects/palomarin/Palodata/Band/allbandpalo.dbf'
-
-# local copies:
-nethrspath <- "../rawdat/allpalonthrs_through2018.CSV"
-bandpath <- "../rawdat/allbandpalo_through2018.CSV"
-
-# PALETTE
-pointblue.palette <- c('#4495d1', '#74b743', '#f7941d', '#005baa', '#bfd730',
-                       '#a7a9ac', '#666666')
 ```
 
 The seasonal changes in the bird community make Palomarin a fascinating place to study birds year-round. Some species are present all year, while others are only here for a few months, or even a few days each year as they travel thousands of miles on migration. These comings and goings are always an exciting event as we welcome back and then say farewell to these seasonal animals each year - and in some cases, get to learn where they’ve been. Similarly, we cherish the connections with interns who come to Palomarin for a “bird season” from all over the country and the world!
 
 <figure>
-```{r captures}
+<iframe src="graph_seasonal_capturestats.html" style="border: none;" width = 95%; height = 450px;></iframe>
 
-# calculate average net hours per month
-effort <- read_csv(nethrspath, 
-                   col_types = cols_only(location = col_factor(), 
-                                         date = col_date(format = '%m/%d/%Y'), 
-                                         nethours = col_number())) %>% 
-  filter(location == 'PN') %>% 
-  mutate(year = format(date, '%Y'),
-         month = format(date, '%m'),
-         monthlab = format(date, '%b')) %>% 
-  filter(year > 2008) %>% #cleaner data?
-  # total by year and month:
-  group_by(year, month, monthlab) %>% 
-  summarize(nethours = sum(nethours)) %>% 
-  ungroup()
-  
-# banding data
-captures <- read_csv(bandpath, col_types = cols_only(loc = 'f',
-                                         date = col_date(format = '%m/%d/%Y'),
-                                         size = 'f',
-                                         code = 'f',
-                                         bandnumb = 'n',
-                                         spec = 'f',
-                                         age = 'n',
-                                         sex = 'f')) %>% 
-  mutate(year = format(date, '%Y'),
-         month = format(date, '%m')) %>% 
-  filter(loc == 'PN' & year > 2008 & 
-           spec %in% c('WIWA', 'SWTH', 'HETH', 'GCSP', 'WREN')) %>% 
-  # count total captures for each species by year and month
-  group_by(spec, year, month) %>% 
-  count() %>% 
-  ungroup() %>% 
-  mutate(spec = as.factor(as.character(spec))) %>% 
-  complete(spec, year, month, fill = list(n = 0))
-
-# calculate capture rate per 1000 net hours, and fit smoothed line
-dat <- left_join(captures, effort, by = c('month', 'year')) %>% 
-  mutate(rate = n / nethours * 1000,
-         month = as.numeric(month),
-         monthlab = factor(monthlab, levels = unique(monthlab))) %>% 
-  select(spec, monthlab, month, rate) %>% 
-  # calculate loess by species
-  nest(data = c(monthlab, month, rate)) %>% 
-  mutate(mod = purrr::map(data, loess, formula = rate ~ month, span = 0.55),
-         smooth = purrr::map(mod, `[[`, 'fitted')) %>% 
-  select(-mod) %>% 
-  unnest(cols = c(data, smooth)) %>% 
-  group_by(spec, monthlab, month, smooth) %>% 
-  summarize(maxrate = max(rate),
-            meanrate = mean(rate)) %>% 
-  ungroup() %>% 
-  mutate(smooth = case_when(maxrate == 0 ~ 0,
-                            smooth < 0 ~ 0,
-                            TRUE ~ smooth),
-         spec = factor(spec, levels = c('WREN', 'SWTH', 'WIWA', 'HETH', 'GCSP')),
-         speclab = recode(spec, 
-                       GCSP = 'Golden-crowned Sparrow',
-                       WIWA = "Wilson's Warbler",
-                       SWTH = "Swainson's Thrush",
-                       HETH = "Hermit Thrush",
-                       WREN = 'Wrentit'))
-
-# build interactive plot
-pal <- setNames(pointblue.palette[1:5], 
-                c("Wrentit", "Swainson's Thrush", "Wilson's Warbler",
-                  "Hermit Thrush", "Golden-crowned Sparrow"))
-dat %>%
-  plot_ly(x = ~monthlab) %>%
-  # add_markers(y = ~meanrate,
-  #             color = ~speclab,
-  #             colors = pal,
-  #             marker = list(size = 8),
-  #             showlegend = F,
-  #             hoverinfo = 'y') %>%
-  add_lines(y = ~smooth,
-            color = ~speclab,
-            colors = pal,
-            line = list(width = 3),
-            hoverinfo = 'y') %>%
-  layout(yaxis = list(title = 'Capture rate (per 1000 net hours)',
-                      font = list(size = 14),
-                      showline = TRUE,
-                      ticks = 'outside',
-                      tick0 = 0,
-                      # range = c(0,20),
-                      showgrid = FALSE,
-                      automargin = TRUE,
-                      hoverformat = '.2f'),
-         xaxis = list(title = NA,
-                      showline = TRUE,
-                      ticks = 'outside',
-                      # range = c(1980,maxyear+4),
-                      showgrid = FALSE),
-         margin = list(r = 0, b = 10, t = 10)) %>%
-  config(displaylogo = FALSE, showTips = FALSE,
-         modeBarButtonsToRemove = list('zoom2d', 'select2d', 'lasso2d',
-                                       'zoomIn2d', 'zoomOut2d',
-                                       'pan2d', 'toggleSpikelines'))
-
-```
 <figcaption>
 *Seasonal shifts in the bird community at Palomarin. Some species are here year-round (like Wrentit), while others are only here during certain months. (One net hour is equal to 1 net being open for 1 hour).*
 </figcaption>
@@ -180,7 +63,7 @@ All birds fitted with geolocator tags (GPS and light-level tags) are captured du
 <figure>
 ![](../images/banding_lab_crop.jpg "Palomarin biologists recording data in the banding lab")
 <figcaption>
-*Palomarin biologists collect long-term banding data in our banding lab*
+*Palomarin biologists collect long-term banding data in our banding lab. Photo by Kim Kayano.*
 </figcaption>
 </figure>
 </div>
@@ -188,7 +71,7 @@ All birds fitted with geolocator tags (GPS and light-level tags) are captured du
 <figure>
 ![](../images/MGWA-with-band_by-Stefanie-Krantz_compressed.jpg "A banded MacGillivray’s Warbler")
 <figcaption>
-*A banded MacGillivray’s Warbler. Photo by Stefanie Krantz*
+*A banded MacGillivray’s Warbler. Photo by Stefanie Krantz.*
 </figcaption>
 </figure>
 </div>
