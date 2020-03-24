@@ -18,10 +18,14 @@ rmarkdown::render(here::here('Rmd/index.Rmd'),
 
 # HOW ARE THE BIRDS DOING -------------------------------------------------
 
+rmarkdown::render(here::here('Rmd/bandingstats.Rmd'), 
+                  output_file = here::here('docs/banding.html'))
 
 
 # WEATHER & CLIMATE -------------------------------------------------------
 
+rmarkdown::render(here::here('Rmd/climate.Rmd'), 
+                  output_file = here::here('docs/climate.html'))
 
 
 # HABITAT & COMMUNITY CHANGE ----------------------------------------------
