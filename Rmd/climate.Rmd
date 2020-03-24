@@ -1,0 +1,97 @@
+---
+title: "Tracking a Changing Climate"
+output: 
+  html_document:
+    theme: default
+    css: pointblue_page_style.css
+---
+
+```{r setup, echo = FALSE, warning = FALSE, message = FALSE}
+knitr::opts_chunk$set(echo = FALSE, warning = FALSE, message = FALSE, 
+                      out.width="95%", fig.asp=0.6)
+```
+
+Since 1968, Point Blue has collected weather data several times each day at the Palomarin Field Station to understand how short-term fluctuations in weather and long-term changes in climate affect bird populations. Understanding these changes requires long-term monitoring effort across decades!
+
+### How has the climate changed?
+Check out these graphics to see how annual temperatures and rainfall totals have changed over time. The hottest year we’ve recorded was in XXXX, and overall temperatures are trending XXXX. Rainfall totals are measured July to June (to capture the entire wet winter season), and vary a lot from year to year. The wettest year we’ve recorded was in XXXX, but recent years have been relatively (dry?). [[Add correct interpretation after actually putting the figures together!]]
+
+*Insert climate data figure here*
+
+<!-- <figure> -->
+<!-- <iframe src="graph_seasonal_capturestats.html" style="border: none;" width = 95%; height = 450px;></iframe> -->
+
+<figcaption>
+*TBD*
+</figcaption>
+</figure>
+
+### How are birds affected by weather and climate?
+Weather plays a huge role in the daily lives of birds, and is a major driver of everything from successfully raising young, to surviving the winter, to migration timing, and even body size. Here are just a few examples of how our research has identified how birds are responding to global climate change. 
+
+#### Migration Timing
+A changing climate may influence the seasonal timing (“phenology”) of blooming plants, hatching insects, and bird migration or nesting. In some cases, birds may not be able to easily change the timing of their migration to keep up with changes in the timing of their plant and insect food supplies, while others are shifting to try to stay in synch.
+
+Point Blue examined the dates migratory species arrive at Palomarin in the spring, and we found that some species are arriving earlier (Orange-crowned Warbler), some are arriving later (Wilson’s Warbler), while others haven’t changed at all (Swainson’s Thrush).
+
+*Insert migration timing figs*
+
+For species that arrive at Palomarin in the fall, we again found that some species are arriving earlier (Golden-crowned Sparrow and Ruby-crowned Kinglet), while others haven’t changed at all (Fox Sparrow and Hermit Thrush).  You can read more about this study [here](https://oehha.ca.gov/media/downloads/climate-change/report/2018caindicatorsreportmay2018.pdf) (pages 232-242).
+
+*Insert second set of migration timing figs*
+
+#### Body Size
+<div class="table-wrapper">
+<div class="row">  
+<div class="column">
+<figure>
+![](../images/banding_lab_crop.jpg "Palomarin biologists recording data in the banding lab")
+<figcaption>
+*Measuring the wing chord (length) of a Red-breasted Sapsucker. Wing chord was one of the measurements found to be increasing over time. Photo by Point Blue / Mark Dettling.*
+</figcaption>
+</figure>
+</div>
+<div class="column">  
+Birds at Palomarin have been getting bigger! A 2012  [study](http://www.prbo.org/refs/files/12135_Goodman.pdf) led by graduate student Rae Goodman uncovered this surprising finding using banding data from Palomarin and the San Francisco Bay Bird Observatory. Studies from other parts of the world have found that birds are getting smaller, thought to be related to increasing temperatures. In California, birds may be getting bigger in response to increasing variability in our climate.
+</div>
+</div>
+</div>
+
+### Why is tracking weather and climate important for bird conservation?
+These data demonstrate that many bird species are responding to climate change, and different species are responding in different ways. Our concern for bird conservation is that the speed at which our climate is changing may be outpacing their ability to evolve and adapt to new conditions.
+
+By collecting long-term data on species and how they are responding to changes in weather and climate, we are able to identify how birds are responding and which birds may be more vulnerable to climate change.
+
+### How did we collect these data?
+<div class="table-wrapper">
+<div class="row">
+<div class="column">
+<figure>
+![](../images/banding_lab_crop.jpg "Palomarin biologists recording data in the banding lab")
+<figcaption>
+*Palomarin intern collecting weather data.*
+</figcaption>
+</figure>
+</div>
+<div class="column">
+All of these data are collected by staff, volunteers, and especially the hundreds of interns who have trained at Palomarin over the years. The bird body size and arrival dates data come from our long-term mist netting and banding efforts, described here.
+
+We have been collecting weather data since 1968, including daily records of precipitation, fog, temperature, cloud cover, wind, and barometric pressure data. 
+</div>
+</div>
+</div>
+
+### Come visit!
+Watch how we collect weather data during a bird banding demonstration! Visitors can drop in and join our intern and staff biologists to learn how we collect this data - and hopefully see a bird in the hand! More information on visiting and scheduling groups is available [here](https://www.pointblue.org/about-us/contact-visit-us/){target="_blank"}.
+
+
+### More information
+* Migratory bird arrivals. Pages 232-242 in *Indicators of Climate Change in California*. [[View PDF](https://oehha.ca.gov/media/downloads/climate-change/report/2018caindicatorsreportmay2018.pdf)]
+
+* Avian body size changes and climate change: warming or increasing variability? Published in *Global Change Biology*. [[View PDF](http://www.prbo.org/refs/files/12135_Goodman.pdf)]
+
+* Evidence of the effects of climate change on landbirds in western North America: A review and recommendations for future research. Published in *Western Field Ornithologists*. [[View PDF](http://www.prbo.org/refs/files/12453_Seavy_etal2018.pdf)] 
+
+* Projecting demographic responses to climate change: adult and juvenile survival respond differently to direct and indirect effects of weather in a passerine population. Published in *Global Change Biology*. [[View PDF](http://www.prbo.org/refs/files/12253_KristenE.Dybala2013.pdf)] [[Read summary](http://pointblue.org/wp-content/uploads/2018/06/2013_pubbrief_paentsvyoungsparrowsclimatechange_Dybala_GlobalChange.pdf)] 
+
+
