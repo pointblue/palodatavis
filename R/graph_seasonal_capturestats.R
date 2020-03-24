@@ -131,4 +131,5 @@ graph1 <- plot_ly(dat2) %>%
 
 htmlwidgets::saveWidget(graph1,
                         here::here(graphpath),
-                        selfcontained = TRUE)
+                        selfcontained = TRUE,
+                        title = 'Seasonal capture stats')
