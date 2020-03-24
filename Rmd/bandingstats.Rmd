@@ -1,0 +1,74 @@
+---
+title: "How Are the Birds Doing?"
+output: 
+  html_document:
+    theme: default
+    css: pointblue_page_style.css
+---
+
+```{r setup, echo = FALSE, warning = FALSE, message = FALSE}
+knitr::opts_chunk$set(echo = FALSE, warning = FALSE, message = FALSE, 
+                      out.width="95%", fig.asp=0.6)
+```
+
+This question is frequently asked by those who care about birds - whether they are a scientist, a birder, or simply a nature lover -  and answering it is the key first step to effective bird conservation. Operating year-round since 1966, the Palomarin Field Station provides a unique long-term perspective on West Coast bird populations. 
+
+### How have capture rates changed over the years?
+
+*Insert climate data figure here*
+
+<!-- <figure> -->
+<!-- <iframe src="graph_seasonal_capturestats.html" style="border: none;" width = 95%; height = 450px;></iframe> -->
+
+<figcaption>
+*Capture rates at the Palomarin Field Station, 1979-2019. Select button at top right to view individual seasons.*
+</figcaption>
+</figure>
+
+The bird community changes with the seasons as migrants come and go. We therefore look at total capture rates of unique individual birds during each season and overall. We explore fluctuations in the overall size of the seasonal bird community each year and some of the factors contributing to these fluctuations including: [local habitat changes](docs/habitat.html), [climate change and local weather](docs/climate.html), and [migratory connectivity](docs/connections.html).  
+
+### How are individual species doing?
+Although we study the entire community of birds at Palomarin, we pay particular attention to a suite of focal species to understand how they are doing and what is driving any changes over time. Select a species below to see how annual capture rates of our focal species are changing over time and what this means. 
+
+#### Year-Round Residents
+Present at Palo all year, these bird species often maintain their territories even during the nonbreeding season. 
+
+*Insert array of species/graphics*
+
+#### Seasonal Migrants
+Present at Palomarin only for part of the year, neotropical migrants spend the spring and summer breeding season with us, then migrate to the tropics of Latin America to spend their winter. Neotemperate migrants spend the summer as far north as Alaska, and then migrate to spend the winter with us.
+
+*Insert array of species/graphics*
+
+### Why is measuring capture rates important for bird conservation?
+The capture rates of birds serve as indicators of population fluctuations, which are influenced by many factors. For year-round residents, local factors like weather and habitat change may play a large role. For seasonal migrants, their numbers may be influenced by changes anywhere along their migration route. By examining variation in capture rates, we can examine how bird populations are changing over time. , and some of the important factors affecting our birds.
+
+### How did we collect these data?
+<div class="table-wrapper">
+<div class="row">
+<div class="column">
+<figure>
+![](../images/banding_lab_crop.jpg "Palomarin biologists recording data in the banding lab")
+<figcaption>
+*Photo of a Point Blue intern with a newly banded XXXX bird at the Palomarin Field Station. Photo by XXX.*
+</figcaption>
+</figure>
+</div>
+<div class="column">
+All of these data are collected by staff, volunteers, and especially the hundreds of interns who have trained at Palomarin over the years. 
+
+Since 1966, we have been mist-netting and banding birds at the Palomarin Field Station year-round. All birds are given uniquely-numbered bands provided by the U.S. Bird Banding Laboratory. 
+</div>
+</div>
+</div>
+
+### Come visit!
+Watch how we collect weather data during a bird banding demonstration! Visitors can drop in and join our intern and staff biologists to learn how we collect this data - and hopefully see a bird in the hand! More information on visiting and scheduling groups is available [here](https://www.pointblue.org/about-us/contact-visit-us/){target="_blank"}.
+
+
+### More information
+* Links to handbook/protocols?
+
+* Relevant banding-related papers?
+
+
