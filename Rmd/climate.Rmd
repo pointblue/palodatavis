@@ -45,7 +45,7 @@ For species that arrive at Palomarin in the fall, we again found that some speci
 <div class="row">  
 <div class="column">
 <figure>
-![](../images/banding_lab_crop.jpg "Palomarin biologists recording data in the banding lab")
+![](../images/weather/wing_chord.jpg "Measuring the wing chord (length) of a Red-breasted Sapsucker")
 <figcaption>
 *Measuring the wing chord (length) of a Red-breasted Sapsucker. Wing chord was one of the measurements found to be increasing over time. Photo by Point Blue / Mark Dettling.*
 </figcaption>
@@ -67,9 +67,9 @@ By collecting long-term data on species and how they are responding to changes i
 <div class="row">
 <div class="column">
 <figure>
-![](../images/banding_lab_crop.jpg "Palomarin biologists recording data in the banding lab")
+![](../images/weather/Vicky_taking_rain_fall05.jpg "Collecting weather data")
 <figcaption>
-*Palomarin intern collecting weather data.*
+*Former Palomarin intern Vicky Galan collecting weather data. Photo by Point Blue*
 </figcaption>
 </figure>
 </div>
