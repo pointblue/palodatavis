@@ -15,7 +15,7 @@ This question is frequently asked by those who care about birds - whether they a
 
 ### How have capture rates changed over the years?
 
-*Insert climate data figure here*
+*Insert capture rate figure here*
 
 <!-- <figure> -->
 <!-- <iframe src="graph_seasonal_capturestats.html" style="border: none;" width = 95%; height = 450px;></iframe> -->
@@ -33,12 +33,118 @@ Although we study the entire community of birds at Palomarin, we pay particular 
 #### Year-Round Residents
 Present at Palo all year, these bird species often maintain their territories even during the nonbreeding season. 
 
-*Insert array of species/graphics*
+<div class="table-wrapper">
+<div class="row">
+<div class="column5">
+<figure>
+![](../images/birds/WREN.png "Wrentit"){#birds}
+<figcaption>
+**Wrentit**
+</figcaption>
+</figure>
+</div>
+<div class="column5">
+<figure>
+![](../images/birds/SOSP.png "Song Sparrow"){#birds}
+<figcaption>
+**Song Sparrow**  
+*Photo by Miguel Demeulemeester / Point Blue*
+</figcaption>
+</figure>
+</div>
+<div class="column5">
+<figure>
+![](../images/birds/NWCS.png "Nuttall's White-crowned Sparrow"){#birds}
+<figcaption>
+**Nuttall's White-crowned Sparrow**
+</figcaption>
+</figure>
+</div>
+<div class="column5">
+<figure>
+![](../images/birds/SPTO.png "Spotted Towhee"){#birds}
+<figcaption>
+**Spotted Towhee**  
+*Photo by Amon Armstrong / Point Blue*
+</figcaption>
+</figure>
+</div>
+<div class="column5">
+<figure>
+![](../images/birds/CASJ.png "California Scrub-Jay"){#birds}
+<figcaption>
+**California Scrub-Jay**
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
 
 #### Seasonal Migrants
 Present at Palomarin only for part of the year, neotropical migrants spend the spring and summer breeding season with us, then migrate to the tropics of Latin America to spend their winter. Neotemperate migrants spend the summer as far north as Alaska, and then migrate to spend the winter with us.
 
-*Insert array of species/graphics*
+```{r}
+library(htmltools)
+library(bsplus)
+library(shiny)
+bs_modal(id = 'WIWA', title = "Wilson's Warbler", 
+         body = tags$iframe(seamless = "seamless", 
+                            src = "../docs/graph_seasonal_capturestats.html",
+                            width = '100%', height = '450px'),
+         size = 'large')
+```
+
+<div class="table-wrapper">
+<div class="row">
+<div class="column5">
+```{r}
+bs_button("Wilson's Warbler") %>% bs_attach_modal(id_modal = "WIWA")
+```
+
+<figure>
+![](../images/birds/WIWA.png "Wilson's Warbler"){#birds}
+<figcaption>
+**Wilson's Warbler**  
+*Photo by Hannah Conley / Point Blue*
+</figcaption>
+</figure>
+</div>
+<div class="column5">
+<figure>
+![](../images/birds/SWTH.png "Swainson's Thrush"){#birds}
+<figcaption>
+**Swainson's Thrush**  
+*Photo by Ian Tait / Point Blue*
+</figcaption>
+</figure>
+</div>
+<div class="column5">
+<figure>
+![](../images/birds/FOSP.png "Fox Sparrow"){#birds}
+<figcaption>
+**Fox Sparrow**  
+*Photo by Hannah Conley / Point Blue*
+</figcaption>
+</figure>
+</div>
+<div class="column5">
+<figure>
+![](../images/birds/GCSP.png "Golden-crowned Sparrow"){#birds}
+<figcaption>
+**Golden-crowned Sparrow**
+</figcaption>
+</figure>
+</div>
+<div class="column5">
+<figure>
+![](../images/birds/HETH.png "Hermit Thrush"){#birds}
+<figcaption>
+**Hermit Thrush**
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
 
 ### Why is measuring capture rates important for bird conservation?
 The capture rates of birds serve as indicators of population fluctuations, which are influenced by many factors. For year-round residents, local factors like weather and habitat change may play a large role. For seasonal migrants, their numbers may be influenced by changes anywhere along their migration route. By examining variation in capture rates, we can examine how bird populations are changing over time. , and some of the important factors affecting our birds.
@@ -48,7 +154,7 @@ The capture rates of birds serve as indicators of population fluctuations, which
 <div class="row">
 <div class="column">
 <figure>
-![](../images/banding_lab_crop.jpg "Palomarin biologists recording data in the banding lab")
+![](../images/connections/banding_lab_crop.jpg "Palomarin biologists recording data in the banding lab")
 <figcaption>
 *Photo of a Point Blue intern with a newly banded XXXX bird at the Palomarin Field Station. Photo by XXX.*
 </figcaption>
