@@ -89,7 +89,7 @@ library(bsplus)
 library(shiny)
 bs_modal(id = 'WIWA', title = "Wilson's Warbler", 
          body = tags$iframe(seamless = "seamless", 
-                            src = "../docs/graph_seasonal_capturestats.html",
+                            src = "graph_seasonal_capturestats.html",
                             width = '100%', height = '450px'),
          size = 'large')
 ```
