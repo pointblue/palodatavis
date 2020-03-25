@@ -5,12 +5,6 @@ output:
     css: pointblue_page_style.css
 ---
 
-<figure>
-![](../images/wren.jpg "Color-banded Wrentit")
-<figcaption>
-*Color-banded Wrentit. Photo by XXX. Testing.* 
-</figcaption>
-</figure>
 The Palomarin Field Station, located at the south end of Point Reyes National Seashore, was established in 1966 and today remains an active field station year-round.
 
 Point Blue staff train field biology interns, host organized groups and drop-in visitors, and collaborate on research with agency partners, graduate students, and others. 
@@ -20,14 +14,14 @@ With over 50 years of data, the Palomarin Field Station has made unique contribu
 <div class="table-wrapper">  
 <div class="row">  
 <div class="column">  
-![](../images/icons/nature_stewardship.png "bird icon"){#icon}  
+[![](../images/icons/nature_stewardship.png "bird icon"){#icon}](banding.html)  
 
 ### How are the birds doing?  
 
 Explore some of the latest capture stats and how they change over time, at one of the oldest, continuously-running banding stations in the United States.  
 </div>  
 <div class="column">  
-![](../images/icons/climate_change.png "climate icon"){#icon}
+[![](../images/icons/climate_change.png "climate icon"){#icon}](climate.html)
   
 ### Tracking a changing climate  
 
