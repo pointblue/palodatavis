@@ -33,7 +33,6 @@ Although we study the entire community of birds at Palomarin, we pay particular 
 #### Year-Round Residents
 Present at Palo all year, these bird species often maintain their territories even during the nonbreeding season. 
 
-<div class="table-wrapper">
 <div class="row">
 <div class="column5">
 <figure>
@@ -78,10 +77,8 @@ Present at Palo all year, these bird species often maintain their territories ev
 </figure>
 </div>
 </div>
-</div>
 
 #### Seasonal Migrants
-Present at Palomarin only for part of the year, neotropical migrants spend the spring and summer breeding season with us, then migrate to the tropics of Latin America to spend their winter. Neotemperate migrants spend the summer as far north as Alaska, and then migrate to spend the winter with us.
 
 ```{r}
 library(htmltools)
@@ -93,18 +90,18 @@ bs_modal(id = 'WIWA', title = "Wilson's Warbler",
                             width = '100%', height = '450px'),
          size = 'large')
 ```
+Present at Palomarin only for part of the year, **neotropical migrants** spend the spring and summer breeding season with us, then migrate to the tropics of Latin America to spend their winter.
 
-<div class="table-wrapper">
 <div class="row">
 <div class="column5">
-```{r}
-bs_button("Wilson's Warbler") %>% bs_attach_modal(id_modal = "WIWA")
-```
-
 <figure>
 ![](../images/birds/WIWA.png "Wilson's Warbler"){#birds}
 <figcaption>
-**Wilson's Warbler**  
+```{r}
+bs_button("Wilson's Warbler") %>% bs_attach_modal(id_modal = "WIWA")
+```
+<br>
+  
 *Photo by Hannah Conley / Point Blue*
 </figcaption>
 </figure>
@@ -118,6 +115,11 @@ bs_button("Wilson's Warbler") %>% bs_attach_modal(id_modal = "WIWA")
 </figcaption>
 </figure>
 </div>
+</div>
+
+**Neotemperate migrants** spend the summer as far north as Alaska, and then migrate to spend the winter with us.
+
+<div class="row">
 <div class="column5">
 <figure>
 ![](../images/birds/FOSP.png "Fox Sparrow"){#birds}
@@ -144,13 +146,11 @@ bs_button("Wilson's Warbler") %>% bs_attach_modal(id_modal = "WIWA")
 </figure>
 </div>
 </div>
-</div>
 
 ### Why is measuring capture rates important for bird conservation?
 The capture rates of birds serve as indicators of population fluctuations, which are influenced by many factors. For year-round residents, local factors like weather and habitat change may play a large role. For seasonal migrants, their numbers may be influenced by changes anywhere along their migration route. By examining variation in capture rates, we can examine how bird populations are changing over time. , and some of the important factors affecting our birds.
 
 ### How did we collect these data?
-<div class="table-wrapper">
 <div class="row">
 <div class="column">
 <figure>
@@ -164,7 +164,6 @@ The capture rates of birds serve as indicators of population fluctuations, which
 All of these data are collected by staff, volunteers, and especially the hundreds of interns who have trained at Palomarin over the years. 
 
 Since 1966, we have been mist-netting and banding birds at the Palomarin Field Station year-round. All birds are given uniquely-numbered bands provided by the U.S. Bird Banding Laboratory. 
-</div>
 </div>
 </div>
 
