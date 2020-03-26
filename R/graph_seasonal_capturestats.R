@@ -22,7 +22,7 @@ pointblue.palette <- c('#4495d1', '#74b743', '#f7941d', '#005baa', '#bfd730',
                        '#a7a9ac', '#666666')
 
 #OUTPUT
-graphpath <- "docs/graph_seasonal_capturestats.html"
+out <- "docs/widget/graph_seasonal_capturestats.html"
 
 # CALCULATE STATS ---------------------------------------------------------
 
@@ -62,10 +62,10 @@ captures <- read_csv(here::here(bandpath),
   mutate(spec = as.factor(as.character(spec))) %>% 
   complete(spec, year, month, fill = list(n = 0))
 
-# calculate capture rate per 1000 net hours, and fit smoothed line
+# calculate capture rate per 1000 net hours
 dat <- left_join(captures, effort, by = c('month', 'year')) %>% 
   mutate(rate = n / nethours * 1000,
-         month = as.numeric(month),
+         month = as.numeric(month) + 0.5,
          monthlab = factor(monthlab, levels = unique(monthlab)),
          spec = factor(spec, levels = c('WREN', 'SWTH', 'WIWA', 'HETH', 'GCSP')),
          speclab = recode(spec, 
@@ -74,11 +74,19 @@ dat <- left_join(captures, effort, by = c('month', 'year')) %>%
                           SWTH = "Swainson's Thrush",
                           HETH = "Hermit Thrush",
                           WREN = 'Wrentit')) %>% 
-  select(spec, speclab, monthlab, month, rate)
+  select(spec, speclab, monthlab, month, year, rate)
+
+datavg <- dat %>% 
+  group_by(spec, speclab, monthlab, month) %>% 
+  summarize(rate = mean(rate)) %>% 
+  mutate(ratelab = format(round(rate, digits = 1), nsmall = 1)) %>% 
+  ungroup()
+
+# FIT SMOOTHED LINES ------------------------------------------------------
 
 g1 <- ggplot(dat, aes(month, rate, color = speclab)) +
-  geom_smooth(method="glm", method.args = list(family="quasipoisson"), 
-              formula = y ~ splines::ns(x, 4), se = FALSE)
+  geom_smooth(method="gam", method.args = list(family="quasipoisson"), 
+              formula = y ~ s(x, k = 7), se = FALSE, n = 111)
 
 # build plot object for rendering 
 gg1 <- ggplot_build(g1)
@@ -86,8 +94,11 @@ gg1 <- ggplot_build(g1)
 # extract data for the loess lines from the 'data' slot
 dat2 <- data.frame(x = gg1$data[[1]]$x,
                    smooth = gg1$data[[1]]$y,
-                   speclab = rep(levels(dat$speclab), each = 80)) %>% 
-  mutate(speclab = factor(speclab, levels = levels(dat$speclab)))
+                   speclab = rep(levels(dat$speclab), each = 111)) %>% 
+  mutate(speclab = factor(speclab, levels = levels(dat$speclab))) %>% 
+  left_join(datavg %>% select(speclab, x = month, monthlab, 
+                              avgrate = rate, avgratelab = ratelab),
+            by = c('x', 'speclab'))
 
 
 # PLOTLY ------------------------------------------------------------------
@@ -101,9 +112,18 @@ graph1 <- plot_ly(dat2) %>%
   add_lines(x = ~x,
             y = ~smooth,
             color = ~speclab,
+            legendgroup = ~speclab,
             colors = pal,
             line = list(width = 3),
             hoverinfo = 'none') %>%
+  add_markers(x = ~x, 
+              y = ~avgrate,
+              color = ~speclab,
+              legendgroup = ~speclab,
+              hoverinfo = 'text',
+              text = ~paste0('</br>', speclab,
+                             '</br>', monthlab, ' avg rate: ', avgratelab),
+              showlegend = FALSE) %>% 
   layout(yaxis = list(title = 'Capture rate (per 1000 net hours)',
                       font = list(size = 14),
                       showline = TRUE,
@@ -117,9 +137,9 @@ graph1 <- plot_ly(dat2) %>%
                       showline = TRUE,
                       ticks = 'outside',
                       tickmode = 'array',
-                      tickvals = seq(1.5, 11.5, 1),
+                      tickvals = seq(1.5, 12.5, 1),
                       ticktext = c('Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun',
-                                   'Jul', 'Sep', 'Oct', 'Nov', 'Dec'),
+                                   'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'),
                       showgrid = FALSE),
          legend = list(x = 0.01, xanchor = 'left', y = 1, yanchor = 'top', 
                        bgcolor = NA),
@@ -130,6 +150,6 @@ graph1 <- plot_ly(dat2) %>%
                                        'pan2d', 'toggleSpikelines'))
 
 htmlwidgets::saveWidget(graph1,
-                        here::here(graphpath),
+                        here::here(out),
                         selfcontained = TRUE,
                         title = 'Seasonal capture stats')
