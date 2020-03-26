@@ -31,15 +31,26 @@ A changing climate may influence the seasonal timing (“phenology”) of bloomi
 
 Point Blue examined the dates migratory species arrive at Palomarin in the spring, and we found that some species are arriving earlier (Orange-crowned Warbler), some are arriving later (Wilson’s Warbler), while others haven’t changed at all (Swainson’s Thrush).
 
-*Insert migration timing figs*
-
+<figure>
+![](../images/weather/migration_timing1.png "Trend in average arrival timing at Palomarin for 3 migratory species"){#fig80}
+</figure>
+  
+  
 For species that arrive at Palomarin in the fall, we again found that some species are arriving earlier (Golden-crowned Sparrow and Ruby-crowned Kinglet), while others haven’t changed at all (Fox Sparrow and Hermit Thrush).  You can read more about this study [here](https://oehha.ca.gov/media/downloads/climate-change/report/2018caindicatorsreportmay2018.pdf) (pages 232-242).
 
-*Insert second set of migration timing figs*
+<figure>
+![](../images/weather/migration_timing2.png "Trend in average arrival timing at Palomarin for 2 migratory species"){#fig60}
+</figure>
+  
+<figure>
+![](../images/weather/migration_timing3.png "Trend in average arrival timing at Palomarin for 2 migratory species"){#fig60}
+</figure>
 
 #### Body Size
-<div class="table-wrapper">
 <div class="row">  
+<div class="column">  
+Birds at Palomarin have been getting bigger! A 2012  [study](http://www.prbo.org/refs/files/12135_Goodman.pdf) led by graduate student Rae Goodman uncovered this surprising finding using banding data from Palomarin and the San Francisco Bay Bird Observatory. Studies from other parts of the world have found that birds are getting smaller, thought to be related to increasing temperatures. In California, birds may be getting bigger in response to increasing variability in our climate.
+</div>
 <div class="column">
 <figure>
 ![](../images/weather/wing_chord.jpg "Measuring the wing chord (length) of a Red-breasted Sapsucker")
@@ -47,10 +58,6 @@ For species that arrive at Palomarin in the fall, we again found that some speci
 *Measuring the wing chord (length) of a Red-breasted Sapsucker. Wing chord was one of the measurements found to be increasing over time. Photo by Point Blue / Mark Dettling.*
 </figcaption>
 </figure>
-</div>
-<div class="column">  
-Birds at Palomarin have been getting bigger! A 2012  [study](http://www.prbo.org/refs/files/12135_Goodman.pdf) led by graduate student Rae Goodman uncovered this surprising finding using banding data from Palomarin and the San Francisco Bay Bird Observatory. Studies from other parts of the world have found that birds are getting smaller, thought to be related to increasing temperatures. In California, birds may be getting bigger in response to increasing variability in our climate.
-</div>
 </div>
 </div>
 
@@ -60,9 +67,8 @@ These data demonstrate that many bird species are responding to climate change, 
 By collecting long-term data on species and how they are responding to changes in weather and climate, we are able to identify how birds are responding and which birds may be more vulnerable to climate change.
 
 ### How did we collect these data?
-<div class="table-wrapper">
 <div class="row">
-<div class="column">
+<div class="column" flex-basis="25%">
 <figure>
 ![](../images/weather/Vicky_taking_rain_fall05.jpg "Collecting weather data")
 <figcaption>
@@ -74,7 +80,6 @@ By collecting long-term data on species and how they are responding to changes i
 All of these data are collected by staff, volunteers, and especially the hundreds of interns who have trained at Palomarin over the years. The bird body size and arrival dates data come from our long-term mist netting and banding efforts, described here.
 
 We have been collecting weather data since 1968, including daily records of precipitation, fog, temperature, cloud cover, wind, and barometric pressure data. 
-</div>
 </div>
 </div>
 

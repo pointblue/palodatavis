@@ -70,7 +70,7 @@ a {
     flex-direction: column;
     flex-basis: 100%;
     flex: 1;
-    margin: 15px;
+    margin: 0;
   }
 }
 @media screen and (min-width: 700px) {
@@ -85,7 +85,7 @@ a {
 }
 figure {
   text-align: center;
-  padding: 0;
+  margin: 10px;
 }
 figcaption {
   font-size: 14px;
@@ -111,6 +111,16 @@ figcaption {
 #portrait {
   height: 350px;
   padding: 0px 0px 0px 0px;
+}
+#fig80 {
+  width: 750px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+#fig60 {
+  width: 600px;
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
 .btn {
   width: 140px;
