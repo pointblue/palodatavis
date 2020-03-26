@@ -19,7 +19,7 @@ We calculated rainfall totals and annual average temperatures from July to June 
 <figure>
 <iframe src="widget/graph_annual_weatherstats.html" style="border: none;" width = 95%; height = 450px;></iframe>
 <figcaption>
-*TBD*
+*Annual total rainfall and average temperatures recorded at the Palomarin Field Station, calculated from July to June each year.*
 </figcaption>
 </figure>
 
