@@ -112,3 +112,13 @@ figcaption {
   height: 350px;
   padding: 0px 0px 0px 0px;
 }
+.btn {
+    white-space: normal;
+    border: 2px solid #005BAA;
+    border-radius: 8px;
+    transition-duration: 0.4s;
+}
+.btn:hover {
+  background-color: #005BAA;
+  color: white;
+}
