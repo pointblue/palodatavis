@@ -85,15 +85,24 @@ a {
 }
 figure {
   text-align: center;
-  margin: 10px;
+  margin: 15px;
 }
 figcaption {
   font-size: 14px;
   margin-top: 5px;
-  margin-bottom: 15px;
+  margin-bottom: 5px;
   margin-left: 10px;
   margin-right: 10px;
   text-align: center;
+}
+iframe {
+  display: block;
+  border: none;
+  width: 95%; 
+  height: 450px;
+  margin: 0 !important;
+  padding: 0 !important;
+  line-height: 0 !important;
 }
 #photobar {
   width: 100%;
