@@ -109,7 +109,7 @@ graph1 <- plot_ly() %>%
             colors = pal,
             line = list(width = 1),
             hoverinfo = 'text',
-            text = ~lab,
+            text = ~paste0(bioyear, ': ', lab),
             type = 'scatter',
             mode = 'markers',
             legendgroup = ~name) %>%
@@ -126,13 +126,13 @@ graph1 <- plot_ly() %>%
                       showline = TRUE,
                       ticks = 'outside',
                       tickmode = 'array',
-                      tickvals = seq(1975, 2017, 1),
-                      ticktext = unique(sdat$bioyear),
+                      tickvals = seq(1975, 2015, 5),
+                      ticktext = unique(sdat$bioyear)[seq(1, 41, 5)],
                       showgrid = FALSE),
          hovermode = 'x',
          legend = list(x = 0.01, xanchor = 'left', y = 1, yanchor = 'top', 
                        bgcolor = NA),
-         margin = list(r = 0, b = 10, t = 10)) %>%
+         margin = list(r = 0, b = 0, t = 0, l = 0)) %>%
   config(displaylogo = FALSE, showTips = FALSE,
          modeBarButtonsToRemove = list('zoom2d', 'select2d', 'lasso2d',
                                        'zoomIn2d', 'zoomOut2d',
