@@ -42,13 +42,10 @@ This question is frequently asked by those who care about birds - whether they a
 
 ### How have capture rates changed over the years?
 
-*Insert capture rate figure here*
-
-<!-- <figure> -->
-<!-- <iframe src="graph_seasonal_capturestats.html" style="border: none;" width = 95%; height = 450px;></iframe> -->
-
+<figure>
+<iframe src="widget/graph_total_capturestats.html" style="border: none;" width = 95%; height = 450px;></iframe>
 <figcaption>
-*Capture rates at the Palomarin Field Station, 1979-2019. Select button at top right to view individual seasons.*
+*Annual capture rates at the Palomarin Field Station, 1979-2019. Select lines at top left to view individual seasons. Capture rates have declined overall, and especially during the fall.*
 </figcaption>
 </figure>
 
