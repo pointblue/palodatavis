@@ -114,6 +114,7 @@ figcaption {
 }
 .btn {
   width: 140px;
+  height: 55px;
   white-space: normal;
   border: 2px solid #005BAA;
   border-radius: 8px;
