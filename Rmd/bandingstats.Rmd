@@ -16,26 +16,26 @@ library(shiny)
 
 # set up modals for each of the focal species below
 bs_modal(id = 'WREN', title = "Wrentit", 
-         body = tags$img(src = "../fig/WREN.jpg", width = '100%'))
+         body = tags$img(src = "fig/WREN.jpg", width = '100%'))
 bs_modal(id = 'SOSP', title = "Song Sparrow", 
-         body = tags$img(src = "../fig/SOSP.jpg", width = '100%'))
+         body = tags$img(src = "fig/SOSP.jpg", width = '100%'))
 bs_modal(id = 'NWCS', title = "Nuttall's White-crowned Sparrow", 
-         body = tags$img(src = "../fig/NWCS.jpg", width = '100%'))
+         body = tags$img(src = "fig/NWCS.jpg", width = '100%'))
 bs_modal(id = 'SPTO', title = "Spotted Towhee", 
-         body = tags$img(src = "../fig/SPTO.jpg", width = '100%'))
+         body = tags$img(src = "fig/SPTO.jpg", width = '100%'))
 bs_modal(id = 'CASJ', title = "California Scrub-Jay", 
-         body = tags$img(src = "../fig/CASJ.jpg", width = '100%'))
+         body = tags$img(src = "fig/CASJ.jpg", width = '100%'))
 
 bs_modal(id = 'WIWA', title = "Wilson's Warbler", 
-         body = tags$img(src = "../fig/WIWA.jpg", width = '100%'))
+         body = tags$img(src = "fig/WIWA.jpg", width = '100%'))
 bs_modal(id = 'SWTH', title = "Swainson's Thrush", 
-         body = tags$img(src = "../fig/SWTH.jpg", width = '100%'))
+         body = tags$img(src = "fig/SWTH.jpg", width = '100%'))
 bs_modal(id = 'FOSP', title = "Fox Sparrow", 
-         body = tags$img(src = "../fig/FOSP.jpg", width = '100%'))
+         body = tags$img(src = "fig/FOSP.jpg", width = '100%'))
 bs_modal(id = 'GCSP', title = "Golden-crowned Sparrow", 
-         body = tags$img(src = "../fig/GCSP.jpg", width = '100%'))
+         body = tags$img(src = "fig/GCSP.jpg", width = '100%'))
 bs_modal(id = 'HETH', title = "Hermit Thrush", 
-         body = tags$img(src = "../fig/HETH.jpg", width = '100%'))
+         body = tags$img(src = "fig/HETH.jpg", width = '100%'))
 ```
 
 This question is frequently asked by those who care about birds - whether they are a scientist, a birder, or simply a nature lover -  and answering it is the key first step to effective bird conservation. Operating year-round since 1966, the Palomarin Field Station provides a unique long-term perspective on West Coast bird populations. 
