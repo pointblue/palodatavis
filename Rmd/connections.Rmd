@@ -14,7 +14,7 @@ knitr::opts_chunk$set(echo = FALSE, warning = FALSE, message = FALSE,
 The seasonal changes in the bird community make Palomarin a fascinating place to study birds year-round. Some species are present all year, while others are only here for a few months, or even a few days each year as they travel thousands of miles on migration. These comings and goings are always an exciting event as we welcome back and then say farewell to these seasonal animals each year - and in some cases, get to learn where they’ve been. Similarly, we cherish the connections with interns who come to Palomarin for a “bird season” from all over the country and the world!
 
 <figure>
-<iframe src="graph_seasonal_capturestats.html" style="border: none;" width = 95%; height = 450px;></iframe>
+<iframe src="widget/graph_seasonal_capturestats.html" style="border: none;" width = 95%; height = 450px;></iframe>
 
 <figcaption>
 *Seasonal shifts in the bird community at Palomarin. Some species are here year-round (like Wrentit), while others are only here during certain months. (One net hour is equal to 1 net being open for 1 hour).*
@@ -28,7 +28,7 @@ Since the founding of the Palomarin Field Station in 1966, we have wanted to kno
 <div class="row">  
 <div class="column">
 <figure>
-![](../images/gcsp_gls_annotated.jpg "Golden-crowned Sparrow carrying a light-level geolocator")
+![](../images/connections/gcsp_gls_annotated.jpg "Golden-crowned Sparrow carrying a light-level geolocator")
 <figcaption>
 *A banded Golden-crowned Sparrow carries a light-level geolocator (note the small antenna on the back). Photo by John Ranlett.*
 </figcaption>
@@ -45,7 +45,7 @@ Light-level geolocators collect data on light intensity, and along with their in
 We have discovered that some birds travel to Palomarin from thousands of miles away. Golden-crowned Sparrows nest in southern Alaska before spending the fall, winter, and early spring at Palomarin while Swainson’s Thrushes that nest near Palomarin leave us to spend the winter in Mexico, primarily on the West Coast.
 
 <figure>
-<iframe src="migration_map.html" style="border: none;" width = 95%; height = 450px;></iframe>
+<iframe src="widget/migration_map.html" style="border: none;" width = 95%; height = 450px;></iframe>
 <figcaption>
 *Each point represents an individual bird we tracked on their migration. The coordinates are the average of several points collected throughout the season they were away from Palomarin.*
 </figcaption>
@@ -61,7 +61,7 @@ All birds fitted with geolocator tags (GPS and light-level tags) are captured du
 <div class="row">
 <div class="column">
 <figure>
-![](../images/banding_lab_crop.jpg "Palomarin biologists recording data in the banding lab")
+![](../images/connections/banding_lab_crop.jpg "Palomarin biologists recording data in the banding lab")
 <figcaption>
 *Palomarin biologists collect long-term banding data in our banding lab. Photo by Kim Kayano.*
 </figcaption>
@@ -69,7 +69,7 @@ All birds fitted with geolocator tags (GPS and light-level tags) are captured du
 </div>
 <div class="column">
 <figure>
-![](../images/MGWA-with-band_by-Stefanie-Krantz_compressed.jpg "A banded MacGillivray’s Warbler")
+![](../images/connections/MGWA-with-band_by-Stefanie-Krantz_compressed.jpg "A banded MacGillivray’s Warbler")
 <figcaption>
 *A banded MacGillivray’s Warbler. Photo by Stefanie Krantz.*
 </figcaption>
@@ -82,7 +82,7 @@ All birds fitted with geolocator tags (GPS and light-level tags) are captured du
 One of the most special things about the Palomarin Field Station is the people. Specifically, the interns who come to learn, and live there each season make the field station a home, and one where lasting relationships are made. Since our founding, Palomarin has hosted over <b>XXX</b> interns and volunteers from over 20 countries. And just like the birds, many of these biologists leave, but their connections to the place remain. 
 
 <figure>
-![](../images/KTCH2018_summer_compressed.jpg "Palomarin interns and staff, spring/summer 2018")
+![](../images/connections/KTCH2018_summer_compressed.jpg "Palomarin interns and staff, spring/summer 2018")
 <figcaption>
 *Palomarin interns & staff pose for the tri-annual crew photo, spring/summer 2018.*
 </figcaption>
