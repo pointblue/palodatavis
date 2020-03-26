@@ -16,12 +16,10 @@ Since 1968, Point Blue has collected weather data several times each day at the 
 ### How has the climate changed?
 We calculated rainfall totals and annual average temperatures from July to June to capture the entire wet winter season. Both measures have varied over the last 40 years, but temperatures have recently become much warmer. The hottest year we’ve recorded was in 2017-18, the most recent year of data included here. The wettest year we’ve recorded was in 1997-98 (during a strong El Nino). Recent years have been relatively dry, punctuated by a few wet winters. 
 
-<figure>
-<iframe src="widget/graph_annual_weatherstats.html" style="border: none;" width = 95%; height = 450px;></iframe>
+<iframe src="widget/graph_annual_weatherstats.html"></iframe>
 <figcaption>
-*Annual total rainfall and average temperatures recorded at the Palomarin Field Station, calculated from July to June each year.*
+Annual total rainfall and average temperatures recorded at the Palomarin Field Station, calculated from July to June each year.
 </figcaption>
-</figure>
 
 ### How are birds affected by weather and climate?
 Weather plays a huge role in the daily lives of birds, and is a major driver of everything from successfully raising young, to surviving the winter, to migration timing, and even body size. Here are just a few examples of how our research has identified how birds are responding to global climate change. 
@@ -49,13 +47,13 @@ For species that arrive at Palomarin in the fall, we again found that some speci
 #### Body Size
 <div class="row">  
 <div class="column">  
-Birds at Palomarin have been getting bigger! A 2012  [study](http://www.prbo.org/refs/files/12135_Goodman.pdf) led by graduate student Rae Goodman uncovered this surprising finding using banding data from Palomarin and the San Francisco Bay Bird Observatory. Studies from other parts of the world have found that birds are getting smaller, thought to be related to increasing temperatures. In California, birds may be getting bigger in response to increasing variability in our climate.
+Birds at Palomarin have been getting bigger! A [2012  study led by graduate student Rae Goodman](http://www.prbo.org/refs/files/12135_Goodman.pdf) uncovered this surprising finding using banding data from Palomarin and the San Francisco Bay Bird Observatory. Studies from other parts of the world have found that birds are getting smaller, thought to be related to increasing temperatures. In California, birds may be getting bigger in response to increasing variability in our climate.
 </div>
 <div class="column">
 <figure>
 ![](../images/weather/wing_chord.jpg "Measuring the wing chord (length) of a Red-breasted Sapsucker")
 <figcaption>
-*Measuring the wing chord (length) of a Red-breasted Sapsucker. Wing chord was one of the measurements found to be increasing over time. Photo by Point Blue / Mark Dettling.*
+Measuring the wing chord (length) of a Red-breasted Sapsucker. Wing chord was one of the measurements found to be increasing over time.  *Photo by Point Blue / Mark Dettling.*
 </figcaption>
 </figure>
 </div>
@@ -72,7 +70,7 @@ By collecting long-term data on species and how they are responding to changes i
 <figure>
 ![](../images/weather/Vicky_taking_rain_fall05.jpg "Collecting weather data")
 <figcaption>
-*Former Palomarin intern Vicky Galan collecting weather data. Photo by Point Blue*
+Former Palomarin intern Vicky Galan collecting weather data. *Photo by Point Blue*
 </figcaption>
 </figure>
 </div>
