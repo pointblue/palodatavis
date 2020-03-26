@@ -92,7 +92,7 @@ map(spplist[1:5], function(x) {
     scale_x_continuous(breaks = seq(1980, max(dat$year), 5)) +
     ylim(0, 15) +
     theme_classic() 
-  ggsave(paste0('fig/', x, '.jpg'), 
+  ggsave(paste0('docs/fig/', x, '.jpg'), 
          width = 5, height = 3.5, units = 'in', dpi = 150)
 })
 
@@ -109,6 +109,6 @@ map(spplist[6:10], function(x) {
     scale_x_continuous(breaks = seq(1980, max(dat$year), 5)) +
     ylim(0, 25) +
     theme_classic() 
-  ggsave(paste0('fig/', x, '.jpg'), 
+  ggsave(paste0('docs/fig/', x, '.jpg'), 
          width = 5, height = 3.5, units = 'in', dpi = 150)
 })
