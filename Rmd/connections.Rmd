@@ -13,18 +13,14 @@ knitr::opts_chunk$set(echo = FALSE, warning = FALSE, message = FALSE,
 
 The seasonal changes in the bird community make Palomarin a fascinating place to study birds year-round. Some species are present all year, while others are only here for a few months, or even a few days each year as they travel thousands of miles on migration. These comings and goings are always an exciting event as we welcome back and then say farewell to these seasonal animals each year - and in some cases, get to learn where they’ve been. Similarly, we cherish the connections with interns who come to Palomarin for a “bird season” from all over the country and the world!
 
-<figure>
-<iframe src="widget/graph_seasonal_capturestats.html" style="border: none;" width = 95%; height = 450px;></iframe>
-
+<iframe src="widget/graph_seasonal_capturestats.html"></iframe>
 <figcaption>
 *Seasonal shifts in the bird community at Palomarin. Some species are here year-round (like Wrentit), while others are only here during certain months. (One net hour is equal to 1 net being open for 1 hour).*
 </figcaption>
-</figure>
 
 ### Where do the birds go?
 Since the founding of the Palomarin Field Station in 1966, we have wanted to know where birds go when they leave. Banding birds was the first stage of exploring these connections, but banding stations are uncommon and it's rare that birds we band get recaptured at another station far away. 
 
-<div class="table-wrapper">
 <div class="row">  
 <div class="column">
 <figure>
@@ -40,16 +36,13 @@ Now, miniaturized technologies have finally helped us unlock the mysteries, by t
 Light-level geolocators collect data on light intensity, and along with their internal clocks, allow us to determine sunrise and sunset times. With those data, we can estimate their latitude and longitude to determine their location each day. We also use another type of geolocator that collects GPS data.
 </div>
 </div>
-</div>
 
 We have discovered that some birds travel to Palomarin from thousands of miles away. Golden-crowned Sparrows nest in southern Alaska before spending the fall, winter, and early spring at Palomarin while Swainson’s Thrushes that nest near Palomarin leave us to spend the winter in Mexico, primarily on the West Coast.
 
-<figure>
-<iframe src="widget/migration_map.html" style="border: none;" width = 95%; height = 450px;></iframe>
+<iframe src="widget/migration_map.html"></iframe>
 <figcaption>
 *Each point represents an individual bird we tracked on their migration. The coordinates are the average of several locations collected throughout the season they were away from Palomarin. Note that geolocators can be less accurate in estimating latitude. See __More information__ below for links to papers to learn about the error in these estimates.*
 </figcaption>
-</figure>
 
 ### Why is tracking migratory pathways important for bird conservation?
 Learning where birds go is not only exciting, it can help us better understand the challenges birds face, and how best to conserve them. Each of these bird seasons plays an important role in the lives of the species we study, and events and conditions (good vs. poor) at one location can carry over to affect birds during other periods of their lives. By understanding the connections these birds have to other places, and the different challenges they may face in each region, we can collaborate with partners along their migratory pathways to conserve these species, well into the future. 
