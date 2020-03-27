@@ -43,7 +43,7 @@ This question is frequently asked by those who care about birds - whether they a
 ### How have capture rates changed over the years?
 
 <figure>
-<iframe src="widget/graph_total_capturestats.html" style="border: none;" width = 95%; height = 450px;></iframe>
+<iframe src="widget/graph_total_capturestats.html"></iframe>
 <figcaption>
 *Annual capture rates at the Palomarin Field Station, 1979-2019. Select lines at top left to view individual seasons. Capture rates have declined overall, and especially during the fall.*
 </figcaption>
@@ -59,7 +59,6 @@ Present at Palo all year, these bird species often maintain their territories ev
 
 <div class="row">
 <div class="column5">
-<figure>
 ![](../images/birds/WREN.png "Wrentit"){#birds}
 <figcaption>
 ```{r}
@@ -69,10 +68,8 @@ bs_button("Wrentit") %>% bs_attach_modal(id_modal = "WREN")
   
 *Photo by Point Blue*
 </figcaption>
-</figure>
 </div>
 <div class="column5">
-<figure>
 ![](../images/birds/SOSP.png "Song Sparrow"){#birds}
 <figcaption>
 ```{r}
@@ -82,10 +79,8 @@ bs_button("Song Sparrow") %>% bs_attach_modal(id_modal = "SOSP")
   
 *Photo by Miguel Demeulemeester / Point Blue*
 </figcaption>
-</figure>
 </div>
 <div class="column5">
-<figure>
 ![](../images/birds/NWCS.png "Nuttall's White-crowned Sparrow"){#birds}
 <figcaption>
 ```{r}
@@ -95,10 +90,8 @@ bs_button("Nuttall's White-crowned Sparrow") %>% bs_attach_modal(id_modal = "NWC
   
 *Photo by Point Blue*
 </figcaption>
-</figure>
 </div>
 <div class="column5">
-<figure>
 ![](../images/birds/SPTO.png "Spotted Towhee"){#birds}
 <figcaption>
 ```{r}
@@ -108,10 +101,8 @@ bs_button("Spotted Towhee") %>% bs_attach_modal(id_modal = "SPTO")
   
 *Photo by Amon Armstrong / Point Blue*
 </figcaption>
-</figure>
 </div>
 <div class="column5">
-<figure>
 ![](../images/birds/CASJ.png "California Scrub-Jay"){#birds}
 <figcaption>
 ```{r}
@@ -121,7 +112,6 @@ bs_button("California Scrub-Jay") %>% bs_attach_modal(id_modal = "CASJ")
   
 *Photo by Point Blue*
 </figcaption>
-</figure>
 </div>
 </div>
 
@@ -130,7 +120,6 @@ Present at Palomarin only for part of the year, **neotropical migrants** spend t
 
 <div class="row">
 <div class="column5">
-<figure>
 ![](../images/birds/WIWA.png "Wilson's Warbler"){#birds}
 <figcaption>
 ```{r}
@@ -140,10 +129,8 @@ bs_button("Wilson's Warbler") %>% bs_attach_modal(id_modal = "WIWA")
   
 *Photo by Hannah Conley / Point Blue*
 </figcaption>
-</figure>
 </div>
 <div class="column5">
-<figure>
 ![](../images/birds/SWTH.png "Swainson's Thrush"){#birds}
 <figcaption>
 ```{r}
@@ -153,7 +140,6 @@ bs_button("Swainson's Thrush") %>% bs_attach_modal(id_modal = "SWTH")
   
 *Photo by Ian Tait / Point Blue*
 </figcaption>
-</figure>
 </div>
 </div>
 
@@ -161,7 +147,6 @@ bs_button("Swainson's Thrush") %>% bs_attach_modal(id_modal = "SWTH")
 
 <div class="row">
 <div class="column5">
-<figure>
 ![](../images/birds/FOSP.png "Fox Sparrow"){#birds}
 <figcaption>
 ```{r}
@@ -171,10 +156,8 @@ bs_button("Fox Sparrow") %>% bs_attach_modal(id_modal = "FOSP")
   
 *Photo by Hannah Conley / Point Blue*
 </figcaption>
-</figure>
 </div>
 <div class="column5">
-<figure>
 ![](../images/birds/GCSP.png "Golden-crowned Sparrow"){#birds}
 <figcaption>
 ```{r}
@@ -184,10 +167,8 @@ bs_button("Golden-crowned Sparrow") %>% bs_attach_modal(id_modal = "GCSP")
   
 *Photo by Point Blue*
 </figcaption>
-</figure>
 </div>
 <div class="column5">
-<figure>
 ![](../images/birds/HETH.png "Hermit Thrush"){#birds}
 <figcaption>
 ```{r}
@@ -197,7 +178,6 @@ bs_button("Hermit Thrush") %>% bs_attach_modal(id_modal = "HETH")
   
 *Photo by Point Blue*
 </figcaption>
-</figure>
 </div>
 </div>
 
