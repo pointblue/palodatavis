@@ -39,12 +39,10 @@ In the earlier years of our study, the landscape at the field station was compri
 
 Now, the vegetation across the study area has grown in size and structure and has become a complex mix of mature scrub with tall coyote brush, poison pak, California blackberry, and a young, dense Douglas fir forest. We have documented the change in the average height of these firs over time, as well as an increase in the number of trees in the study area, and the height of shrub species like coyote brush.
 
-<figure>
-<iframe src="widget/graph_annual_vegheight.html" style="border: none;" width = 95%; height = 450px;></iframe>
+<iframe src="widget/graph_annual_vegheight.html"></iframe>
 <figcaption>
 *Mean height (and standard error) of Douglas fir trees at Palomarin since 1983.*
 </figcaption>
-</figure>
 
 ### How has the breeding bird community changed?
 
@@ -78,12 +76,10 @@ Your browser does not support the video tag.
 
 Extra attention is paid to four primary focal species, which are color-banded so we can more easily identify individuals in the field: Song Sparrows, Nuttall’s White-crowned Sparrows, Wrentits, and Wilson’s Warblers. The number of Song Sparrow and Nuttall’s White-crowned Sparrow territories have declined, while Wilson’s Warblers and Wrentits have greatly increased.
 
-<figure>
-<iframe src="widget/graph_annual_territories.html" style="border: none;" width = 95%; height = 450px;></iframe>
+<iframe src="widget/graph_annual_territories.html"></iframe>
 <figcaption>
 *Number of territories for our 4 primary focal species each year since 1982.*
 </figcaption>
-</figure>
 
 ### Why is tracking habitat change important for bird conservation?
 
