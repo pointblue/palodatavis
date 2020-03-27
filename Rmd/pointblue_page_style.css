@@ -31,6 +31,14 @@ h4 {
   margin-top: 15px;
   margin-bottom: 10px;
 }
+h5 {
+  font-family: "Franklin Gothic Medium",sans-serif;
+  font-size: 24px;
+  line-height: 28px;
+  color: #005BAA;
+  margin-bottom: 10px;
+  text-align: center;
+}
 body {
   font-family: "Franklin Gothic Book",sans-serif;
   font-size: 16px;
@@ -43,9 +51,11 @@ a {
   font-style: bold
 }
 #icon {
+  display: block;
   width: 90px;
   height: 90px;
-  padding: 0px 0px 0px 0px;
+  margin: 0 auto;
+  padding: 0;
 }
 #birds {
   width: 150px;
@@ -70,7 +80,7 @@ a {
     flex-direction: column;
     flex-basis: 100%;
     flex: 1;
-    margin: 0;
+    margin: 10px;
   }
 }
 @media screen and (min-width: 700px) {
