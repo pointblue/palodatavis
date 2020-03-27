@@ -63,10 +63,10 @@ sdat <- dat %>%
   mutate(lab = case_when(name == 'rain' ~ format(round(value, digits = 0), nsmall = 0),
                          name == 'avgtemp' ~ format(round(value, digits = 2), nsmall = 2)),
          lab = case_when(name == 'rain' ~ paste0(lab, 'mm'),
-                         name == 'avgtemp' ~ paste0(lab, 'C')),
+                         name == 'avgtemp' ~ paste0(lab, '\u00B0C')),
          name = recode(name,
                        rain = 'Total precipitation (mm)',
-                       avgtemp = 'Annual average temperature (C)'),
+                       avgtemp = 'Annual average temperature (\u00B0C)'),
          name = as.factor(name))
 
 
@@ -89,10 +89,10 @@ dat2 <- data.frame(x = gg1$data[[1]]$x,
 
 # build interactive plot
 pal <- setNames(pointblue.palette[c(2, 4)], 
-                c('Annual average temperature (C)', 'Total precipitation (mm)'))
+                c('Annual average temperature (\u00B0C)', 'Total precipitation (mm)'))
 
 graph1 <- plot_ly() %>%
-  add_trace(data = dat2 %>% filter(name == 'Annual average temperature (C)'),
+  add_trace(data = dat2 %>% filter(name == 'Annual average temperature (\u00B0C)'),
             x = ~x,
             y = ~smooth,
             color = ~name,
@@ -115,7 +115,7 @@ graph1 <- plot_ly() %>%
             mode = 'lines',
             legendgroup = ~name,
             showlegend = FALSE) %>% 
-  add_trace(data = sdat %>% filter(name == 'Annual average temperature (C)'),
+  add_trace(data = sdat %>% filter(name == 'Annual average temperature (\u00B0C)'),
             x = ~year,
             y = ~value,
             color = ~name,
@@ -138,7 +138,7 @@ graph1 <- plot_ly() %>%
             type = 'scatter',
             mode = 'markers',
             legendgroup = ~name) %>%
-  layout(yaxis = list(title = 'Temperature (C)',
+  layout(yaxis = list(title = 'Temperature (\u00B0C)\n\n\n',
                       font = list(size = 14),
                       showline = TRUE,
                       ticks = 'outside',
@@ -154,6 +154,7 @@ graph1 <- plot_ly() %>%
                        showline = TRUE,
                        ticks = 'outside',
                        tick0 = 0,
+                       ticksuffix = '  ',
                        range = c(0,2000),
                        showgrid = FALSE,
                        automargin = TRUE,
@@ -168,7 +169,7 @@ graph1 <- plot_ly() %>%
          hovermode = 'x',
          legend = list(x = 0.01, xanchor = 'left', y = 1, yanchor = 'top', 
                        bgcolor = NA),
-         margin = list(r = 60, b = 0, t = 0, l = 50)) %>%
+         margin = list(r = 0, b = 0, t = 0, l = 50)) %>%
   config(displaylogo = FALSE, showTips = FALSE,
          modeBarButtonsToRemove = list('zoom2d', 'select2d', 'lasso2d',
                                        'zoomIn2d', 'zoomOut2d',
