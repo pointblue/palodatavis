@@ -46,7 +46,7 @@ For species that arrive at Palomarin in the fall, we again found that some speci
 
 #### Body Size
 <div class="row">  
-<div class="column">  
+<div class="column-left">  
 Birds at Palomarin have been getting bigger! A [2012  study led by graduate student Rae Goodman](http://www.prbo.org/refs/files/12135_Goodman.pdf) uncovered this surprising finding using banding data from Palomarin and the San Francisco Bay Bird Observatory. Studies from other parts of the world have found that birds are getting smaller, thought to be related to increasing temperatures. In California, birds may be getting bigger in response to increasing variability in our climate.
 </div>
 <div class="column">
@@ -66,7 +66,7 @@ By collecting long-term data on species and how they are responding to changes i
 
 ### How did we collect these data?
 <div class="row">
-<div class="column" flex-basis="25%">
+<div class="column">
 <figure>
 ![](../images/weather/Vicky_taking_rain_fall05.jpg "Collecting weather data")
 <figcaption>
