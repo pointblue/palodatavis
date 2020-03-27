@@ -85,6 +85,13 @@ a {
     margin: 10px;
   }
 }
+.column-left {
+    display: flex;
+    flex-direction: column;
+    flex-basis: 100%;
+    flex: 1;
+    margin-right: 10px;
+  }
 .column5 {
     display: flex;
     flex-direction: column;
