@@ -58,8 +58,8 @@ a {
   padding: 0;
 }
 #birds {
-  width: 150px;
-  height: 150px;
+  width: 140px;
+  height: 140px;
   margin: 0;
 }
 .table-wrapper {
@@ -83,19 +83,21 @@ a {
     margin: 10px;
   }
 }
-@media screen and (min-width: 700px) {
-  .column5 {
+.column5 {
     display: flex;
     flex-direction: column;
-    flex-basis: 160px;
+    flex-basis: 170px;
+    max-width: 170px;
     flex-grow: 0;
     flex-shrink: 0;
-    margin: 5px;
+    margin: 2px;
   }
-}
 figure {
   text-align: center;
-  margin: 15px;
+  margin-top: 0;
+  margin-left: 10px;
+  margin-right: 10px;
+  margin-bottom: 10px;
 }
 figcaption {
   font-size: 14px;
@@ -142,7 +144,7 @@ iframe {
   margin-bottom: 10px;
 }
 .btn {
-  width: 140px;
+  width: 130px;
   height: 55px;
   white-space: normal;
   border: 2px solid #005BAA;
@@ -152,4 +154,5 @@ iframe {
 .btn:hover {
   background-color: #005BAA;
   color: white;
+  border: 2px solid #005BAA;
 }
