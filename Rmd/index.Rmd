@@ -16,30 +16,28 @@ With over 50 years of data, the Palomarin Field Station has made unique contribu
 <div class="column">  
 [![](../images/icons/nature_stewardship.png "bird icon"){#icon}](banding.html)  
 
-### How are the birds doing?  
+##### [How are the birds doing?](banding.html)  
 
 Explore some of the latest capture stats and how they change over time, at one of the oldest, continuously-running banding stations in the United States.  
 </div>  
 <div class="column">  
 [![](../images/icons/climate_change.png "climate icon"){#icon}](climate.html)
   
-### Tracking a changing climate  
+##### [Tracking a changing climate](climate.html)  
 
 Learn about weather patterns at Palo, and how weather and climate change affect bird populations through migration timing, body size, and more.  
 </div>  
-</div>  
-<div class="row">  
 <div class="column">  
 [![](../images/icons/ghg.png "tree icon"){#icon}](habitat.html)
   
-### Habitat & community change  
+##### [Habitat & community change](habitat.html)  
 
 Take a tour of the habitat changes in the Palomarin study area since 1966, and see how the bird community is responding.  
 </div>  
 <div class="column">  
 [![](../images/icons/conservation.png "globe icon"){#icon}](connections.html)
 
-### Crossroads & connections  
+##### [Crossroads & connections](connections.html)  
 
 See how Palomarin is home to birds migrating from thousands of miles away, and how we find out where they come from to inform conservation.  
 </div>  
