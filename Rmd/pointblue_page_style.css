@@ -58,9 +58,11 @@ a {
   padding: 0;
 }
 #birds {
+  display: block;
   width: 140px;
   height: 140px;
-  margin: 0;
+  margin: 0 auto;
+  margin-top: 10px;
 }
 .table-wrapper {
   margin: 10px;
