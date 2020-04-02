@@ -37,7 +37,7 @@ Overlooking the Palomarin study area in 2006. Notice the dark patches of Douglas
 
 In the earlier years of our study, the landscape at the field station was comprised of two distinct habitat types: the mist-netting and banding site was largely forested while the area adjacent was dominated by short, open coastal scrub.  
 
-Now, the vegetation across the study area has grown in size and structure and has become a complex mix of mature scrub with tall coyote brush, poison pak, California blackberry, and a young, dense Douglas fir forest. We have documented the change in the average height of these firs over time, as well as an increase in the number of trees in the study area, and the height of shrub species like coyote brush.
+Now, the vegetation across the study area has grown in size and structure and has become a complex mix of mature scrub with tall coyote brush, poison oak, California blackberry, and a young, dense Douglas fir forest. We have documented the change in the average height of these firs over time, as well as an increase in the number of trees in the study area, and the height of shrub species like coyote brush.
 
 <iframe src="widget/graph_annual_vegheight.html"></iframe>
 <figcaption>
