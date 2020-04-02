@@ -21,7 +21,7 @@ During the 15 years before the field station began, the land around Palomarin wa
 <figure>
 ![](../images/habitat/early70s_from_ridge_crop.jpg "Overlooking Palomarin study area, 1970s")
 <figcaption>
-*Overlooking the Palomarin study area in the 1970s* 
+Overlooking the Palomarin study area in the 1970s. *Photo by Point Blue*
 </figcaption>
 </figure>
 </div>
@@ -29,7 +29,7 @@ During the 15 years before the field station began, the land around Palomarin wa
 <figure>
 ![](../images/habitat/palo_overview_crop.jpg "Overlooking Palomarin study area, 2006")
 <figcaption>
-*Overlooking the Palomarin study area in 2006. Notice the dark patches of Douglas fir trees on the hillside and in the flats.* 
+Overlooking the Palomarin study area in 2006. Notice the dark patches of Douglas fir trees on the hillside and in the flats. *Photo by Point Blue*
 </figcaption>
 </figure>
 </div>
@@ -41,7 +41,7 @@ Now, the vegetation across the study area has grown in size and structure and ha
 
 <iframe src="widget/graph_annual_vegheight.html"></iframe>
 <figcaption>
-*Mean height (and standard error) of Douglas fir trees at Palomarin since 1983.*
+Mean height (and standard error) of Douglas fir trees at Palomarin since 1983.
 </figcaption>
 
 ### How has the breeding bird community changed?
@@ -51,7 +51,7 @@ Now, the vegetation across the study area has grown in size and structure and ha
 <figure>
 ![](../images/habitat/WREN23_byDennisJongsomjit.JPG "Wrentit sitting on a nest")
 <figcaption>
-*A Wrentit sitting on a nest. Photo by Dennis Jongsomjit* 
+A Wrentit sitting on a nest. *Photo by Dennis Jongsomjit* 
 </figcaption>
 </figure>
 </div>
@@ -71,14 +71,14 @@ Your browser does not support the video tag.
 </video>
 </center>
 <figcaption>
-*Tracking the number of territories of breeding birds at Palomarin through time.*
+Tracking the number of territories of breeding birds at Palomarin through time.
 </figcaption>
 
 Extra attention is paid to four primary focal species, which are color-banded so we can more easily identify individuals in the field: Song Sparrows, Nuttall’s White-crowned Sparrows, Wrentits, and Wilson’s Warblers. The number of Song Sparrow and Nuttall’s White-crowned Sparrow territories have declined, while Wilson’s Warblers and Wrentits have greatly increased.
 
 <iframe src="widget/graph_annual_territories.html"></iframe>
 <figcaption>
-*Number of territories for our 4 primary focal species each year since 1982.*
+Number of territories for our 4 primary focal species each year since 1982.
 </figcaption>
 
 ### Why is tracking habitat change important for bird conservation?
@@ -94,7 +94,7 @@ During the breeding season (March-July), three interns spend their days stealthi
 <figure>
 ![](../images/habitat/gridding_crop.jpg "Nest searching intern")
 <figcaption>
-*A nest-searching intern observing and recording bird behavior and movement * 
+A nest-searching intern observing and recording bird behavior and movement. *Photo by Point Blue*
 </figcaption>
 </figure>
 </div>
@@ -102,7 +102,7 @@ During the breeding season (March-July), three interns spend their days stealthi
 <figure>
 ![](../images/habitat/G2_brood2maps_18_crop.jpg "Territory map")
 <figcaption>
-*A territory map for Wrentits in 2018. Each circle represents the territorial area occupied by a breeding pair.* 
+A territory map for Wrentits in 2018. Each circle represents the territorial area occupied by a breeding pair.
 </figcaption>
 </figure>
 </div>

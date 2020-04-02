@@ -53,7 +53,7 @@ Birds at Palomarin have been getting bigger! A [2012  study led by graduate stud
 <figure>
 ![](../images/weather/wing_chord.jpg "Measuring the wing chord (length) of a Red-breasted Sapsucker")
 <figcaption>
-Measuring the wing chord (length) of a Red-breasted Sapsucker. Wing chord was one of the measurements found to be increasing over time.  *Photo by Point Blue / Mark Dettling.*
+Measuring the wing chord (length) of a Red-breasted Sapsucker. Wing chord was one of the measurements found to be increasing over time.  *Photo by Mark Dettling / Point Blue*
 </figcaption>
 </figure>
 </div>
