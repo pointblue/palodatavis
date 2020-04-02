@@ -188,9 +188,9 @@ The capture rates of birds serve as indicators of population fluctuations, which
 <div class="row">
 <div class="column">
 <figure>
-![](../images/connections/banding_lab_crop.jpg "Palomarin biologists recording data in the banding lab")
+![](../images/birds/banding_intern_Francoise.jpg "Point Blue intern holding a woodpecker in the banding lab")
 <figcaption>
-*Photo of a Point Blue intern with a newly banded XXXX bird at the Palomarin Field Station. Photo by Point Blue*
+*Former Point Blue intern Francoise holding a newly banded woodpecker at the Palomarin Field Station. Photo by Beverly Cherner/Point Blue*
 </figcaption>
 </figure>
 </div>
