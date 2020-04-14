@@ -38,7 +38,7 @@ bs_modal(id = 'HETH', title = "Hermit Thrush",
          body = tags$img(src = "fig/HETH.jpg", width = '100%'))
 ```
 
-This question is frequently asked by those who care about birds - whether they are a scientist, a birder, or simply a nature lover -  and answering it is the key first step to effective bird conservation. Operating year-round since 1966, the Palomarin Field Station provides a unique long-term perspective on West Coast bird populations. 
+This question is frequently asked by those who care about birds &mdash; whether they are a scientist, a birder, or simply a nature lover &mdash; and answering it is the key first step to effective bird conservation. Operating year-round since 1966, the Palomarin Field Station provides a unique long-term perspective on West Coast bird populations. 
 
 ### How have capture rates changed over the years?
 
@@ -49,7 +49,7 @@ Annual capture rates at the Palomarin Field Station, 1979-2019. Select lines at 
 </figcaption>
 </figure>
 
-The bird community changes with the seasons as migrants come and go. We therefore look at total capture rates of unique individual birds during each season and overall. We explore fluctuations in the overall size of the seasonal bird community each year and some of the factors contributing to these fluctuations including: [local habitat changes](habitat.html), [climate change and local weather](climate.html), and [migratory connectivity](connections.html).  
+The bird community changes with the seasons as migrants come and go, so we examine total capture rates of individual birds during each season and overall in each year. We explore fluctuations in the total size of the seasonal bird community each year and some of the factors contributing to these fluctuations including: [local habitat changes](habitat.html), [climate change and local weather](climate.html), and [migratory connectivity](connections.html).  
 
 ### How are individual species doing?
 Although we study the entire community of birds at Palomarin, we pay particular attention to a suite of focal species to understand how they are doing and what is driving any changes over time. Select a species below to see how annual capture rates of our focal species are changing over time and what this means. 
@@ -116,7 +116,7 @@ bs_button("California Scrub-Jay") %>% bs_attach_modal(id_modal = "CASJ")
 </div>
 
 #### Seasonal Migrants
-Present at Palomarin only for part of the year, **neotropical migrants** spend the spring and summer breeding season with us, then migrate to the tropics of Latin America to spend their winter.
+Present at Palomarin only for part of the year, **Neotropical migrants** spend the spring and summer breeding season with us, then migrate to the tropics of Latin America to spend their winter.
 
 <div class="row">
 <div class="column5">
@@ -182,7 +182,7 @@ bs_button("Hermit Thrush") %>% bs_attach_modal(id_modal = "HETH")
 </div>
 
 ### Why is measuring capture rates important for bird conservation?
-The capture rates of birds serve as indicators of population fluctuations, which are influenced by many factors. For year-round residents, local factors like weather and habitat change may play a large role. For seasonal migrants, their numbers may be influenced by changes anywhere along their migration route. By examining variation in capture rates, we can examine how bird populations are changing over time. , and some of the important factors affecting our birds.
+The capture rates of birds serve as indicators of population fluctuations, which are influenced by many factors. For year-round resident species, local factors like weather and habitat change may play a large role. For seasonally migrating species, their numbers may be influenced by changes anywhere along their migration route. By examining variation in capture rates, we can examine how bird populations are changing over time, and identify some of the important factors affecting our birds.
 
 ### How did we collect these data?
 <div class="row">
@@ -190,7 +190,7 @@ The capture rates of birds serve as indicators of population fluctuations, which
 <figure>
 ![](../images/birds/banding_intern_Francoise.jpg "Point Blue intern holding a woodpecker in the banding lab")
 <figcaption>
-Former Point Blue intern Francoise holding a newly banded woodpecker at the Palomarin Field Station. *Photo by Beverly Cherner/Point Blue*
+Former Point Blue intern Francoise Benjamin holding a newly banded woodpecker at the Palomarin Field Station. *Photo by Beverly Cherner/Point Blue*
 </figcaption>
 </figure>
 </div>
@@ -202,12 +202,12 @@ Since 1966, we have been mist-netting and banding birds at the Palomarin Field S
 </div>
 
 ### Come visit!
-Watch how we collect weather data during a bird banding demonstration! Visitors can drop in and join our intern and staff biologists to learn how we collect this data - and hopefully see a bird in the hand! More information on visiting and scheduling groups is available [here](https://www.pointblue.org/about-us/contact-visit-us/){target="_blank"}.
+Watch how we collect banding data during a bird banding demonstration! Visitors can drop in and join our intern and staff biologists to learn how we collect these data &mdash; and hopefully see a bird in the hand! [More information on visiting and scheduling groups.](https://www.pointblue.org/about-us/contact-visit-us/){target="_blank"}
 
 
 ### More information
-* Links to handbook/protocols?
+* [Palomarin field methods and handbook](https://sites.google.com/pointblue.org/palomarinresources/methods)
 
-* Relevant banding-related papers?
+* [List of scientific publications from Palomarin](https://sites.google.com/pointblue.org/palomarinresources/publications)
 
 
