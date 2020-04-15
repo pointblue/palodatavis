@@ -61,11 +61,11 @@ captures <- read_csv(here::here(bandpath),
 dat <- left_join(captures, effort, by = c('year', 'month')) %>%
   mutate(year = as.numeric(year),
          month = as.numeric(month),
-         season = case_when(month >= 3 & month <= 7 ~ "spring/summer",
-                            month >= 8 & month <= 11 ~ "fall",
-                            TRUE ~ "winter"),
-         # group December with following Jan and Feb
-         year = case_when(month == 12 ~ year + 1,
+         season = case_when(month >= 3 & month <= 7 ~ 'spring',
+                            month >= 8 & month <= 10 ~ 'fall',
+                            TRUE ~ 'winter'),
+         # group Jan and Feb with previous Nov and Dec
+         year = case_when(month <= 2 ~ year - 1,
                           TRUE ~ year)) %>% 
   group_by(year, season) %>% 
   summarize(n = sum(n),
@@ -73,15 +73,20 @@ dat <- left_join(captures, effort, by = c('year', 'month')) %>%
   # calculate annual total
   pivot_longer(n:nethours) %>% 
   pivot_wider(names_from = season, values_from = value) %>% 
-  mutate(total = fall + `spring/summer` + winter) %>% 
-  pivot_longer(fall:total, names_to = 'season') %>% 
+  # drop 1978 (only data from Jan-Feb 1979 showing as winter 1978)
+  filter(!is.na(spring)) %>% 
+  mutate(total = fall + spring + winter) %>% 
+  pivot_longer(winter:total, names_to = 'season') %>% 
   pivot_wider(names_from = name, values_from = value) %>% 
   # calculate rate
   mutate(rate = n / nethours * 1000,
          ratelab = format(round(rate, digits = 1), nsmall = 1),
-         season = factor(season, levels = c('total', 'winter', 'spring/summer', 'fall'))) %>% 
-  select(year, season, rate, ratelab) %>%
-  filter(!is.na(rate))
+         season = factor(season, levels = c('total', 'spring', 'fall', 'winter')),
+         season = recode(season, total = 'Total',
+                         spring = 'Spring/Summer (Mar - Jul)',
+                         fall = 'Fall (Aug - Oct)',
+                         winter = 'Winter (Nov - Feb)')) %>% 
+  select(year, season, rate, ratelab)
 
 
 # FIT SMOOTHED LINES ------------------------------------------------------
@@ -97,7 +102,10 @@ gg1 <- ggplot_build(g1)
 dat2 <- data.frame(x = gg1$data[[1]]$x,
                    smooth = gg1$data[[1]]$y,
                    season = rep(levels(dat$season), each = 80)) %>% 
-  mutate(season = factor(season, levels = c('total', 'winter', 'spring/summer', 'fall')))
+  mutate(season = factor(season, levels = c('Total', 
+                                            'Spring/Summer (Mar - Jul)', 
+                                            'Fall (Aug - Oct)',
+                                            'Winter (Nov - Feb)')))
 
 # PLOTLY ------------------------------------------------------------------
 
@@ -111,10 +119,11 @@ dat2 <- data.frame(x = gg1$data[[1]]$x,
 
 # build interactive plot
 pal <- setNames(pointblue.palette[1:4], 
-                c("winter", "spring/summer", "fall", "total"))
+                c("Winter (Nov - Feb)", "Spring/Summer (Mar - Jul)", 
+                  "Fall (Aug - Oct)", "Total"))
 
 graph1 <- plot_ly() %>%
-  add_lines(data = dat2 %>% filter(season == 'total'),
+  add_lines(data = dat2 %>% filter(season == 'Total'),
             x = ~x,
             y = ~smooth,
             color = ~season,
@@ -122,7 +131,7 @@ graph1 <- plot_ly() %>%
             legendgroup = ~season,
             hoverinfo = 'none',
             line = list(width = 4)) %>% 
-  add_lines(data = dat2 %>% filter(season != 'total'),
+  add_lines(data = dat2 %>% filter(season != 'Total'),
             x = ~x,
             y = ~smooth,
             color = ~season,
@@ -130,7 +139,7 @@ graph1 <- plot_ly() %>%
             legendgroup = ~season,
             hoverinfo = 'none',
             visible = 'legendonly') %>% 
-  add_markers(data = dat %>% filter(season == 'total'),
+  add_markers(data = dat %>% filter(season == 'Total'),
               x = ~year,
               y = ~rate,
               color = ~season,
@@ -138,7 +147,7 @@ graph1 <- plot_ly() %>%
               showlegend = FALSE,
               hoverinfo = 'x+text',
               text = ~ratelab) %>%
-  add_markers(data = dat %>% filter(season != 'total'),
+  add_markers(data = dat %>% filter(season != 'Total'),
             x = ~year,
             y = ~rate,
             color = ~season,
@@ -152,7 +161,7 @@ graph1 <- plot_ly() %>%
                       showline = TRUE,
                       ticks = 'outside',
                       tick0 = 0,
-                      range = c(0, 300),
+                      range = c(0, 275),
                       showgrid = FALSE,
                       automargin = TRUE,
                       hoverformat = '.2f'),
@@ -161,8 +170,7 @@ graph1 <- plot_ly() %>%
                       ticks = 'outside',
                       showgrid = FALSE),
          hovermode = 'x',
-         legend = list(x = 0.01, xanchor = 'left', y = 1, yanchor = 'top', 
-                       bgcolor = NA),
+         legend = list(x = 1, xanchor = 'right', y = 1, yanchor = 'top'),
          margin = list(r = 0, b = 10, t = 10)) %>%
   config(displaylogo = FALSE, showTips = FALSE,
          modeBarButtonsToRemove = list('zoom2d', 'select2d', 'lasso2d',
