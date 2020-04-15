@@ -89,13 +89,13 @@ map1 <- leaflet(shp) %>%
                    label = ~TagType,
                    popup = ~TagType) %>% 
   
-  addLayersControl(overlayGroups = c('Fox Sparrow', 'Golden-crowned Sparrow',
-                                     'Hermit Thrush', "Swainson's Thrush"),
+  addLayersControl(overlayGroups = c('Golden-crowned Sparrow',
+                                     "Swainson's Thrush"),
                    position = "bottomleft",
                    options = layersControlOptions(collapsed = TRUE)) %>%
   hideGroup('Golden-crowned Sparrow') %>%
-  hideGroup('Hermit Thrush') %>%
-  hideGroup('Fox Sparrow') %>%
+  # hideGroup('Hermit Thrush') %>%
+  # hideGroup('Fox Sparrow') %>%
   hideGroup("Swainson's Thrush") %>%
   
   addLegend(pal = pal1,
