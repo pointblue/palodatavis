@@ -10,7 +10,7 @@ library(plotly)
 
 #INPUT DATA
 # original copies:
-# wthrpath <- 'Z:\Terrestrial\programs_and_projects\palomarin\Palodata\Weather\compiled\ paloallwthr.dbf'
+# wthrpath <- 'Z:\Terrestrial\programs_and_projects\palomarin\Palodata\Weather\compiled\paloallwthr.dbf'
 
 # local copy:
 wthrpath <- "rawdat/paloallwthr.dbf"
@@ -41,25 +41,27 @@ dat <- foreign::read.dbf(wthrpath) %>%
          month = as.numeric(format(DATE, '%m')),
          bioyear = case_when(month >= 7 ~ paste0(year, '-', substr(year+1, 3, 4)),
                              month <= 6 ~ paste0(year - 1, '-', substr(year, 3, 4))),
-         year = case_when(month >= 7 ~ year,
-                          month <= 6 ~ year - 1)) 
+         # for plotting purposes, align bioyear with July-Dec calendar year
+         bioyearx = case_when(month >= 7 ~ year,
+                              month <= 6 ~ year - 1),
+         AVGTEMP = (HIGH + LOW) / 2) 
   
-sdat <- dat %>% 
-  mutate(AVGTEMP = (HIGH + LOW) / 2) %>% 
-  group_by(bioyear, year) %>% 
+raindat <- dat %>% 
+  group_by(bioyear, bioyearx) %>% 
   summarize(rain = sum(RAIN),
-            nrain = length(!is.na(RAIN)),
-            high = mean(HIGH, na.rm = TRUE),
-            nhigh = length(!is.na(HIGH)),
-            low = mean(LOW, na.rm = TRUE),
-            nlow = length(!is.na(LOW)),
-            avgtemp = mean(AVGTEMP, na.rm = TRUE),
-            navgtemp = length(!is.na(AVGTEMP))) %>% 
-  filter(nrain > 300) %>% 
-  select(year, bioyear, rain, avgtemp) %>% 
-  # # convert to meters
-  # mutate(rain = rain / 1000) %>% 
-  pivot_longer(rain:avgtemp) %>% 
+            nrain = length(!is.na(RAIN))) %>% 
+  filter(bioyearx >= 1975)
+
+tempdat <- dat %>% 
+  group_by(year) %>% 
+  summarize(avgtemp = mean(AVGTEMP, na.rm = TRUE),
+            navgtemp = length(!is.na(AVGTEMP)))
+
+sdat <- full_join(tempdat, raindat, by = c('year' = 'bioyearx')) %>% 
+  mutate(rain = case_when(nrain < 300 ~ NA_real_,
+                          TRUE ~ rain)) %>% 
+  select(year, bioyear, avgtemp, rain) %>% 
+  pivot_longer(avgtemp:rain) %>% 
   mutate(lab = case_when(name == 'rain' ~ format(round(value, digits = 0), nsmall = 0),
                          name == 'avgtemp' ~ format(round(value, digits = 2), nsmall = 2)),
          lab = case_when(name == 'rain' ~ paste0(lab, 'mm'),
@@ -68,7 +70,6 @@ sdat <- dat %>%
                        rain = 'Total precipitation (mm)',
                        avgtemp = 'Annual average temperature (\u00B0C)'),
          name = as.factor(name))
-
 
 # FIT SMOOTHED LINES ------------------------------------------------------
 
@@ -89,7 +90,8 @@ dat2 <- data.frame(x = gg1$data[[1]]$x,
 
 # build interactive plot
 pal <- setNames(pointblue.palette[c(2, 4)], 
-                c('Annual average temperature (\u00B0C)', 'Total precipitation (mm)'))
+                c('Annual average temperature (\u00B0C)', 
+                  'Total precipitation (mm)'))
 
 graph1 <- plot_ly() %>%
   add_trace(data = dat2 %>% filter(name == 'Annual average temperature (\u00B0C)'),
@@ -122,7 +124,7 @@ graph1 <- plot_ly() %>%
             colors = pal,
             line = list(width = 1),
             hoverinfo = 'text',
-            text = ~paste0(bioyear, ': ', lab),
+            text = ~paste0(year, ': ', lab),
             type = 'scatter',
             mode = 'markers',
             legendgroup = ~name) %>%
@@ -161,10 +163,10 @@ graph1 <- plot_ly() %>%
                        hoverformat = '.2f'),
          xaxis = list(title = NA,
                       showline = TRUE,
-                      ticks = 'outside',
-                      tickmode = 'array',
-                      tickvals = seq(1975, 2015, 5),
-                      ticktext = unique(sdat$bioyear)[seq(1, 41, 5)],
+                      # ticks = 'outside',
+                      # tickmode = 'array',
+                      # tickvals = seq(1975, 2015, 5),
+                      # ticktext = unique(sdat$bioyear)[seq(1, 41, 5)],
                       showgrid = FALSE),
          hovermode = 'x',
          legend = list(x = 0.01, xanchor = 'left', y = 1, yanchor = 'top', 
