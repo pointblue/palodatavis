@@ -14,11 +14,11 @@ knitr::opts_chunk$set(echo = FALSE, warning = FALSE, message = FALSE,
 Point Blue staff collects weather data several times each day at the Palomarin Field Station to understand how short-term fluctuations in weather and long-term changes in climate affect bird populations. Understanding these changes requires long-term monitoring effort across decades!
 
 ### How has the climate changed?
-We calculated rainfall totals and annual average temperatures from July to June to capture the entire winter rainy season. Both measures have fluctuated over the last 40 years, but temperatures have recently become much warmer. The hottest year we’ve recorded was in 2017-18, the most recent year of data included here. The wettest year we’ve recorded was in 1997-98 (during a strong El Nino). Recent years have been relatively dry, punctuated by a few wet winters. 
+To examine long-term weather patterns, we calculated annual average temperatures and total rainfall at Palomarin since 1975. Both measures have fluctuated over the last 40+ years, but temperatures have recently become much warmer. Through 2018, the most recent year of data included here, the hottest year we’ve recorded was in 2017. The wettest year we’ve recorded was in 1997-98 (during a strong El Nino). Recent years have been relatively dry, punctuated by a few wet winters. 
 
 <iframe src="widget/graph_annual_weatherstats.html"></iframe>
 <figcaption>
-Annual total rainfall and average temperatures recorded at the Palomarin Field Station, calculated from July to June each year.
+Average temperatures and rainfall recorded at the Palomarin Field Station each year, 1975&ndash;2018. Average temperatures are calculated from the average of the daily high and low temperatures. Rainfall totals are calculated from July through June of the following calendar year, to capture an entire winter rainy season.
 </figcaption>
 
 ### How are birds affected by weather and climate?
