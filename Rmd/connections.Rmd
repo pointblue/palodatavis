@@ -11,7 +11,7 @@ knitr::opts_chunk$set(echo = FALSE, warning = FALSE, message = FALSE,
                       out.width="95%", fig.asp=0.6)
 ```
 
-The seasonal changes in the bird community make Palomarin a fascinating place to study birds year-round. Some species are present all year, while others are only here for a few months, or even a few days each year as they travel thousands of miles on migration. These comings and goings are always an exciting event as we welcome back and then say farewell to these seasonal animals each year - and in some cases, get to learn where they’ve been. Similarly, we cherish the connections with interns who come to Palomarin for a “bird season” from all over the country and the world!
+The seasonal changes in the bird community make Palomarin a fascinating place to study birds year-round. Some species are present all year, while others are only here for a few months, or even a few days each year as they travel thousands of miles on migration. These comings and goings are always an exciting event as we welcome back and then say farewell to these seasonal animals each year &mdash; and in some cases, get to learn where they’ve been. Similarly, we cherish the connections with interns who come to Palomarin from all over the country and the world to study the birds at Palomarin for a "bird season"!
 
 <iframe src="widget/graph_seasonal_capturestats.html"></iframe>
 <figcaption>
@@ -45,10 +45,10 @@ Each point represents an individual bird we tracked on their migration. The coor
 </figcaption>
 
 ### Why is tracking migratory pathways important for bird conservation?
-Learning where birds go is not only exciting, it can help us better understand the challenges birds face, and how best to conserve them. Each of these bird seasons plays an important role in the lives of the species we study, and events and conditions (good vs. poor) at one location can carry over to affect birds during other periods of their lives. By understanding the connections these birds have to other places, and the different challenges they may face in each region, we can collaborate with partners along their migratory pathways to conserve these species, well into the future. 
+Learning where birds go is not only exciting, it can help us better understand the challenges birds face, and how best to conserve them. Each season plays an important role in the lives of the bird species we study, and events and conditions (good vs. poor) at one location can carry over to affect birds during other periods of their lives. By understanding the connections these birds have to other places, and the different challenges they may face in each region, we can collaborate with partners along their migratory pathways to conserve these species, well into the future. 
 
 ### How did we collect these data?
-All birds fitted with geolocator tags (GPS and light-level tags) are captured during our normal long-term banding study, or during other banding operations using mist nets or potter traps. Figure 1 data showing seasonal timing of when species are at Palo are also from the banding study.
+All birds fitted with geolocator tags (GPS and light-level tags) are either captured during our normal long-term mist-netting and banding operation at Palomarin, or during additional banding operations using mist nets or potter traps. The seasonal timing data showing when species are at Palomarin are also from the long-term banding study.
 
 <div class="table-wrapper">
 <div class="row">
@@ -72,20 +72,24 @@ A banded MacGillivray’s Warbler. *Photo by Stefanie Krantz*
 </div>
 
 ### Palomarin connects humans too!
-One of the most special things about the Palomarin Field Station is the people. Specifically, the interns who come to learn, and live there each season make the field station a home, and one where lasting relationships are made. Since our founding, Palomarin has hosted over <b>XXX</b> interns and volunteers from over 20 countries. And just like the birds, many of these biologists leave, but their connections to the place remain. 
+One of the most special things about the Palomarin Field Station is the people. Specifically, the interns who come to learn, and live there each season make the field station a home, and one where lasting relationships are made. Since our founding, Palomarin has hosted over 700 interns and volunteers from over 20 countries. And just like the birds, many of these biologists leave, but their connections to the place remain. 
 
 <figure>
 ![](../images/connections/KTCH2018_summer_compressed.jpg "Palomarin interns and staff, spring/summer 2018")
 <figcaption>
-Palomarin interns & staff pose for the tri-annual crew photo, spring/summer 2018. *Photo by Point Blue*
+Palomarin interns & staff pose for the seasonal crew photo, spring/summer 2018. *Photo by Point Blue*
 </figcaption>
 </figure>
 
 ### Meet our biologists!
-Visitors can drop in at Palomarin to join our intern and staff biologists, learn how we collect this data, and hopefully see a bird in the hand! More information on visiting and scheduling groups is available [here](https://www.pointblue.org/about-us/contact-visit-us/){target="_blank"}.
+Visitors can drop in at Palomarin to join our intern and staff biologists, learn how we collect this data, and hopefully see a bird in the hand! [More information on visiting and scheduling groups.](https://www.pointblue.org/about-us/contact-visit-us/){target="_blank"}
 
 
 ### More information
+* Migration tracking reveals geographic variation in the vulnerability of a Nearctic-Neotropical migrant bird. Published in *Scientific Reports*. [[View PDF](https://rdcu.be/b3fs8)] [[Behind the scenes blog post!](https://natureecoevocommunity.nature.com/channels/521-behind-the-paper/posts/64994-unraveling-migration-and-conservation-mysteries)]
+
+* Classic pattern of leap-frog migration in Sooty Fox Sparrow (*Passerella iliaca unalaschcensis*) is not supported by direct migration tracking of individual birds. Published in *Auk*. [[View PDF](http://www.prbo.org/refs/files/12529_Fraser_etal2018.pdf)]
+
 * Migratory geography of Golden-crowned Sparrows from two wintering regions. Published in *Animal Migration*. [[View PDF](http://www.prbo.org/refs/files/12429_CormierRL2016.pdf)] [[Read summary](http://rdjzr2agvvkijm6n3b66365n-wpengine.netdna-ssl.com/wp-content/uploads/2018/06/2016_pubbrief_GCSPmigration_Cormier_etal_AnimalMigration.pdf)]  
 
 * When birds of a feather don’t flock together: Hermit Thrushes across the San Francisco Bay region migrate to different breeding locations. Published in *Animal Migration*. [[View PDF](http://www.prbo.org/refs/files/12393_Nelson_etal2016.pdf)] [[Read summary](http://pointblue.org/wp-content/uploads/2018/06/2016_pubbrief_BirdsDontFlock_Nelson_etal_AnimalMigration.pdf)]  
