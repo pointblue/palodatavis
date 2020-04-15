@@ -41,7 +41,7 @@ We have discovered that some birds travel to Palomarin from thousands of miles a
 
 <iframe src="widget/migration_map.html"></iframe>
 <figcaption>
-Each point represents an individual bird we tracked on their migration. The coordinates are the average of several locations collected throughout the season they were away from Palomarin. Note that geolocators can be less accurate in estimating latitude. See __More information__ below for links to papers to learn about the error in these estimates.
+Each point represents an individual bird we tracked on their migration. The coordinates are the average of several locations collected throughout the season they were away from Palomarin. Note that geolocators can be less accurate in estimating latitude. See __More information__ below for links to papers to learn about the error in these estimates. For comparison, turn range maps on and off at bottom left to view the full breeding (orange) and wintering (green) ranges of each species.
 </figcaption>
 
 ### Why is tracking migratory pathways important for bird conservation?
