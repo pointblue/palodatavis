@@ -190,7 +190,7 @@ The capture rates of birds serve as indicators of population fluctuations, which
 <figure>
 ![](../images/birds/banding_intern_Francoise.jpg "Point Blue intern holding a woodpecker in the banding lab")
 <figcaption>
-Former Point Blue intern Francoise Benjamin holding a newly banded woodpecker at the Palomarin Field Station. *Photo by Beverly Cherner/Point Blue*
+Former Point Blue intern Francoise Benjamin holding a newly banded woodpecker at the Palomarin Field Station. *Photo by Beverly Cherner / Point Blue*
 </figcaption>
 </figure>
 </div>
@@ -206,8 +206,8 @@ Watch how we collect banding data during a bird banding demonstration! Visitors 
 
 
 ### More information
-* [Palomarin field methods and handbook](https://sites.google.com/pointblue.org/palomarinresources/methods)
+* Dependent vs. independent juvenile survival: contrasting drivers of variation and the buffering effect of parental care. Published in *Ecology*. [[View PDF](http://www.prbo.org/refs/files/12242_DybalaKE2013.pdf)]
 
-* [List of scientific publications from Palomarin](https://sites.google.com/pointblue.org/palomarinresources/publications)
+* How safe is mist netting? Evaluating the risk of injury and mortality to birds. Published in *Methods in Ecology and Evolution*. [[View PDF](http://www.prbo.org/refs/files/12125_Spotswood2012.pdf)]
 
-
+* Effects of mist netting on reproductive performance of Wrentits and Song Sparrows in central coastal California. Published in *The Condor*. [[View PDF](http://vvvvvv.prbo.org/refs/files/12001_Jennings_etal2009.pdf)]
