@@ -43,7 +43,7 @@ The vegetation across the study area has since grown in size and structure and h
 
 <iframe src="widget/graph_annual_vegheight.html"></iframe>
 <figcaption>
-Mean height (and standard error) of Douglas fir trees at Palomarin since 1983.
+Mean height (and standard error) of Douglas fir trees at Palomarin, 1983&ndash;2018.
 </figcaption>
 
 ### How has the breeding bird community changed?
@@ -65,13 +65,13 @@ Nearly every day during the spring and summer, biologists collect data on the mo
 </div>
 </div>
 
-As the vegetation has changed, the breeding bird community has also changed a lot since 1980, especially with the addition of more species associated with mature forest.
+As the vegetation has changed, the breeding bird community has also changed a lot since the early 1980s, especially the addition of more species associated with mature forest.
 
 <center>
 <img src="../images/habitat/territory_trends_animated.gif" alt="animated" width="90%">
 </center>
 <figcaption>
-Tracking the changing number and composition of breeding bird territories at Palomarin, 1983&ndash;2018. Because the breeding bird community is so diverse, this figure is limited to the 15 species that have ever ranked in the top 5 for the number of territories in one year.
+Tracking the changing number and composition of breeding bird territories at Palomarin, 1982&ndash;2018. Because the breeding bird community is so diverse, this figure is limited to the 15 species that have ever ranked in the top 5 for the number of territories in one year.
 </figcaption>
   
 </br>
@@ -80,7 +80,7 @@ Extra attention is paid to four primary focal species, which are also given uniq
 
 <iframe src="widget/graph_annual_territories.html"></iframe>
 <figcaption>
-Number of territories for our 4 primary focal species each year since 1982.
+Number of territories for our 4 primary focal species each year, 1982&ndash;2018.
 </figcaption>
 
 ### Why is tracking habitat change important for bird conservation?
