@@ -68,7 +68,8 @@ graph1 <- plot_ly() %>%
               marker = list(size = 8,
                             color = pointblue.palette[4]),
               showlegend = F,
-              hoverinfo = 'y',
+              hoverinfo = 'text+y',
+              text = ~YEAR,
               error_y = list(type = 'data',
                              symmetric = TRUE,
                              array = ~se,
@@ -87,6 +88,7 @@ graph1 <- plot_ly() %>%
                       ticks = 'outside',
                       # range = c(1980,maxyear+4),
                       showgrid = FALSE),
+         hovermode = 'x',
          margin = list(r = 0, b = 10, t = 10)) %>%
   config(displaylogo = FALSE, showTips = FALSE,
          modeBarButtonsToRemove = list('zoom2d', 'select2d', 'lasso2d',
