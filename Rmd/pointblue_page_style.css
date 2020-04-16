@@ -75,6 +75,7 @@ a {
   justify-content: center;
   width: 100%;
   margin: 0;
+  break-inside: avoid;
 }
 @media screen and (min-width: 700px) {
   .column {
@@ -93,10 +94,17 @@ a {
     flex: 1;
     margin: 10px;
   }
+  a[href]:after {
+    content: none !important;
+  }
+  .row {
+    break-inside: avoid;
+  }
+  table, img {
+    break-inside: avoid;
+  }
 }
-table, img {
-  break-inside: avoid;
-}
+
 .column-left {
     display: flex;
     flex-direction: column;
