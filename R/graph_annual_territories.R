@@ -28,7 +28,7 @@ terrdat <- read_csv(terrpath, col_types = cols()) %>%
   select(year = YEAR, wiwa, sosp, wren, nwcs) %>% 
   pivot_longer(-year, values_to = 'territories', names_to = 'species') %>% 
   mutate(species = factor(species,
-                          levels = c('wren', 'sosp', 'nwcs', 'wiwa')),
+                          levels = c('wren', 'nwcs', 'sosp', 'wiwa')),
          species2 = recode(species,
                            nwcs = "Nuttall's White-crowned Sparrow",
                            sosp = "Song Sparrow",
@@ -89,8 +89,8 @@ graph1 <- plot_ly() %>%
               y = ~territories,
               marker = list(size = 8),
               text = ~territories,
-              hoverinfo = 'text',
-              text = ~paste0('</br>', year, ' : ', territories),
+              hoverinfo = 'x+text',
+              text = ~territories,
               legendgroup = ~species2,
               showlegend = F,
               color = ~species2,
@@ -100,7 +100,7 @@ graph1 <- plot_ly() %>%
                       showline = TRUE,
                       ticks = 'outside',
                       tick0 = 0,
-                      range = c(0,100),
+                      range = c(0, 90),
                       showgrid = FALSE,
                       automargin = TRUE),
          xaxis = list(title = NA,
@@ -108,8 +108,7 @@ graph1 <- plot_ly() %>%
                       ticks = 'outside',
                       range = c(1980,maxyear+4),
                       showgrid = FALSE),
-         legend = list(x = 0.01, xanchor = 'left', y = 1, yanchor = 'top', 
-                       bgcolor = NA, orientation = 'h'),
+         legend = list(x = 0.5, y = 100, orientation = 'h'),
          hovermode = 'x',
          margin = list(r = 0, b = 10, t = 10)) %>%
   config(displaylogo = FALSE, showTips = FALSE,
