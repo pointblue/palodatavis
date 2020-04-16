@@ -68,13 +68,10 @@ Nearly every day during the spring and summer, biologists collect data on the mo
 As the vegetation has changed, the breeding bird community has also changed a lot since 1980, especially with the addition of more species associated with mature forest.
 
 <center>
-<video width="100%" asp=0.625 controls>
-  <source src="../images/habitat/territory_trends_animated.mp4" type="video/mp4">
-Your browser does not support the video tag.
-</video>
+<img src="../images/habitat/territory_trends_animated.gif" alt="animated" width="90%">
 </center>
 <figcaption>
-Tracking the number of territories of breeding birds at Palomarin through time.
+Tracking the changing number and composition of breeding bird territories at Palomarin, 1983&ndash;2018. Because the breeding bird community is so diverse, this figure is limited to the 15 species that have ever ranked in the top 5 for the number of territories in one year.
 </figcaption>
   
 </br>
