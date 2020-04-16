@@ -75,9 +75,9 @@ By collecting long-term data on species and how they are responding to changes i
 <div class="row">
 <div class="column">
 <figure>
-![](../images/weather/Vicky_taking_rain_fall05.jpg "Collecting weather data")
+![](../images/weather/weather_station.jpg "Palo weather station")
 <figcaption>
-Former Point Blue intern Vicky Galan collecting weather data at the Palomarin Field Station. *Photo by Point Blue*
+Solar-powered weather station at Palomarin that collects temperature, rain, and wind data. *Photo by Hilary Allen / Point Blue*
 </figcaption>
 </figure>
 </div>
