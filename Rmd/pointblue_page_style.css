@@ -85,6 +85,18 @@ a {
     margin: 10px;
   }
 }
+@media print {
+  .column {
+    display: flex;
+    flex-direction: column;
+    flex-basis: 100%;
+    flex: 1;
+    margin: 10px;
+  }
+}
+table, img {
+  break-inside: avoid;
+}
 .column-left {
     display: flex;
     flex-direction: column;
@@ -111,7 +123,7 @@ figure {
 figcaption {
   font-size: 14px;
   margin-top: 5px;
-  margin-bottom: 5px;
+  margin-bottom: 15px;
   margin-left: 10px;
   margin-right: 10px;
   text-align: center;
