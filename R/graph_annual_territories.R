@@ -100,7 +100,7 @@ graph1 <- plot_ly() %>%
                       showline = TRUE,
                       ticks = 'outside',
                       tick0 = 0,
-                      range = c(0,90),
+                      range = c(0,100),
                       showgrid = FALSE,
                       automargin = TRUE),
          xaxis = list(title = NA,
@@ -109,7 +109,7 @@ graph1 <- plot_ly() %>%
                       range = c(1980,maxyear+4),
                       showgrid = FALSE),
          legend = list(x = 0.01, xanchor = 'left', y = 1, yanchor = 'top', 
-                       bgcolor = NA),
+                       bgcolor = NA, orientation = 'h'),
          hovermode = 'x',
          margin = list(r = 0, b = 10, t = 10)) %>%
   config(displaylogo = FALSE, showTips = FALSE,
