@@ -106,7 +106,7 @@ plot_terr <- terrdat_full %>%
   labs(title = 'Breeding Bird Territories at Palomarin in {round(frame_time, 0)}')
 
 animate(plot_terr, nframes = 360, fps = 6, end_pause = 30, 
-        height = 1200, width = 1200, res = 220)
+        height = 900, width = 1200, res = 220)
 anim_save(filename = video)
 
 # plot_terr <- terrdat_ranked %>% 
