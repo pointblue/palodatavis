@@ -103,6 +103,12 @@ a {
   table, img {
     break-inside: avoid;
   }
+  title{
+    color: #005BAA !important; 
+  }
+  h1, h2, h3, h4, h5 {
+    color: #005BAA !important; 
+  }
 }
 
 .column-left {
