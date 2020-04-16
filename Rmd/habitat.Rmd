@@ -105,7 +105,7 @@ A nest-searching intern observing and recording bird behavior and movement.
 <figure>
 ![](../images/habitat/G2_brood2maps_18_crop.jpg "Territory map")
 <figcaption>
-A territory map for Wrentits in 2018. Each circle represents the territorial area occupied by a breeding pair. 
+A territory map for Wrentits in 2018, produced by nest-searching interns from data compiled over the season. Each circle represents the territorial area occupied by a breeding pair. 
 *Image by Point Blue*  
 </figcaption>
 </figure>
