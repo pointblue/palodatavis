@@ -4,14 +4,29 @@ output:
   html_document:
     css: pointblue_page_style.css
 ---
+<figure>
+<img src="../images/Kayano_art_crop.jpg" height="200px" >
+<figcaption>
+Placeholder for full width banner art/photo? (TBD). *Artwork by Kim Kayano*
+</figcaption>
+</figure>
 
-The Palomarin Field Station, located at the south end of Point Reyes National Seashore, was established in 1966 and today remains an active field station year-round.
-
-Point Blue staff train field biology interns, host organized groups and drop-in visitors, and collaborate on research with agency partners, graduate students, and others. 
+<div class="row">
+<div class="column">
+<figure>
+![](../images/palo_building.jpg "Palomarin Field Station")
+<figcaption>
+Placeholder for group/class photo in front of building? (TBD). *Photo by Point Blue*
+</figcaption>
+</figure>
+</div>
+<div class="column">
+The Palomarin Field Station, located at the south end of the [Point Reyes National Seashore](https://www.nps.gov/pore/index.htm){target="_blank"}, was established in 1966 and today remains an active field station year-round. Point Blue staff train field biology interns, host organized groups and drop-in visitors, and collaborate on research with agency partners, graduate students, and others. 
 
 With over 50 years of data, the Palomarin Field Station has made unique contributions to the fields of ornithology, ecology, and conservation. Here, you can explore some of the latest data coming from the field station.
+</div>
+</div>
 
-<div class="table-wrapper">  
 <div class="row">  
 <div class="column">  
 [![](../images/icons/nature_stewardship.png "bird icon"){#icon}](banding.html)  
@@ -40,7 +55,6 @@ Take a tour of the habitat changes in the Palomarin study area since 1966, and s
 ##### [Crossroads & connections](connections.html)  
 
 See how Palomarin is home to birds migrating from thousands of miles away, much like the hundreds of interns who have studied them here, and how we find out where birds come from to inform conservation.  
-</div>  
 </div>  
 </div>  
   
