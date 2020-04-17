@@ -16,7 +16,7 @@ Placeholder for full width banner art/photo? (TBD). *Artwork by Kim Kayano*
 <figure>
 ![](../images/palo_building.jpg "Palomarin Field Station")
 <figcaption>
-Placeholder for group/class photo in front of building? (TBD). *Photo by Point Blue*
+Palomarin Field Station and Nature Center. *Photo by Point Blue*
 </figcaption>
 </figure>
 </div>
