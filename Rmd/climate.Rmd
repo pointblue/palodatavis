@@ -54,8 +54,8 @@ To examine long-term weather patterns, we calculated annual average temperatures
 Average temperatures and rainfall recorded at the Palomarin Field Station each year, 1975&ndash;2018. Average temperatures are calculated from the average of the daily high and low temperatures. Rainfall totals are calculated from July through June of the following calendar year, to capture an entire winter rainy season.
 </figcaption>
 
-### How are birds affected by weather and climate?
-Weather plays a huge role in the daily lives of birds, and is a major driver of everything from successfully raising young, to surviving the winter, to migration timing, and even body size. Here are just a couple examples of how our research has identified how birds are responding to global climate change. 
+### Why is tracking weather and climate important for bird conservation?
+Understanding how birds are affected by weather and climate requires long-term monitoring over decades. Because of our long-term bird monitoring and weather data collection at Palomarin, Point Blue has been able to identify changes in both the bird populations and the local climate, and uncover the links between them. This information helps us understand how well birds are adapting to climate change, and which species may be more vulnerable to climate change and may require more conservation attention. Here are just a couple examples of how our research has identified how birds are responding to global climate change.
 
 #### Migration Timing
 A changing climate may influence the seasonal timing (“phenology”) of blooming plants, hatching insects, and bird migration or nesting. In some cases, birds may not be able to easily change the timing of their migration to keep up with changes in the timing of their plant and insect food supplies, while others are shifting to try to stay in sync.
@@ -166,11 +166,6 @@ Measuring the wing chord (length) of a Red-breasted Sapsucker. Wing chord was on
 </figure>
 </div>
 </div>
-
-### Why is tracking weather and climate important for bird conservation?
-These data demonstrate that many bird species are responding to climate change, and different species are responding in different ways. Our concern for bird conservation is that the rate at which our climate is changing may be outpacing the rate at which species can evolve and adapt to new conditions.
-
-By collecting long-term data on species and how they are responding to changes in weather and climate, we are able to identify how birds are responding and which birds may be more vulnerable to climate change.
 
 ### How did we collect these data?
 <div class="row">
