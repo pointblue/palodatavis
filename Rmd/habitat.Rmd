@@ -44,7 +44,7 @@ Mean height (and standard error) of Douglas fir trees at Palomarin, 1983&ndash;2
 
 Bird species have individual habitat requirements and preferences, and can be affected by habitat change in a number of ways. They may find it easier or harder to find food, raise young, avoid predators, or survive extreme weather conditions. As the habitat at Palomarin has transformed, we have witnessed the open coastal scrub residents that once flourished here (such as White-crowned Sparrows) fade from the study area while more forest and mixed scrub species (such as Wilson's Warblers and Swainson's Thrushes) moved in. By studying how birds within a community respond differently to changes in their environment, we can learn what they need to thrive, to help inform and guide conservation efforts. Land management and restoration projects can benefit from this type of research by understanding how best to create an environment that supports a more resilient bird community. 
 
-### How has the breeding bird community changed?
+#### Changes in the number of breeding territories
 
 <div class="row">  
 <div class="column">  
@@ -57,13 +57,20 @@ A Wrentit peering out from its nest.
 </figure>
 </div>
 <div class="column">
-Biologists at Palomarin survey the breeding bird community through mist netting and bird banding, as well as searching for nests and mapping the boundaries of breeding bird territories.  
+One way to measure the response of the breeding bird community to habitat change around Palomarin is the number of breeding bird territories. Since the early 1980s, nearly every day during the spring and summer, Point Blue staff and interns collect data on the movements and behaviors of breeding birds to create territory maps representing that season’s breeding bird activity. The number of territories provides us with a measure of how many breeding individuals of each species are present in the bird community.
 
-Nearly every day during the spring and summer, biologists collect data on the movements and behaviors of breeding birds to create territory maps representing that season’s breeding bird activity. The number of territories provides us with a measure of how many breeding individuals of each species are present in the bird community. 
+Extra attention is paid to four primary focal species, which are also given unique combinations of colored leg bands so we can more easily identify individuals in the field: Song Sparrows, Nuttall’s White-crowned Sparrows, Wrentits, and Wilson’s Warblers. The number of Song Sparrow and Nuttall’s White-crowned Sparrow territories have declined, while Wilson’s Warblers and Wrentits have greatly increased.
 </div>
 </div>
 
-As the vegetation has changed, the breeding bird community has also changed a lot since the early 1980s, especially the addition of more species associated with mature forest.
+<iframe src="widget/graph_annual_territories.html"></iframe>
+<figcaption>
+Number of territories for our 4 primary focal species each year, 1982&ndash;2018.
+</figcaption>
+
+#### New species joining the breeding bird community
+
+We have also seen changes in the rest of the breeding bird community, especially the addition of more species associated with mature forest and mixed scrub such as Wilson's Warblers and Swainson's Thrushes.
 
 <center>
 <img src="../images/habitat/territory_trends_animated.gif" alt="animated" width="90%">
@@ -71,15 +78,9 @@ As the vegetation has changed, the breeding bird community has also changed a lo
 <figcaption>
 Tracking the changing number and composition of breeding bird territories at Palomarin, 1982&ndash;2018. Because the breeding bird community is so diverse, this figure is limited to the 15 species that have ever ranked in the top 5 for the number of territories in one year.
 </figcaption>
-  
 </br>
 </br>
-Extra attention is paid to four primary focal species, which are also given unique combinations of colored leg bands so we can more easily identify individuals in the field: Song Sparrows, Nuttall’s White-crowned Sparrows, Wrentits, and Wilson’s Warblers. The number of Song Sparrow and Nuttall’s White-crowned Sparrow territories have declined, while Wilson’s Warblers and Wrentits have greatly increased.
 
-<iframe src="widget/graph_annual_territories.html"></iframe>
-<figcaption>
-Number of territories for our 4 primary focal species each year, 1982&ndash;2018.
-</figcaption>
 
 ### How did we collect these data?
 
