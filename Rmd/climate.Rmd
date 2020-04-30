@@ -185,11 +185,12 @@ We have been collecting weather data since 1968, including daily records of prec
 </div>
 </div>
 
-### Come visit!
-Watch how we collect weather data during a bird banding demonstration! Visitors can drop in and join our intern and staff biologists to learn how we collect this data &mdash; and hopefully see a bird in the hand! [More information on visiting and scheduling groups.](https://www.pointblue.org/about-us/contact-visit-us/){target="_blank"}
+### Plan your visit!
+Although the Palomarin Field Station is currently closed to the public, we welcome you to plan your visit in the near future. You can see our weather station and watch how we collect weather data during a bird banding demonstration. Visitors can drop in and join our intern and staff biologists to learn how we collect this data &mdash; and hopefully see a bird in the hand! [More information on visiting and scheduling groups.](https://www.pointblue.org/about-us/contact-visit-us/){target="_blank"}
 
+### Related research
+There is much more to learn from these data! You can read more about what we have found here, and please [contact us](mailto:kdybala@pointblue.org) if you are interested in collaborating on future research.
 
-### More information
 * Migratory bird arrivals. Pages 232&ndash;242 in *Indicators of Climate Change in California*. [[View PDF](https://oehha.ca.gov/media/downloads/climate-change/report/2018caindicatorsreportmay2018.pdf)]
 
 * Avian body size changes and climate change: warming or increasing variability? Published in *Global Change Biology*. [[View PDF](http://www.prbo.org/refs/files/12135_Goodman.pdf)]
