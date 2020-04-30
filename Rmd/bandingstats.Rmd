@@ -84,7 +84,7 @@ Our declining capture rates mirror the continent-wide pattern of declining bird 
 Although we study the entire community of birds at Palomarin, we pay particular attention to a suite of focal species to understand how they are doing and what is driving any changes over time. Select a species below to see how annual capture rates of our focal species are changing over time and what this means. 
 
 #### Year-Round Residents
-Present at Palo all year, these bird species often maintain their territories even during the nonbreeding season. Changes in the capture rates of these species are most likely to reflect changes to the local habitat and climate.
+Present at Palo all year, these bird species often maintain their territories even during the nonbreeding season. Changes in the capture rates of these species are most likely to reflect changes to the local habitat and climate. While most of these populations are relatively stable, we have seen declines in Nuttall's White-crowned Sparrows and Song Sparrows, thought to be related to the [local habitat changes](habitat.html).
 
 <div class="row">
 <div class="column5">
@@ -209,6 +209,8 @@ bs_button("Hermit Thrush") %>% bs_attach_modal(id_modal = "HETH")
 </figcaption>
 </div>
 </div>
+
+Further research into the specific [migration routes](connections.html) of our local populations of these species would provide additional insights into what is producing the patterns we see at Palomarin and how vulnerable these populations are to changes in habitat and climate.
 
 ### How did we collect these data?
 <div class="row">
