@@ -13,38 +13,36 @@ knitr::opts_chunk$set(echo = FALSE, warning = FALSE, message = FALSE,
 
 At the Palomarin Field Station we have been monitoring birds and their environment since 1966. Since the beginning of our study, the area adjacent to the mist nets and banding station has undergone drastic habitat change, resulting in shifts in the local bird community. Tracking the changes in the habitat alongside the changes in bird populations at Palomarin can inform bird conservation as we learn more about what environmental factors are most important for certain species to thrive. Here, you can explore the habitat changes and bird community changes we have recorded through our long-term data collection.
 
-### How has the habitat changed?
-During the 15 years before the field station was established, the land around Palomarin was partially cultivated for agricultural use and hosted many buildings. Since its inclusion in the nascent Point Reyes National Seashore in 1965, the land has not been disturbed significantly and habitat succession has gradually taken place. 
-
+### Over 50 years of habitat transformation
 <div class="row">  
 <div class="column">  
 <figure>
 ![](../images/habitat/early70s_from_ridge_crop.jpg "Overlooking Palomarin study area, 1970s")
+
+![](../images/habitat/palo_overview_crop.jpg "Overlooking Palomarin study area, 2006")
 <figcaption>
-Overlooking the Palomarin study area in the 1970s. 
-*Photo by Point Blue*  
+<figcaption>
+Overlooking the Palomarin study area in the 1970s (top) and in 2006 (bottom). Notice the dark patches of Douglas fir trees on the hillside and in the flats. *Photo by Point Blue*  
 </figcaption>
 </figure>
 </div>
 <div class="column">
-<figure>
-![](../images/habitat/palo_overview_crop.jpg "Overlooking Palomarin study area, 2006")
-<figcaption>
-Overlooking the Palomarin study area in 2006. Notice the dark patches of Douglas fir trees on the hillside and in the flats. 
-*Photo by Point Blue*  
-</figcaption>
-</figure>
-</div>
-</div>
+During the 15 years before the field station was established, the land around Palomarin was partially cultivated for agricultural use and hosted many buildings. Since its inclusion in the nascent Point Reyes National Seashore in 1965, disturbance to the landscape has been minimal and the vegetation has gradually transformed.  
 
 In the earlier years of our study, the landscape at the field station was comprised of two distinct habitat types: the mist-netting and banding site was largely forested while the area adjacent, where much of our nest searching takes place, was dominated by short, open coastal scrub.  
 
 The vegetation across the study area has since grown in size and structure and has become a complex mix of mature scrub with tall coyote brush, poison oak, California blackberry, and a young, dense Douglas fir forest. We have documented the change in the average height of these firs over time, as well as an increase in the number of trees in the study area, and the height of shrub species like coyote brush.
+</div>
+</div>
 
 <iframe src="widget/graph_annual_vegheight.html"></iframe>
 <figcaption>
 Mean height (and standard error) of Douglas fir trees at Palomarin, 1983&ndash;2018.
 </figcaption>
+
+### Why is tracking habitat change important for bird conservation?
+
+Bird species have individual habitat requirements and preferences, and can be affected by habitat change in a number of ways. They may find it easier or harder to find food, raise young, avoid predators, or survive extreme weather conditions. As the habitat at Palomarin has transformed, we have witnessed the open coastal scrub residents that once flourished here (such as White-crowned Sparrows) fade from the study area while more forest and mixed scrub species (such as Wilson's Warblers and Swainson's Thrushes) moved in. By studying how birds within a community respond differently to changes in their environment, we can learn what they need to thrive, to help inform and guide conservation efforts. Land management and restoration projects can benefit from this type of research by understanding how best to create an environment that supports a more resilient bird community. 
 
 ### How has the breeding bird community changed?
 
@@ -82,10 +80,6 @@ Extra attention is paid to four primary focal species, which are also given uniq
 <figcaption>
 Number of territories for our 4 primary focal species each year, 1982&ndash;2018.
 </figcaption>
-
-### Why is tracking habitat change important for bird conservation?
-
-At Palomarin, we witnessed the open coastal scrub residents that once flourished here (such as White-crowned Sparrows) fade from the study area while more forest and mixed scrub species (such as Wilson's Warblers and Swainson's Thrushes) moved in. Witnessing and studying this shift has answered some questions, and incited further study to determine what it is that certain species need to survive and thrive. Studying how birds within a community respond differently to changes in their environment provides us with information to help inform and guide conservation efforts. Land management and restoration projects can benefit from this type of research by understanding how best to create an environment that supports a more resilient bird community. 
 
 ### How did we collect these data?
 
