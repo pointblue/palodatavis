@@ -68,7 +68,7 @@ Extra attention is paid to four primary focal species, which are also given uniq
 Number of territories for our 4 primary focal species each year, 1982&ndash;2018.
 </figcaption>
 
-#### New species joining the breeding bird community
+#### New species join the breeding bird community
 
 We have also seen changes in the rest of the breeding bird community, especially the addition of more species associated with mature forest and mixed scrub such as Wilson's Warblers and Swainson's Thrushes.
 
@@ -110,11 +110,12 @@ A territory map for Wrentits in 2018, produced by nest-searching interns from da
 Each summer, we collect vegetation data at 8 fixed points throughout the study area. The data helps describe the habitat succession as well as the proliferation and growth of the Douglas fir trees. At each of the 8 points, we record the size (height and width) and species of all woody plants along four 10-meter transects.
 
 
-### Meet our biologists!
-Visitors can drop in at Palomarin to join our intern and staff biologists, learn how we collect this data, and hopefully see a bird in the hand! [More information on visiting and scheduling groups.](https://www.pointblue.org/about-us/contact-visit-us/){target="_blank"}
+### Plan your visit!
+Although the Palomarin Field Station is currently closed to the public, we welcome you to plan your visit in the near future. Visitors can drop in and join our intern and staff biologists to learn how we collect this data &mdash; and hopefully see a bird in the hand! [More information on visiting and scheduling groups.](https://www.pointblue.org/about-us/contact-visit-us/){target="_blank"}
 
 
-### More information
+### Related research
+There is much more to learn from these data! You can read more about what we have found here, and please [contact us](mailto:kdybala@pointblue.org) if you are interested in collaborating on future research.
 
 * There goes the neighborhood: White-crowned Sparrow nest site selection and reproductive success as local density declines. Published in *Condor*. [[View PDF](http://www.prbo.org/refs/files/12504_ElizabethL.Porzig2018.pdf)] [[Read summary](http://pointblue.org/wp-content/uploads/2018/06/2018_pubbrief_White-crownedSParrowhabitatchoices_Porzig_Condor.pdf)] 
 
