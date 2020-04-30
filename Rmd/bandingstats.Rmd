@@ -16,26 +16,54 @@ library(shiny)
 
 # set up modals for each of the focal species below
 bs_modal(id = 'WREN', title = "Wrentit: stable", 
-         body = tags$img(src = "fig/WREN.jpg", width = '100%'))
+         body = tagList(tags$p("Wrentits remain relatively common at Palomarin, despite long-term habitat change and climate change."),
+                        tags$img(src = "fig/WREN.jpg", width = '100%'),
+                        tags$figcaption("Annual capture rates at the Palomarin Field Station, 1979-2018.")))
+
 bs_modal(id = 'SOSP', title = "Song Sparrow: declining", 
-         body = tags$img(src = "fig/SOSP.jpg", width = '100%'))
+         body = tagList(tags$p("Song Sparrows were once one of the most common species at Palomarin, but their numbers have declined locally, thought to be a result of the long-term habitat change."),
+                        tags$img(src = "fig/SOSP.jpg", width = '100%'),
+                        tags$figcaption("Annual capture rates at the Palomarin Field Station, 1979-2018.")))
+
 bs_modal(id = 'NWCS', title = "Nuttall's White-crowned Sparrow: declining", 
-         body = tags$img(src = "fig/NWCS.jpg", width = '100%'))
+         body = tagList(tags$p("Nuttall's White-crowned Sparrows have declined dramatically as the local vegetation has shifted from open scrub and grassland to dense coastal scrub and Douglas fir forest."),
+                        tags$img(src = "fig/NWCS.jpg", width = '100%'),
+                        tags$figcaption("Annual capture rates at the Palomarin Field Station, 1979-2018.")))
+
 bs_modal(id = 'SPTO', title = "Spotted Towhee: stable", 
-         body = tags$img(src = "fig/SPTO.jpg", width = '100%'))
+         body = tagList(tags$p("Spotted Towhee populations remain relatively stable at Palomarin."),
+                        tags$img(src = "fig/SPTO.jpg", width = '100%'),
+                        tags$figcaption("Annual capture rates at the Palomarin Field Station, 1979-2018.")))
+
 bs_modal(id = 'CASJ', title = "California Scrub-Jay: stable", 
-         body = tags$img(src = "fig/CASJ.jpg", width = '100%'))
+         body = tagList(tags$p("California Scrub-Jays are infrequently caught in our mist-nets, in part because they are larger than most of the species we catch and are more easily able to get themselves out! Capture rates are low but steady."),
+                        tags$img(src = "fig/CASJ.jpg", width = '100%'),
+                        tags$figcaption("Annual capture rates at the Palomarin Field Station, 1979-2018.")))
 
 bs_modal(id = 'WIWA', title = "Wilson's Warbler: declining", 
-         body = tags$img(src = "fig/WIWA.jpg", width = '100%'))
+         body = tagList(tags$p("Wilson's Warbler numbers have declined slightly, but fluctuate year to year, with a relatively high capture rate in 2018."),
+                        tags$img(src = "fig/WIWA.jpg", width = '100%'),
+                        tags$figcaption("Annual capture rates at the Palomarin Field Station, 1979-2018.")))
+
 bs_modal(id = 'SWTH', title = "Swainson's Thrush: stable", 
-         body = tags$img(src = "fig/SWTH.jpg", width = '100%'))
+         body = tagList(tags$p("Swainson's Thrush numbers have remained steady at Palomarin."),
+                        tags$img(src = "fig/SWTH.jpg", width = '100%'),
+                        tags$figcaption("Annual capture rates at the Palomarin Field Station, 1979-2018.")))
+         
 bs_modal(id = 'FOSP', title = "Fox Sparrow: stable", 
-         body = tags$img(src = "fig/FOSP.jpg", width = '100%'))
+         body = tagList(tags$p("Fox Sparrows are relatively steady, except for an unusual spike in their numbers in 2013, possibly the result of an extremely productive nesting season in Alaska."),
+                        tags$img(src = "fig/FOSP.jpg", width = '100%'),
+                        tags$figcaption("Annual capture rates at the Palomarin Field Station, 1979-2018.")))
+
 bs_modal(id = 'GCSP', title = "Golden-crowned Sparrow: declining", 
-         body = tags$img(src = "fig/GCSP.jpg", width = '100%'))
+         body = tagList(tags$p("Golden-crowned Sparrows have been slowly declining, but with a bump in their numbers in 2013 similar to Fox Sparrow, possibly the result of an extremely productive nesting season in Alaska."),
+                        tags$img(src = "fig/GCSP.jpg", width = '100%'),
+                        tags$figcaption("Annual capture rates at the Palomarin Field Station, 1979-2018.")))
+
 bs_modal(id = 'HETH', title = "Hermit Thrush: declining", 
-         body = tags$img(src = "fig/HETH.jpg", width = '100%'))
+         body = tagList(tags$p("Hermit Thrushes have declined slightly over the years."),
+                        tags$img(src = "fig/HETH.jpg", width = '100%'),
+                        tags$figcaption("Annual capture rates at the Palomarin Field Station, 1979-2018.")))
 ```
 
 This question is frequently asked by those who care about birds &mdash; whether they are a scientist, a birder, or simply a nature lover &mdash; and answering it is the key first step to effective bird conservation. Operating year-round since 1966, the Palomarin Field Station provides a unique long-term perspective on West Coast bird populations. 
@@ -50,13 +78,13 @@ Annual capture rates at the Palomarin Field Station, 1979-2018, overall total an
 </figcaption>
 </figure>
 
-Capture rates might be affected by several factors, including: [local habitat changes](habitat.html), [climate change and local weather](climate.html), and for migratory species, changes in habitat or climate along their [migratory routes](connections.html). Because each species may responds to these changes differently, we also examine changes in the capture rates of individual species.  
+### Why is measuring capture rates important for bird conservation?
+Our declining capture rates mirror the continent-wide pattern of declining bird populations across North America, and an estimated [3 billion fewer birds since 1970](https://www.3billionbirds.org){target="_blank"}. In particular, the decline in captures during the fall suggests a reduced number of migratory birds passing through Palomarin on fall migration. These declines likely reflect a combination of habitat loss and degradation along their [migration routes](connections.html), the additional impacts of [climate change](climate.html) on their ability to raise young and survive each year, and [local habitat changes](habitat.html) that might make Palomarin more or less suitable for individual species. By examining long-term variation in capture rates, we can identify individual species that are declining rapidly and determine where and when conservation attention is needed.
 
-### How are individual species doing?
 Although we study the entire community of birds at Palomarin, we pay particular attention to a suite of focal species to understand how they are doing and what is driving any changes over time. Select a species below to see how annual capture rates of our focal species are changing over time and what this means. 
 
 #### Year-Round Residents
-Present at Palo all year, these bird species often maintain their territories even during the nonbreeding season. 
+Present at Palo all year, these bird species often maintain their territories even during the nonbreeding season. Changes in the capture rates of these species are most likely to reflect changes to the local habitat and climate.
 
 <div class="row">
 <div class="column5">
@@ -117,7 +145,7 @@ bs_button("California Scrub-Jay") %>% bs_attach_modal(id_modal = "CASJ")
 </div>
 
 #### Seasonal Migrants
-Present at Palomarin only for part of the year, **Neotropical migrants** spend the spring and summer breeding season with us, then migrate to the tropics of Latin America to spend their winter.
+Present at Palomarin only for part of the year, **Neotropical migrants** spend the spring and summer breeding season with us, then migrate to the tropics of Latin America to spend their winter. Changes in the capture rates of these species may reflect changes in habitat or climate in the tropics, along their [migration routes](connections.html), or local effects of changes at Palomarin.
 
 <div class="row">
 <div class="column5">
@@ -144,7 +172,7 @@ bs_button("Swainson's Thrush") %>% bs_attach_modal(id_modal = "SWTH")
 </div>
 </div>
 
-**Neotemperate migrants** spend the summer as far north as Alaska, and then migrate to spend the winter with us.
+**Neotemperate migrants** spend the summer as far north as Alaska, and then migrate to spend the winter with us. Changes in the capture rates of these species may reflect changes in habitat or climate in Alaska or Canada, along their [migration routes](connections.html), or local effects of changes at Palomarin.
 
 <div class="row">
 <div class="column5">
@@ -182,9 +210,6 @@ bs_button("Hermit Thrush") %>% bs_attach_modal(id_modal = "HETH")
 </div>
 </div>
 
-### Why is measuring capture rates important for bird conservation?
-The capture rates of birds serve as indicators of population fluctuations, which are influenced by many factors. For year-round resident species, local factors like weather and habitat change may play a large role. For seasonally migrating species, their numbers may be influenced by changes anywhere along their migration route. By examining variation in capture rates, we can examine how bird populations are changing over time, and identify some of the important factors affecting our birds.
-
 ### How did we collect these data?
 <div class="row">
 <div class="column">
@@ -196,19 +221,18 @@ Former Point Blue intern Francoise Benjamin holding a newly banded woodpecker at
 </figure>
 </div>
 <div class="column">
-All of these data are collected by staff, volunteers, and especially the hundreds of interns who have trained at Palomarin over the years. 
+Since 1966, we have been mist-netting and banding birds at the Palomarin Field Station year-round. All of the birds we capture are carefully recorded and given uniquely-numbered bands provided by the U.S. Bird Banding Laboratory. All of these data are collected by staff, volunteers, and especially the hundreds of interns who have trained at Palomarin over the years. 
 
-Since 1966, we have been mist-netting and banding birds at the Palomarin Field Station year-round. All birds are given uniquely-numbered bands provided by the U.S. Bird Banding Laboratory. 
+For more information on how we carefully capture and band birds to collect this valuable data, please watch our video: [Bird-banding and Mist-netting with Point Blue](https://www.youtube.com/watch?v=8nVXgGhQNXM&feature=youtu.be){target="_blank}
 </div>
 </div>
 
-### Come visit!
-Watch how we collect banding data during a bird banding demonstration! Visitors can drop in and join our intern and staff biologists to learn how we collect these data &mdash; and hopefully see a bird in the hand! [More information on visiting and scheduling groups.](https://www.pointblue.org/about-us/contact-visit-us/){target="_blank"}
-
+### Plan your visit!
+Although the Palomarin Field Station is currently closed to the public, we welcome you to plan your visit in the near future. Visitors can drop in and join our intern and staff biologists to learn how we collect this valuable data on bird populations &mdash; and hopefully see a bird in the hand! [More information on visiting and scheduling groups.](https://www.pointblue.org/about-us/contact-visit-us/){target="_blank"}
 
 ### More information
-* Dependent vs. independent juvenile survival: contrasting drivers of variation and the buffering effect of parental care. Published in *Ecology*. [[View PDF](http://www.prbo.org/refs/files/12242_DybalaKE2013.pdf)]
+* Dependent vs. independent juvenile survival: contrasting drivers of variation and the buffering effect of parental care. Published in *Ecology*. [[View PDF](http://www.prbo.org/refs/files/12242_DybalaKE2013.pdf){target="_blank"}]
 
-* How safe is mist netting? Evaluating the risk of injury and mortality to birds. Published in *Methods in Ecology and Evolution*. [[View PDF](http://www.prbo.org/refs/files/12125_Spotswood2012.pdf)]
+* How safe is mist netting? Evaluating the risk of injury and mortality to birds. Published in *Methods in Ecology and Evolution*. [[View PDF](http://www.prbo.org/refs/files/12125_Spotswood2012.pdf){target="_blank"}]
 
-* Effects of mist netting on reproductive performance of Wrentits and Song Sparrows in central coastal California. Published in *The Condor*. [[View PDF](http://vvvvvv.prbo.org/refs/files/12001_Jennings_etal2009.pdf)]
+* Effects of mist netting on reproductive performance of Wrentits and Song Sparrows in central coastal California. Published in *The Condor*. [[View PDF](http://vvvvvv.prbo.org/refs/files/12001_Jennings_etal2009.pdf){target="_blank"}]
