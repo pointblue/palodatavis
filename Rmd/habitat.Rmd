@@ -120,9 +120,9 @@ Although the Palomarin Field Station is currently closed to the public, we welco
 ### Related research
 There is much more to learn from these data! You can read more about what we have found here, and please [contact us](mailto:kdybala@pointblue.org) if you are interested in collaborating on future research.
 
-* There goes the neighborhood: White-crowned Sparrow nest site selection and reproductive success as local density declines. Published in *Condor*. [[View PDF](http://www.prbo.org/refs/files/12504_ElizabethL.Porzig2018.pdf)] [[Read summary](http://pointblue.org/wp-content/uploads/2018/06/2018_pubbrief_White-crownedSParrowhabitatchoices_Porzig_Condor.pdf)] 
+* There goes the neighborhood: White-crowned Sparrow nest site selection and reproductive success as local density declines. Published in *Condor*. [[View PDF](http://www.prbo.org/refs/files/12504_ElizabethL.Porzig2018.pdf){target="_blank"}] [[Read summary](http://pointblue.org/wp-content/uploads/2018/06/2018_pubbrief_White-crownedSParrowhabitatchoices_Porzig_Condor.pdf){target="_blank"}] 
 
-* Habitat suitability through time: using time series and habitat models to understand changes in bird density. Published in *Ecosphere*. [[View PDF](http://pointblue.org/wp-content/uploads/2018/06/Porzig_et_al_2014.pdf)] [[Read summary](http://pointblue.org/wp-content/uploads/2018/06/2016_pubbrief_Palo-community_Porzig_etal_Ecosphere.pdf)]
+* Habitat suitability through time: using time series and habitat models to understand changes in bird density. Published in *Ecosphere*. [[View PDF](http://pointblue.org/wp-content/uploads/2018/06/Porzig_et_al_2014.pdf){target="_blank"}] [[Read summary](http://pointblue.org/wp-content/uploads/2018/06/2016_pubbrief_Palo-community_Porzig_etal_Ecosphere.pdf){target="_blank"}]
 
-* *A Guide to Nestling Development and Aging in Altricial Passerines*. U.S. Fish and Wildlife Service Biological Technical Publication. [[View PDF](https://digitalcommons.unl.edu/cgi/viewcontent.cgi?article=1160&context=usfwspubs)]
+* *A Guide to Nestling Development and Aging in Altricial Passerines*. U.S. Fish and Wildlife Service Biological Technical Publication. [[View PDF](https://digitalcommons.unl.edu/cgi/viewcontent.cgi?article=1160&context=usfwspubs){target="_blank"}]
 
