@@ -74,7 +74,7 @@ One way to measure the abundance of the local bird community is the number of bi
 <figure>
 <iframe src="widget/graph_total_capturestats.html"></iframe>
 <figcaption>
-Annual capture rates at the Palomarin Field Station, 1979-2018, overall total and by season. Select lines at top left to view individual seasons. *Note: Annual totals are calculated March through February of the following calendar year, to keep an entire winter season together.*
+Annual capture rates at the Palomarin Field Station, 1979-2018, overall total and by season. Select lines at top right to view individual seasons. *Note: Annual totals are calculated March through February of the following calendar year, to keep an entire winter season together.*
 </figcaption>
 </figure>
 
