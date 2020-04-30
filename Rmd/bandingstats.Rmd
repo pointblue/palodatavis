@@ -230,7 +230,9 @@ For more information on how we carefully capture and band birds to collect this 
 ### Plan your visit!
 Although the Palomarin Field Station is currently closed to the public, we welcome you to plan your visit in the near future. Visitors can drop in and join our intern and staff biologists to learn how we collect this valuable data on bird populations &mdash; and hopefully see a bird in the hand! [More information on visiting and scheduling groups.](https://www.pointblue.org/about-us/contact-visit-us/){target="_blank"}
 
-### More information
+### Related research
+There is much more to learn from these data! You can read more about what we have found here, and please [contact us](mailto:kdybala@pointblue.org) if you are interested in collaborating on future research.
+
 * Dependent vs. independent juvenile survival: contrasting drivers of variation and the buffering effect of parental care. Published in *Ecology*. [[View PDF](http://www.prbo.org/refs/files/12242_DybalaKE2013.pdf){target="_blank"}]
 
 * How safe is mist netting? Evaluating the risk of injury and mortality to birds. Published in *Methods in Ecology and Evolution*. [[View PDF](http://www.prbo.org/refs/files/12125_Spotswood2012.pdf){target="_blank"}]
