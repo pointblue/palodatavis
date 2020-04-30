@@ -15,41 +15,42 @@ library(bsplus)
 library(shiny)
 
 # set up modals for each of the focal species below
-bs_modal(id = 'WREN', title = "Wrentit", 
+bs_modal(id = 'WREN', title = "Wrentit: stable", 
          body = tags$img(src = "fig/WREN.jpg", width = '100%'))
-bs_modal(id = 'SOSP', title = "Song Sparrow", 
+bs_modal(id = 'SOSP', title = "Song Sparrow: declining", 
          body = tags$img(src = "fig/SOSP.jpg", width = '100%'))
-bs_modal(id = 'NWCS', title = "Nuttall's White-crowned Sparrow", 
+bs_modal(id = 'NWCS', title = "Nuttall's White-crowned Sparrow: declining", 
          body = tags$img(src = "fig/NWCS.jpg", width = '100%'))
-bs_modal(id = 'SPTO', title = "Spotted Towhee", 
+bs_modal(id = 'SPTO', title = "Spotted Towhee: stable", 
          body = tags$img(src = "fig/SPTO.jpg", width = '100%'))
-bs_modal(id = 'CASJ', title = "California Scrub-Jay", 
+bs_modal(id = 'CASJ', title = "California Scrub-Jay: stable", 
          body = tags$img(src = "fig/CASJ.jpg", width = '100%'))
 
-bs_modal(id = 'WIWA', title = "Wilson's Warbler", 
+bs_modal(id = 'WIWA', title = "Wilson's Warbler: declining", 
          body = tags$img(src = "fig/WIWA.jpg", width = '100%'))
-bs_modal(id = 'SWTH', title = "Swainson's Thrush", 
+bs_modal(id = 'SWTH', title = "Swainson's Thrush: stable", 
          body = tags$img(src = "fig/SWTH.jpg", width = '100%'))
-bs_modal(id = 'FOSP', title = "Fox Sparrow", 
+bs_modal(id = 'FOSP', title = "Fox Sparrow: stable", 
          body = tags$img(src = "fig/FOSP.jpg", width = '100%'))
-bs_modal(id = 'GCSP', title = "Golden-crowned Sparrow", 
+bs_modal(id = 'GCSP', title = "Golden-crowned Sparrow: declining", 
          body = tags$img(src = "fig/GCSP.jpg", width = '100%'))
-bs_modal(id = 'HETH', title = "Hermit Thrush", 
+bs_modal(id = 'HETH', title = "Hermit Thrush: declining", 
          body = tags$img(src = "fig/HETH.jpg", width = '100%'))
 ```
 
 This question is frequently asked by those who care about birds &mdash; whether they are a scientist, a birder, or simply a nature lover &mdash; and answering it is the key first step to effective bird conservation. Operating year-round since 1966, the Palomarin Field Station provides a unique long-term perspective on West Coast bird populations. 
 
-### How have capture rates changed over the years?
+### How has the number of birds at Palomarin changed?
 
+One way to measure the abundance of the local bird community is the number of birds captured as part of our long-term mist-netting and banding study. The bird community changes with the seasons as migrants come and go, so we examine total capture rates of individual birds during each season and overall in each year. Capture rates have declined overall, and especially during the fall season.  
 <figure>
 <iframe src="widget/graph_total_capturestats.html"></iframe>
 <figcaption>
-Annual capture rates at the Palomarin Field Station, 1979-2018, overall total and by season. Select lines at top left to view individual seasons. Capture rates have declined overall, and especially during the fall. *Note: Annual totals are calculated March through February of the following calendar year, to keep an entire winter season together.*
+Annual capture rates at the Palomarin Field Station, 1979-2018, overall total and by season. Select lines at top left to view individual seasons. *Note: Annual totals are calculated March through February of the following calendar year, to keep an entire winter season together.*
 </figcaption>
 </figure>
 
-The bird community changes with the seasons as migrants come and go, so we examine total capture rates of individual birds during each season and overall in each year. We explore fluctuations in the total size of the seasonal bird community each year and some of the factors contributing to these fluctuations including: [local habitat changes](habitat.html), [climate change and local weather](climate.html), and [migratory connectivity](connections.html).  
+Capture rates might be affected by several factors, including: [local habitat changes](habitat.html), [climate change and local weather](climate.html), and for migratory species, changes in habitat or climate along their [migratory routes](connections.html). Because each species may responds to these changes differently, we also examine changes in the capture rates of individual species.  
 
 ### How are individual species doing?
 Although we study the entire community of birds at Palomarin, we pay particular attention to a suite of focal species to understand how they are doing and what is driving any changes over time. Select a species below to see how annual capture rates of our focal species are changing over time and what this means. 
@@ -88,7 +89,7 @@ bs_button("Nuttall's White-crowned Sparrow") %>% bs_attach_modal(id_modal = "NWC
 ```
 <br>
   
-*Photo by Point Blue*
+*Photo by Miguel Demeulemeester / Point Blue*
 </figcaption>
 </div>
 <div class="column5">
@@ -165,7 +166,7 @@ bs_button("Golden-crowned Sparrow") %>% bs_attach_modal(id_modal = "GCSP")
 ```
 <br>
   
-*Photo by Point Blue*
+*Photo by Ryan DiGaudio*
 </figcaption>
 </div>
 <div class="column5">
@@ -176,7 +177,7 @@ bs_button("Hermit Thrush") %>% bs_attach_modal(id_modal = "HETH")
 ```
 <br>
   
-*Photo by Point Blue*
+*Photo by Miguel Demeulemeester / Point Blue*
 </figcaption>
 </div>
 </div>
