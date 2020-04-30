@@ -148,7 +148,7 @@ bs_button("Ruby-crowned Kinglet") %>% bs_attach_modal(id_modal = "RCKI")
 </div>
 </div>
 
-We don't yet know exactly why some species are changing their migration timing while others are not, and whether shifts in migration timing are helping species adapt to changes in the timing of their food supply or other necessary resources. Future research could examine whether individuals that arrive earlier or later are more successful in raising young or surviving the winter, and whether the optimal arrival time has changed over the years.
+We don't yet know exactly why some species are changing their migration timing while others are not, and whether shifts in migration timing are helping species adapt to changes in the timing of their food supply or other necessary resources. Future research could examine whether individuals that arrive earlier or later are more successful in raising young or surviving the winter, whether the optimal arrival time has changed over the years, and whether it depends on [how far the birds are migrating](connections.html).
 
 #### Body Size
 <div class="row">  
