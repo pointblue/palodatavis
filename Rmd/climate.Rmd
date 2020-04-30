@@ -174,14 +174,12 @@ By collecting long-term data on species and how they are responding to changes i
 <figure>
 ![](../images/weather/weather_station.jpg "Palo weather station")
 <figcaption>
-Solar-powered weather station at Palomarin that collects temperature, rain, and wind data. *Photo by Hilary Allen / Point Blue*
+Solar-powered weather station at Palomarin. *Photo by Hilary Allen / Point Blue*
 </figcaption>
 </figure>
 </div>
 <div class="column">
-All of these data are collected by staff, volunteers, and especially the hundreds of interns who have trained at Palomarin over the years. The bird body size and arrival dates data come from our long-term mist netting and banding operation.
-
-We have been collecting weather data since 1968, including daily records of precipitation, fog, temperature, cloud cover, wind, and barometric pressure data. 
+The tools have changed over time, but we have been collecting weather data on site since 1968, including daily records of precipitation, fog, temperature, cloud cover, wind, and barometric pressure. The bird body size and arrival dates data come from our long-term mist netting and banding operation. All of these data are collected by staff, volunteers, and especially the hundreds of interns who have trained at Palomarin over the years. 
 </div>
 </div>
 
