@@ -44,10 +44,10 @@ bs_modal(id = 'RCKI', title = "Ruby-crowned Kinglet: arriving earlier",
                         tags$figcaption("Arrival dates to Palomarin each year, shown after subtracting the average arrival date over all years in the study, 1980-2016. The decreasing trend line indicates that Ruby-crowned Kinglets tend to arrive earlier each year.")))
 ```
 
-Point Blue staff collect weather data several times each day at the Palomarin Field Station to understand how short-term fluctuations in weather and long-term changes in climate affect bird populations. Understanding these changes requires long-term monitoring effort across decades!
+Point Blue staff and interns collect weather data several times each day at the Palomarin Field Station to understand how climate change (over the long-term) and weather fluctuations (over the short-term) affect birds. Weather plays a huge role in the daily lives of birds, from successfully raising young to surviving the winter, while climate change can affect the long-term stability of bird populations.
 
 ### How has the climate changed?
-To examine long-term weather patterns, we calculated annual average temperatures and total rainfall at Palomarin since 1975. Both measures have fluctuated over the last 40+ years, but temperatures have recently become much warmer. Through 2018, the most recent year of data included here, the hottest year we’ve recorded was in 2017. The wettest year we’ve recorded was in 1997-98 (during a strong El Nino). Recent years have been relatively dry, punctuated by a few wet winters. 
+To examine long-term weather patterns, we calculated annual average temperatures and total rainfall at Palomarin since 1975. Both measures have fluctuated over the last 40+ years, but temperatures have recently become much warmer. Through 2018, the most recent year of data included here, the hottest year we’ve recorded was in 2017. The wettest year we’ve recorded was in 1997-98 (during a strong El Ni&ntilde;o). Recent years have been relatively dry, punctuated by a few wet winters. 
 
 <iframe src="widget/graph_annual_weatherstats.html"></iframe>
 <figcaption>
