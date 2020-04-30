@@ -153,7 +153,7 @@ We don't yet know exactly why some species are changing their migration timing w
 #### Body Size
 <div class="row">  
 <div class="column-left">  
-Birds at Palomarin have been getting longer wings! A [2012  study led by graduate student Rae Goodman](http://www.prbo.org/refs/files/12135_Goodman.pdf) uncovered this surprising finding using banding data from Palomarin and the San Francisco Bay Bird Observatory. Studies from other parts of the world have found that birds are getting smaller, thought to be related to increasing temperatures. Longer wings could indicate birds in California are getting larger, possibly in response to increasing variability in our climate or more favorable conditions than in other places.
+Birds at Palomarin have been getting longer wings! A [2012  study led by graduate student Rae Goodman](http://www.prbo.org/refs/files/12135_Goodman.pdf){target="_blank"} uncovered this surprising finding using banding data from Palomarin and the San Francisco Bay Bird Observatory. Studies from other parts of the world have found that birds are getting smaller, thought to be related to increasing temperatures. Longer wings could indicate birds in California are getting larger, possibly in response to increasing variability in our climate or more favorable conditions than in other places.
 
 To understand why birds have been getting longer wings, future research could examing whether birds with longer wings arrive at to the Palomarin Field Station at different times than birds with shorter wings, or whether they are better at raising young or surviving the winter.
 </div>
@@ -188,12 +188,12 @@ Although the Palomarin Field Station is currently closed to the public, we welco
 ### Related research
 There is much more to learn from these data! You can read more about what we have found here, and please [contact us](mailto:kdybala@pointblue.org) if you are interested in collaborating on future research.
 
-* Migratory bird arrivals. Pages 232&ndash;242 in *Indicators of Climate Change in California*. [[View PDF](https://oehha.ca.gov/media/downloads/climate-change/report/2018caindicatorsreportmay2018.pdf)]
+* Migratory bird arrivals. Pages 232&ndash;242 in *Indicators of Climate Change in California*. [[View PDF](https://oehha.ca.gov/media/downloads/climate-change/report/2018caindicatorsreportmay2018.pdf){target="_blank"}]
 
-* Avian body size changes and climate change: warming or increasing variability? Published in *Global Change Biology*. [[View PDF](http://www.prbo.org/refs/files/12135_Goodman.pdf)]
+* Avian body size changes and climate change: warming or increasing variability? Published in *Global Change Biology*. [[View PDF](http://www.prbo.org/refs/files/12135_Goodman.pdf){target="_blank"}]
 
-* Evidence of the effects of climate change on landbirds in western North America: A review and recommendations for future research. Published in *Western Field Ornithologists*. [[View PDF](http://www.prbo.org/refs/files/12453_Seavy_etal2018.pdf)] 
+* Evidence of the effects of climate change on landbirds in western North America: A review and recommendations for future research. Published in *Western Field Ornithologists*. [[View PDF](http://www.prbo.org/refs/files/12453_Seavy_etal2018.pdf){target="_blank"}] 
 
-* Projecting demographic responses to climate change: adult and juvenile survival respond differently to direct and indirect effects of weather in a passerine population. Published in *Global Change Biology*. [[View PDF](http://www.prbo.org/refs/files/12253_KristenE.Dybala2013.pdf)] [[Read summary](http://pointblue.org/wp-content/uploads/2018/06/2013_pubbrief_paentsvyoungsparrowsclimatechange_Dybala_GlobalChange.pdf)] 
+* Projecting demographic responses to climate change: adult and juvenile survival respond differently to direct and indirect effects of weather in a passerine population. Published in *Global Change Biology*. [[View PDF](http://www.prbo.org/refs/files/12253_KristenE.Dybala2013.pdf)] [[Read summary](http://pointblue.org/wp-content/uploads/2018/06/2013_pubbrief_paentsvyoungsparrowsclimatechange_Dybala_GlobalChange.pdf){target="_blank"}] 
 
 
