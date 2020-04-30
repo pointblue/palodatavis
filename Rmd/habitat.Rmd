@@ -68,6 +68,8 @@ Extra attention is paid to four primary focal species, which are also given uniq
 Number of territories for our 4 primary focal species each year, 1982&ndash;2018.
 </figcaption>
 
+We have found that Nuttall's White-crowned Sparrows have stayed just as successful at raising young over this time period, despite the decline in their numbers. They strongly prefer to nest in patches of open coastal scrub that have become rare at Palomarin, and they may be seeking out their preferred habitat elsewhere. 
+
 #### New species join the breeding bird community
 
 We have also seen changes in the rest of the breeding bird community, especially the addition of more species associated with mature forest and mixed scrub such as Wilson's Warblers and Swainson's Thrushes.
@@ -81,6 +83,7 @@ Tracking the changing number and composition of breeding bird territories at Pal
 </br>
 </br>
 
+So far, our research has found that bird populations are more directly influenced by changes in habitat and [weather or climate](climate.html) rather than interactions with other bird species. But we expect there to be an increasing number of new interactions between species as they move in response to habitat and climate change, and future research could continue to examine this question.
 
 ### How did we collect these data?
 
