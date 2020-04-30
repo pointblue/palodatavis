@@ -46,7 +46,7 @@ bs_modal(id = 'RCKI', title = "Ruby-crowned Kinglet: arriving earlier",
 
 Point Blue staff and interns collect weather data several times each day at the Palomarin Field Station to understand how climate change (over the long-term) and weather fluctuations (over the short-term) affect birds. Weather plays a huge role in the daily lives of birds, from successfully raising young to surviving the winter, while climate change can affect the long-term stability of bird populations.
 
-### How has the climate changed?
+### Palomarin's climate is warming
 To examine long-term weather patterns, we calculated annual average temperatures and total rainfall at Palomarin since 1975. Both measures have fluctuated over the last 40+ years, but temperatures have recently become much warmer. Through 2018, the most recent year of data included here, the hottest year we’ve recorded was in 2017. The wettest year we’ve recorded was in 1997-98 (during a strong El Ni&ntilde;o). Recent years have been relatively dry, punctuated by a few wet winters. 
 
 <iframe src="widget/graph_annual_weatherstats.html"></iframe>
