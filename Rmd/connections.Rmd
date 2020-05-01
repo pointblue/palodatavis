@@ -26,7 +26,7 @@ Hermit Thrushes and Golden-crowned Sparrows spend the spring and summer as far n
 ### Why is understanding migratory pathways important for bird conservation?
 Learning where birds go is not only exciting, it can help us better understand the challenges birds face, and how best to conserve them. Each season plays an important role in the lives of the bird species we study, and events and conditions (good vs. poor) at one location can carry over to affect birds during other periods of their lives. By understanding the connections these birds have to other places, and the different challenges they may face in each region, we can collaborate with partners along their migratory pathways to conserve these species, well into the future. 
 
-### Palomarin is a migration crossroads
+#### Adopting new technology
 Banding birds was the first stage of exploring the migration routes that connect banding stations, but because banding stations are uncommon, it's rare that birds we band get recaptured at another station far away. 
 
 <div class="row">  
@@ -45,6 +45,7 @@ Light-level geolocators collect data on light intensity, and along with their in
 </div>
 </div>
 
+#### Palomarin is a West Coast migration crossroads
 We have discovered that some birds travel to Palomarin from thousands of miles away. Golden-crowned Sparrows nest in southern Alaska before spending the fall, winter, and early spring at Palomarin while Swainson’s Thrushes that nest near Palomarin leave us to spend the winter in Mexico, primarily on the West Coast.
 
 <iframe src="widget/migration_map.html"></iframe>
