@@ -36,7 +36,7 @@ dat <- foreign::read.dbf(wthrpath) %>%
                           TRUE ~ HIGH),
          LOW = case_when(LOW == 999 ~ NA_integer_,
                          TRUE ~ LOW)) %>% 
-  filter(DATE >= '1975-01-01' & RAIN_CUMUL == TRUE) %>% 
+  filter(DATE >= '1976-01-01' & RAIN_CUMUL == TRUE) %>% 
   mutate(year = as.numeric(format(DATE, '%Y')),
          month = as.numeric(format(DATE, '%m')),
          bioyear = case_when(month >= 7 ~ paste0(year, '-', substr(year+1, 3, 4)),

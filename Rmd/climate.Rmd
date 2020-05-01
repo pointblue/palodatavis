@@ -16,38 +16,45 @@ library(shiny)
 
 # set up modals for each of the focal species below
 bs_modal(id = 'OCWA', title = "Orange-crowned Warbler: arriving earlier",
-         body = tagList(tags$img(src = "fig/OCWA_migration.jpg", width = '350px', class='centerImage'),
-                        tags$figcaption("Arrival dates to Palomarin each year, shown after subtracting the average arrival date over all years in the study, 1980-2016. The decreasing trend line indicates that Orange-crowned Warblers tend to arrive earlier each year.")))
+         body = tagList(tags$p("In recent years, Orange-crowned Warblers have tended to arrive earlier than average, changing at a rate of 2.6 days per decade."),
+                        tags$img(src = "fig/OCWA_migration.jpg", width = '300px', class = "center"),
+                        tags$figcaption("Annual arrival dates to Palomarin, 1980-2016")))
 
 bs_modal(id = 'SWTH', title = "Swainson's Thrush: no change", 
-         body = tagList(tags$img(src = "fig/SWTH_migration.jpg", width = '350px'),
-                        tags$figcaption("Arrival dates to Palomarin each year, shown after subtracting the average arrival date over all years in the study, 1980-2016. There has been no detectable change for Swainson's Thrush over time.")))
+         body = tagList(tags$p("So far, there has been no detectable change in Swainson's Thrush arrival dates over time."),
+                        tags$img(src = "fig/SWTH_migration.jpg", width = '300px', class = "center"),
+                        tags$figcaption("Annual arrival dates to Palomarin, 1980-2016")))
 
 bs_modal(id = 'WIWA', title = "Wilson's Warbler: arriving later", 
-         body = tagList(tags$img(src = "fig/WIWA_migration.jpg", width = '350px', align='center'),
-                        tags$figcaption("Arrival dates to Palomarin each year, shown after subtracting the average arrival date over all years in the study, 1980-2016. The increasing trend line indicates that Wilson's Warblers tend to arrive later each year.")))
+         body = tagList(tags$p("In recent years, Wilson's Warblers have tended to arrive later than average, changing at a rate of 1.1 days per decade."),
+                        tags$img(src = "fig/WIWA_migration.jpg", width = '300px', class = 'center'),
+                        tags$figcaption("Annual arrival dates to Palomarin, 1980-2016")))
 
 bs_modal(id = 'FOSP', title = "Fox Sparrow: no change", 
-         body = tagList(tags$img(src = "fig/FOSP_migration.jpg", width = '350px'),
-                        tags$figcaption("Arrival dates to Palomarin each year, shown after subtracting the average arrival date over all years in the study, 1980-2016. There has been no detectable change for Fox  Sparrow over time.")))
+         body = tagList(tags$p("So far, there has been no detectable change in Fox Sparrow arrival dates over time."),
+                        tags$img(src = "fig/FOSP_migration.jpg", width = '300px', class = "center"),
+                        tags$figcaption("Annual arrival dates to Palomarin, 1980-2016")))
 
 bs_modal(id = 'GCSP', title = "Golden-crowned Sparrow: arriving earlier", 
-         body = tagList(tags$img(src = "fig/GCSP_migration.jpg", width = '350px%'),
-                        tags$figcaption("Arrival dates to Palomarin each year, shown after subtracting the average arrival date over all years in the study, 1980-2016. The decreasing trend line indicates that Golden-crowned Sparrows tend to arrive earlier each year.")))
+         body = tagList(tags$p("In recent years, Golden-crowned Sparrows have tended to arrive earlier than average, changing at a rate of 2.1 days per decade."),
+                        tags$img(src = "fig/GCSP_migration.jpg", width = '300px', class = "center"),
+                        tags$figcaption("Annual arrival dates to Palomarin, 1980-2016")))
 
 bs_modal(id = 'HETH', title = "Hermit Thrush: no change", 
-         body = tagList(tags$img(src = "fig/HETH_migration.jpg", width = '350px', halign='center'),
-                        tags$figcaption("Arrival dates to Palomarin each year, shown after subtracting the average arrival date over all years in the study, 1980-2016. There has been no detectable change for Hermit Thrush over time.")))
+         body = tagList(tags$p("So far, there has been no detectable change in Hermit Thrush arrival dates over time."),
+                        tags$img(src = "fig/HETH_migration.jpg", width = '300px', class = 'center'),
+                        tags$figcaption("Annual arrival dates to Palomarin, 1980-2016")))
 
 bs_modal(id = 'RCKI', title = "Ruby-crowned Kinglet: arriving earlier", 
-         body = tagList(tags$img(src = "fig/RCKI_migration.jpg", width = '350px'),
-                        tags$figcaption("Arrival dates to Palomarin each year, shown after subtracting the average arrival date over all years in the study, 1980-2016. The decreasing trend line indicates that Ruby-crowned Kinglets tend to arrive earlier each year.")))
+         body = tagList(tags$p("In recent years, Ruby-crowned Kinglets have tended to arrive earlier than average, changing at a rate of 1.8 days per decade."),
+                        tags$img(src = "fig/RCKI_migration.jpg", width = '300px', class = 'center'),
+                        tags$figcaption("Annual arrival dates to Palomarin, 1980-2016")))
 ```
 
 Point Blue staff and interns collect weather data several times each day at the Palomarin Field Station to understand how climate change (over the long-term) and weather fluctuations (over the short-term) affect birds. Weather plays a huge role in the daily lives of birds, from successfully raising young to surviving the winter, while climate change can affect the long-term stability of bird populations.
 
 ### Palomarin's climate is warming
-To examine long-term weather patterns, we calculated annual average temperatures and total rainfall at Palomarin since 1975. Both measures have fluctuated over the last 40+ years, but temperatures have recently become much warmer. Through 2018, the most recent year of data included here, the hottest year we’ve recorded was in 2017. The wettest year we’ve recorded was in 1997-98 (during a strong El Ni&ntilde;o). Recent years have been relatively dry, punctuated by a few wet winters. 
+To examine long-term weather patterns, we calculated annual average temperatures and total rainfall at Palomarin since 1976. Both measures have fluctuated over the last 40+ years, but temperatures have recently become much warmer. Through 2018, the most recent year of data included here, the hottest year we’ve recorded was in 2017. The wettest year we’ve recorded was in 1997-98 (during a strong El Ni&ntilde;o). Recent years have been relatively dry, punctuated by a few wet winters. 
 
 <iframe src="widget/graph_annual_weatherstats.html"></iframe>
 <figcaption>
@@ -148,7 +155,7 @@ bs_button("Ruby-crowned Kinglet") %>% bs_attach_modal(id_modal = "RCKI")
 </div>
 </div>
 
-We don't yet know exactly why some species are changing their migration timing while others are not, and whether shifts in migration timing are helping species adapt to changes in the timing of their food supply or other necessary resources. Future research could examine whether individuals that arrive earlier or later are more successful in raising young or surviving the winter, whether the optimal arrival time has changed over the years, and whether it depends on [how far the birds are migrating](connections.html).
+The timing of bird arrivals in spring is thought to be adapted to the timing of food availability for successfully raising young, which may also be shifting with climate change. The timing of bird arrivals in fall may reflect warmer temperatures and a longer nesting season to our north. It's not yet clear whether birds that are shifting the timing of their migration are able to keep up with changes in their environment, or why some birds aren't yet changing the timing of migration at all. Future research could examine whether individuals that arrive earlier or later are more successful in raising young or surviving the winter, whether the optimal arrival time has changed over the years, and whether it depends on [how far the birds are migrating](connections.html).
 
 #### Body Size
 <div class="row">  
