@@ -11,15 +11,23 @@ knitr::opts_chunk$set(echo = FALSE, warning = FALSE, message = FALSE,
                       out.width="95%", fig.asp=0.6)
 ```
 
-The seasonal changes in the bird community make Palomarin a fascinating place to study birds year-round. Some species are present all year, while others are only here for a few months, or even a few days each year as they travel thousands of miles on migration. These comings and goings are always an exciting event as we welcome back and then say farewell to these seasonal animals each year &mdash; and in some cases, get to learn where they’ve been. Similarly, we cherish the connections with interns who come to Palomarin from all over the country and the world to study the birds at Palomarin for a "bird season"!
+Since the founding of the Palomarin Field Station in 1966, we have wanted to know where birds go when they leave Palomarin, or where they've been before they arrive. These comings and goings are always an exciting event as we welcome back and then say farewell to these seasonal animals each year &mdash; and in some cases, get to learn where they’ve been. Similarly, we cherish the connections with interns who come to Palomarin from all over the country and the world to study the birds at Palomarin for a "bird season"!
+
+### Seasonal shifts in the bird community
+Some species are present at Palomarin all year, while others are only here for a few months, or even a few days each year as they travel thousands of miles on migration. We have documented these seasonal shifts in the number of birds captured each month as part of our long-term mist-netting and banding study. 
 
 <iframe src="widget/graph_seasonal_capturestats.html"></iframe>
 <figcaption>
-Seasonal shifts in the bird community at Palomarin. Some species are here year-round (like Wrentit), while others are only here during certain months. (One net hour is equal to 1 net being open for 1 hour).
+Seasonal shifts in the bird community at Palomarin.  (One net hour is equal to 1 net being open for 1 hour).
 </figcaption>
 
-### Where do the birds go?
-Since the founding of the Palomarin Field Station in 1966, we have wanted to know where birds go when they leave. Banding birds was the first stage of exploring these connections, but banding stations are uncommon and it's rare that birds we band get recaptured at another station far away. 
+Wrentit is present at Palomarin year-round, while Swainson's Thrush and Wilson's Warbler are Neotropical migrants that spend the spring and summer breeding season with us, then migrate to the tropics of Latin America to spend their winter. Wilson's Warblers arrive earlier than Swainson's Thrushes, and the capture rates of all three of these species increase mid-summer as new young birds leave the nest! The other two species shown here, Hermit Thrush and Golden-crowned Sparrow are Neotemperate migrants that spend the summer as far north as Alaska, and then migrate to spend the winter with us.
+
+### Why is understanding migratory pathways important for bird conservation?
+Learning where birds go is not only exciting, it can help us better understand the challenges birds face, and how best to conserve them. Each season plays an important role in the lives of the bird species we study, and events and conditions (good vs. poor) at one location can carry over to affect birds during other periods of their lives. By understanding the connections these birds have to other places, and the different challenges they may face in each region, we can collaborate with partners along their migratory pathways to conserve these species, well into the future. 
+
+### Palomarin is a migration crossroads
+Banding birds was the first stage of exploring the migration routes that connect banding stations, but because banding stations are uncommon, it's rare that birds we band get recaptured at another station far away. 
 
 <div class="row">  
 <div class="column">
@@ -31,7 +39,7 @@ A banded Golden-crowned Sparrow carries a light-level geolocator (note the small
 </figure>
 </div>
 <div class="column">  
-Now, miniaturized technologies have finally helped us unlock the mysteries, by tracking birds throughout the year. The birds are outfitted with tiny backpacks, called geolocators, that collect data on their locations. And when birds return to Palomarin after migrating, we can remove the backpacks, download the data, and find out where they went!
+Now, miniaturized technologies have finally helped us unlock these migration mysteries, by tracking birds throughout the year. The birds are outfitted with tiny backpacks, called geolocators, that collect data on their locations. And when birds return to Palomarin after migrating, we can remove the backpacks, download the data, and find out where they went!
 
 Light-level geolocators collect data on light intensity, and along with their internal clocks, allow us to determine sunrise and sunset times. With those data, we can estimate their latitude and longitude to determine their location each day. We also use another type of geolocator that collects GPS data.
 </div>
@@ -41,11 +49,20 @@ We have discovered that some birds travel to Palomarin from thousands of miles a
 
 <iframe src="widget/migration_map.html"></iframe>
 <figcaption>
-Each point represents an individual bird we tracked on their migration. The coordinates are the average of several locations collected throughout the season they were away from Palomarin. Note that geolocators can be less accurate in estimating latitude. See __More information__ below for links to papers to learn about the error in these estimates. For comparison, turn range maps on and off at bottom left to view the full breeding (orange) and wintering (green) ranges of each species.
+Each point represents an individual bird we tracked on their migration. The coordinates are the average of several locations collected throughout the season they were away from Palomarin.
 </figcaption>
 
-### Why is tracking migratory pathways important for bird conservation?
-Learning where birds go is not only exciting, it can help us better understand the challenges birds face, and how best to conserve them. Each season plays an important role in the lives of the bird species we study, and events and conditions (good vs. poor) at one location can carry over to affect birds during other periods of their lives. By understanding the connections these birds have to other places, and the different challenges they may face in each region, we can collaborate with partners along their migratory pathways to conserve these species, well into the future. 
+Our research has also found that neighboring populations of breeding Swainson's Thrush in the Sierra Nevada and Cascades travel much farther to Central and South America, and experience greater amounts of habitat loss. These findings provide insights into why some species are declining in only certain parts of their range, and suggest when and where more conservation attention is needed.
+
+### Palomarin connects humans too!
+One of the most special things about the Palomarin Field Station is the people. Specifically, the interns who come to learn, and live there each season make the field station a home, and one where lasting relationships are made. Since our founding, Palomarin has hosted over 700 interns and volunteers from over 20 countries. And just like the birds, many of these biologists leave, but their connections to the place remain. 
+
+<figure>
+![](../images/connections/KTCH2018_summer_compressed.jpg "Palomarin interns and staff, spring/summer 2018")
+<figcaption>
+Palomarin interns & staff pose for the seasonal crew photo, spring/summer 2018. *Photo by Point Blue*
+</figcaption>
+</figure>
 
 ### How did we collect these data?
 All birds fitted with geolocator tags (GPS and light-level tags) are either captured during our normal long-term mist-netting and banding operation at Palomarin, or during additional banding operations using mist nets or potter traps. The seasonal timing data showing when species are at Palomarin are also from the long-term banding study.
@@ -70,16 +87,6 @@ A banded MacGillivray’s Warbler. *Photo by Stefanie Krantz*
 </div>
 </div>
 </div>
-
-### Palomarin connects humans too!
-One of the most special things about the Palomarin Field Station is the people. Specifically, the interns who come to learn, and live there each season make the field station a home, and one where lasting relationships are made. Since our founding, Palomarin has hosted over 700 interns and volunteers from over 20 countries. And just like the birds, many of these biologists leave, but their connections to the place remain. 
-
-<figure>
-![](../images/connections/KTCH2018_summer_compressed.jpg "Palomarin interns and staff, spring/summer 2018")
-<figcaption>
-Palomarin interns & staff pose for the seasonal crew photo, spring/summer 2018. *Photo by Point Blue*
-</figcaption>
-</figure>
 
 ### Meet our biologists!
 Visitors can drop in at Palomarin to join our intern and staff biologists, learn how we collect this data, and hopefully see a bird in the hand! [More information on visiting and scheduling groups.](https://www.pointblue.org/about-us/contact-visit-us/){target="_blank"}
