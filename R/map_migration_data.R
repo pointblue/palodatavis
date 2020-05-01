@@ -11,8 +11,8 @@ library(leaflet)
 coordpath <- "rawdat/Summary_MarinBirds_MeanLocsWhereTheyWent.xlsx"
 iconpath <- "images/icons/logo.png"
 
-swthrange <- 'rawdat/cath_ustu_pl.shp'
-gcsprange <- 'rawdat/zono_atri_pl.shp'
+# swthrange <- 'rawdat/cath_ustu_pl.shp'
+# gcsprange <- 'rawdat/zono_atri_pl.shp'
 
 # PALETTE
 pointblue.palette <- c('#4495d1', '#74b743', '#f7941d', '#005baa', '#bfd730',
@@ -42,21 +42,22 @@ pal2 <- colorFactor(palette = pointblue.palette[c(3,2)],
 logoicon <- makeIcon(iconUrl = here::here(iconpath), 
                      iconWidth = 25, iconHeight = 25)
 
-swthpoly <- st_read(here::here(swthrange)) %>%
-  st_set_crs('+proj=longlat +datum=WGS84') %>%
-  filter(ORIGIN != 4) %>% #drop migration range
-  group_by(ORIGIN) %>%
-  summarize() %>%
-  mutate(season = case_when(ORIGIN == 2 ~ 'breeding',
-                            ORIGIN == 3 ~ 'wintering'))
+# swthpoly <- st_read(here::here(swthrange)) %>%
+#   st_set_crs('+proj=longlat +datum=WGS84') %>%
+#   filter(ORIGIN != 4) %>% #drop migration range
+#   group_by(ORIGIN) %>%
+#   summarize() %>%
+#   mutate(season = case_when(ORIGIN == 2 ~ 'breeding',
+#                             ORIGIN == 3 ~ 'wintering'))
+# 
+# gcsppoly <- st_read(here::here(gcsprange)) %>%
+#   st_set_crs('+proj=longlat +datum=WGS84') %>%
+#   filter(ORIGIN != 4) %>% #drop migration range
+#   group_by(ORIGIN) %>%
+#   summarize() %>%
+#   mutate(season = case_when(ORIGIN == 2 ~ 'breeding',
+#                             ORIGIN == 3 ~ 'wintering'))
 
-gcsppoly <- st_read(here::here(gcsprange)) %>%
-  st_set_crs('+proj=longlat +datum=WGS84') %>%
-  filter(ORIGIN != 4) %>% #drop migration range
-  group_by(ORIGIN) %>%
-  summarize() %>%
-  mutate(season = case_when(ORIGIN == 2 ~ 'breeding',
-                            ORIGIN == 3 ~ 'wintering'))
 # CREATE MAP --------------------------------------------------------------
 
 map1 <- leaflet(shp) %>% 
@@ -65,15 +66,15 @@ map1 <- leaflet(shp) %>%
   # background terrain
   addProviderTiles("Esri.WorldGrayCanvas") %>% 
   
-  # range maps
-  addPolygons(data = swthpoly,
-              fillColor = ~ pal2(season),
-              stroke = FALSE,
-              group = "Swainson's Thrush") %>%
-  addPolygons(data = gcsppoly,
-              fillColor = ~pal2(season),
-              stroke = FALSE,
-              group = "Golden-crowned Sparrow") %>%
+  # # range maps
+  # addPolygons(data = swthpoly,
+  #             fillColor = ~ pal2(season),
+  #             stroke = FALSE,
+  #             group = "Swainson's Thrush") %>%
+  # addPolygons(data = gcsppoly,
+  #             fillColor = ~pal2(season),
+  #             stroke = FALSE,
+  #             group = "Golden-crowned Sparrow") %>%
   
   # add icon for Palo
   addMarkers(lng = -122.735527, lat = 37.929851, 
@@ -89,14 +90,14 @@ map1 <- leaflet(shp) %>%
                    label = ~TagType,
                    popup = ~TagType) %>% 
   
-  addLayersControl(overlayGroups = c('Golden-crowned Sparrow',
-                                     "Swainson's Thrush"),
-                   position = "bottomleft",
-                   options = layersControlOptions(collapsed = TRUE)) %>%
-  hideGroup('Golden-crowned Sparrow') %>%
-  # hideGroup('Hermit Thrush') %>%
-  # hideGroup('Fox Sparrow') %>%
-  hideGroup("Swainson's Thrush") %>%
+  # addLayersControl(overlayGroups = c('Golden-crowned Sparrow',
+  #                                    "Swainson's Thrush"),
+  #                  position = "bottomleft",
+  #                  options = layersControlOptions(collapsed = TRUE)) %>%
+  # hideGroup('Golden-crowned Sparrow') %>%
+  # # hideGroup('Hermit Thrush') %>%
+  # # hideGroup('Fox Sparrow') %>%
+  # hideGroup("Swainson's Thrush") %>%
   
   addLegend(pal = pal1,
             values = shp$specieslab,
