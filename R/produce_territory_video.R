@@ -15,7 +15,7 @@ library(gganimate) # also requires "av" package for making mp4 (or "gifski" for 
 terrpath <- "rawdat/palo_breeding_territories.csv"
 
 # OUTPUTS
-video <- 'images/habitat/territory_trends_animated.gif'
+video <- 'images/habitat/territory_trends_animated.mp4'
 
 pointblue.palette <- c('#4495d1', '#74b743', '#f7941d', '#005baa', '#bfd730',
                        '#a7a9ac', '#666666')
@@ -106,7 +106,8 @@ plot_terr <- terrdat_full %>%
   labs(title = 'Breeding Bird Territories at Palomarin in {round(frame_time, 0)}')
 
 animate(plot_terr, nframes = 360, fps = 6, end_pause = 30, 
-        height = 900, width = 1200, res = 220)
+        height = 900, width = 1200, res = 220,
+        renderer = av_renderer())
 anim_save(filename = video)
 
 # plot_terr <- terrdat_ranked %>% 

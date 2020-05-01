@@ -74,14 +74,13 @@ We have found that Nuttall's White-crowned Sparrows have stayed just as successf
 
 We have also seen changes in the rest of the breeding bird community, especially the addition of more species associated with mature forest and mixed scrub such as Wilson's Warblers and Swainson's Thrushes.
 
-<center>
-<img src="../images/habitat/territory_trends_animated.gif" alt="animated" width="90%">
-</center>
+<video class="center" width="85%" controls>
+  <source src="../images/habitat/territory_trends_animated.mp4" type="video/mp4">
+Your browser does not support the video tag.
+</video>
 <figcaption>
 Tracking the changing number and composition of breeding bird territories at Palomarin, 1982&ndash;2018. Because the breeding bird community is so diverse, this figure is limited to the 15 species that have ever ranked in the top 5 for the number of territories in one year.
 </figcaption>
-</br>
-</br>
 
 So far, our research has found that bird populations are more directly influenced by changes in habitat and [weather or climate](climate.html) rather than interactions with other bird species. But we expect there to be an increasing number of new interactions between species as they move in response to habitat and climate change, and future research could continue to examine this question.
 
