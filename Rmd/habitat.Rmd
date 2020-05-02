@@ -17,12 +17,12 @@ At the Palomarin Field Station we have been monitoring birds and their environme
 <div class="row">  
 <div class="column">  
 <figure>
-![](../images/habitat/early70s_from_ridge_crop.jpg "Overlooking Palomarin study area, 1970s")
+![](../images/habitat/early70s_from_ridge_caption.png "Overlooking Palomarin study area, 1970s")
 
-![](../images/habitat/palo_overview_crop.jpg "Overlooking Palomarin study area, 2006")
+![](../images/habitat/palo_overview_2006_caption.png "Overlooking Palomarin study area, 2006")
 <figcaption>
 <figcaption>
-Overlooking the Palomarin study area in the 1970s (top) and in 2006 (bottom). Notice the dark patches of Douglas fir trees on the hillside and in the flats. *Photo by Point Blue*  
+Overlooking the Palomarin study area in the 1970s (top) and in 2006 (bottom). Notice the dark patches of Douglas fir trees on the hillside and in the flats.
 </figcaption>
 </figure>
 </div>
@@ -35,10 +35,10 @@ The vegetation across the study area has since grown in size and structure and h
 </div>
 </div>
 
-<iframe src="widget/graph_annual_vegheight.html"></iframe>
-<figcaption>
-Mean height (and standard error) of Douglas fir trees at Palomarin, 1983&ndash;2018.
-</figcaption>
+<!-- <iframe src="widget/graph_annual_vegheight.html"></iframe> -->
+<!-- <figcaption> -->
+<!-- Mean height (and standard error) of Douglas fir trees at Palomarin, 1983&ndash;2018. -->
+<!-- </figcaption> -->
 
 ### Why is tracking habitat change important for bird conservation?
 
@@ -49,10 +49,9 @@ Bird species have individual habitat requirements and preferences, and can be af
 <div class="row">  
 <div class="column">  
 <figure>
-![](../images/habitat/WREN23_byDennisJongsomjit.JPG "Wrentit sitting on a nest")
+![](../images/habitat/WREN23_byDennisJongsomjit_caption.png "Wrentit sitting on a nest")
 <figcaption>
 A Wrentit peering out from its nest. 
-*Photo by Dennis Jongsomjit*  
 </figcaption>
 </figure>
 </div>
@@ -74,7 +73,7 @@ We have found that Nuttall's White-crowned Sparrows have stayed just as successf
 
 We have also seen changes in the rest of the breeding bird community, especially the addition of more species associated with mature forest and mixed scrub such as Wilson's Warblers and Swainson's Thrushes.
 
-<video class="center" width="85%" controls>
+<video class="center" width="80%" controls>
   <source src="../images/habitat/territory_trends_animated.mp4" type="video/mp4">
 Your browser does not support the video tag.
 </video>
@@ -91,19 +90,17 @@ During the breeding season (March-July), three interns spend their days stealthi
 <div class="row">  
 <div class="column">  
 <figure>
-![](../images/habitat/gridding_crop.jpg "Nest searching intern")
+![](../images/habitat/gridding_caption.png "Nest searching intern")
 <figcaption>
-A nest-searching intern observing and recording bird behavior and movement. 
-*Photo by Point Blue*  
+A nest-searching intern observing and recording bird behavior and movement.
 </figcaption>
 </figure>
 </div>
 <div class="column">
 <figure>
-![](../images/habitat/G2_brood2maps_18_crop.jpg "Territory map")
+![](../images/habitat/G2_brood2maps_18_caption.png "Territory map")
 <figcaption>
 A territory map for Wrentits in 2018, produced by nest-searching interns from data compiled over the season. Each circle represents the territorial area occupied by a breeding pair. 
-*Image by Point Blue*  
 </figcaption>
 </figure>
 </div>

@@ -58,7 +58,7 @@ To examine long-term weather patterns, we calculated annual average temperatures
 
 <iframe src="widget/graph_annual_weatherstats.html"></iframe>
 <figcaption>
-Average temperatures and rainfall recorded at the Palomarin Field Station each year, 1975&ndash;2018. Average temperatures are calculated from the average of the daily high and low temperatures. Rainfall totals are calculated from July through June of the following calendar year, to capture an entire winter rainy season.
+Average temperatures and rainfall recorded at the Palomarin Field Station each year, 1976&ndash;2018. Average temperatures are calculated from the average of the daily high and low temperatures. Rainfall totals are calculated from July through June of the following calendar year, to capture an entire winter rainy season.
 </figcaption>
 
 ### Why is tracking weather and climate important for bird conservation?
@@ -166,9 +166,9 @@ To understand why birds have been getting longer wings, future research could ex
 </div>
 <div class="column">
 <figure>
-![](../images/weather/wing_chord.jpg "Measuring the wing chord (length) of a Red-breasted Sapsucker")
+![](../images/climate/wing_chord_caption.png "Measuring the wing chord (length) of a Red-breasted Sapsucker")
 <figcaption>
-Measuring the wing chord (length) of a Red-breasted Sapsucker. Wing chord was one of the measurements found to be increasing over time.  *Photo by Mark Dettling / Point Blue*
+Measuring the wing chord (length) of a Red-breasted Sapsucker. Wing chord was one of the measurements found to be increasing over time.
 </figcaption>
 </figure>
 </div>
@@ -178,9 +178,9 @@ Measuring the wing chord (length) of a Red-breasted Sapsucker. Wing chord was on
 <div class="row">
 <div class="column">
 <figure>
-![](../images/weather/weather_station.jpg "Palo weather station")
+![](../images/climate/weather_station_caption.png "Palo weather station"){#portrait}
 <figcaption>
-Solar-powered weather station at Palomarin. *Photo by Hilary Allen / Point Blue*
+Solar-powered weather station at Palomarin
 </figcaption>
 </figure>
 </div>

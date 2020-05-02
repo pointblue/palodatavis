@@ -32,9 +32,9 @@ Banding birds was the first stage of exploring the migration routes that connect
 <div class="row">  
 <div class="column">
 <figure>
-![](../images/connections/gcsp_gls_annotated.jpg "Golden-crowned Sparrow carrying a light-level geolocator")
+![](../images/connections/gcsp_gls_annotated_caption.png "Golden-crowned Sparrow carrying a light-level geolocator")
 <figcaption>
-A banded Golden-crowned Sparrow carries a light-level geolocator (note the small antenna on the back). *Photo by John Ranlett*
+A banded Golden-crowned Sparrow carries a light-level geolocator (note the small antenna on the back).
 </figcaption>
 </figure>
 </div>
@@ -59,9 +59,9 @@ Our research has also found that neighboring populations of breeding Swainson's 
 One of the most special things about the Palomarin Field Station is the people. Specifically, the interns who come to learn, and live there each season make the field station a home, and one where lasting relationships are made. Since our founding, Palomarin has hosted over 700 interns and volunteers from over 20 countries. And just like the birds, many of these biologists leave, but their connections to the place remain. 
 
 <figure>
-![](../images/connections/KTCH2018_summer_compressed.jpg "Palomarin interns and staff, spring/summer 2018")
+![](../images/connections/KTCH2018_summer_caption_large.png "Palomarin interns and staff, spring/summer 2018")
 <figcaption>
-Palomarin interns & staff pose for the seasonal crew photo, spring/summer 2018. *Photo by Point Blue*
+Palomarin interns & staff pose for the seasonal crew photo, spring/summer 2018.
 </figcaption>
 </figure>
 
@@ -71,17 +71,17 @@ All birds fitted with geolocator tags (GPS and light-level tags) are either capt
 <div class="row">
 <div class="column">
 <figure>
-![](../images/connections/banding_lab_crop.jpg "Palomarin biologists recording data in the banding lab")
+![](../images/connections/banding_lab_caption.png "Palomarin biologists recording data in the banding lab")
 <figcaption>
-Palomarin biologists collect long-term banding data in our banding lab. *Photo by Kim Kayano*
+Palomarin biologists collect long-term banding data in our banding lab.
 </figcaption>
 </figure>
 </div>
 <div class="column">
 <figure>
-![](../images/connections/MGWA-with-band_by-Stefanie-Krantz_compressed.jpg "A banded MacGillivray’s Warbler")
+![](../images/connections/MGWA-with-band_by-Stefanie-Krantz_caption.png "A banded MacGillivray’s Warbler")
 <figcaption>
-A banded MacGillivray’s Warbler. *Photo by Stefanie Krantz*
+A banded MacGillivray’s Warbler.
 </figcaption>
 </figure>
 </div>
