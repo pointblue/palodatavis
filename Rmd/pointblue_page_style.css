@@ -147,6 +147,10 @@ figcaption {
     margin-right: auto;
     display: block
 }
+.carousel-caption {
+  font-size: 10px;
+  text-align: center;
+}
 iframe {
   display: block;
   border: none;
@@ -182,17 +186,4 @@ iframe {
   width: 600px;
   margin-top: 10px;
   margin-bottom: 10px;
-}
-.btn {
-  width: 130px;
-  height: 55px;
-  white-space: normal;
-  border: 2px solid #005BAA;
-  border-radius: 8px;
-  transition-duration: 0.4s;
-}
-.btn:hover {
-  background-color: #005BAA;
-  color: white;
-  border: 2px solid #005BAA;
 }
