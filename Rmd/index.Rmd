@@ -25,12 +25,12 @@ library(bsplus)
 library(shiny)
 
 bs_carousel(id = 'palo', use_indicators = TRUE) %>% 
-  bs_append(content = bs_carousel_image(src = '../images/index/palo_building_caption.png')) %>% 
-  bs_append(content = bs_carousel_image(src = '../images/index/banding_intern_Francoise_caption.png')) %>% 
-  bs_append(content = bs_carousel_image(src = '../images/index/wren_eggs_caption.png')) %>% 
-  bs_append(content = bs_carousel_image(src = '../images/index/banding_lab_caption.png')) %>% 
-  bs_append(content = bs_carousel_image(src = '../images/index/KTCH2018_summer_caption.png')) %>% 
-  bs_append(content = bs_carousel_image(src = '../images/index/WREN23_byDennisJongsomjit_caption.png'))
+  bs_append(content = bs_carousel_image(src = 'fig/palo_building_caption.png')) %>% 
+  bs_append(content = bs_carousel_image(src = 'fig/banding_intern_Francoise_caption.png')) %>% 
+  bs_append(content = bs_carousel_image(src = 'fig/wren_eggs_caption.png')) %>% 
+  bs_append(content = bs_carousel_image(src = 'fig/banding_lab_caption.png')) %>% 
+  bs_append(content = bs_carousel_image(src = 'fig/KTCH2018_summer_caption.png')) %>% 
+  bs_append(content = bs_carousel_image(src = 'fig/WREN23_byDennisJongsomjit_caption.png'))
 
 ```
 
