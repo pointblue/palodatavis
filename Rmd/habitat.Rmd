@@ -10,6 +10,12 @@ output:
 knitr::opts_chunk$set(echo = FALSE, warning = FALSE, message = FALSE, 
                       out.width="95%", fig.asp=0.6)
 ```
+<figure>
+![](../images/habitat/gridding_caption.png "Nest searching intern")
+<figcaption>
+A nest-searching intern observing and recording bird behavior and movement.
+</figcaption>
+</figure>
 
 At the Palomarin Field Station we have been monitoring birds and their environment since 1966. Since the beginning of our study, the area adjacent to the mist nets and banding station has undergone drastic habitat change, resulting in shifts in the local bird community. Tracking the changes in the habitat alongside the changes in bird populations at Palomarin can inform bird conservation as we learn more about what environmental factors are most important for certain species to thrive. Here, you can explore the habitat changes and bird community changes we have recorded through our long-term data collection.
 
@@ -85,16 +91,11 @@ So far, our research has found that bird populations are more directly influence
 
 ### How did we collect these data?
 
-During the breeding season (March-July), three interns spend their days stealthily tracking birds to map the boundaries of the territory each one calls home, as well as to find their nests and determine how successful each nest attempt is. The interns are trained in how to identify and follow birds by both sound and sight, as well as how to find and safely monitor their nests. A bird that sings in the same area day after day is considered a territorial individual. After months of recording the movements and territorial behavior of individual birds, we compile all of this data into territory maps for each species. 
-
 <div class="row">  
 <div class="column">  
-<figure>
-![](../images/habitat/gridding_caption.png "Nest searching intern")
-<figcaption>
-A nest-searching intern observing and recording bird behavior and movement.
-</figcaption>
-</figure>
+During the breeding season (March-July), three interns spend their days stealthily tracking birds to map the boundaries of the territory each one calls home, as well as to find their nests and determine how successful each nest attempt is. The interns are trained in how to identify and follow birds by both sound and sight, as well as how to find and safely monitor their nests. A bird that sings in the same area day after day is considered a territorial individual. After months of recording the movements and territorial behavior of individual birds, we compile all of this data into territory maps for each species. 
+
+Each summer, we also collect vegetation data at 8 fixed points throughout the study area. The data helps describe the habitat succession as well as the proliferation and growth of the Douglas fir trees. At each of the 8 points, we record the size (height and width) and species of all woody plants along four 10-meter transects.
 </div>
 <div class="column">
 <figure>
@@ -105,9 +106,6 @@ A territory map for Wrentits in 2018, produced by nest-searching interns from da
 </figure>
 </div>
 </div>
-
-Each summer, we collect vegetation data at 8 fixed points throughout the study area. The data helps describe the habitat succession as well as the proliferation and growth of the Douglas fir trees. At each of the 8 points, we record the size (height and width) and species of all woody plants along four 10-meter transects.
-
 
 ### Plan your visit!
 Although the Palomarin Field Station is currently closed to the public, we welcome you to plan your visit in the near future. Visitors can drop in and join our intern and staff biologists to learn how we collect this data &mdash; and hopefully see a bird in the hand! [More information on visiting and scheduling groups.](https://www.pointblue.org/about-us/contact-visit-us/){target="_blank"}
