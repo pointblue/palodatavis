@@ -14,7 +14,7 @@ output:
 Welcome! We invite you to explore and learn about birds from over 50 years of data collected by Point Blue staff and interns at the Palomarin Field Station. We are located at the south end of the [Point Reyes National Seashore](https://www.nps.gov/pore/index.htm){target="_blank"}, where nearly 490 bird species have been recorded, the greatest number of any national park!
 
 <div class="row">
-<div class="column">
+<div class="column-margin">
 
 ```{r setup, echo = FALSE, warning = FALSE, message = FALSE}
 knitr::opts_chunk$set(echo = FALSE, warning = FALSE, message = FALSE, 
@@ -42,7 +42,7 @@ Here, you can dive deep into some of the most important science stories from Pal
 </div>
 </div>
 
-<div class="row">  
+<div class="row-margin">  
 <div class="column">  
 [![](../images/icons/nature_stewardship.png "bird icon"){#icon}](banding.html)  
 
@@ -50,21 +50,21 @@ Here, you can dive deep into some of the most important science stories from Pal
 
 Explore some of the latest bird numbers and how they change over time at one of the oldest, continuously-running banding stations in the United States.  
 </div>  
-<div class="column">  
+<div class="column-margin">  
 [![](../images/icons/climate_change.png "climate icon"){#icon}](climate.html)
   
 ##### [Tracking a changing climate](climate.html)  
 
 Learn about weather patterns at Palomarin, and how weather and climate change affect bird populations through changes in migration timing, body size, and more.  
 </div>  
-<div class="column">  
+<div class="column-margin">  
 [![](../images/icons/ghg.png "tree icon"){#icon}](habitat.html)
   
 ##### [Habitat & community change](habitat.html)  
 
 Take a tour of the habitat changes in the Palomarin study area since 1966, and see how the bird community is responding.  
 </div>  
-<div class="column">  
+<div class="column-margin">  
 [![](../images/icons/conservation.png "globe icon"){#icon}](connections.html)
 
 ##### [Crossroads & connections](connections.html)  
@@ -74,7 +74,7 @@ See how Palomarin is home to birds migrating from thousands of miles away, much 
 </div>  
 
 ### Plan your visit!
-Although the Palomarin Field Station is **currently closed to the public**, we welcome you to plan your visit in the near future. Visitors can drop in and join our intern and staff biologists to learn how we collect this data &mdash; and hopefully see a bird in the hand! [More information on visiting and scheduling groups.](https://www.pointblue.org/about-us/contact-visit-us/){target="_blank"}
+Although the Palomarin Field Station is **temporarily closed to the public**, we welcome you to plan your visit in the near future. Visitors can drop in and join our intern and staff biologists to learn how we collect this data &mdash; and hopefully see a bird in the hand! [More information on visiting and scheduling groups.](https://www.pointblue.org/about-us/contact-visit-us/){target="_blank"}
 
 In the meantime, please enjoy a recent [field report video](https://youtu.be/3X1ad2gnS4Q) about our banding study, or our [Palomarin blog](https://www.pointblue.org/engage-with-us/blogs/palomarin/){target="_blank"}, including a [recent post](https://www.pointblue.org/palomarin_blog/sheltering-at-palomarin/?bblinkid=216134292&bbemailid=20775611&bbejrid=1451437087){target="_blank"} about life going on at Palomarin during the shelter-in-place.
 
