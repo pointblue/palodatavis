@@ -13,9 +13,7 @@ output:
 
 Welcome! We invite you to explore and learn about birds from over 50 years of data collected by Point Blue staff and interns at the Palomarin Field Station. We are located at the south end of the [Point Reyes National Seashore](https://www.nps.gov/pore/index.htm){target="_blank"}, where nearly 490 bird species have been recorded, the greatest number of any national park!
 
-<div class="row">
-<div class="column-margin-right">
-
+<div style="margin-bottom:15px;">
 ```{r setup, echo = FALSE, warning = FALSE, message = FALSE}
 knitr::opts_chunk$set(echo = FALSE, warning = FALSE, message = FALSE, 
                       out.width="95%", fig.asp=0.6)
@@ -24,7 +22,7 @@ library(htmltools)
 library(bsplus)
 library(shiny)
 
-bs_carousel(id = 'palo', use_indicators = TRUE) %>% 
+bs_carousel(id = 'palo', use_indicators = TRUE, use_controls = FALSE) %>% 
   bs_append(content = bs_carousel_image(src = 'fig/palo_building_caption.png')) %>% 
   bs_append(content = bs_carousel_image(src = 'fig/banding_intern_Francoise_caption.png')) %>% 
   bs_append(content = bs_carousel_image(src = 'fig/wren_eggs_caption.png')) %>% 
@@ -33,17 +31,14 @@ bs_carousel(id = 'palo', use_indicators = TRUE) %>%
   bs_append(content = bs_carousel_image(src = 'fig/WREN23_byDennisJongsomjit_caption.png'))
 
 ```
-
 </div>
-<div class="column">
+
 Since 1966, the Palomarin Field Station has been a constant hub of field biology research, training, and outreach. As one of the oldest field stations in Western North America, our research has made unique contributions to the fields of ornithology, ecology, and conservation. We also provide high quality training to field biology interns each year, many of whom go on to become professionals in research and conservation. We maintain a Nature Center that is open to the public, and enjoy hosting organized groups and drop-in visitors to share the joy of birds and science!
 
 Here, you can dive deep into some of the most important science stories from Palomarin, and explore data that spans decades.
-</div>
-</div>
 
-<div class="row-margin">  
-<div class="column">  
+<div class="row">  
+<div class="column-margin">  
 [![](../images/icons/nature_stewardship.png "bird icon"){#icon}](banding.html)  
 
 #### [How are the birds doing?](banding.html)  
