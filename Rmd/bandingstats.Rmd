@@ -2,7 +2,6 @@
 title: "How Are the Birds Doing?"
 output: 
   html_document:
-    theme: default
     css: pointblue_page_style.css
 ---
 
@@ -71,19 +70,18 @@ This question is frequently asked by those who care about birds &mdash; whether 
 ### Fewer birds at Palomarin
 
 One way to measure the abundance of the local bird community is the number of birds captured as part of our long-term mist-netting and banding study. The bird community changes with the seasons as migrants come and go, so we examine total capture rates of individual birds during each season and overall in each year. Capture rates have declined overall, and especially during the fall season.  
-<figure>
+
 <iframe src="widget/graph_total_capturestats.html"></iframe>
 <figcaption>
 Annual capture rates at the Palomarin Field Station, 1979-2018, overall total and by season. Select lines at top right to view individual seasons. *Note: Annual totals are calculated March through February of the following calendar year, to keep an entire winter season together.*
 </figcaption>
-</figure>
 
 ### Why is tracking bird populations important for bird conservation?
 Our declining capture rates mirror the continent-wide pattern of declining bird populations across North America, and an estimated [3 billion fewer birds since 1970](https://www.3billionbirds.org){target="_blank"}. In particular, the decline in captures during the fall suggests a reduced number of migratory birds passing through Palomarin on fall migration. By examining long-term variation in capture rates, we can identify individual species that are declining rapidly and determine where and when conservation attention is needed. These declines likely reflect a combination of habitat loss and degradation along [migration routes](connections.html), the additional impacts of [climate change](climate.html) on their ability to raise young and survive each year, and [local habitat changes](habitat.html) that might make Palomarin more or less suitable for individual species. 
 
 Although we study the entire community of birds at Palomarin, we pay particular attention to a suite of focal species to understand how they are doing and what is driving any changes over time. Select a species below to see how annual capture rates of our focal species are changing over time and what this means. 
 
-#### Year-Round Residents
+##### Year-Round Residents
 Present at Palo all year, these bird species often maintain their territories even during the nonbreeding season. Changes in the capture rates of these species are most likely to reflect changes to the local habitat and climate. While most of these populations are relatively stable, we have seen declines in Nuttall's White-crowned Sparrows and Song Sparrows, thought to be related to the [local habitat changes](habitat.html).
 
 <div class="row">
@@ -144,7 +142,7 @@ bs_button("California Scrub-Jay") %>% bs_attach_modal(id_modal = "CASJ")
 </div>
 </div>
 
-#### Seasonal Migrants
+##### Seasonal Migrants
 Present at Palomarin only for part of the year, **Neotropical migrants** spend the spring and summer breeding season with us, then migrate to the tropics of Latin America to spend their winter. Changes in the capture rates of these species may reflect changes in habitat or climate in the tropics, along their [migration routes](connections.html), or local effects of changes at Palomarin.
 
 <div class="row">
@@ -214,12 +212,10 @@ Further research into the specific [migration routes](connections.html) of our l
 
 ### How did we collect these data?
 <div class="row">
-<div class="column">
-<figure>
+<div class="column-margin-right">
 ![](../images/index/banding_intern_Francoise_caption.png "Point Blue intern holding a woodpecker in the banding lab")
 <figcaption>
 Former Point Blue intern Francoise Benjamin holding a newly banded woodpecker at the Palomarin Field Station. </figcaption>
-</figure>
 </div>
 <div class="column">
 Since 1966, we have been mist-netting and banding birds at the Palomarin Field Station year-round. All of the birds we capture are carefully recorded and given uniquely-numbered bands provided by the U.S. Bird Banding Laboratory. All of these data are collected by staff, volunteers, and especially the hundreds of interns who have trained at Palomarin over the years. 

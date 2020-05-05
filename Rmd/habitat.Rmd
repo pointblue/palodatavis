@@ -50,16 +50,14 @@ The vegetation across the study area has since grown in size and structure and h
 
 Bird species have individual habitat requirements and preferences, and can be affected by habitat change in a number of ways. They may find it easier or harder to find food, raise young, avoid predators, or survive extreme weather conditions. As the habitat at Palomarin has transformed, we have witnessed the open coastal scrub residents that once flourished here (such as White-crowned Sparrows) fade from the study area while more forest and mixed scrub species (such as Wilson's Warblers and Swainson's Thrushes) moved in. By studying how birds within a community respond differently to changes in their environment, we can learn what they need to thrive, to help inform and guide conservation efforts. Land management and restoration projects can benefit from this type of research by understanding how best to create an environment that supports a more resilient bird community. 
 
-#### Changes in the number of breeding territories
+##### Changes in the number of breeding territories
 
 <div class="row">  
-<div class="column">  
-<figure>
+<div class="column-margin-right">  
 ![](../images/habitat/WREN23_byDennisJongsomjit_caption.png "Wrentit sitting on a nest")
 <figcaption>
 A Wrentit peering out from its nest. 
 </figcaption>
-</figure>
 </div>
 <div class="column">
 One way to measure the response of the breeding bird community to habitat change around Palomarin is the number of breeding bird territories. Since the early 1980s, nearly every day during the spring and summer, Point Blue staff and interns collect data on the movements and behaviors of breeding birds to create territory maps representing that season’s breeding bird activity. The number of territories provides us with a measure of how many breeding individuals of each species are present in the bird community.
@@ -75,7 +73,7 @@ Number of territories for our 4 primary focal species each year, 1982&ndash;2018
 
 We have found that Nuttall's White-crowned Sparrows have stayed just as successful at raising young over this time period, despite the decline in their numbers. They strongly prefer to nest in patches of open coastal scrub that have become rare at Palomarin, and they may be seeking out their preferred habitat elsewhere. 
 
-#### New species join the breeding bird community
+##### New species join the breeding bird community
 
 We have also seen changes in the rest of the breeding bird community, especially the addition of more species associated with mature forest and mixed scrub such as Wilson's Warblers and Swainson's Thrushes.
 
@@ -97,13 +95,11 @@ During the breeding season (March-July), three interns spend their days stealthi
 
 Each summer, we also collect vegetation data at 8 fixed points throughout the study area. The data helps describe the habitat succession as well as the proliferation and growth of the Douglas fir trees. At each of the 8 points, we record the size (height and width) and species of all woody plants along four 10-meter transects.
 </div>
-<div class="column">
-<figure>
+<div class="column-margin-left">
 ![](../images/habitat/G2_brood2maps_18_caption.png "Territory map")
 <figcaption>
 A territory map for Wrentits in 2018, produced by nest-searching interns from data compiled over the season. Each circle represents the territorial area occupied by a breeding pair. 
 </figcaption>
-</figure>
 </div>
 </div>
 

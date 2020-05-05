@@ -64,7 +64,7 @@ Average temperatures and rainfall recorded at the Palomarin Field Station each y
 ### Why is tracking weather and climate important for bird conservation?
 Understanding how birds are affected by weather and climate requires long-term monitoring over decades. Because of our long-term bird monitoring and weather data collection at Palomarin, Point Blue has been able to identify changes in both the bird populations and the local climate, and uncover the links between them. This information helps us understand how well birds are adapting to climate change, and which species may be more vulnerable to climate change and may require more conservation attention. Here are just a couple examples of how our research has identified how birds are responding to global climate change.
 
-#### Migration Timing
+##### Migration Timing
 A changing climate may influence the seasonal timing (“phenology”) of blooming plants, hatching insects, and bird migration or nesting. In some cases, birds may not be able to easily change the timing of their migration to keep up with changes in the timing of their plant and insect food supplies, while others are shifting to try to stay in sync.
 
 We have examined the dates migratory species arrive at Palomarin in the spring, and found that some species are arriving earlier (Orange-crowned Warbler), some are arriving later (Wilson’s Warbler), while others haven’t changed at all (Swainson’s Thrush).
@@ -157,26 +157,24 @@ bs_button("Ruby-crowned Kinglet") %>% bs_attach_modal(id_modal = "RCKI")
 
 The timing of bird arrivals in spring is thought to be adapted to the timing of food availability for successfully raising young, which may also be shifting with climate change. The timing of bird arrivals in fall may reflect warmer temperatures and a longer nesting season to our north. It's not yet clear whether birds that are shifting the timing of their migration are able to keep up with changes in their environment, or why some birds aren't yet changing the timing of migration at all. Future research could examine whether individuals that arrive earlier or later are more successful in raising young or surviving the winter, whether the optimal arrival time has changed over the years, and whether it depends on [how far the birds are migrating](connections.html).
 
-#### Body Size
+##### Body Size
 <div class="row">  
-<div class="column-left">  
+<div class="column">  
 Birds at Palomarin have been getting longer wings! A [2012  study led by graduate student Rae Goodman](http://www.prbo.org/refs/files/12135_Goodman.pdf){target="_blank"} uncovered this surprising finding using banding data from Palomarin and the San Francisco Bay Bird Observatory. Studies from other parts of the world have found that birds are getting smaller, thought to be related to increasing temperatures. Longer wings could indicate birds in California are getting larger, possibly in response to increasing variability in our climate or more favorable conditions than in other places.
 
 To understand why birds have been getting longer wings, future research could examing whether birds with longer wings arrive at to the Palomarin Field Station at different times than birds with shorter wings, or whether they are better at raising young or surviving the winter.
 </div>
-<div class="column">
-<figure>
+<div class="column-margin-left">
 ![](../images/climate/wing_chord_caption.png "Measuring the wing chord (length) of a Red-breasted Sapsucker")
 <figcaption>
 Measuring the wing chord (length) of a Red-breasted Sapsucker. Wing chord was one of the measurements found to be increasing over time.
 </figcaption>
-</figure>
 </div>
 </div>
 
 ### How did we collect these data?
 <div class="row">
-<div class="column">
+<div class="column-margin-right">
 <figure>
 ![](../images/climate/weather_station_caption.png "Palo weather station"){#portrait}
 <figcaption>

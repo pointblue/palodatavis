@@ -12,18 +12,27 @@ h3 {
   font-family: "Franklin Gothic Narrow",sans-serif !important;
   font-weight: normal !important;
   font-size: 24px;
-  line-height: 36px;
+  line-height: 28px;
   color: #005BAA;
-  margin-bottom: 10px;
+  margin-bottom: 15px;
 }
-h5 {
+h4 {
   font-family: "Franklin Gothic Narrow",sans-serif !important;
   font-weight: normal !important;
   font-size: 24px;
   line-height: 28px;
   color: #005BAA;
-  margin-bottom: 10px;
+  margin-bottom: 15px;
   text-align: center;
+}
+h5 {
+  font-family: "Franklin Gothic Narrow",sans-serif !important;
+  font-weight: bold !important;
+  font-size: 18px;
+  line-height: 28px;
+  color: #005BAA;
+  margin-top: 15px;
+  margin-bottom: 15px;
 }
 body {
   font-family: "Franklin Gothic Book",sans-serif !important;
@@ -50,28 +59,29 @@ a {
   margin: 0 auto;
   margin-top: 10px;
 }
-.table-wrapper {
-  margin: 10px;
+#portrait {
+  height: 350px;
+  padding: 0px 0px 0px 0px;
 }
 .row {
-  clear: both;
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: center;
-  width: 100%;
-  margin-top: 15px;
-  break-inside: avoid;
+    clear: both;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100%;
+    margin: 0;
+    break-inside: avoid;
 }
 .row-margin {
-  clear: both;
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: center;
-  width: 100%;
-  margin-top: 25px;
-  break-inside: avoid;
+    clear: both;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100%;
+    margin-top: 25px;
+    break-inside: avoid;
 }
 @media screen and (min-width: 700px) {
   .column {
@@ -81,13 +91,30 @@ a {
     flex: 1;
     margin: 0;
   }
-  .column-margin {
+  .column-margin-right {
+    display: flex;
+    flex-direction: column;
+    flex-basis: 100%;
+    flex: 1;
+    margin-right: 15px;
+  }
+  .column-margin-left {
     display: flex;
     flex-direction: column;
     flex-basis: 100%;
     flex: 1;
     margin-left: 15px;
-    margin-right: 15px;
+  }
+}
+@media screen and (max-width: 700px) {
+  .column-margin-right {
+    margin-bottom: 15px;
+  }
+  .column-margin-left {
+    margin-top: 15px;
+  }
+  .row-margin {
+    margin-top: 25px;
   }
 }
 @media print {
@@ -115,13 +142,6 @@ a {
   }
 }
 
-.column-left {
-    display: flex;
-    flex-direction: column;
-    flex-basis: 100%;
-    flex: 1;
-    margin-right: 10px;
-  }
 .column5 {
     display: flex;
     flex-direction: column;
@@ -130,7 +150,7 @@ a {
     flex-grow: 0;
     flex-shrink: 0;
     margin: 2px;
-  }
+}
 figure {
   text-align: center;
   margin-top: 0;
@@ -164,33 +184,7 @@ iframe {
   padding: 0 !important;
   line-height: 0 !important;
 }
-#photobar {
-  width: 100%;
-}
-#photoleft {
-  width: 50%;
-  float: left;
-  padding: 0 10px 0 0;
-}
-#photoright {
-  width: 30%;
-  float: right;
-  padding: 0;
-}
-#portrait {
-  height: 350px;
-  padding: 0px 0px 0px 0px;
-}
-#fig80 {
-  width: 750px;
-  margin-top: 10px;
-  margin-bottom: 10px;
-}
-#fig60 {
-  width: 600px;
-  margin-top: 10px;
-  margin-bottom: 10px;
-}
+
 /* modal button style */
 .btn {
   width: 130px;
