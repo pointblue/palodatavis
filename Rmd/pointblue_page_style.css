@@ -83,14 +83,25 @@ a {
     margin-top: 25px;
     break-inside: avoid;
 }
-@media screen and (min-width: 700px) {
-  .column {
+
+.column {
+  display: flex;
+  flex-direction: column;
+  flex-basis: 100%;
+  flex: 1;
+  margin: 0;
+}
+.column5 {
     display: flex;
     flex-direction: column;
-    flex-basis: 100%;
-    flex: 1;
-    margin: 0;
-  }
+    flex-basis: 170px;
+    max-width: 170px;
+    flex-grow: 0;
+    flex-shrink: 0;
+    margin: 2px;
+}
+
+@media screen and (min-width: 700px) {
   .column-margin-right {
     display: flex;
     flex-direction: column;
@@ -105,6 +116,12 @@ a {
     flex: 1;
     margin-left: 15px;
   }
+  .column-margin {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    margin: 10px;
+}
 }
 @media screen and (max-width: 700px) {
   .column-margin-right {
@@ -142,15 +159,6 @@ a {
   }
 }
 
-.column5 {
-    display: flex;
-    flex-direction: column;
-    flex-basis: 170px;
-    max-width: 170px;
-    flex-grow: 0;
-    flex-shrink: 0;
-    margin: 2px;
-}
 figure {
   text-align: center;
   margin-top: 0;
