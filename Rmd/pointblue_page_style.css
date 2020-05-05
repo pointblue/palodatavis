@@ -34,6 +34,16 @@ h5 {
   margin-top: 15px;
   margin-bottom: 15px;
 }
+h6 {
+  font-family: "Franklin Gothic Narrow",sans-serif !important;
+  font-weight: normal !important;
+  font-size: 18px;
+  line-height: 28px;
+  color: #005BAA;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  text-align: center;
+}
 body {
   font-family: "Franklin Gothic Book",sans-serif !important;
   font-size: 16px;
@@ -192,7 +202,9 @@ iframe {
   padding: 0 !important;
   line-height: 0 !important;
 }
-
+.html-widget {
+  margin: 0;
+}
 /* modal button style */
 .btn {
   width: 130px;
