@@ -10,6 +10,12 @@ output:
 knitr::opts_chunk$set(echo = FALSE, warning = FALSE, message = FALSE, 
                       out.width="95%", fig.asp=0.6)
 ```
+<figure>
+![](../images/connections/gcsp_caption.png "Golden-crowned Sparrow with a blue band")
+<figcaption>
+A color-banded Golden-crowned Sparrow
+</figcaption>
+</figure>
 
 Since the founding of the Palomarin Field Station in 1966, we have wanted to know where birds go when they leave Palomarin, or where they've been before they arrive. These comings and goings are always an exciting event as we welcome back and then say farewell to these seasonal animals each year &mdash; and in some cases, get to learn where they’ve been. Similarly, we cherish the connections with interns who come to Palomarin from all over the country and the world to study the birds at Palomarin for a "bird season"!
 
