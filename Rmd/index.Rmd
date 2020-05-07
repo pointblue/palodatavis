@@ -44,9 +44,11 @@ Explore some of the latest bird numbers and how they change over time at one of 
 
 Learn about weather patterns at Palomarin, and how weather and climate change affect bird populations through changes in migration timing, body size, and more.  
 </div>  
+</div>
+<div class="row">
 <div class="column-margin">  
 [![](../images/icons/ghg.png "tree icon"){#icon}](habitat.html)
-  
+
 #### [Habitat & community change](habitat.html)  
 
 Take a tour of the habitat changes in the Palomarin study area since 1966, and see how the bird community is responding.  
