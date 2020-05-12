@@ -22,7 +22,15 @@ bs_carousel(id = 'palo', use_indicators = TRUE, use_controls = FALSE) %>%
   bs_append(content = bs_carousel_image(src = 'fig/WREN23_byDennisJongsomjit_caption.png'))
 
 ```
-  
+
+```{js}
+window.onload = function()
+    {
+        parent.document.getElementById('fileUploadIframe').style.height = document.body.clientHeight+5+'px';
+        parent.document.getElementById('fileUploadIframe').style.width = document.body.clientWidth+18+'px';
+    };
+```
+
 ###### Welcome! We invite you to explore and learn about birds from over 50 years of data collected by Point Blue staff and interns at the Palomarin Field Station. 
  
 Since 1966, the Palomarin Field Station has been a constant hub of field biology research, training, and outreach. As one of the oldest field stations in Western North America, our research has made unique contributions to the fields of ornithology, ecology, and conservation. We also provide high quality training to field biology interns each year, many of whom go on to become professionals in research and conservation. We maintain a Nature Center that is open to the public, and enjoy hosting organized groups and drop-in visitors to share the joy of birds and science!
