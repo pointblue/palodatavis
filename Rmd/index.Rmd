@@ -39,32 +39,32 @@ Here, you can dive deep into some of the most important science stories from Pal
 
 <div class="row">  
 <div class="column-margin">  
-[![](../images/icons/nature_stewardship.png "bird icon"){#icon}](banding.html)  
+[![](../images/icons/nature_stewardship.png "bird icon"){#icon}](https://www.pointblue.org/our-work/keystone-datasets/how-are-the-birds-doing/){target="_blank"}  
 
-#### [How are the birds doing?](banding.html)  
+#### [How are the birds doing?](https://www.pointblue.org/our-work/keystone-datasets/how-are-the-birds-doing/){target="_blank"}  
 
 Explore some of the latest bird numbers and how they change over time at one of the oldest, continuously-running banding stations in the United States.  
 </div>  
 <div class="column-margin">  
-[![](../images/icons/climate_change.png "climate icon"){#icon}](climate.html)
+[![](../images/icons/climate_change.png "climate icon"){#icon}](https://www.pointblue.org/our-work/keystone-datasets/tracking-a-changing-climate/){target="_blank"}
   
-#### [Tracking a changing climate](climate.html)  
+#### [Tracking a changing climate](https://www.pointblue.org/our-work/keystone-datasets/tracking-a-changing-climate/){target="_blank"}  
 
 Learn about weather patterns at Palomarin, and how weather and climate change affect bird populations through changes in migration timing, body size, and more.  
 </div>  
 </div>
 <div class="row">
 <div class="column-margin">  
-[![](../images/icons/ghg.png "tree icon"){#icon}](habitat.html)
+[![](../images/icons/ghg.png "tree icon"){#icon}](https://www.pointblue.org/our-work/keystone-datasets/habitat-and-community-change/){target="_blank"}
 
-#### [Habitat & community change](habitat.html)  
+#### [Habitat & community change](https://www.pointblue.org/our-work/keystone-datasets/habitat-and-community-change/){target="_blank"}  
 
 Take a tour of the habitat changes in the Palomarin study area since 1966, and see how the bird community is responding.  
 </div>  
 <div class="column-margin">  
-[![](../images/icons/conservation.png "globe icon"){#icon}](connections.html)
+[![](../images/icons/conservation.png "globe icon"){#icon}](https://www.pointblue.org/our-work/keystone-datasets/crossroads-and-connections/){target="_blank"}
 
-#### [Crossroads & connections](connections.html)  
+#### [Crossroads & connections](https://www.pointblue.org/our-work/keystone-datasets/crossroads-and-connections/){target="_blank"}  
 
 See how Palomarin is home to birds migrating from thousands of miles away, much like the hundreds of interns who have studied them here, and how we find out where birds come from to inform conservation.  
 </div>  
