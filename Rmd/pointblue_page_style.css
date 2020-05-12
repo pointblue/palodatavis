@@ -44,12 +44,27 @@ h6 {
   margin-bottom: 15px;
   text-align: center;
 }
+html {
+  margin: 0;
+  padding: 0;
+}
 body {
   font-family: "Franklin Gothic Book",sans-serif !important;
   font-size: 16px;
   line-height: 22px;
   text-align: left;
   color: #666666;
+  margin: 0;
+  padding: 0;
+}
+iframe {
+  display: block;
+  border: 0;
+  width: 95%; 
+  height: 450px;
+  margin: 0 !important;
+  padding: 0 !important;
+  line-height: 0 !important;
 }
 a {
   color: #005BAA !important;
@@ -192,15 +207,6 @@ figcaption {
 .carousel-caption {
   font-size: 10px;
   text-align: center;
-}
-iframe {
-  display: block;
-  border: none;
-  width: 95%; 
-  height: 450px;
-  margin: 0 !important;
-  padding: 0 !important;
-  line-height: 0 !important;
 }
 .html-widget {
   margin: 0;
