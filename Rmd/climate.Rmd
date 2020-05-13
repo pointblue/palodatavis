@@ -68,6 +68,12 @@ bs_modal(id = 'RCKI',
                                  class = 'center')))
 ```
 
+<figure>
+![](../docs/fig/wren_eggs_caption.png "Wrentit nest with three eggs")
+<figcaption>
+A Wrentit nest with three eggs
+</figcaption>
+</figure>
 Point Blue staff and interns collect weather data several times each day at the Palomarin Field Station to understand how climate change (over the long-term) and weather fluctuations (over the short-term) affect birds. Weather plays a huge role in the daily lives of birds, from successfully raising young to surviving the winter, while climate change can affect the long-term stability of bird populations.
 
 ### Record temperatures in 2017
