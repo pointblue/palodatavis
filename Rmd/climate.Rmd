@@ -55,7 +55,7 @@ bs_modal(id = 'GCSP',
 
 bs_modal(id = 'HETH', 
          title = "Hermit Thrush: arriving earlier", 
-         body = tagList(tags$p("In recent years, Golden-crowned Sparrows have tended to arrive earlier than average."),
+         body = tagList(tags$p("In recent years, Hermit Thrushes have tended to arrive earlier than average."),
                         tags$img(src = "fig/HETH_migration.jpg", 
                                  width = '300px', 
                                  class = 'center')))
