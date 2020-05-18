@@ -225,3 +225,9 @@ figcaption {
   color: white;
   border: 2px solid #005BAA;
 }
+.modal {
+  position: absolute;
+  top: 50%;
+  margin-top: -100px;
+  height: 200px;
+}
