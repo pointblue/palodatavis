@@ -14,14 +14,18 @@ library(bsplus)
 library(shiny)
 
 # set up modals for each of the focal species below
-bs_modal(id = 'WREN', title = "Wrentit: stable", size = 'small',
+bs_modal(id = 'WREN', title = "Wrentit: stable",
          body = tagList(tags$p("Wrentits remain relatively common at Palomarin, despite long-term habitat change and climate change."),
-                        tags$img(src = "fig/WREN.jpg", width = '100%'),
+                        tags$img(src = "fig/WREN.jpg", 
+                                 width = '400px',
+                                 class = 'center'),
                         tags$figcaption("Annual capture rates at the Palomarin Field Station, 1979-2018.")))
 
-bs_modal(id = 'SOSP', title = "Song Sparrow: declining", size = 'small',
+bs_modal(id = 'SOSP', title = "Song Sparrow: declining",
          body = tagList(tags$p("Song Sparrows were once one of the most common species at Palomarin, but their numbers have declined locally, thought to be a result of the long-term habitat change."),
-                        tags$img(src = "fig/SOSP.jpg", width = '100%'),
+                        tags$img(src = "fig/SOSP.jpg", 
+                                 width = '400px',
+                                 class = 'center'),
                         tags$figcaption("Annual capture rates at the Palomarin Field Station, 1979-2018.")))
 
 bs_modal(id = 'NWCS', title = "Nuttall's White-crowned Sparrow: declining", 
@@ -33,37 +37,51 @@ bs_modal(id = 'NWCS', title = "Nuttall's White-crowned Sparrow: declining",
 
 bs_modal(id = 'SPTO', title = "Spotted Towhee: stable", 
          body = tagList(tags$p("Spotted Towhee populations remain relatively stable at Palomarin."),
-                        tags$img(src = "fig/SPTO.jpg", width = '100%'),
+                        tags$img(src = "fig/SPTO.jpg", 
+                                 width = '400px',
+                                 class = 'center'),
                         tags$figcaption("Annual capture rates at the Palomarin Field Station, 1979-2018.")))
 
 bs_modal(id = 'CASJ', title = "California Scrub-Jay: stable", 
          body = tagList(tags$p("California Scrub-Jays are infrequently caught in our mist-nets, in part because they are larger than most of the species we catch and are more easily able to get themselves out! Capture rates are low but steady."),
-                        tags$img(src = "fig/CASJ.jpg", width = '100%'),
+                        tags$img(src = "fig/CASJ.jpg", 
+                                 width = '400px',
+                                 class = 'center'),
                         tags$figcaption("Annual capture rates at the Palomarin Field Station, 1979-2018.")))
 
 bs_modal(id = 'WIWA', title = "Wilson's Warbler: declining", 
          body = tagList(tags$p("Wilson's Warbler numbers have declined slightly, but fluctuate year to year, with a relatively high capture rate in 2018."),
-                        tags$img(src = "fig/WIWA.jpg", width = '100%'),
+                        tags$img(src = "fig/WIWA.jpg", 
+                                 width = '400px',
+                                 class = 'center'),
                         tags$figcaption("Annual capture rates at the Palomarin Field Station, 1979-2018.")))
 
 bs_modal(id = 'SWTH', title = "Swainson's Thrush: stable", 
          body = tagList(tags$p("Swainson's Thrush numbers have remained steady at Palomarin."),
-                        tags$img(src = "fig/SWTH.jpg", width = '100%'),
+                        tags$img(src = "fig/SWTH.jpg", 
+                                 width = '400px',
+                                 class = 'center'),
                         tags$figcaption("Annual capture rates at the Palomarin Field Station, 1979-2018.")))
          
 bs_modal(id = 'FOSP', title = "Fox Sparrow: stable", 
          body = tagList(tags$p("Fox Sparrows are relatively steady, except for an unusual spike in their numbers in 2013, possibly the result of an extremely productive nesting season in Alaska."),
-                        tags$img(src = "fig/FOSP.jpg", width = '100%'),
+                        tags$img(src = "fig/FOSP.jpg", 
+                                 width = '400px',
+                                 class = 'center'),
                         tags$figcaption("Annual capture rates at the Palomarin Field Station, 1979-2018.")))
 
 bs_modal(id = 'GCSP', title = "Golden-crowned Sparrow: declining", 
          body = tagList(tags$p("Golden-crowned Sparrows have been slowly declining, but with a bump in their numbers in 2013 similar to Fox Sparrow, possibly the result of an extremely productive nesting season in Alaska."),
-                        tags$img(src = "fig/GCSP.jpg", width = '100%'),
+                        tags$img(src = "fig/GCSP.jpg", 
+                                 width = '400px',
+                                 class = 'center'),
                         tags$figcaption("Annual capture rates at the Palomarin Field Station, 1979-2018.")))
 
 bs_modal(id = 'HETH', title = "Hermit Thrush: declining", 
          body = tagList(tags$p("Hermit Thrushes have declined slightly over the years."),
-                        tags$img(src = "fig/HETH.jpg", width = '100%'),
+                        tags$img(src = "fig/HETH.jpg", 
+                                 width = '400px',
+                                 class = 'center'),
                         tags$figcaption("Annual capture rates at the Palomarin Field Station, 1979-2018.")))
 ```
 
