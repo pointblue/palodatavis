@@ -228,6 +228,8 @@ figcaption {
  /* New width for default modal */
 .modal-dialog {
   width: 450px;
+  margin-left: auto;
+  margin-right: auto;
 }
 /*.modal {
 /*  position: absolute;
