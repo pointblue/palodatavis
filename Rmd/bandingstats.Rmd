@@ -121,7 +121,7 @@ window.addEventListener('message', function(event) {
   //calculate padding value and update the modal top-padding
   // from https://stackoverflow.com/questions/32018499/position-bootbox-dynamically-inside-iframe
   $("body").on("shown.bs.modal", ".modal", function() {
-     $(this).find('div.modal-dialog').css("top", topOffset - currentScroll + 'px');
+     $(this).find('div.modal-dialog').css("top", currentScroll - topOffset + 50 + 'px');
     });
   }, false);
 
