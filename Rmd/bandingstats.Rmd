@@ -90,6 +90,12 @@ if ( window.addEventListener ) {
 } else if ( window.attachEvent ) { // ie8
     window.attachEvent('onload', sendDocHeightMsg);
 }
+
+// get scroll position from parent for positioning modal?
+// from https://stackoverflow.com/questions/32018499/position-bootbox-dynamically-inside-iframe
+$("body").on("shown.bs.modal", ".modal", function() {
+   $(this).find('div.modal-dialog').css("top",$(parent.window.document).scrollTop());
+});
 ```
 <figure>
 ![](../images/birds/wren_caption.png "Wrentit")
