@@ -171,11 +171,21 @@ graph1 <- plot_ly() %>%
          hovermode = 'x',
          legend = list(x = 0.01, xanchor = 'left', y = 1, yanchor = 'top', 
                        bgcolor = NA),
-         margin = list(r = 0, b = 0, t = 0, l = 50)) %>%
+         margin = list(r = 0, b = 0, t = 0, l = 50, pad = 0)) %>%
   config(displaylogo = FALSE, showTips = FALSE,
          modeBarButtonsToRemove = list('zoom2d', 'select2d', 'lasso2d',
                                        'zoomIn2d', 'zoomOut2d',
                                        'pan2d', 'toggleSpikelines'))
+
+graph1$dependencies <- c(graph1$dependencies,
+                         list(
+                           htmltools::htmlDependency(
+                             name = 'plotly_style_nomargin',
+                             version = '1.0.0',
+                             src = here::here('Rmd'),
+                             stylesheet = 'plotly_style.css'
+                           )
+                         ))
 
 htmlwidgets::saveWidget(graph1,
                         here::here(out),
