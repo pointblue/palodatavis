@@ -92,10 +92,19 @@ if ( window.addEventListener ) {
 }
 
 // get scroll position from parent for positioning modal?
-// from https://stackoverflow.com/questions/32018499/position-bootbox-dynamically-inside-iframe
-$("body").on("shown.bs.modal", ".modal", function() {
-   $(this).find('div.modal-dialog').css("top",$(parent.window.document).scrollTop());
-});
+// https://stackoverflow.com/questions/24805274/bootstrap-modal-at-top-of-iframe-regardless-of-scroll-position-how-do-i-positio
+window.addEventListener('message', function(event) {
+  var messageContent = event.data.split(':');
+  var topOffset = messageContent[0];
+  var currentScroll = messageContent[1];
+
+  //calculate padding value and update the modal top-padding
+  // from https://stackoverflow.com/questions/32018499/position-bootbox-dynamically-inside-iframe
+  $("body").on("shown.bs.modal", ".modal", function() {
+     $(this).find('div.modal-dialog').css("top",currentScroll + 'px');
+    });
+  }, false);
+
 ```
 <figure>
 ![](../images/birds/wren_caption.png "Wrentit")
