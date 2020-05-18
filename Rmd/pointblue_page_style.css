@@ -226,10 +226,12 @@ figcaption {
   border: 2px solid #005BAA;
 }
  /* New width for default modal */
-.modal-dialog {
-  width: 450px;
-  margin-left: auto;
-  margin-right: auto;
+@media screen and (min-width: 500px) {
+  .modal-dialog {
+    width: 450px;
+    margin-left: auto;
+    margin-right: auto;
+  }
 }
 /*.modal {
 /*  position: absolute;
