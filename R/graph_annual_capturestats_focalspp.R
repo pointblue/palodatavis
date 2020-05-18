@@ -20,9 +20,6 @@ bandpath <- "rawdat/allbandpalo_through2018.CSV"
 pointblue.palette <- c('#4495d1', '#74b743', '#f7941d', '#005baa', '#bfd730',
                        '#a7a9ac', '#666666')
 
-#OUTPUT
-wrenpath <- "docs/capturestats_WREN.html"
-
 # CALCULATE STATS ---------------------------------------------------------
 spplist <- c('WREN', 'SOSP', 'NWCS', 'SPTO', 'CASJ', 'WIWA', 'SWTH', 'FOSP',
              'GCSP', 'HETH')

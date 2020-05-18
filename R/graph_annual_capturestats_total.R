@@ -177,6 +177,16 @@ graph1 <- plot_ly() %>%
                                        'zoomIn2d', 'zoomOut2d',
                                        'pan2d', 'toggleSpikelines'))
 
+graph1$dependencies <- c(graph1$dependencies,
+                         list(
+                           htmltools::htmlDependency(
+                             name = 'plotly_style_nomargin',
+                             version = '1.0.0',
+                             src = here::here('Rmd'),
+                             stylesheet = 'plotly_style.css'
+                           )
+                         ))
+
 htmlwidgets::saveWidget(graph1,
                         here::here(out),
                         selfcontained = TRUE,
