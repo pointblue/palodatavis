@@ -214,7 +214,7 @@ figcaption {
 /* modal button style */
 .btn {
   width: 130px;
-  height: 55px;
+  min-height: 55px;
   white-space: normal;
   border: 2px solid #005BAA;
   border-radius: 8px;
@@ -229,5 +229,4 @@ figcaption {
   position: absolute;
   top: 50%;
   margin-top: -100px;
-  height: 200px;
 }
