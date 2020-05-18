@@ -14,19 +14,19 @@ library(bsplus)
 library(shiny)
 
 # set up modals for each of the focal species below
-bs_modal(id = 'WREN', title = "Wrentit: stable", 
+bs_modal(id = 'WREN', title = "Wrentit: stable", size = 'small',
          body = tagList(tags$p("Wrentits remain relatively common at Palomarin, despite long-term habitat change and climate change."),
                         tags$img(src = "fig/WREN.jpg", width = '100%'),
                         tags$figcaption("Annual capture rates at the Palomarin Field Station, 1979-2018.")))
 
-bs_modal(id = 'SOSP', title = "Song Sparrow: declining", 
+bs_modal(id = 'SOSP', title = "Song Sparrow: declining", size = 'small',
          body = tagList(tags$p("Song Sparrows were once one of the most common species at Palomarin, but their numbers have declined locally, thought to be a result of the long-term habitat change."),
                         tags$img(src = "fig/SOSP.jpg", width = '100%'),
                         tags$figcaption("Annual capture rates at the Palomarin Field Station, 1979-2018.")))
 
 bs_modal(id = 'NWCS', title = "Nuttall's White-crowned Sparrow: declining", 
          body = tagList(tags$p("Nuttall's White-crowned Sparrows have declined dramatically as the local vegetation has shifted from open scrub and grassland to dense coastal scrub and Douglas fir forest."),
-                        tags$img(src = "fig/NWCS.jpg", width = '100%'),
+                        tags$img(src = "fig/NWCS.jpg", width = '300px'),
                         tags$figcaption("Annual capture rates at the Palomarin Field Station, 1979-2018.")))
 
 bs_modal(id = 'SPTO', title = "Spotted Towhee: stable", 
