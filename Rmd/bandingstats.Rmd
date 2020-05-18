@@ -186,6 +186,9 @@ bs_button("Nuttall's White-crowned Sparrow") %>% bs_attach_modal(id_modal = "NWC
 *Photo by Miguel Demeulemeester / Point Blue*
 </figcaption>
 </div>
+</div>
+
+<div class="row">
 <div class="column5">
 ![](../images/birds/SPTO.png "Spotted Towhee"){#birds}
 <figcaption>
