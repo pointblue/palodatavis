@@ -26,7 +26,9 @@ bs_modal(id = 'SOSP', title = "Song Sparrow: declining", size = 'small',
 
 bs_modal(id = 'NWCS', title = "Nuttall's White-crowned Sparrow: declining", 
          body = tagList(tags$p("Nuttall's White-crowned Sparrows have declined dramatically as the local vegetation has shifted from open scrub and grassland to dense coastal scrub and Douglas fir forest."),
-                        tags$img(src = "fig/NWCS.jpg", width = '300px'),
+                        tags$img(src = "fig/NWCS.jpg", 
+                                 width = '400px',
+                                 class = 'center'),
                         tags$figcaption("Annual capture rates at the Palomarin Field Station, 1979-2018.")))
 
 bs_modal(id = 'SPTO', title = "Spotted Towhee: stable", 
