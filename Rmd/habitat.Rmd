@@ -143,3 +143,4 @@ There is much more to learn from these data! You can read more about what we hav
 
 * *A Guide to Nestling Development and Aging in Altricial Passerines*. U.S. Fish and Wildlife Service Biological Technical Publication. [[View PDF](https://digitalcommons.unl.edu/cgi/viewcontent.cgi?article=1160&context=usfwspubs){target="_blank"}]
 
+* Full list of [Palomarin publications](https://sites.google.com/pointblue.org/palomarinresources/publications){target="_blank"}
