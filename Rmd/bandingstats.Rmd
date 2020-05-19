@@ -50,14 +50,14 @@ bs_modal(id = 'CASJ', title = "California Scrub-Jay: stable",
                         tags$figcaption("Annual capture rates at the Palomarin Field Station, 1979-2018.")))
 
 bs_modal(id = 'WIWA', title = "Wilson's Warbler: declining", 
-         body = tagList(tags$p("Wilson's Warbler numbers have declined slightly, but fluctuate year to year, with a relatively high capture rate in 2018."),
+         body = tagList(tags$p("Wilson's Warbler numbers have declined slightly in our forested mist-netting area, even though the number of nesting territories has increased in other parts of our study area. (See <a href='https://www.pointblue.org/our-work/keystone-datasets/habitat-and-community-change/' target='_parent'>Habitat & Community Change</a>"),
                         tags$img(src = "fig/WIWA.jpg", 
                                  width = '400px',
                                  class = 'center'),
                         tags$figcaption("Annual capture rates at the Palomarin Field Station, 1979-2018.")))
 
 bs_modal(id = 'SWTH', title = "Swainson's Thrush: stable", 
-         body = tagList(tags$p("Swainson's Thrush numbers have remained steady at Palomarin."),
+         body = tagList(tags$p("Swainson's Thrush numbers have remained steady in our forested mist-netting area, even though the number of nesting territories has increased in other parts of our study area."),
                         tags$img(src = "fig/SWTH.jpg", 
                                  width = '400px',
                                  class = 'center'),
@@ -145,7 +145,7 @@ Annual capture rates at the Palomarin Field Station, 1979-2018, overall total an
 </figcaption>
 
 ### Why is tracking bird populations important for bird conservation?
-Our declining capture rates mirror the continent-wide pattern of declining bird populations across North America, and an estimated [3 billion fewer birds since 1970](https://www.3billionbirds.org){target="_blank"}. In particular, the decline in captures during the fall suggests a reduced number of migratory birds passing through Palomarin on fall migration. By examining long-term variation in capture rates, we can identify individual species that are declining rapidly and determine where and when conservation attention is needed. These declines likely reflect a combination of habitat loss and degradation along [migration routes](connections.html), the additional impacts of [climate change](climate.html) on their ability to raise young and survive each year, and [local habitat changes](habitat.html) that might make Palomarin more or less suitable for individual species. 
+Our declining capture rates mirror the continent-wide pattern of declining bird populations across North America, with an estimated **[3 billion fewer birds since 1970](https://www.3billionbirds.org){target="_blank"}**. In particular, the decline in captures during the fall suggests a reduced number of migratory birds passing through Palomarin on fall migration. By examining long-term variation in capture rates, we can identify individual species that are declining rapidly and determine where and when conservation attention is needed. These declines likely reflect a combination of habitat loss and degradation along [migration routes](connections.html), the additional impacts of [climate change](climate.html) on their ability to raise young and survive each year, and [local habitat changes](habitat.html) that might make Palomarin more or less suitable for individual species. 
 
 Although we study the entire community of birds at Palomarin, we pay particular attention to a suite of focal species to understand how they are doing and what is driving any changes over time. Select a species below to see how annual capture rates of our focal species are changing over time and what this means. 
 
