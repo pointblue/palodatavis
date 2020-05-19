@@ -50,7 +50,7 @@ bs_modal(id = 'CASJ', title = "California Scrub-Jay: stable",
                         tags$figcaption("Annual capture rates at the Palomarin Field Station, 1979-2018.")))
 
 bs_modal(id = 'WIWA', title = "Wilson's Warbler: declining", 
-         body = tagList(tags$p("Wilson's Warbler numbers have declined slightly in our forested mist-netting area, even though the number of nesting territories has increased in other parts of our study area. (See <a href='https://www.pointblue.org/our-work/keystone-datasets/habitat-and-community-change/' target='_parent'>Habitat & Community Change</a>"),
+         body = tagList(tags$p("Wilson's Warbler numbers have declined slightly in our forested mist-netting area, even though the number of nesting territories has increased in other parts of our study area."),
                         tags$img(src = "fig/WIWA.jpg", 
                                  width = '400px',
                                  class = 'center'),
