@@ -219,7 +219,7 @@ bs_button("Ruby-crowned Kinglet") %>% bs_attach_modal(id_modal = "RCKI")
 </div>
 </div>
 
-For all of these species, it's not yet clear why some birds aren't changing the timing of migration (yet), and whether birds that are shifting the timing of their migration are able to keep up with changes in their environment. Future research could examine whether individuals that arrive earlier or later are more successful in raising young or surviving the winter, whether the optimal arrival time has changed over the years, and whether it depends on [how far the birds are migrating](connections.html).
+For all of these species, it's not yet clear why some birds aren't changing the timing of migration (yet), and whether birds that are shifting the timing of their migration are able to keep up with changes in their environment. Future research could examine whether individuals that arrive earlier or later are more successful in raising young or surviving the winter, whether the optimal arrival time has changed over the years, and whether it depends on [how far the birds are migrating](https://www.pointblue.org/our-work/keystone-datasets/crossroads-and-connections/).
 
 ##### Changes in Body Size
 <div class="row">  

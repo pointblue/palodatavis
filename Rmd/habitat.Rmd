@@ -112,7 +112,7 @@ Your browser does not support the video tag.
 Tracking the changing number and composition of breeding bird territories at Palomarin, 1982&ndash;2018. Because the breeding bird community is so diverse, this figure is limited to the 15 species that have ever ranked in the top 5 for the number of territories in one year.
 </figcaption>
 
-So far, our research has found that bird populations are more directly influenced by changes in habitat and [weather or climate](climate.html) rather than interactions with other bird species. But we expect there to be an increasing number of new interactions between species as they move in response to habitat and climate change, and future research could continue to examine this question.
+So far, our research has found that bird populations are more directly influenced by changes in habitat and [weather or climate](https://www.pointblue.org/our-work/keystone-datasets/tracking-a-changing-climate/) rather than interactions with other bird species. But we expect there to be an increasing number of new interactions between species as they move in response to habitat and climate change, and future research could continue to examine this question.
 
 ### How did we collect these data?
 
