@@ -125,14 +125,14 @@ Although the Palomarin Field Station is currently closed to the public, we welco
 ### Related research
 There is much more to learn from these data! You can read more about what we have found here, and please [contact us](mailto:kdybala@pointblue.org) if you are interested in collaborating on future research.
 
-* Migration tracking reveals geographic variation in the vulnerability of a Nearctic-Neotropical migrant bird. Published in *Scientific Reports*. [[View PDF](https://rdcu.be/b3fs8){target="_blank"}] [[Behind the scenes blog post!](https://natureecoevocommunity.nature.com/channels/521-behind-the-paper/posts/64994-unraveling-migration-and-conservation-mysteries){target="_blank"}]
+* Migration tracking reveals geographic variation in the vulnerability of a Nearctic-Neotropical migrant bird. Published in *Scientific Reports*. [[View PDF](https://rdcu.be/b3fs8){target="_blank"}] [[Read summary](http://rdjzr2agvvkijm6n3b66365n-wpengine.netdna-ssl.com/wp-content/uploads/2020/04/pubbrief_2020_SwainsonsThrushVulnerabilities_Humple_etal_ScientificReports.pdf){target="_blank"}] [[Behind the scenes blog post!](https://natureecoevocommunity.nature.com/channels/521-behind-the-paper/posts/64994-unraveling-migration-and-conservation-mysteries){target="_blank"}]
 
 * Classic pattern of leap-frog migration in Sooty Fox Sparrow (*Passerella iliaca unalaschcensis*) is not supported by direct migration tracking of individual birds. Published in *Auk*. [[View PDF](http://www.prbo.org/refs/files/12529_Fraser_etal2018.pdf){target="_blank"}]
 
 * Migratory geography of Golden-crowned Sparrows from two wintering regions. Published in *Animal Migration*. [[View PDF](http://www.prbo.org/refs/files/12429_CormierRL2016.pdf){target="_blank"}] [[Read summary](http://rdjzr2agvvkijm6n3b66365n-wpengine.netdna-ssl.com/wp-content/uploads/2018/06/2016_pubbrief_GCSPmigration_Cormier_etal_AnimalMigration.pdf){target="_blank"}]  
 
-* When birds of a feather don’t flock together: Hermit Thrushes across the San Francisco Bay region migrate to different breeding locations. Published in *Animal Migration*. [[View PDF](http://www.prbo.org/refs/files/12393_Nelson_etal2016.pdf){target="_blank"}] [[Read summary](http://pointblue.org/wp-content/uploads/2018/06/2016_pubbrief_BirdsDontFlock_Nelson_etal_AnimalMigration.pdf){target="_blank"}]  
+* Migration patterns of San Francisco Bay Area Hermit Thrushes differ across a fine spatial scale. Published in *Animal Migration*. [[View PDF](http://www.prbo.org/refs/files/12393_Nelson_etal2016.pdf){target="_blank"}] [[Read summary](http://pointblue.org/wp-content/uploads/2018/06/2016_pubbrief_BirdsDontFlock_Nelson_etal_AnimalMigration.pdf){target="_blank"}]  
 
 * Geolocator tags reveal strong migratory connectivity and within-winter movements for coastal California Swainson’s Thrushes. Published in *Auk*. [[View PDF](http://www.prbo.org/refs/files/12248_Cormier2013.pdf){target="_blank"}] [[Read summary](http://pointblue.org/wp-content/uploads/2018/06/2013_pubbrief_swthgeolocator_Cormieretal_June2013.pdf){target="_blank"}]  
 
-
+* Full list of [Palomarin publications](https://sites.google.com/pointblue.org/palomarinresources/publications){target="_blank"}
