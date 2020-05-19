@@ -130,7 +130,7 @@ Understanding how birds are affected by weather and climate requires long-term m
 ##### Inconsistent Changes in Migration Timing
 A changing climate may influence the seasonal timing (“phenology”) of blooming plants, hatching insects, and bird migration or nesting. In some cases, birds may not be able to easily change the timing of their migration to keep up with changes in the timing of their plant and insect food supplies, while others are shifting to try to stay in sync.
 
-We have examined the dates migratory species arrive at Palomarin in the spring, and found that some species are arriving earlier (Orange-crowned Warbler), some are arriving later (Wilson’s Warbler), while others haven’t changed at all (Swainson’s Thrush).
+**Spring arrivals.** We have examined the dates migratory species arrive at Palomarin in the spring, and found that some species are arriving earlier (Orange-crowned Warbler), some are arriving later (Wilson’s Warbler), while others haven’t changed at all (Swainson’s Thrush).
 
 <div class="row">
 <div class="column5">
@@ -170,7 +170,7 @@ bs_button("Orange-crowned Warbler") %>% bs_attach_modal(id_modal = "OCWA")
 
 The timing of bird arrivals in spring is thought to be adapted to the timing of food availability for successfully raising young, which may also be shifting with climate change. Earlier spring arrivals are consistent with warming trends and an earlier onset of spring. However, birds also need to be in good enough body condition to migrate, which might create delays in their arrivals at Palomarin. 
 
-For species that arrive at Palomarin in the fall, Fox Sparrow hasn't changed at all, while the others are all arriving earlier. The timing of bird arrivals in fall likely reflect conditions to our north, with earlier fall arrivals suggesting an earlier end to their nesting season. 
+**Fall arrivals.** Among species that arrive at Palomarin in the fall, Fox Sparrow hasn't changed at all, while the others are arriving earlier. The timing of bird arrivals in fall likely reflect conditions to our north, with earlier fall arrivals suggesting an earlier end to their nesting season. 
 
 <div class="row">
 <div class="column5">
