@@ -49,14 +49,14 @@ bs_modal(id = 'CASJ', title = "California Scrub-Jay: stable",
                                  class = 'center'),
                         tags$figcaption("Annual capture rates at the Palomarin Field Station, 1979-2018.")))
 
-bs_modal(id = 'WIWA', title = "Wilson's Warbler: declining", 
+bs_modal(id = 'WIWA', title = "Wilson's Warbler: mixed", 
          body = tagList(tags$p("Wilson's Warbler numbers have declined slightly in our forested mist-netting area, even though the number of nesting territories has increased in other parts of our study area."),
                         tags$img(src = "fig/WIWA.jpg", 
                                  width = '400px',
                                  class = 'center'),
                         tags$figcaption("Annual capture rates at the Palomarin Field Station, 1979-2018.")))
 
-bs_modal(id = 'SWTH', title = "Swainson's Thrush: stable", 
+bs_modal(id = 'SWTH', title = "Swainson's Thrush: mixed", 
          body = tagList(tags$p("Swainson's Thrush numbers have remained steady in our forested mist-netting area, even though the number of nesting territories has increased in other parts of our study area."),
                         tags$img(src = "fig/SWTH.jpg", 
                                  width = '400px',
@@ -145,12 +145,12 @@ Annual capture rates at the Palomarin Field Station, 1979-2018, overall total an
 </figcaption>
 
 ### Why is tracking bird populations important for bird conservation?
-Our declining capture rates mirror the continent-wide pattern of declining bird populations across North America, with an estimated **[3 billion fewer birds since 1970](https://www.3billionbirds.org){target="_blank"}**. In particular, the decline in captures during the fall suggests a reduced number of migratory birds passing through Palomarin on fall migration. By examining long-term variation in capture rates, we can identify individual species that are declining rapidly and determine where and when conservation attention is needed. These declines likely reflect a combination of habitat loss and degradation along [migration routes](connections.html), the additional impacts of [climate change](climate.html) on their ability to raise young and survive each year, and [local habitat changes](habitat.html) that might make Palomarin more or less suitable for individual species. 
+Our declining capture rates mirror the continent-wide pattern of declining bird populations across North America, with an estimated **[3 billion fewer birds since 1970](https://www.3billionbirds.org){target="_blank"}**. In particular, the decline in captures during the fall suggests a reduced number of migratory birds passing through Palomarin on fall migration. By examining long-term variation in capture rates, we can identify individual species that are declining rapidly and determine where and when conservation attention is needed. These declines likely reflect a combination of habitat loss and degradation along [migration routes](https://www.pointblue.org/our-work/keystone-datasets/crossroads-and-connections/), the additional impacts of [climate change](https://www.pointblue.org/our-work/keystone-datasets/tracking-a-changing-climate/) on their ability to raise young and survive each year, and [local habitat changes](https://www.pointblue.org/our-work/keystone-datasets/habitat-and-community-change/) that might make Palomarin more or less suitable for individual species. 
 
 Although we study the entire community of birds at Palomarin, we pay particular attention to a suite of focal species to understand how they are doing and what is driving any changes over time. Select a species below to see how annual capture rates of our focal species are changing over time and what this means. 
 
 ##### Year-Round Residents
-Present at Palo all year, these bird species often maintain their territories even during the nonbreeding season. Changes in the capture rates of these species are most likely to reflect changes to the local habitat and climate. While most of these populations are relatively stable, we have seen declines in Nuttall's White-crowned Sparrows and Song Sparrows, thought to be related to the [local habitat changes](habitat.html).
+Present at Palo all year, these bird species often maintain their territories even during the nonbreeding season. Changes in the capture rates of these species are most likely to reflect changes to the local habitat and climate. While most of these populations are relatively stable, we have seen declines in Nuttall's White-crowned Sparrows and Song Sparrows, thought to be related to the [local habitat changes](https://www.pointblue.org/our-work/keystone-datasets/habitat-and-community-change/).
 
 <div class="row">
 <div class="column5">
@@ -214,7 +214,9 @@ bs_button("California Scrub-Jay") %>% bs_attach_modal(id_modal = "CASJ")
 </div>
 
 ##### Seasonal Migrants
-Present at Palomarin only for part of the year, **Neotropical migrants** spend the spring and summer breeding season with us, then migrate to the tropics of Latin America to spend their winter. Changes in the capture rates of these species may reflect changes in habitat or climate in the tropics, along their [migration routes](connections.html), or local effects of changes at Palomarin.
+Present at Palomarin only for part of the year, **Neotropical migrants** spend the spring and summer breeding season with us, then migrate to the tropics of Latin America to spend their winter. Changes in the capture rates of these species may reflect a combination of changes in habitat or climate in the tropics, along their [migration routes](https://www.pointblue.org/our-work/keystone-datasets/crossroads-and-connections/), or local effects of changes at Palomarin. 
+
+For both of these species, trends in capture rates (from our forested mist-netting area) tell a different story than the growing number of nesting territories throughout other parts of the Palomarin study area, which are undergoing [rapid habitat change](https://www.pointblue.org/our-work/keystone-datasets/habitat-and-community-change/).
 
 <div class="row">
 <div class="column5">
@@ -241,7 +243,7 @@ bs_button("Swainson's Thrush") %>% bs_attach_modal(id_modal = "SWTH")
 </div>
 </div>
 
-**Neotemperate migrants** spend the summer as far north as Alaska, and then migrate to spend the winter with us. Changes in the capture rates of these species may reflect changes in habitat or climate in Alaska or Canada, along their [migration routes](connections.html), or local effects of changes at Palomarin.
+**Neotemperate migrants** spend the summer as far north as Alaska, and then migrate to spend the winter with us. Changes in the capture rates of these species may reflect changes in habitat or climate in Alaska or Canada, along their [migration routes](https://www.pointblue.org/our-work/keystone-datasets/crossroads-and-connections/), or local effects of changes at Palomarin.
 
 <div class="row">
 <div class="column5">
@@ -279,7 +281,7 @@ bs_button("Hermit Thrush") %>% bs_attach_modal(id_modal = "HETH")
 </div>
 </div>
 
-Further research into the specific [migration routes](connections.html) of our local populations of these species would provide additional insights into what is producing the patterns we see at Palomarin and how vulnerable these populations are to changes in habitat and climate.
+Further research into the specific [migration routes](https://www.pointblue.org/our-work/keystone-datasets/crossroads-and-connections/) of our local populations of these species would provide additional insights into what is producing the patterns we see at Palomarin and how vulnerable these populations are to changes in habitat and climate.
 
 ### How did we collect these data?
 <div class="row">
