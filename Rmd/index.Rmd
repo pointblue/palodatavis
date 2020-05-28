@@ -90,12 +90,5 @@ See how Palomarin is home to birds migrating from thousands of miles away, much 
 </div>  
 </div>  
 
-### Recent news from Palomarin
-
-![](../images/icons/boots.png "boots icon"){#iconmini} [Field report video](https://youtu.be/3X1ad2gnS4Q){target="_blank"}
-
-![](../images/icons/management.png "notebook icon"){#iconmini} Blog Post: [Sheltering at Palomarin](https://www.pointblue.org/palomarin_blog/sheltering-at-palomarin/?bblinkid=216134292&bbemailid=20775611&bbejrid=1451437087){target="_blank"}
-  
-  
 ### Plan your future visit!
 Although the Palomarin Field Station is **temporarily closed to the public**, we welcome you to plan your visit in the near future. We are located at the south end of the [Point Reyes National Seashore](https://www.nps.gov/pore/index.htm){target="_blank"}, where nearly 490 bird species have been recorded, the greatest number of any national park! Visitors can drop in and join our intern and staff biologists to learn how we collect this data &mdash; and hopefully see a bird in the hand! [More information on visiting and scheduling groups.](https://www.pointblue.org/about-us/contact-visit-us/){target="_blank"}
