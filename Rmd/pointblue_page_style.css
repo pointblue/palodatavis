@@ -30,7 +30,7 @@ h3 {
 }
 h4 {
   font-family: "Segoe UI",sans-serif !important;
-  font-weight: normal !important;
+  font-weight: bold !important;
   font-size: 24px;
   line-height: 28px;
   color: #005BAA;
@@ -92,10 +92,15 @@ a {
   margin: 0 auto;
   padding: 0;
 }
+#iconmini {
+  width: 50px;
+  height: 50px;
+  padding: 0;
+}
 #birds {
   display: block;
-  width: 140px;
-  height: 140px;
+  width: 180px;
+  height: 180px;
   margin: 0 auto;
   margin-top: 10px;
 }
@@ -134,8 +139,8 @@ a {
 .column5 {
     display: flex;
     flex-direction: column;
-    flex-basis: 170px;
-    max-width: 170px;
+    flex-basis: 200px;
+    max-width: 200px;
     flex-grow: 0;
     flex-shrink: 0;
     margin: 2px;
