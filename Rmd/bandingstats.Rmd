@@ -139,9 +139,12 @@ This question is frequently asked by those who care about birds &mdash; whether 
 
 One way to measure the abundance of the local bird community is the number of birds captured as part of our long-term mist-netting and banding study. The bird community changes with the seasons as migrants come and go, so we examine total capture rates of individual birds during each season and overall in each year. Capture rates have declined overall, and especially during the fall season.  
 
+*Select lines at top right to view capture rates by season.*
+
 <iframe src="widget/graph_total_capturestats.html"></iframe>
 <figcaption>
-Annual capture rates at the Palomarin Field Station, 1979-2018, overall total and by season. Select lines at top right to view individual seasons. *Note: Annual totals are calculated March through February of the following calendar year, to keep an entire winter season together.*
+Annual capture rates at the Palomarin Field Station, 1979&ndash;2018.<br>
+*Note: Annual totals are calculated March through February of the following calendar year, to keep an entire winter season together.*
 </figcaption>
 
 ### Why is tracking bird populations important for bird conservation?
@@ -293,7 +296,7 @@ Former Point Blue intern Francoise Benjamin holding a newly banded woodpecker at
 <div class="column">
 Since 1966, we have been mist-netting and banding birds at the Palomarin Field Station year-round. All of the birds we capture are carefully recorded and given uniquely-numbered bands provided by the U.S. Bird Banding Laboratory. All of these data are collected by staff, volunteers, and especially the hundreds of interns who have trained at Palomarin over the years. 
 
-For more information on how we carefully capture and band birds to collect this valuable data, please watch our video: [Bird-banding and Mist-netting with Point Blue](https://www.youtube.com/watch?v=8nVXgGhQNXM&feature=youtu.be){target="_blank}
+For more information on how we carefully capture and band birds to collect this valuable data, please watch our video: [Bird-banding and Mist-netting with Point Blue](https://youtu.be/8nVXgGhQNXM){target="_blank}
 </div>
 </div>
 
