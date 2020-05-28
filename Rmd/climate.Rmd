@@ -195,6 +195,9 @@ bs_button("Golden-crowned Sparrow") %>% bs_attach_modal(id_modal = "GCSP")
 *Photo by Ryan DiGaudio*
 </figcaption>
 </div>
+</div>
+
+<div class="row">
 <div class="column5">
 ![](../images/birds/HETH.png "Hermit Thrush"){#birds}
 <figcaption>
