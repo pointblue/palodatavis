@@ -127,6 +127,7 @@ graph1 <- plot_ly() %>%
             text = ~paste0(year, ': ', lab),
             type = 'scatter',
             mode = 'markers',
+            marker = list(size = 8),
             legendgroup = ~name) %>%
   add_trace(data = sdat %>% filter(name == 'Total precipitation (mm)'),
             x = ~year,
@@ -139,6 +140,7 @@ graph1 <- plot_ly() %>%
             text = ~paste0(bioyear, ': ', lab),
             type = 'scatter',
             mode = 'markers',
+            marker = list(size = 8),
             legendgroup = ~name) %>%
   layout(yaxis = list(title = 'Temperature (\u00B0C)\n\n\n',
                       font = list(size = 14),
