@@ -90,7 +90,12 @@ See how Palomarin is home to birds migrating from thousands of miles away, much 
 </div>  
 </div>  
 
-### Plan your visit!
-Although the Palomarin Field Station is **temporarily closed to the public**, we welcome you to plan your visit in the near future. We are located at the south end of the [Point Reyes National Seashore](https://www.nps.gov/pore/index.htm){target="_blank"}, where nearly 490 bird species have been recorded, the greatest number of any national park! Visitors can drop in and join our intern and staff biologists to learn how we collect this data &mdash; and hopefully see a bird in the hand! [More information on visiting and scheduling groups.](https://www.pointblue.org/about-us/contact-visit-us/){target="_blank"}
+### Recent news from Palomarin
 
-In the meantime, please enjoy a recent [field report video](https://youtu.be/3X1ad2gnS4Q) about our banding study, or our [Palomarin blog](https://www.pointblue.org/engage-with-us/blogs/palomarin/){target="_blank"}, including a [recent post](https://www.pointblue.org/palomarin_blog/sheltering-at-palomarin/?bblinkid=216134292&bbemailid=20775611&bbejrid=1451437087){target="_blank"} about life going on at Palomarin during the shelter-in-place.
+![](../images/icons/boots.png "boots icon"){#iconmini} [Field report video](https://youtu.be/3X1ad2gnS4Q){target="_blank"}
+
+![](../images/icons/management.png "notebook icon"){#iconmini} Blog Post: [Sheltering at Palomarin](https://www.pointblue.org/palomarin_blog/sheltering-at-palomarin/?bblinkid=216134292&bbemailid=20775611&bbejrid=1451437087){target="_blank"}
+  
+  
+### Plan your future visit!
+Although the Palomarin Field Station is **temporarily closed to the public**, we welcome you to plan your visit in the near future. We are located at the south end of the [Point Reyes National Seashore](https://www.nps.gov/pore/index.htm){target="_blank"}, where nearly 490 bird species have been recorded, the greatest number of any national park! Visitors can drop in and join our intern and staff biologists to learn how we collect this data &mdash; and hopefully see a bird in the hand! [More information on visiting and scheduling groups.](https://www.pointblue.org/about-us/contact-visit-us/){target="_blank"}
