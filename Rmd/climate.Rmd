@@ -229,7 +229,7 @@ For all of these species, it's not yet clear why some birds aren't changing the 
 <div class="column">  
 Birds at Palomarin have been getting longer wings! We confirmed this surprising finding using banding data from both Palomarin and the San Francisco Bay Bird Observatory. Studies from other parts of the world have found that birds are getting smaller, thought to be related to increasing temperatures. Longer wings could indicate birds in California are getting larger, possibly in response to increasing variability in our climate or more favorable conditions than in other places.
 
-To understand why birds have been getting longer wings, future research could examing whether birds with longer wings arrive at to the Palomarin Field Station at different times than birds with shorter wings, or whether they are better at raising young or surviving the winter.
+To understand why birds have been getting longer wings, future research could examine whether birds with longer wings arrive at the Palomarin Field Station at different times than birds with shorter wings, or whether they are better at raising young or surviving the winter.
 </div>
 <div class="column-margin-left">
 ![](../images/climate/wing_chord_caption.png "Measuring the wing chord (length) of a Red-breasted Sapsucker")
