@@ -1,0 +1,145 @@
+---
+title: "Habitat and Bird Community Change"
+output: 
+  html_document:
+    theme: default
+    css: pointblue_page_style.css
+---
+
+```{r setup, echo = FALSE, warning = FALSE, message = FALSE}
+knitr::opts_chunk$set(echo = FALSE, warning = FALSE, message = FALSE, 
+                      out.width="95%", fig.asp=0.6)
+```
+
+```{js}
+//from https://www.dyn-web.com/tutorials/iframes/postmessage/height/
+
+// Get height of document
+function getDocHeight(doc) {
+    doc = doc || document;
+    // from http://stackoverflow.com/questions/1145850/get-height-of-entire-document-with-javascript
+    var body = doc.body, html = doc.documentElement;
+    var height = Math.max( body.scrollHeight, body.offsetHeight, 
+        html.clientHeight, html.scrollHeight, html.offsetHeight );
+    return height;
+}
+
+// send docHeight onload
+function sendDocHeightMsg(e) {
+    var ht = getDocHeight();
+    parent.postMessage( JSON.stringify( {'docHeight': ht} ), '*' );
+}
+
+// assign onload handler 
+if ( window.addEventListener ) {
+    window.addEventListener('load', sendDocHeightMsg, false);
+} else if ( window.attachEvent ) { // ie8
+    window.attachEvent('onload', sendDocHeightMsg);
+}
+```
+<figure>
+![](../images/habitat/gridding_caption.png "Nest searching intern")
+<figcaption>
+A nest-searching intern observing and recording bird behavior and movement.
+</figcaption>
+</figure>
+
+At the Palomarin Field Station we have been monitoring birds and their environment since 1966. Since the beginning of our study, the area adjacent to the mist nets and banding station has undergone drastic habitat change, resulting in shifts in the local bird community. Tracking the changes in the habitat alongside the changes in bird populations at Palomarin can inform bird conservation as we learn more about what environmental factors are most important for certain species to thrive. Here, you can explore the habitat changes and bird community changes we have recorded through our long-term data collection.
+
+### Over 50 years of habitat transformation
+<div class="row">  
+<div class="column">  
+<figure>
+![](../images/habitat/early70s_from_ridge_caption.png "Overlooking Palomarin study area, 1970s")
+
+![](../images/habitat/palo_overview_2006_caption.png "Overlooking Palomarin study area, 2006")
+<figcaption>
+<figcaption>
+Overlooking the Palomarin study area in the 1970s (top) and in 2006 (bottom). Notice the dark patches of Douglas fir trees on the hillside and in the flats.
+</figcaption>
+</figure>
+</div>
+<div class="column">
+During the 15 years before the field station was established, the land around Palomarin was partially cultivated for agricultural use and hosted many buildings. Since its inclusion in the nascent Point Reyes National Seashore in 1965, disturbance to the landscape has been minimal and the vegetation has gradually transformed.  
+
+In the earlier years of our study, the landscape at the field station was comprised of two distinct habitat types: the mist-netting and banding site was largely forested while the area adjacent, where much of our nest searching takes place, was dominated by short, open coastal scrub.  
+
+The vegetation across the study area has since grown in size and structure and has become a complex mix of mature scrub with tall coyote brush, poison oak, California blackberry, and a young, dense Douglas fir forest. We have documented the change in the average height of these firs over time, as well as an increase in the number of trees in the study area, and the height of shrub species like coyote brush.
+</div>
+</div>
+
+<!-- <iframe src="widget/graph_annual_vegheight.html"></iframe> -->
+<!-- <figcaption> -->
+<!-- Mean height (and standard error) of Douglas fir trees at Palomarin, 1983&ndash;2018. -->
+<!-- </figcaption> -->
+
+### Why is tracking habitat change important for bird conservation?
+
+Bird species have individual habitat requirements and preferences, and can be affected by habitat change in a number of ways. They may find it easier or harder to find food, raise young, avoid predators, or survive extreme weather conditions. As the habitat at Palomarin has transformed, we have witnessed the open coastal scrub residents that once flourished here (such as White-crowned Sparrows) fade from the study area while more forest and mixed scrub species (such as Wilson's Warblers and Swainson's Thrushes) moved in. By studying how birds within a community respond differently to changes in their environment, we can learn what they need to thrive, to help inform and guide conservation efforts. Land management and restoration projects can benefit from this type of research by understanding how best to create an environment that supports a more resilient bird community. 
+
+##### Changes in the number of breeding territories
+
+<div class="row">  
+<div class="column-margin-right">  
+![](../images/habitat/WREN23_byDennisJongsomjit_caption.png "Wrentit sitting on a nest")
+<figcaption>
+A Wrentit peering out from its nest. 
+</figcaption>
+</div>
+<div class="column">
+One way to measure the response of the breeding bird community to habitat change around Palomarin is the number of breeding bird territories. Since the early 1980s, nearly every day during the spring and summer, Point Blue staff and interns collect data on the movements and behaviors of breeding birds to create territory maps representing that season’s breeding bird activity. The number of territories provides us with a measure of how many breeding individuals of each species are present in the bird community.
+
+Extra attention is paid to four primary focal species, which are also given unique combinations of colored leg bands so we can more easily identify individuals in the field: Song Sparrows, Nuttall’s White-crowned Sparrows, Wrentits, and Wilson’s Warblers. The number of Song Sparrow and Nuttall’s White-crowned Sparrow territories have declined, while Wilson’s Warblers and Wrentits have greatly increased.
+</div>
+</div>
+
+<iframe src="widget/graph_annual_territories.html"></iframe>
+<figcaption>
+Number of territories for our 4 primary focal species each year, 1982&ndash;2018.
+</figcaption>
+
+We have found that Nuttall's White-crowned Sparrows have stayed just as successful at raising young over this time period, despite the decline in their numbers. They strongly prefer to nest in patches of open coastal scrub that have become rare at Palomarin, and they may be seeking out their preferred habitat elsewhere. 
+
+##### New species join the breeding bird community
+
+We have also seen changes in the rest of the breeding bird community, especially the addition of more species associated with mature forest and mixed scrub such as Wilson's Warblers and Swainson's Thrushes.
+
+<video class="center" width="80%" controls>
+  <source src="../images/habitat/territory_trends_animated.mp4" type="video/mp4">
+Your browser does not support the video tag.
+</video>
+<figcaption>
+Tracking the changing number and composition of breeding bird territories at Palomarin, 1982&ndash;2018. Because the breeding bird community is so diverse, this figure is limited to the 15 species that have ever ranked in the top 5 for the number of territories in one year.
+</figcaption>
+
+So far, our research has found that bird populations are more directly influenced by changes in habitat and [weather or climate](climate.html) rather than interactions with other bird species. But we expect there to be an increasing number of new interactions between species as they move in response to habitat and climate change, and future research could continue to examine this question.
+
+### How did we collect these data?
+
+<div class="row">  
+<div class="column">  
+During the breeding season (March-July), three interns spend their days stealthily tracking birds to map the boundaries of the territory each one calls home, as well as to find their nests and determine how successful each nest attempt is. The interns are trained in how to identify and follow birds by both sound and sight, as well as how to find and safely monitor their nests. A bird that sings in the same area day after day is considered a territorial individual. After months of recording the movements and territorial behavior of individual birds, we compile all of this data into territory maps for each species. 
+
+Each summer, we also collect vegetation data at 8 fixed points throughout the study area. The data helps describe the habitat succession as well as the proliferation and growth of the Douglas fir trees. At each of the 8 points, we record the size (height and width) and species of all woody plants along four 10-meter transects.
+</div>
+<div class="column-margin-left">
+![](../images/habitat/G2_brood2maps_18_caption.png "Territory map")
+<figcaption>
+A territory map for Wrentits in 2018, produced by nest-searching interns from data compiled over the season. Each circle represents the territorial area occupied by a breeding pair. 
+</figcaption>
+</div>
+</div>
+
+### Plan your visit!
+Although the Palomarin Field Station is currently closed to the public, we welcome you to plan your visit in the near future. Visitors can drop in and join our intern and staff biologists to learn how we collect this data &mdash; and hopefully see a bird in the hand! [More information on visiting and scheduling groups.](https://www.pointblue.org/about-us/contact-visit-us/){target="_blank"}
+
+
+### Related research
+There is much more to learn from these data! You can read more about what we have found here, and please [contact us](mailto:kdybala@pointblue.org) if you are interested in collaborating on future research.
+
+* There goes the neighborhood: White-crowned Sparrow nest site selection and reproductive success as local density declines. Published in *Condor*. [[View PDF](http://www.prbo.org/refs/files/12504_ElizabethL.Porzig2018.pdf){target="_blank"}] [[Read summary](http://pointblue.org/wp-content/uploads/2018/06/2018_pubbrief_White-crownedSParrowhabitatchoices_Porzig_Condor.pdf){target="_blank"}] 
+
+* Habitat suitability through time: using time series and habitat models to understand changes in bird density. Published in *Ecosphere*. [[View PDF](http://pointblue.org/wp-content/uploads/2018/06/Porzig_et_al_2014.pdf){target="_blank"}] [[Read summary](http://pointblue.org/wp-content/uploads/2018/06/2016_pubbrief_Palo-community_Porzig_etal_Ecosphere.pdf){target="_blank"}]
+
+* *A Guide to Nestling Development and Aging in Altricial Passerines*. U.S. Fish and Wildlife Service Biological Technical Publication. [[View PDF](https://digitalcommons.unl.edu/cgi/viewcontent.cgi?article=1160&context=usfwspubs){target="_blank"}]
+

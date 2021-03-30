@@ -1,0 +1,10 @@
+body{
+  padding: 0px !important;
+}
+
+#htmlwidget_container{
+  top: 0px !important;
+  bottom: 0px !important;
+  right: 0px !important;
+  left: 0px !important;
+}

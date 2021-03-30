@@ -1,0 +1,268 @@
+---
+title: "Tracking a Changing Climate"
+output: 
+  html_document:
+    theme: default
+    css: pointblue_page_style.css
+---
+
+```{r setup, echo = FALSE, warning = FALSE, message = FALSE}
+knitr::opts_chunk$set(echo = FALSE, warning = FALSE, message = FALSE, 
+                      out.width="95%", fig.asp=0.6)
+
+library(htmltools)
+library(bsplus)
+library(shiny)
+
+# set up modals for each of the focal species below
+bs_modal(id = 'WIWA', 
+         title = "Wilson's Warbler: arriving later", 
+         body = tagList(tags$p("In recent years, Wilson's Warblers have tended to arrive later than average."),
+                        tags$img(src = "fig/WIWA_migration.jpg", 
+                                 width = '300px', 
+                                 class = 'center')))
+
+bs_modal(id = 'SWTH', 
+         title = "Swainson's Thrush: no change", 
+         body = tagList(tags$p("So far, there has been no detectable change in Swainson's Thrush arrival dates over time."),
+                        tags$img(src = "fig/SWTH_migration.jpg", 
+                                 width = '300px', 
+                                 class = "center"),
+                        tags$figcaption("Annual arrival dates to Palomarin, 1980-2016")))
+
+bs_modal(id = 'OCWA', 
+         title = "Orange-crowned Warbler: arriving earlier",
+         body = tagList(tags$p("In recent years, Orange-crowned Warblers have tended to arrive earlier than average."),
+                        tags$img(src = "fig/OCWA_migration.jpg", 
+                                 width = '300px', 
+                                 class = "center")))
+
+
+
+bs_modal(id = 'FOSP', 
+         title = "Fox Sparrow: no change", 
+         body = tagList(tags$p("So far, there has been no detectable change in Fox Sparrow arrival dates over time."),
+                        tags$img(src = "fig/FOSP_migration.jpg", 
+                                 width = '300px', 
+                                 class = "center")))
+
+bs_modal(id = 'GCSP', 
+         title = "Golden-crowned Sparrow: arriving earlier", 
+         body = tagList(tags$p("In recent years, Golden-crowned Sparrows have tended to arrive earlier than average."),
+                        tags$img(src = "fig/GCSP_migration.jpg", 
+                                 width = '300px', 
+                                 class = "center")))
+
+bs_modal(id = 'HETH', 
+         title = "Hermit Thrush: arriving earlier", 
+         body = tagList(tags$p("In recent years, Hermit Thrushes have tended to arrive earlier than average."),
+                        tags$img(src = "fig/HETH_migration.jpg", 
+                                 width = '300px', 
+                                 class = 'center')))
+
+bs_modal(id = 'RCKI', 
+         title = "Ruby-crowned Kinglet: arriving earlier", 
+         body = tagList(tags$p("In recent years, Ruby-crowned Kinglets have tended to arrive earlier than average."),
+                        tags$img(src = "fig/RCKI_migration.jpg", 
+                                 width = '300px', 
+                                 class = 'center')))
+```
+
+```{js}
+//from https://www.dyn-web.com/tutorials/iframes/postmessage/height/
+
+// Get height of document
+function getDocHeight(doc) {
+    doc = doc || document;
+    // from http://stackoverflow.com/questions/1145850/get-height-of-entire-document-with-javascript
+    var body = doc.body, html = doc.documentElement;
+    var height = Math.max( body.scrollHeight, body.offsetHeight, 
+        html.clientHeight, html.scrollHeight, html.offsetHeight );
+    return height;
+}
+
+// send docHeight onload
+function sendDocHeightMsg(e) {
+    var ht = getDocHeight();
+    parent.postMessage( JSON.stringify( {'docHeight': ht} ), '*' );
+}
+
+// assign onload handler 
+if ( window.addEventListener ) {
+    window.addEventListener('load', sendDocHeightMsg, false);
+} else if ( window.attachEvent ) { // ie8
+    window.attachEvent('onload', sendDocHeightMsg);
+}
+
+// get scroll position from parent for positioning modal?
+// https://stackoverflow.com/questions/24805274/bootstrap-modal-at-top-of-iframe-regardless-of-scroll-position-how-do-i-positio
+window.addEventListener('message', function(event) {
+  var messageContent = event.data.split(':');
+  var topOffset = messageContent[0];
+  var currentScroll = messageContent[1];
+
+  //calculate padding value and update the modal top-padding
+  // from https://stackoverflow.com/questions/32018499/position-bootbox-dynamically-inside-iframe
+  $("body").on("shown.bs.modal", ".modal", function() {
+     $(this).find('div.modal-dialog').css("top",currentScroll - topOffset + 80 + 'px');
+    });
+  }, false);
+```
+<figure>
+![](../docs/fig/wren_eggs_caption.png "Wrentit nest with three eggs")
+<figcaption>
+A Wrentit nest with three eggs
+</figcaption>
+</figure>
+Point Blue staff and interns collect weather data several times each day at the Palomarin Field Station to understand how climate change (over the long-term) and weather fluctuations (over the short-term) affect birds. Weather plays a huge role in the daily lives of birds, from successfully raising young to surviving the winter, while climate change can affect the long-term stability of bird populations.
+
+### Record temperatures in 2017
+To examine long-term weather patterns, we calculated annual average temperatures and total rainfall at Palomarin since 1976. Both measures have fluctuated over the last 40+ years, but temperatures have recently trended warmer. Through 2019, the most recent year of data included here, the hottest year we’ve recorded was in 2017. The wettest year we’ve recorded was in 1997-98 (during a strong El Ni&ntilde;o). Recent years have been relatively dry, punctuated by a few wet winters. 
+
+<iframe src="widget/graph_annual_weatherstats.html"></iframe>
+<figcaption>
+Average temperatures and rainfall recorded at the Palomarin Field Station each year, 1976&ndash;2019. Average temperatures are calculated from the average of the daily high and low temperatures. Rainfall totals are calculated from July through June of the following calendar year, to capture an entire winter rainy season.
+</figcaption>
+
+### Why is tracking weather and climate important for bird conservation?
+Understanding how birds are affected by weather and climate requires long-term monitoring over decades. Because of our long-term bird monitoring and weather data collection at Palomarin, Point Blue has been able to identify changes in both the bird populations and the local climate, and uncover the links between them. This information helps us understand how well birds are adapting to climate change, and which species may be more vulnerable to climate change and may require more conservation attention. Here are just a couple examples of how our research has identified how birds are responding to global climate change.
+
+##### Inconsistent Changes in Migration Timing
+A changing climate may influence the seasonal timing (“phenology”) of blooming plants, hatching insects, and bird migration or nesting. In some cases, birds may not be able to easily change the timing of their migration to keep up with changes in the timing of their plant and insect food supplies, while others are shifting to try to stay in sync.
+
+We have examined the dates migratory species arrive at Palomarin in the spring, and found that some species are arriving earlier (Orange-crowned Warbler), some are arriving later (Wilson’s Warbler), while others haven’t changed at all (Swainson’s Thrush).
+
+<div class="row">
+<div class="column5">
+![](../images/birds/WIWA.png "Wilson's Warbler"){#birds}
+<figcaption>
+```{r}
+bs_button("Wilson's Warbler") %>% bs_attach_modal(id_modal = "WIWA")
+```
+<br>
+  
+*Photo by Hannah Conley / Point Blue*
+</figcaption>
+</div>
+<div class="column5">
+![](../images/birds/SWTH.png "Swainson's Thrush"){#birds}
+<figcaption>
+```{r}
+bs_button("Swainson's Thrush") %>% bs_attach_modal(id_modal = "SWTH")
+```
+<br>
+  
+*Photo by Ian Tait / Point Blue*
+</figcaption>
+</div>
+<div class="column5">
+![](../images/birds/OCWA.png "Orange-crowned Warbler"){#birds}
+<figcaption>
+```{r}
+bs_button("Orange-crowned Warbler") %>% bs_attach_modal(id_modal = "OCWA")
+```
+<br>
+  
+*Photo by Rich Stallcup*
+</figcaption>
+</div>
+</div>
+
+The timing of bird arrivals in spring is thought to be adapted to the timing of food availability for successfully raising young, which may also be shifting with climate change. Earlier spring arrivals are consistent with warming trends and an earlier onset of spring. However, birds also need to be in good enough body condition to migrate, which might create delays in their arrivals at Palomarin. 
+
+For species that arrive at Palomarin in the fall, Fox Sparrow hasn't changed at all, while the others are all arriving earlier. The timing of bird arrivals in fall likely reflect conditions to our north, with earlier fall arrivals suggesting an earlier end to their nesting season. 
+
+<div class="row">
+<div class="column5">
+![](../images/birds/FOSP.png "Fox Sparrow"){#birds}
+<figcaption>
+```{r}
+bs_button("Fox Sparrow") %>% bs_attach_modal(id_modal = "FOSP")
+```
+<br>
+  
+*Photo by Hannah Conley / Point Blue*
+</figcaption>
+</div>
+<div class="column5">
+![](../images/birds/GCSP.png "Golden-crowned Sparrow"){#birds}
+<figcaption>
+```{r}
+bs_button("Golden-crowned Sparrow") %>% bs_attach_modal(id_modal = "GCSP")
+```
+<br>
+  
+*Photo by Ryan DiGaudio*
+</figcaption>
+</div>
+<div class="column5">
+![](../images/birds/HETH.png "Hermit Thrush"){#birds}
+<figcaption>
+```{r}
+bs_button("Hermit Thrush") %>% bs_attach_modal(id_modal = "HETH")
+```
+<br>
+  
+*Photo by Miguel Demeulemeester / Point Blue*
+</figcaption>
+</div>
+<div class="column5">
+![](../images/birds/RCKI.png "Ruby-crowned Kinglet"){#birds}
+<figcaption>
+```{r}
+bs_button("Ruby-crowned Kinglet") %>% bs_attach_modal(id_modal = "RCKI")
+```
+<br>
+  
+*Photo by Point Blue*
+</figcaption>
+</div>
+</div>
+
+For all of these species, it's not yet clear why some birds aren't changing the timing of migration (yet), and whether birds that are shifting the timing of their migration are able to keep up with changes in their environment. Future research could examine whether individuals that arrive earlier or later are more successful in raising young or surviving the winter, whether the optimal arrival time has changed over the years, and whether it depends on [how far the birds are migrating](connections.html).
+
+##### Changes in Body Size
+<div class="row">  
+<div class="column">  
+Birds at Palomarin have been getting longer wings! We confirmed this surprising finding using banding data from both Palomarin and the San Francisco Bay Bird Observatory. Studies from other parts of the world have found that birds are getting smaller, thought to be related to increasing temperatures. Longer wings could indicate birds in California are getting larger, possibly in response to increasing variability in our climate or more favorable conditions than in other places.
+
+To understand why birds have been getting longer wings, future research could examing whether birds with longer wings arrive at to the Palomarin Field Station at different times than birds with shorter wings, or whether they are better at raising young or surviving the winter.
+</div>
+<div class="column-margin-left">
+![](../images/climate/wing_chord_caption.png "Measuring the wing chord (length) of a Red-breasted Sapsucker")
+<figcaption>
+Measuring the wing chord (length) of a Red-breasted Sapsucker. Wing chord was one of the measurements found to be increasing over time.
+</figcaption>
+</div>
+</div>
+
+### How did we collect these data?
+<div class="row">
+<div class="column-margin-right">
+<figure>
+![](../images/climate/weather_station_caption.png "Palo weather station"){#portrait}
+<figcaption>
+Solar-powered weather station at Palomarin
+</figcaption>
+</figure>
+</div>
+<div class="column">
+The tools have changed over time, but we have been collecting weather data on site since 1968, including daily records of precipitation, fog, temperature, cloud cover, wind, and barometric pressure. The bird body size and arrival dates data come from our long-term mist netting and banding operation. All of these data are collected by staff, volunteers, and especially the hundreds of interns who have trained at Palomarin over the years. 
+</div>
+</div>
+
+### Plan your visit!
+Although the Palomarin Field Station is currently closed to the public, we welcome you to plan your visit in the near future. You can see our weather station and watch how we collect weather data during a bird banding demonstration. Visitors can drop in and join our intern and staff biologists to learn how we collect this data &mdash; and hopefully see a bird in the hand! [More information on visiting and scheduling groups.](https://www.pointblue.org/about-us/contact-visit-us/){target="_blank"}
+
+### Related research
+There is much more to learn from these data! You can read more about what we have found here, and please [contact us](mailto:kdybala@pointblue.org) if you are interested in collaborating on future research.
+
+* Migratory bird arrivals. Pages 232&ndash;242 in *Indicators of Climate Change in California*. [[View PDF](https://oehha.ca.gov/media/downloads/climate-change/report/2018caindicatorsreportmay2018.pdf){target="_blank"}]
+
+* Avian body size changes and climate change: warming or increasing variability? Published in *Global Change Biology*. [[View PDF](http://www.prbo.org/refs/files/12135_Goodman.pdf){target="_blank"}]
+
+* Evidence of the effects of climate change on landbirds in western North America: A review and recommendations for future research. Published in *Western Field Ornithologists*. [[View PDF](http://www.prbo.org/refs/files/12453_Seavy_etal2018.pdf){target="_blank"}] 
+
+* Projecting demographic responses to climate change: adult and juvenile survival respond differently to direct and indirect effects of weather in a passerine population. Published in *Global Change Biology*. [[View PDF](http://www.prbo.org/refs/files/12253_KristenE.Dybala2013.pdf)] [[Read summary](http://pointblue.org/wp-content/uploads/2018/06/2013_pubbrief_paentsvyoungsparrowsclimatechange_Dybala_GlobalChange.pdf){target="_blank"}] 
+
+

@@ -1,0 +1,138 @@
+---
+title: "Crossroads & Connections"
+output: 
+  html_document:
+    theme: default
+    css: pointblue_page_style.css
+---
+
+```{r setup, echo = FALSE, warning = FALSE, message = FALSE}
+knitr::opts_chunk$set(echo = FALSE, warning = FALSE, message = FALSE, 
+                      out.width="95%", fig.asp=0.6)
+```
+
+```{js}
+//from https://www.dyn-web.com/tutorials/iframes/postmessage/height/
+
+// Get height of document
+function getDocHeight(doc) {
+    doc = doc || document;
+    // from http://stackoverflow.com/questions/1145850/get-height-of-entire-document-with-javascript
+    var body = doc.body, html = doc.documentElement;
+    var height = Math.max( body.scrollHeight, body.offsetHeight, 
+        html.clientHeight, html.scrollHeight, html.offsetHeight );
+    return height;
+}
+
+// send docHeight onload
+function sendDocHeightMsg(e) {
+    var ht = getDocHeight();
+    parent.postMessage( JSON.stringify( {'docHeight': ht} ), '*' );
+}
+
+// assign onload handler 
+if ( window.addEventListener ) {
+    window.addEventListener('load', sendDocHeightMsg, false);
+} else if ( window.attachEvent ) { // ie8
+    window.attachEvent('onload', sendDocHeightMsg);
+}
+```
+
+<figure>
+![](../images/connections/gcsp_caption.png "Golden-crowned Sparrow with a blue band")
+<figcaption>
+A color-banded Golden-crowned Sparrow
+</figcaption>
+</figure>
+
+Since the founding of the Palomarin Field Station in 1966, we have wanted to know where birds go when they leave Palomarin, or where they've been before they arrive. These comings and goings are always an exciting event as we welcome back and then say farewell to these seasonal animals each year &mdash; and in some cases, get to learn where they’ve been. Similarly, we cherish the connections with interns who come to Palomarin from all over the country and the world to study the birds at Palomarin for a "bird season"!
+
+### Seasonal shifts in the bird community
+Some species are present at Palomarin all year, while others are only here for a few months, or even a few days each year as they travel thousands of miles on migration. We have documented these seasonal shifts in the number of birds captured each month as part of our long-term mist-netting and banding study. 
+
+<iframe src="widget/graph_seasonal_capturestats.html"></iframe>
+<figcaption>
+Monthly capture rates at the Palomarin Field Station, 2008-2018.
+</figcaption>
+
+Hermit Thrushes and Golden-crowned Sparrows spend the spring and summer as far north as Alaska, and then migrate to spend the fall and winter with us. Wilson's Warblers arrive in the spring, followed by Swainson's Thrushes about a month later, and they both stay through the summer breeding season. They then migrate to the tropics of Latin America to spend the winter. Wrentits are present at Palomarin year-round, spending time with all four of these migratory species through the seasons. Note that the capture rates during the summer increase dramatically as new young birds leave the nest!
+
+### Why is understanding migratory pathways important for bird conservation?
+Learning where birds go is not only exciting, it can help us better understand the challenges birds face, and how best to conserve them. Each season plays an important role in the lives of the bird species we study, and events and conditions (good vs. poor) at one location can carry over to affect birds during other periods of their lives. By understanding the connections these birds have to other places, and the different challenges they may face in each region, we can collaborate with partners along their migratory pathways to conserve these species, well into the future. 
+
+##### Adopting new technology
+Banding birds was the first stage of exploring the migration routes that connect banding stations, but because banding stations are uncommon, it's rare that birds we band get recaptured at another station far away. 
+
+<div class="row">  
+<div class="column-margin-right">
+![](../images/connections/gcsp_gls_annotated_caption.png "Golden-crowned Sparrow carrying a light-level geolocator")
+<figcaption>
+A banded Golden-crowned Sparrow carries a light-level geolocator (note the small antenna on the back).
+</figcaption>
+</div>
+<div class="column">  
+Now, miniaturized technologies have finally helped us unlock these migration mysteries, by tracking birds throughout the year. The birds are outfitted with tiny backpacks, called geolocators, that collect data on their locations. And when birds return to Palomarin after migrating, we can remove the backpacks, download the data, and find out where they went!
+
+Light-level geolocators collect data on light intensity, and along with their internal clocks, allow us to determine sunrise and sunset times. With those data, we can estimate their latitude and longitude to determine their location each day. We also use another type of geolocator that collects GPS data.
+</div>
+</div>
+
+##### Palomarin is a West Coast migration crossroads
+We have discovered that some birds travel to Palomarin from thousands of miles away. Golden-crowned Sparrows nest in southern Alaska before spending the fall, winter, and early spring at Palomarin while Swainson’s Thrushes that nest near Palomarin leave us to spend the winter in Mexico, primarily on the West Coast.
+
+<iframe src="widget/migration_map.html"></iframe>
+<figcaption>
+Each point represents an individual bird we tracked on their migration. The coordinates are the average of several locations collected throughout the season they were away from Palomarin.
+</figcaption>
+
+Our research has also found that neighboring populations of breeding Swainson's Thrush in the Sierra Nevada and Cascades travel much farther to Central and South America, and experience greater amounts of habitat loss. These findings provide insights into why some species are declining in only certain parts of their range, and suggest when and where more conservation attention is needed.
+
+### Palomarin connects humans too!
+One of the most special things about the Palomarin Field Station is the people. Specifically, the interns who come to learn, and live there each season make the field station a home, and one where lasting relationships are made. Since our founding, Palomarin has hosted over 700 interns and volunteers from over 20 countries. And just like the birds, many of these biologists leave, but their connections to the place remain. 
+
+<figure>
+![](../images/connections/KTCH2018_summer_caption_large.png "Palomarin interns and staff, spring/summer 2018")
+<figcaption>
+Palomarin interns & staff pose for the seasonal crew photo, spring/summer 2018.
+</figcaption>
+</figure>
+
+### How did we collect these data?
+All birds fitted with geolocator tags (GPS and light-level tags) are either captured during our normal long-term mist-netting and banding operation at Palomarin, or during additional banding operations using mist nets or potter traps. The seasonal timing data showing when species are at Palomarin are also from the long-term banding study.
+
+<div class="row">
+<div class="column">
+<figure>
+![](../images/connections/banding_lab_caption.png "Palomarin biologists recording data in the banding lab")
+<figcaption>
+Palomarin biologists collect long-term banding data in our banding lab.
+</figcaption>
+</figure>
+</div>
+<div class="column">
+<figure>
+![](../images/connections/MGWA-with-band_by-Stefanie-Krantz_caption.png "A banded MacGillivray’s Warbler")
+<figcaption>
+A banded MacGillivray’s Warbler.
+</figcaption>
+</figure>
+</div>
+</div>
+
+### Plan your visit!
+Although the Palomarin Field Station is currently closed to the public, we welcome you to plan your visit in the near future. Visitors can drop in and join our intern and staff biologists to learn how we collect this data &mdash; and hopefully see a bird in the hand! [More information on visiting and scheduling groups.](https://www.pointblue.org/about-us/contact-visit-us/){target="_blank"}
+
+### Related research
+There is much more to learn from these data! You can read more about what we have found here, and please [contact us](mailto:kdybala@pointblue.org) if you are interested in collaborating on future research.
+
+* Migration tracking reveals geographic variation in the vulnerability of a Nearctic-Neotropical migrant bird. Published in *Scientific Reports*. [[View PDF](https://rdcu.be/b3fs8){target="_blank"}] [[Read summary](http://rdjzr2agvvkijm6n3b66365n-wpengine.netdna-ssl.com/wp-content/uploads/2020/04/pubbrief_2020_SwainsonsThrushVulnerabilities_Humple_etal_ScientificReports.pdf){target="_blank"}] [[Behind the scenes blog post!](https://natureecoevocommunity.nature.com/channels/521-behind-the-paper/posts/64994-unraveling-migration-and-conservation-mysteries){target="_blank"}]
+
+* Classic pattern of leap-frog migration in Sooty Fox Sparrow (*Passerella iliaca unalaschcensis*) is not supported by direct migration tracking of individual birds. Published in *Auk*. [[View PDF](http://www.prbo.org/refs/files/12529_Fraser_etal2018.pdf){target="_blank"}]
+
+* Migratory geography of Golden-crowned Sparrows from two wintering regions. Published in *Animal Migration*. [[View PDF](http://www.prbo.org/refs/files/12429_CormierRL2016.pdf){target="_blank"}] [[Read summary](http://rdjzr2agvvkijm6n3b66365n-wpengine.netdna-ssl.com/wp-content/uploads/2018/06/2016_pubbrief_GCSPmigration_Cormier_etal_AnimalMigration.pdf){target="_blank"}]  
+
+* Migration patterns of San Francisco Bay Area Hermit Thrushes differ across a fine spatial scale. Published in *Animal Migration*. [[View PDF](http://www.prbo.org/refs/files/12393_Nelson_etal2016.pdf){target="_blank"}] [[Read summary](http://pointblue.org/wp-content/uploads/2018/06/2016_pubbrief_BirdsDontFlock_Nelson_etal_AnimalMigration.pdf){target="_blank"}]  
+
+* Geolocator tags reveal strong migratory connectivity and within-winter movements for coastal California Swainson’s Thrushes. Published in *Auk*. [[View PDF](http://www.prbo.org/refs/files/12248_Cormier2013.pdf){target="_blank"}] [[Read summary](http://pointblue.org/wp-content/uploads/2018/06/2013_pubbrief_swthgeolocator_Cormieretal_June2013.pdf){target="_blank"}]  
+
+* Full list of [Palomarin publications](https://sites.google.com/pointblue.org/palomarinresources/publications){target="_blank"}
