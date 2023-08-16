@@ -120,7 +120,7 @@ A banded MacGillivray’s Warbler.
 </div>
 
 ### Plan your visit!
-We welcome visitors to the Palomarin Field Station! We are located at the south end of the [Point Reyes National Seashore](https://www.nps.gov/pore/index.htm){target="_blank"}, a hotspot for avian biodiversity with nearly 490 bird species have been recorded %mdash; the greatest number of any national park! Visitors are welcome to explore our Nature Center, take a walk down to Fern Canyon along our Nature Trail, and join our scientists for a banding demonstration to learn how we collect this important data. [Check here](https://www.pointblue.org/about-us/contact-visit-us/){target="_blank"} for more information about how to check our current banding schedule and schedule a group visit.
+We welcome visitors to the Palomarin Field Station! We are located at the south end of the [Point Reyes National Seashore](https://www.nps.gov/pore/index.htm){target="_blank"}, a hotspot for avian biodiversity with nearly 490 bird species have been recorded &mdash; the greatest number of any national park! Visitors are welcome to explore our Nature Center, take a walk down to Fern Canyon along our Nature Trail, and join our scientists for a banding demonstration to learn how we collect this important data. [Check here](https://www.pointblue.org/about-us/contact-visit-us/){target="_blank"} for more information about how to check our current banding schedule and schedule a group visit.
 
 ### Related research
 There is much more to learn from these data! You can read more about what we have found here, and please [contact us](mailto:kdybala@pointblue.org) if you are interested in collaborating on future research.
