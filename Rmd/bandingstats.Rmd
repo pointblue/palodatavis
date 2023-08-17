@@ -127,10 +127,6 @@ window.addEventListener('message', function(event) {
 
 ```
 
-
-##### Year-Round Residents
-Present at Palo all year, these bird species often maintain their territories even during the nonbreeding season. Changes in the capture rates of these species are most likely to reflect changes to the local habitat and climate. While most of these populations are relatively stable, we have seen declines in Nuttall's White-crowned Sparrows and Song Sparrows, thought to be related to the [local habitat changes](https://www.pointblue.org/our-work/keystone-datasets/habitat-and-community-change/).
-
 <div class="row">
 <div class="column5">
 ![](../images/birds/WREN.png "Wrentit"){#birds}
