@@ -1,7 +1,11 @@
-
 # READ ME -----------------------------------------------------------------
-
-# graph annual weather stats: total bioyear rain, average temps
+# Script to produce interactive figure with annual weather stats at Palomarin,
+# including: total bioyear rain, average temps
+#
+# AUTHORS: Kristen Dybala (original), updated by Sarah Needles (2024 capstone project)
+#
+# CHANGES:
+# 2024: exclude temps of "99" as NA values
 
 #PACKAGES
 library(tidyverse)
@@ -13,7 +17,8 @@ library(plotly)
 # wthrpath <- 'Z:\Terrestrial\programs_and_projects\palomarin\Palodata\Weather\compiled\paloallwthr.dbf'
 
 # local copy:
-wthrpath <- "rawdat/paloallwthr.dbf"
+#wthrpath <- "rawdat/paloallwthr.dbf"
+wthrpath <- 'rawdat/paloallwthr_12Apr2024.csv'
 
 # PALETTE
 pointblue.palette <- c('#4495d1', '#74b743', '#f7941d', '#005baa', '#bfd730',
@@ -23,20 +28,31 @@ pointblue.palette <- c('#4495d1', '#74b743', '#f7941d', '#005baa', '#bfd730',
 out <- "docs/widget/graph_annual_weatherstats.html"
 
 # SUMMARIZE DATA ---------------------------------------------------------
-
-dat <- foreign::read.dbf(wthrpath) %>% 
-  select(DATE, TIME, RAIN, RAIN_INCH, RAIN_CUMUL, HIGH, LOW) %>% 
-  mutate(TIME = case_when(TIME == '9999' ~ NA_character_,
+rawdat <- read_csv(wthrpath) |>  
+  select(DATE, TIME, RAIN, RAIN_CUMUL, HIGH, LOW) |> 
+  mutate(DATE = as.Date(DATE, format = '%m/%d/%Y'),
+         TIME = case_when(TIME == '9999' ~ NA_character_,
                           TRUE ~ as.character(TIME)),
          RAIN = case_when(RAIN == 999.99 ~ NA_real_,
                           TRUE ~ RAIN),
-         RAIN_INCH = case_when(RAIN_INCH == 99.99 ~ NA_real_,
-                             TRUE ~ RAIN_INCH),
-         HIGH = case_when(HIGH == 999 ~ NA_integer_,
+         HIGH = case_when(HIGH == 999 | HIGH == 99 ~ NA_integer_, 
                           TRUE ~ HIGH),
-         LOW = case_when(LOW == 999 ~ NA_integer_,
-                         TRUE ~ LOW)) %>% 
-  filter(DATE >= '1976-01-01' & RAIN_CUMUL == TRUE) %>% 
+         LOW = case_when(LOW == 999 | LOW == 99 ~ NA_integer_,
+                         TRUE ~ LOW)) |> 
+  filter(DATE >= '1976-01-01')
+
+str(rawdat)
+summary(rawdat)
+testthat::expect_lt(max(rawdat$HIGH, na.rm = TRUE), 50)
+testthat::expect_lt(max(rawdat$LOW, na.rm = TRUE), 25)
+
+rawdat |> filter(is.na(RAIN) & RAIN_CUMUL) # one missing 2020-09-29 (and likely zero)
+rawdat |> filter(DATE == '2020-09-29')
+rawdat |> filter(DATE == '2020-09-28')
+rawdat |> filter(DATE == '2020-09-30')
+
+dat = rawdat |> 
+  filter(RAIN_CUMUL) |> 
   mutate(year = as.numeric(format(DATE, '%Y')),
          month = as.numeric(format(DATE, '%m')),
          bioyear = case_when(month >= 7 ~ paste0(year, '-', substr(year+1, 3, 4)),
@@ -45,23 +61,30 @@ dat <- foreign::read.dbf(wthrpath) %>%
          bioyearx = case_when(month >= 7 ~ year,
                               month <= 6 ~ year - 1),
          AVGTEMP = (HIGH + LOW) / 2) 
-  
-raindat <- dat %>% 
-  group_by(bioyear, bioyearx) %>% 
-  summarize(rain = sum(RAIN),
-            nrain = length(!is.na(RAIN))) %>% 
+summary(dat)
+
+raindat <- dat |> 
+  group_by(bioyear, bioyearx) |> 
+  summarize(rain = sum(RAIN, na.rm = TRUE),
+            nrain = length(!is.na(RAIN)),
+            .groups = 'drop') |>  
   filter(bioyearx >= 1975)
+str(raindat)
+summary(raindat)
 
-tempdat <- dat %>% 
-  group_by(year) %>% 
+tempdat <- dat |> 
+  group_by(year) |> 
   summarize(avgtemp = mean(AVGTEMP, na.rm = TRUE),
-            navgtemp = length(!is.na(AVGTEMP)))
+            navgtemp = length(!is.na(AVGTEMP)),
+            .groups = 'drop')
+str(tempdat)
+summary(tempdat)
 
-sdat <- full_join(tempdat, raindat, by = c('year' = 'bioyearx')) %>% 
+sdat <- full_join(tempdat, raindat, by = c('year' = 'bioyearx')) |> 
   mutate(rain = case_when(nrain < 300 ~ NA_real_,
-                          TRUE ~ rain)) %>% 
-  select(year, bioyear, avgtemp, rain) %>% 
-  pivot_longer(avgtemp:rain) %>% 
+                          TRUE ~ rain)) |> 
+  select(year, bioyear, avgtemp, rain) |> 
+  pivot_longer(avgtemp:rain) |> 
   mutate(lab = case_when(name == 'rain' ~ format(round(value, digits = 0), nsmall = 0),
                          name == 'avgtemp' ~ format(round(value, digits = 2), nsmall = 2)),
          lab = case_when(name == 'rain' ~ paste0(lab, 'mm'),
@@ -93,8 +116,9 @@ pal <- setNames(pointblue.palette[c(2, 4)],
                 c('Annual average temperature (\u00B0C)', 
                   'Total precipitation (mm)'))
 
-graph1 <- plot_ly() %>%
-  add_trace(data = dat2 %>% filter(name == 'Annual average temperature (\u00B0C)'),
+graph1 <- plot_ly() |> 
+  # smoothed trend line for temp
+  add_trace(data = dat2 |>  filter(name == 'Annual average temperature (\u00B0C)'),
             x = ~x,
             y = ~smooth,
             color = ~name,
@@ -104,8 +128,9 @@ graph1 <- plot_ly() %>%
             type = 'scatter',
             mode = 'lines',
             legendgroup = ~name,
-            showlegend = FALSE) %>% 
-  add_trace(data = dat2 %>% filter(name == 'Total precipitation (mm)'),
+            showlegend = FALSE) |> 
+  # smoothed trend line for precip
+  add_trace(data = dat2 |>  filter(name == 'Total precipitation (mm)'),
             x = ~x,
             y = ~smooth,
             yaxis = 'y2',
@@ -116,8 +141,9 @@ graph1 <- plot_ly() %>%
             type = 'scatter',
             mode = 'lines',
             legendgroup = ~name,
-            showlegend = FALSE) %>% 
-  add_trace(data = sdat %>% filter(name == 'Annual average temperature (\u00B0C)'),
+            showlegend = FALSE) |> 
+  # annual points and connecting lines for temp
+  add_trace(data = sdat |>  filter(name == 'Annual average temperature (\u00B0C)'),
             x = ~year,
             y = ~value,
             color = ~name,
@@ -126,9 +152,10 @@ graph1 <- plot_ly() %>%
             hoverinfo = 'text',
             text = ~paste0(year, ': ', lab),
             type = 'scatter',
-            mode = 'markers',
+            mode = 'markers+lines',
             marker = list(size = 8),
-            legendgroup = ~name) %>%
+            legendgroup = ~name) |> 
+  # annual points and connecting lines for precip
   add_trace(data = sdat %>% filter(name == 'Total precipitation (mm)'),
             x = ~year,
             y = ~value,
@@ -139,9 +166,9 @@ graph1 <- plot_ly() %>%
             hoverinfo = 'text',
             text = ~paste0(bioyear, ': ', lab),
             type = 'scatter',
-            mode = 'markers',
+            mode = 'markers+lines',
             marker = list(size = 8),
-            legendgroup = ~name) %>%
+            legendgroup = ~name) |> 
   layout(yaxis = list(title = 'Temperature (\u00B0C)\n\n\n',
                       font = list(size = 14),
                       showline = TRUE,
