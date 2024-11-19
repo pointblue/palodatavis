@@ -77,6 +77,8 @@ summary(raindat)
 tempdat <- dat |> 
   group_by(year) |> 
   summarize(avgtemp = mean(AVGTEMP, na.rm = TRUE),
+            low = mean(LOW, na.rm = TRUE),
+            high = mean(HIGH, na.rm = TRUE),
             navgtemp = length(!is.na(AVGTEMP)),
             .groups = 'drop')
 str(tempdat)
@@ -88,16 +90,20 @@ sdat <- full_join(tempdat, raindat, by = c('year' = 'bioyearx')) |>
   # sum unknown
   mutate(rain = case_when(nrain < 300 ~ NA_real_,
                           TRUE ~ rain)) |> 
-  select(year, bioyear, avgtemp, rain) |> 
+  select(year, bioyear, avgtemp, high, low, rain) |> 
   pivot_longer(avgtemp:rain) |> 
   # format labels for interactive graphics
   mutate(lab = case_when(name == 'rain' ~ format(round(value, digits = 0), nsmall = 0),
-                         name == 'avgtemp' ~ format(round(value, digits = 2), nsmall = 2)),
+                         name %in% c('avgtemp', 'low', 'high') ~ 
+                           format(round(value, digits = 2), nsmall = 2)),
          lab = case_when(name == 'rain' ~ paste0(lab, 'mm'),
-                         name == 'avgtemp' ~ paste0(lab, '\u00B0C')),
+                         name %in% c('avgtemp', 'low', 'high') ~ 
+                           paste0(lab, '\u00B0C')),
          name = recode(name,
                        rain = 'Total precipitation (mm)',
-                       avgtemp = 'Annual average temperature (\u00B0C)'),
+                       avgtemp = 'Annual average temperature (\u00B0C)',
+                       low = 'Annual average low temperature (\u00B0C)',
+                       high = 'Annual average high temperature (\u00B0C)'),
          name = as.factor(name))
 
 # FIT SMOOTHED LINES ------------------------------------------------------
@@ -118,12 +124,14 @@ dat2 <- data.frame(x = gg1$data[[1]]$x,
 # PLOTLY ------------------------------------------------------------------
 
 # build interactive plot
-pal <- setNames(pointblue.palette[c(2, 4)], 
+pal <- setNames(pointblue.palette[c(2, 1, 3, 4)], 
                 c('Annual average temperature (\u00B0C)', 
+                  'Annual average low temperature (\u00B0C)',
+                  'Annual average high temperature (\u00B0C)',
                   'Total precipitation (mm)'))
 
 graph1 <- plot_ly() |> 
-  # smoothed trend line for temp
+  # smoothed trend line for avgtemp
   add_trace(data = dat2 |>  filter(name == 'Annual average temperature (\u00B0C)'),
             x = ~x,
             y = ~smooth,
@@ -135,7 +143,31 @@ graph1 <- plot_ly() |>
             mode = 'lines',
             legendgroup = ~name,
             showlegend = FALSE) |> 
-  # smoothed trend line for precip
+  # # smoothed trend line for avg low temp
+  # add_trace(data = dat2 |>  filter(name == 'Annual average low temperature (\u00B0C)'),
+  #           x = ~x,
+  #           y = ~smooth,
+  #           color = ~name,
+  #           colors = pal,
+  #           line = list(width = 3),
+  #           hoverinfo = 'none',
+  #           type = 'scatter',
+  #           mode = 'lines',
+  #           legendgroup = ~name,
+  #           showlegend = FALSE) |>
+  # # smoothed trend line for avg high temp
+  # add_trace(data = dat2 |>  filter(name == 'Annual average high temperature (\u00B0C)'),
+  #           x = ~x,
+  #           y = ~smooth,
+  #           color = ~name,
+  #           colors = pal,
+  #           line = list(width = 3),
+  #           hoverinfo = 'none',
+  #           type = 'scatter',
+  #           mode = 'lines',
+  #           legendgroup = ~name,
+  #           showlegend = FALSE) |>
+  # smoothed trend line for precip on second y axis
   add_trace(data = dat2 |>  filter(name == 'Total precipitation (mm)'),
             x = ~x,
             y = ~smooth,
@@ -148,7 +180,7 @@ graph1 <- plot_ly() |>
             mode = 'lines',
             legendgroup = ~name,
             showlegend = FALSE) |> 
-  # annual points and connecting lines for temp
+  # annual points and connecting lines for avg temp
   add_trace(data = sdat |>  filter(name == 'Annual average temperature (\u00B0C)'),
             x = ~year,
             y = ~value,
@@ -161,7 +193,33 @@ graph1 <- plot_ly() |>
             mode = 'markers+lines',
             marker = list(size = 8),
             legendgroup = ~name) |> 
-  # annual points and connecting lines for precip
+  # # annual points and connecting lines for avg low temp
+  # add_trace(data = sdat |>  filter(name == 'Annual average low temperature (\u00B0C)'),
+  #           x = ~year,
+  #           y = ~value,
+  #           color = ~name,
+  #           colors = pal,
+  #           line = list(width = 1),
+  #           hoverinfo = 'text',
+  #           text = ~paste0(year, ': ', lab),
+  #           type = 'scatter',
+  #           mode = 'markers+lines',
+  #           marker = list(size = 8),
+  #           legendgroup = ~name) |> 
+  # # annual points and connecting lines for avg high temp
+  # add_trace(data = sdat |>  filter(name == 'Annual average high temperature (\u00B0C)'),
+  #           x = ~year,
+  #           y = ~value,
+  #           color = ~name,
+  #           colors = pal,
+  #           line = list(width = 1),
+  #           hoverinfo = 'text',
+  #           text = ~paste0(year, ': ', lab),
+  #           type = 'scatter',
+  #           mode = 'markers+lines',
+  #           marker = list(size = 8),
+  #           legendgroup = ~name) |> 
+  # annual points and connecting lines for precip on second y axis
   add_trace(data = sdat %>% filter(name == 'Total precipitation (mm)'),
             x = ~year,
             y = ~value,
@@ -180,7 +238,7 @@ graph1 <- plot_ly() |>
                       showline = TRUE,
                       ticks = 'outside',
                       tick0 = 0,
-                      range = c(0,20),
+                      range = c(0, 21),
                       showgrid = FALSE,
                       automargin = TRUE,
                       hoverformat = '.2f'),
@@ -192,7 +250,7 @@ graph1 <- plot_ly() |>
                        ticks = 'outside',
                        tick0 = 0,
                        ticksuffix = '  ',
-                       range = c(0,2000),
+                       range = c(0, 3500),
                        showgrid = FALSE,
                        automargin = TRUE,
                        hoverformat = '.2f'),
