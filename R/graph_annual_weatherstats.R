@@ -5,29 +5,26 @@
 # AUTHORS: Kristen Dybala (original), updated by Sarah Needles (2024 capstone project)
 #
 # CHANGES:
-# 2024: exclude temps of "99" as NA values
+# 2024: update data through 2023; exclude temps of "99" as NA values
 
 #PACKAGES
 library(tidyverse)
-library(foreign)
+library(foreign) # > only needed if reading from dbf directly
 library(plotly)
 
-#INPUT DATA
-# original copies:
-# wthrpath <- 'Z:\Terrestrial\programs_and_projects\palomarin\Palodata\Weather\compiled\paloallwthr.dbf'
-
-# local copy:
-#wthrpath <- "rawdat/paloallwthr.dbf"
+# INPUT DATA
+# local copy of weather data:
 wthrpath <- 'rawdat/paloallwthr_12Apr2024.csv'
 
-# PALETTE
+# STANDARD COLOR PALETTE
 pointblue.palette <- c('#4495d1', '#74b743', '#f7941d', '#005baa', '#bfd730',
                        '#a7a9ac', '#666666')
 
 #OUTPUT
 out <- "docs/widget/graph_annual_weatherstats.html"
 
-# SUMMARIZE DATA ---------------------------------------------------------
+# DATA CLEANING & FORMATTING--------------------------------------------------
+# clean up raw data
 rawdat <- read_csv(wthrpath) |>  
   select(DATE, TIME, RAIN, RAIN_CUMUL, HIGH, LOW) |> 
   mutate(DATE = as.Date(DATE, format = '%m/%d/%Y'),
@@ -41,16 +38,18 @@ rawdat <- read_csv(wthrpath) |>
                          TRUE ~ LOW)) |> 
   filter(DATE >= '1976-01-01')
 
+# check for any missing or unexpected values
 str(rawdat)
 summary(rawdat)
-testthat::expect_lt(max(rawdat$HIGH, na.rm = TRUE), 50)
-testthat::expect_lt(max(rawdat$LOW, na.rm = TRUE), 25)
+testthat::expect_lt(max(rawdat$HIGH, na.rm = TRUE), 50) # HIGH temps should not be >50C
+testthat::expect_lt(max(rawdat$LOW, na.rm = TRUE), 25) # LOW temps should not be >25C
 
 rawdat |> filter(is.na(RAIN) & RAIN_CUMUL) # one missing 2020-09-29 (and likely zero)
 rawdat |> filter(DATE == '2020-09-29')
 rawdat |> filter(DATE == '2020-09-28')
 rawdat |> filter(DATE == '2020-09-30')
 
+# identify bioyears for precip data and calculate daily average temp
 dat = rawdat |> 
   filter(RAIN_CUMUL) |> 
   mutate(year = as.numeric(format(DATE, '%Y')),
@@ -63,6 +62,8 @@ dat = rawdat |>
          AVGTEMP = (HIGH + LOW) / 2) 
 summary(dat)
 
+# ANNUAL WEATHER STATS----------------------------------------------------
+# annual precip totals by bioyear
 raindat <- dat |> 
   group_by(bioyear, bioyearx) |> 
   summarize(rain = sum(RAIN, na.rm = TRUE),
@@ -72,6 +73,7 @@ raindat <- dat |>
 str(raindat)
 summary(raindat)
 
+# annual (calendar) mean of daily average temperatures
 tempdat <- dat |> 
   group_by(year) |> 
   summarize(avgtemp = mean(AVGTEMP, na.rm = TRUE),
@@ -80,11 +82,15 @@ tempdat <- dat |>
 str(tempdat)
 summary(tempdat)
 
+
 sdat <- full_join(tempdat, raindat, by = c('year' = 'bioyearx')) |> 
+  # if there are too many days in a year missing rain totals, consider annual
+  # sum unknown
   mutate(rain = case_when(nrain < 300 ~ NA_real_,
                           TRUE ~ rain)) |> 
   select(year, bioyear, avgtemp, rain) |> 
   pivot_longer(avgtemp:rain) |> 
+  # format labels for interactive graphics
   mutate(lab = case_when(name == 'rain' ~ format(round(value, digits = 0), nsmall = 0),
                          name == 'avgtemp' ~ format(round(value, digits = 2), nsmall = 2)),
          lab = case_when(name == 'rain' ~ paste0(lab, 'mm'),
@@ -98,7 +104,7 @@ sdat <- full_join(tempdat, raindat, by = c('year' = 'bioyearx')) |>
 
 g1 <- sdat %>% 
   ggplot(aes(year, value, color = name)) +
-  geom_smooth(method="gam", method.args = list(family="quasipoisson"), 
+  geom_smooth(method = "gam", method.args = list(family = "gaussian"), 
               formula = y ~ s(x), se = FALSE)
 
 # build plot object for rendering 
