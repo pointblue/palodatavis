@@ -41,8 +41,11 @@ rawdat <- read_csv(wthrpath) |>
 # check for any missing or unexpected values
 str(rawdat)
 summary(rawdat)
-testthat::expect_lt(max(rawdat$HIGH, na.rm = TRUE), 50) # HIGH temps should not be >50C
-testthat::expect_lt(max(rawdat$LOW, na.rm = TRUE), 25) # LOW temps should not be >25C
+
+testthat::test_that('test that all temperature values are sensible', {
+  testthat::expect_lt(max(rawdat$HIGH, na.rm = TRUE), 50) # HIGH temps should not be >50C
+  testthat::expect_lt(max(rawdat$LOW, na.rm = TRUE), 25) # LOW temps should not be >25C
+})
 
 rawdat |> filter(is.na(RAIN) & RAIN_CUMUL) # one missing 2020-09-29 (and likely zero)
 rawdat |> filter(DATE == '2020-09-29')
@@ -275,12 +278,15 @@ graph1$dependencies <- c(graph1$dependencies,
                            htmltools::htmlDependency(
                              name = 'plotly_style_nomargin',
                              version = '1.0.0',
-                             src = here::here('Rmd'),
+                             src = 'docs/widget/lib',
                              stylesheet = 'plotly_style.css'
                            )
                          ))
 
+graph1
+
 htmlwidgets::saveWidget(graph1,
                         here::here(out),
-                        selfcontained = TRUE,
+                        selfcontained = FALSE,
+                        libdir = 'lib',
                         title = 'Annual weather stats')
