@@ -5,6 +5,7 @@
 
 #PACKAGES
 library(tidyverse)
+library(foreign)
 library(plotly)
 
 # INPUT DATA
@@ -43,8 +44,6 @@ effort_sum = effort |>
   summarize(nethours = sum(NETHOURS),
             .groups = 'drop')
 # 564 obs of 3 vars
-
-rm(effort_raw, effort)
 
 ## CAPTURE STATS--------
 # total captures per year
@@ -255,13 +254,14 @@ graph1$dependencies <- c(graph1$dependencies,
                            htmltools::htmlDependency(
                              name = 'plotly_style_nomargin',
                              version = '1.0.0',
-                             src = here::here('Rmd'),
+                             src = 'docs/widgets/lib',
                              stylesheet = 'plotly_style.css'
                            )
                          ))
 
 htmlwidgets::saveWidget(graph1,
                         here::here(out),
-                        selfcontained = TRUE,
+                        selfcontained = FALSE,
+                        libdir = 'lib',
                         title = 'Annual capture stats by season')
 
