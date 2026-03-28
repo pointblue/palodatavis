@@ -6,16 +6,13 @@
 
 #PACKAGES
 library(tidyverse)
+library(foreign)
 library(plotly)
 
-#INPUT DATA
-# original copies:
-# nethrspath <- 'Z:/Terrestrial/band/nethrs/allpalonethrs.dbf'
-# bandpath <- 'Z:/Terrestrial/programs_and_projects/palomarin/Palodata/Band/allbandpalo.dbf'
-
-# local copies:
-nethrspath <- "rawdat/allpalonthrs_through2018.CSV"
-bandpath <- "rawdat/allbandpalo_through2018.CSV"
+# INPUT DATA
+# path to local copies of net hours and banding data
+nethrspath <- "rawdat/allpalonthrs.dbf"
+bandpath <- "rawdat/allnumb.dbf"
 
 # PALETTE
 pointblue.palette <- c('#4495d1', '#74b743', '#f7941d', '#005baa', '#bfd730',
@@ -26,66 +23,59 @@ out <- "docs/widget/graph_seasonal_capturestats.html"
 
 # CALCULATE STATS ---------------------------------------------------------
 
-# average net hours per month:
-effort <- read_csv(here::here(nethrspath), 
-                   col_types = cols_only(location = col_factor(), 
-                                         date = col_date(format = '%m/%d/%Y'), 
-                                         nethours = col_number())) %>% 
-  filter(location == 'PN') %>% 
-  mutate(year = format(date, '%Y'),
-         month = format(date, '%m'),
-         monthlab = format(date, '%b')) %>% 
-  filter(year > 2008) %>% #cleaner data?
-  # total by year and month:
-  group_by(year, month, monthlab) %>% 
-  summarize(nethours = sum(nethours)) %>% 
-  ungroup()
+# total net hours per month:
+effort <- foreign::read.dbf(nethrspath) |> select(PROJECT:DUPE) |> 
+  filter(LOCATION == 'PN' & DATE >= '2008-01-01') |> # subset to more recent data to simplify
+  mutate(year = format(DATE, '%Y'),
+         month = format(DATE, '%m'),
+         monthlab = format(DATE, '%b')) |> 
+  group_by(year, month, monthlab) |> 
+  summarize(nethours = sum(NETHOURS),
+            .groups = 'drop')
 
-# banding data
-captures <- read_csv(here::here(bandpath), 
-                     col_types = cols_only(loc = 'f',
-                                           date = col_date(format = '%m/%d/%Y'),
-                                           size = 'f',
-                                           code = 'f',
-                                           bandnumb = 'n',
-                                           spec = 'f',
-                                           age = 'n',
-                                           sex = 'f')) %>% 
-  mutate(year = format(date, '%Y'),
-         month = format(date, '%m')) %>% 
-  filter(loc == 'PN' & year > 2008 & 
-           spec %in% c('WIWA', 'SWTH', 'HETH', 'GCSP', 'WREN')) %>% 
-  # count total captures for each species by year and month
-  group_by(spec, year, month) %>% 
-  count() %>% 
-  ungroup() %>% 
-  mutate(spec = as.factor(as.character(spec))) %>% 
-  complete(spec, year, month, fill = list(n = 0))
+
+# total captures per month:
+band = foreign::read.dbf(bandpath) |> # slow because this is a large database!
+  select(INITIALS:COM) |> 
+  filter(LOC == 'PN' & DATE >= '2008-01-01') |> 
+  filter(SPEC %in% c('WIWA', 'SWTH', 'HETH', 'GCSP', 'WREN'))
+
+# summarize number of captures by year and month
+captures_sum = band |> 
+  mutate(year = format(DATE, '%Y'),
+         month = format(DATE, '%m')) |> 
+  group_by(SPEC, year, month) |> 
+  count() |> 
+  ungroup() |> 
+  mutate(SPEC = as.factor(as.character(SPEC))) |> 
+  complete(SPEC, year, month, fill = list(n = 0))
 
 # calculate capture rate per 1000 net hours
-dat <- left_join(captures, effort, by = c('month', 'year')) %>% 
+dat <- full_join(captures_sum, effort, by = c('month', 'year')) |> 
+  filter(!is.na(nethours)) |> 
   mutate(rate = n / nethours * 1000,
          month = as.numeric(month) + 0.5,
          monthlab = factor(monthlab, levels = unique(monthlab)),
-         spec = factor(spec, levels = c('WREN', 'SWTH', 'WIWA', 'HETH', 'GCSP')),
-         speclab = recode(spec, 
+         SPEC = factor(SPEC, levels = c('WREN', 'SWTH', 'WIWA', 'HETH', 'GCSP')),
+         speclab = recode(SPEC, 
                           GCSP = 'Golden-crowned Sparrow',
                           WIWA = "Wilson's Warbler",
                           SWTH = "Swainson's Thrush",
                           HETH = "Hermit Thrush",
-                          WREN = 'Wrentit')) %>% 
-  select(spec, speclab, monthlab, month, year, rate)
+                          WREN = 'Wrentit')) |> 
+  select(spec = SPEC, speclab, monthlab, month, year, rate)
 
-datavg <- dat %>% 
-  group_by(spec, speclab, monthlab, month) %>% 
-  summarize(rate = mean(rate)) %>% 
-  mutate(ratelab = format(round(rate, digits = 1), nsmall = 1)) %>% 
+# average capture rate per month over multiple years:
+datavg <- dat |> 
+  group_by(spec, speclab, monthlab, month)|> 
+  summarize(rate = mean(rate)) |> 
+  mutate(ratelab = format(round(rate, digits = 1), nsmall = 1)) |> 
   ungroup()
 
 # FIT SMOOTHED LINES ------------------------------------------------------
 
 g1 <- ggplot(dat, aes(month, rate, color = speclab)) +
-  geom_smooth(method="gam", method.args = list(family="quasipoisson"), 
+  geom_smooth(method = "gam", method.args = list(family = "quasipoisson"), 
               formula = y ~ s(x, k = 7), se = FALSE, n = 111)
 
 # build plot object for rendering 
@@ -149,18 +139,20 @@ graph1 <- plot_ly(dat2) %>%
          modeBarButtonsToRemove = list('zoom2d', 'select2d', 'lasso2d',
                                        'zoomIn2d', 'zoomOut2d',
                                        'pan2d', 'toggleSpikelines'))
+graph1
 
 graph1$dependencies <- c(graph1$dependencies,
                          list(
                            htmltools::htmlDependency(
                              name = 'plotly_style_nomargin',
                              version = '1.0.0',
-                             src = here::here('Rmd'),
+                             src = 'docs/widget/lib',
                              stylesheet = 'plotly_style.css'
                            )
                          ))
 
 htmlwidgets::saveWidget(graph1,
                         here::here(out),
-                        selfcontained = TRUE,
+                        selfcontained = FALSE,
+                        libdir = 'lib',
                         title = 'Seasonal capture stats')
