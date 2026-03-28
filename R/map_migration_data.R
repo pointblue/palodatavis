@@ -24,9 +24,9 @@ out <- "docs/widget/migration_map.html"
 
 # SET UP ------------------------------------------------------------------
 
-shp <- readxl::read_excel(here::here(coordpath)) %>% 
+shp <- readxl::read_excel(here::here(coordpath)) |> 
   st_as_sf(coords = c("Mean.Lon", "Mean.Lat"), 
-           crs = '+proj=longlat +datum=WGS84 +no_defs') %>% 
+           crs = '+proj=longlat +datum=WGS84 +no_defs') |> 
   mutate(specieslab = recode(Species, 'HETH' = "Hermit Thrush",
                              'GCSP' = "Golden-crowned Sparrow",
                              'FOSP' = "Fox Sparrow",
@@ -39,7 +39,7 @@ pal1 <- colorFactor(palette = pointblue.palette[c(3,2,1,4)],
 pal2 <- colorFactor(palette = pointblue.palette[c(3,2)], 
                     domain = unique(swthpoly$season))
 
-logoicon <- makeIcon(iconUrl = here::here(iconpath), 
+logoicon <- makeIcon(iconUrl = here::here(iconpath),
                      iconWidth = 25, iconHeight = 25)
 
 # swthpoly <- st_read(here::here(swthrange)) %>%
@@ -60,27 +60,27 @@ logoicon <- makeIcon(iconUrl = here::here(iconpath),
 
 # CREATE MAP --------------------------------------------------------------
 
-map1 <- leaflet(shp) %>% 
-  setView(lng = -122.735527, lat = 42, zoom = 3) %>% 
+map1 <- leaflet(shp) |> 
+  setView(lng = -122.735527, lat = 42, zoom = 3) |> 
   
   # background terrain
-  addProviderTiles("Esri.WorldGrayCanvas") %>% 
+  addProviderTiles("Esri.WorldGrayCanvas") |> 
   
   # # range maps
   # addPolygons(data = swthpoly,
   #             fillColor = ~ pal2(season),
   #             stroke = FALSE,
-  #             group = "Swainson's Thrush") %>%
+  #             group = "Swainson's Thrush") |>
   # addPolygons(data = gcsppoly,
   #             fillColor = ~pal2(season),
   #             stroke = FALSE,
-  #             group = "Golden-crowned Sparrow") %>%
+  #             group = "Golden-crowned Sparrow") |>
   
   # add icon for Palo
   addMarkers(lng = -122.735527, lat = 37.929851, 
              icon = logoicon,
              label = "Palomarin Field Station",
-             popup = "Palomarin Field Station") %>% 
+             popup = "Palomarin Field Station") |> 
   
   # add migration data
   addCircleMarkers(radius = 8,
@@ -88,16 +88,16 @@ map1 <- leaflet(shp) %>%
                    fillColor =  ~ pal1(specieslab),
                    fillOpacity = 0.7,
                    label = ~TagType,
-                   popup = ~TagType) %>% 
+                   popup = ~TagType) |> 
   
   # addLayersControl(overlayGroups = c('Golden-crowned Sparrow',
   #                                    "Swainson's Thrush"),
   #                  position = "bottomleft",
-  #                  options = layersControlOptions(collapsed = TRUE)) %>%
-  # hideGroup('Golden-crowned Sparrow') %>%
-  # # hideGroup('Hermit Thrush') %>%
-  # # hideGroup('Fox Sparrow') %>%
-  # hideGroup("Swainson's Thrush") %>%
+  #                  options = layersControlOptions(collapsed = TRUE)) |>
+  # hideGroup('Golden-crowned Sparrow') |>
+  # # hideGroup('Hermit Thrush') |>
+  # # hideGroup('Fox Sparrow') |>
+  # hideGroup("Swainson's Thrush") |>
   
   addLegend(pal = pal1,
             values = shp$specieslab,
@@ -120,5 +120,6 @@ title <- paste0('Palomarin Migratory Connectivity')
 
 htmlwidgets::saveWidget(map1,
                         here::here(out),
-                        selfcontained = TRUE,
+                        selfcontained = FALSE,
+                        libdir = 'lib',
                         title = title)
