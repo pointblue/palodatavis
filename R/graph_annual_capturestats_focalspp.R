@@ -241,4 +241,123 @@ htmlwidgets::saveWidget(graph1,
                         selfcontained = FALSE,
                         libdir = 'lib',
                         title = 'Annual capture stats')         
-         
+
+## migrants---------
+
+migrants = dat_sum |> filter(spec %in% spplist[6:10]) |> 
+  mutate(
+    ratelab = format(round(rate, digits = 1), nsmall = 1),
+    group = if_else(spec %in% c('WIWA', 'SWTH'), 'Neotropical', 'Neotemperate'),
+    spec = factor(spec, 
+                  levels = c('WIWA', 'SWTH', 'FOSP', 'GCSP', 'HETH'),
+                  labels = c("Wilson's Warbler", 
+                             "Swainson's Thrush",
+                             'Fox Sparrow', 
+                             'Golden-crowned Sparrow',
+                             'Hermit Thrush'))
+  )
+
+g2 <- ggplot(migrants, aes(year, rate, color = spec)) +
+  geom_smooth(method = "gam", 
+              method.args = list(family = "quasipoisson"), 
+              formula = y ~ s(x), se = FALSE)
+g2
+
+# build plot object for rendering 
+gg2 <- ggplot_build(g2)
+
+# extract data for the loess lines from the 'data' slot
+dat_g2 <- data.frame(
+  x = gg2$data[[1]]$x,
+  smooth = gg2$data[[1]]$y,
+  spec = rep(levels(migrants$spec), each = 80)) |> 
+  mutate(group = if_else(spec %in% c("Wilson's Warbler", "Swainson's Thrush"), 
+                         'Neotropical', 'Neotemperate'))
+
+# build interactive plot
+pal2 <- setNames(pointblue.palette[1:5], 
+                 c("Wilson's Warbler", 
+                   "Swainson's Thrush",
+                   'Fox Sparrow', 
+                   'Golden-crowned Sparrow',
+                   'Hermit Thrush'))
+
+graph2 <- plot_ly() |> 
+  add_lines(data = dat_g2 |> filter(group == "Neotropical"), # make this one show by default to start
+            x = ~x,
+            y = ~smooth,
+            color = ~spec,
+            colors = pal2,
+            legendgroup = ~group,
+            hoverinfo = 'none') |> 
+  add_lines(data = dat_g2 |> filter(group != "Neotropical"),
+            x = ~x,
+            y = ~smooth,
+            color = ~spec,
+            colors = pal2,
+            legendgroup = ~group,
+            hoverinfo = 'none',
+            visible = 'legendonly') |> 
+  add_markers(data = migrants |> filter(group == "Neotropical"),
+              x = ~year,
+              y = ~rate,
+              marker = list(size = 5),
+              color = ~spec,
+              legendgroup = ~group,
+              showlegend = FALSE,
+              hoverinfo = 'x+text',
+              text = ~ratelab) |> 
+  add_markers(data = migrants |> filter(group != "Neotropical"),
+              x = ~year,
+              y = ~rate,
+              marker = list(size = 5),
+              color = ~spec,
+              legendgroup = ~group,
+              showlegend = FALSE,
+              hoverinfo = 'x+text',
+              text = ~ratelab,
+              visible = 'legendonly') |> 
+  layout(yaxis = list(title = 'Capture rate (per 1000 net hours)',
+                      font = list(size = 14),
+                      showline = TRUE,
+                      ticks = 'outside',
+                      tick0 = 0,
+                      range = c(0, 15),
+                      showgrid = FALSE,
+                      automargin = TRUE,
+                      hoverformat = '.2f'),
+         xaxis = list(title = NA,
+                      showline = TRUE,
+                      ticks = 'outside',
+                      showgrid = FALSE),
+         hovermode = 'x',
+         legend = list(x = 1, xanchor = 'right', y = 1, yanchor = 'top',
+                       orientation = 'h'),
+         margin = list(r = 0, b = 10, t = 10)) |> 
+  config(displaylogo = FALSE, showTips = FALSE,
+         modeBarButtonsToRemove = list('zoom2d', 'select2d', 'lasso2d',
+                                       'zoomIn2d', 'zoomOut2d',
+                                       'pan2d', 'toggleSpikelines'))
+
+# test in viewer pane:
+graph2
+
+
+graph2$dependencies <- c(graph2$dependencies,
+                         list(
+                           htmltools::htmlDependency(
+                             name = 'plotly_style_nomargin',
+                             version = '1.0.0',
+                             src = 'docs/widgets/lib',
+                             stylesheet = 'plotly_style.css'
+                           )
+                         ))
+
+# file path of final interactive graphic widget
+out <- "docs/widget/graph_migrant_capturestats.html"
+
+htmlwidgets::saveWidget(graph2,
+                        here::here(out),
+                        selfcontained = FALSE,
+                        libdir = 'lib',
+                        title = 'Annual capture stats') 
