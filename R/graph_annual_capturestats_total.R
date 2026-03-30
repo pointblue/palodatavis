@@ -23,63 +23,17 @@ out <- "docs/widget/graph_total_capturestats.html"
 
 # CALCULATE STATS ---------------------------------------------------------
 
-## NET HOURS------
-# net hours database: (drop extra columns labeled "X")
-effort_raw <- foreign::read.dbf(nethrspath) |> select(PROJECT:DUPE)
-str(effort_raw)
+effort = read_csv('output/nethrs_effort.csv') # total by year and month
+band = read_csv('output/band_captures.csv') # total by species, year, and month
 
-# filter to PN after 1979
-unique(effort_raw$LOCATION) # PN, PGUP, MUHO, PIGU, LACR, RECR, G5, CT, PT, HUMP, PEXA, PALO
-summary(effort_raw$DATE) # 1976-01-03 through 2025-12-31
-
-effort = effort_raw |> 
-  filter(LOCATION == 'PN') |> 
-  filter(DATE >= '1979-01-01')
-  
-# summarize by year and month
-effort_sum = effort |> 
-  mutate(year = format(DATE, '%Y'),
-         month = format(DATE, '%m')) |> 
+dat = band |> 
+  # sum over all species
   group_by(year, month) |> 
-  summarize(nethours = sum(NETHOURS),
-            .groups = 'drop')
-# 564 obs of 3 vars
-
-## CAPTURE STATS--------
-# total captures per year
-
-band_raw = foreign::read.dbf(bandpath) # slow because this is a large database!
-str(band_raw)
-
-# filter to PN after 1979 and no later than last net hours
-# > NOTE: not limited to new captures
-unique(band_raw$LOC)
-summary(band_raw$DATE) # 1966-01-14 thruogh 2026-03-26 (and 1 NA)
-
-band = band_raw |> select(INITIALS:COM) |> 
-  filter(LOC == 'PN') |> 
-  filter(DATE >= '1979-01-01') |> 
-  filter(DATE <= max(effort$DATE))
-# 151173 obs of 35 vars
-
-# summarize number of captures by year and month
-captures_sum = band |> 
-  mutate(year = format(DATE, '%Y'),
-         month = format(DATE, '%m')) |> 
-  group_by(year, month) |> 
-  count() |> 
-  ungroup()
-# 564 obs of 3 vars
-
-testthat::test_that('test that net hours and captures match', {
-  testthat::expect_true(nrow(effort_sum) == nrow(captures_sum))
-  testthat::expect_true(all(unique(effort_sum$year) %in% captures_sum$year))
-  testthat::expect_true(all(unique(captures_sum$year) %in% effort_sum$year))
-})
-
-## JOIN-----------
-# join captures and net hours, and assign months to specific seasons
-dat = full_join(captures_sum, effort_sum, by = c('year', 'month')) |> 
+  summarize(n = sum(n),
+            .groups = 'drop') |> 
+  # join to net hours
+  full_join(effort, by = c('year', 'month')) |> 
+  # assign months to specific seasons
   mutate(year = as.numeric(year),
          month = as.numeric(month),
          season = case_when(month >= 3 & month <= 7 ~ 'spring', # 5 months
