@@ -49,7 +49,7 @@ gg1 <- ggplot_build(g1)
 dat2 <- tibble(x = gg1$data[[1]]$x,
                    smooth = gg1$data[[1]]$y,
                    species = rep(levels(terrdat$species), each = 80)) |> 
-  left_join(terrdat |> select(species, species2), by = c('species'))
+  left_join(terrdat |> select(species, species2) |> distinct(), by = c('species'))
 
 
 
@@ -92,9 +92,9 @@ graph1 <- plot_ly() |>
          xaxis = list(title = NA,
                       showline = TRUE,
                       ticks = 'outside',
-                      range = c(1980,maxyear+4),
+                      range = c(1980,maxyear+2),
                       showgrid = FALSE),
-         legend = list(x = 0.5, y = 100, orientation = 'h'),
+         legend = list(x = 1, xanchor = 'right', y = 1, yanchor = 'top'),
          hovermode = 'x',
          margin = list(r = 0, b = 10, t = 10)) |>
   config(displaylogo = FALSE, showTips = FALSE,
@@ -111,6 +111,8 @@ graph1$dependencies <- c(graph1$dependencies,
                              stylesheet = 'plotly_style.css'
                            )
                          ))
+
+graph1
 
 htmlwidgets::saveWidget(graph1,
                         here::here(out),
