@@ -4,13 +4,12 @@
 
 # PACKAGES
 library(tidyverse)
-library(foreign)
 library(plotly)
 
-# INPUT DATA
-# path to local copies of net hours and banding data
-nethrspath <- "rawdat/allpalonthrs.dbf"
-bandpath <- "rawdat/allnumb.dbf"
+# INPUT DATA 
+# from script 00_process_band_nethrs
+effort = read_csv('output/nethrs_effort.csv') # total by year and month
+band = read_csv('output/band_captures.csv') # total by species, year, and month
 
 # PALETTE
 pointblue.palette <- c('#4495d1', '#74b743', '#f7941d', '#005baa', '#bfd730',
@@ -21,8 +20,6 @@ pointblue.palette <- c('#4495d1', '#74b743', '#f7941d', '#005baa', '#bfd730',
 spplist <- c('WREN', 'SOSP', 'NWCS', 'SPTO', 'CASJ', # residents
              'WIWA', 'SWTH', 'FOSP', 'GCSP', 'HETH') # migrants
 
-effort = read_csv('output/nethrs_effort.csv') # total by year and month
-band = read_csv('output/band_captures.csv') # total by species, year, and month
 
 dat =  band |> 
   filter(SPEC %in% spplist) |> # filter to study spp
