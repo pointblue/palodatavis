@@ -94,7 +94,8 @@ graph1 <- plot_ly() |>
                       ticks = 'outside',
                       range = c(1980,maxyear+2),
                       showgrid = FALSE),
-         legend = list(x = 1, xanchor = 'right', y = 1, yanchor = 'top'),
+         legend = list(x = 1, xanchor = 'right', y = 1, yanchor = 'top',
+                       bgcolor = 'rgba(0,0,0,0)'),
          hovermode = 'x',
          margin = list(r = 0, b = 10, t = 10)) |>
   config(displaylogo = FALSE, showTips = FALSE,
