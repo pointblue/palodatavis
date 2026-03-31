@@ -9,10 +9,11 @@ library(tidyverse)
 library(foreign)
 library(plotly)
 
-# INPUT DATA
-# path to local copies of net hours and banding data
-nethrspath <- "rawdat/allpalonthrs.dbf"
-bandpath <- "rawdat/allnumb.dbf"
+# INPUT DATA 
+# from script 00_process_band_nethrs
+effort = read_csv('output/nethrs_effort.csv') # total by year and month
+band = read_csv('output/band_captures.csv') # total by species, year, and month
+
 
 # PALETTE
 pointblue.palette <- c('#4495d1', '#74b743', '#f7941d', '#005baa', '#bfd730',
@@ -34,28 +35,19 @@ effort <- foreign::read.dbf(nethrspath) |> select(PROJECT:DUPE) |>
             .groups = 'drop')
 
 
-# total captures per month:
-band = foreign::read.dbf(bandpath) |> # slow because this is a large database!
-  select(INITIALS:COM) |> 
-  filter(LOC == 'PN' & DATE >= '2008-01-01') |> 
-  filter(SPEC %in% c('WIWA', 'SWTH', 'HETH', 'GCSP', 'WREN'))
-
-# summarize number of captures by year and month
-captures_sum = band |> 
-  mutate(year = format(DATE, '%Y'),
-         month = format(DATE, '%m')) |> 
-  group_by(SPEC, year, month) |> 
-  count() |> 
-  ungroup() |> 
-  mutate(SPEC = as.factor(as.character(SPEC))) |> 
-  complete(SPEC, year, month, fill = list(n = 0))
+# filter and fill zeroes
+band_subset = band |> filter(year >= 2008) |> 
+  filter(SPEC %in% c('WIWA', 'SWTH', 'HETH', 'GCSP', 'WREN')) |> 
+  mutate(SPEC = as.factor(as.character(SPEC)),
+         year = as.factor(year)) |> 
+  complete(SPEC, nesting(year, month), fill = list(n = 0)) |> 
+  mutate(year = as.numeric(as.character(year)))
 
 # calculate capture rate per 1000 net hours
-dat <- full_join(captures_sum, effort, by = c('month', 'year')) |> 
-  filter(!is.na(nethours)) |> 
+dat <- left_join(band_subset, effort, by = c('month', 'year')) |> 
   mutate(rate = n / nethours * 1000,
+         monthlab = month.abb[as.numeric(month)],
          month = as.numeric(month) + 0.5,
-         monthlab = factor(monthlab, levels = unique(monthlab)),
          SPEC = factor(SPEC, levels = c('WREN', 'SWTH', 'WIWA', 'HETH', 'GCSP')),
          speclab = recode(SPEC, 
                           GCSP = 'Golden-crowned Sparrow',
@@ -68,7 +60,8 @@ dat <- full_join(captures_sum, effort, by = c('month', 'year')) |>
 # average capture rate per month over multiple years:
 datavg <- dat |> 
   group_by(spec, speclab, monthlab, month)|> 
-  summarize(rate = mean(rate)) |> 
+  summarize(rate = mean(rate),
+            .groups = 'drop') |> 
   mutate(ratelab = format(round(rate, digits = 1), nsmall = 1)) |> 
   ungroup()
 
@@ -131,9 +124,7 @@ graph1 <- plot_ly(dat2) %>%
                       ticktext = c('Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun',
                                    'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'),
                       showgrid = FALSE),
-         legend = list(x = 0.5, y = 100, orientation = 'h'),
-         # legend = list(x = 0.01, xanchor = 'left', y = 1, yanchor = 'top', 
-         #               bgcolor = NA),
+         legend = list(x = 1, xanchor = 'right', y = 1, yanchor = 'top'),
          margin = list(r = 0, b = 10, t = 10)) %>%
   config(displaylogo = FALSE, showTips = FALSE,
          modeBarButtonsToRemove = list('zoom2d', 'select2d', 'lasso2d',
