@@ -17,16 +17,16 @@ All pages were most recently refreshed in March 2026
 
 Individual graphics:
 
--   Banding capture rates: Annual statistics updated through 2024;
+-   *Banding capture rates:* Annual statistics updated through 2024;
     Seasonal statistics also include spring (Mar-Jul) and fall (Aug-Nov)
     2025 (Jan-Feb 2026 were not yet available, so winter 2025 (Dec-Feb)
     and Annual 2025 (Mar25-Feb26) are currently excluded)
--   [Annual and seasonal capture rates, all
-    species](https://pointblue.github.io/palodatavis/widget/graph_total_capturestats.html):
--   [Annual capture rates for resident study
-    species](https://pointblue.github.io/palodatavis/widget/graph_resident_capturestats.html)
--   [Annual capture rates for migratory study
-    species](https://pointblue.github.io/palodatavis/widget/graph_migrant_capturestats.html)
+    -   [Annual and seasonal capture rates, all
+        species](https://pointblue.github.io/palodatavis/widget/graph_total_capturestats.html):
+    -   [Annual capture rates for resident study
+        species](https://pointblue.github.io/palodatavis/widget/graph_resident_capturestats.html)
+    -   [Annual capture rates for migratory study
+        species](https://pointblue.github.io/palodatavis/widget/graph_migrant_capturestats.html)
 -   [Weather
     data](https://pointblue.github.io/palodatavis/widget/graph_annual_weatherstats.html):
     Annual average temperature data updated through 2023; Precipitation
@@ -39,7 +39,7 @@ Individual graphics:
     territory mapping is pending vegetation management efforts and
     fundraising
 -   [Migratory connectivity
-    map](https://pointblue.org/github.io/palodatavis/widget/migration_map.html):
+    map](https://pointblue.github.io/palodatavis/widget/migration_map.html):
     Does not yet include most recent Golden-crowned Sparrow studies
     (Iverson et al. 2023-2025)
 
