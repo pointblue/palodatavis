@@ -451,6 +451,11 @@ graph2 <- plot_ly() |>
             type = 'scatter',
             mode = 'lines',
             showlegend = FALSE) |>
+  add_segments(x = 1975, xend = 2023, 
+               y = mean(allrain$rain, na.rm = TRUE),
+               yend = mean(allrain$rain, na.rm = TRUE),
+               line = list(dash = 'dash'), 
+               color = I(pointblue.palette[6])) |> 
   # annual points and connecting lines 
   add_trace(data = sdat %>% filter(name == 'Total precipitation (mm)'),
             x = ~year,
