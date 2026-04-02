@@ -21,7 +21,10 @@ pointblue.palette <- c('#4495d1', '#74b743', '#f7941d', '#005baa', '#bfd730',
                        '#a7a9ac', '#666666')
 
 #OUTPUT
-out <- "docs/widget/graph_annual_weatherstats.html"
+#out <- "docs/widget/graph_annual_weatherstats.html" # original combo- temp + precip
+
+out1 <- 'docs/widget/graph_avgtemp_stats.html'
+out2 <- 'docs/widget/graph_precip_stats.html'
 
 # DATA CLEANING & FORMATTING--------------------------------------------------
 # clean up raw data
@@ -62,10 +65,14 @@ dat = rawdat |>
          # for plotting purposes, align bioyear with July-Dec calendar year
          bioyearx = case_when(month >= 7 ~ year,
                               month <= 6 ~ year - 1),
+         # daily average temp
          AVGTEMP = (HIGH + LOW) / 2) 
 summary(dat)
 
-# ANNUAL WEATHER STATS----------------------------------------------------
+# WEATHER STATS----------------------------------------------------
+
+## annual------------
+
 # annual precip totals by bioyear
 raindat <- dat |> 
   group_by(bioyear, bioyearx) |> 
@@ -76,7 +83,9 @@ raindat <- dat |>
 str(raindat)
 summary(raindat)
 
-# annual (calendar) mean of daily average temperatures
+summary(lm(rain ~ bioyearx, raindat)) # NS
+
+# annual (calendar) mean of daily average temperatures, low temps, high temps
 tempdat <- dat |> 
   group_by(year) |> 
   summarize(avgtemp = mean(AVGTEMP, na.rm = TRUE),
@@ -87,191 +96,274 @@ tempdat <- dat |>
 str(tempdat)
 summary(tempdat)
 
+summary(lm(avgtemp ~ year, tempdat)) # + NS
+summary(lm(high ~ year, tempdat)) # + NS
+summary(lm(low ~ year, tempdat)) # + NS
 
-sdat <- full_join(tempdat, raindat, by = c('year' = 'bioyearx')) |> 
-  # if there are too many days in a year missing rain totals, consider annual
-  # sum unknown
-  mutate(rain = case_when(nrain < 300 ~ NA_real_,
-                          TRUE ~ rain)) |> 
-  select(year, bioyear, avgtemp, high, low, rain) |> 
-  pivot_longer(avgtemp:rain) |> 
-  # format labels for interactive graphics
-  mutate(lab = case_when(name == 'rain' ~ format(round(value, digits = 0), nsmall = 0),
-                         name %in% c('avgtemp', 'low', 'high') ~ 
-                           format(round(value, digits = 2), nsmall = 2)),
-         lab = case_when(name == 'rain' ~ paste0(lab, 'mm'),
-                         name %in% c('avgtemp', 'low', 'high') ~ 
-                           paste0(lab, '\u00B0C')),
-         name = recode(name,
-                       rain = 'Total precipitation (mm)',
-                       avgtemp = 'Annual average temperature (\u00B0C)',
-                       low = 'Annual average low temperature (\u00B0C)',
-                       high = 'Annual average high temperature (\u00B0C)'),
-         name = as.factor(name))
+ggplot(tempdat, aes(year, avgtemp)) + geom_point() + geom_smooth()
+ggplot(tempdat, aes(year, high)) + geom_point() + geom_smooth()
+ggplot(tempdat, aes(year, low)) + geom_point() + geom_smooth()
+# >> all have a strong warming trend 1980-2000, then flatter
 
-# FIT SMOOTHED LINES ------------------------------------------------------
+summary(lm(avgtemp ~ year, tempdat |> filter(year <= 2000))) # +, p = 0.00763
+summary(lm(avgtemp ~ year, tempdat |> filter(year > 2000))) # -, NS
 
-g1 <- sdat %>% 
-  ggplot(aes(year, value, color = name)) +
+summary(lm(high ~ year, tempdat |> filter(year <= 2000))) # +, p = 0.00339
+summary(lm(high ~ year, tempdat |> filter(year > 2000))) # -, NS
+
+summary(lm(low ~ year, tempdat |> filter(year <= 2000))) # +, p = 0.0388
+summary(lm(low ~ year, tempdat |> filter(year > 2000))) # -, NS
+
+
+## monthly--------
+dat |> group_by(year, month) |> count() |> 
+  pivot_wider(names_from = month, values_from = n) |> print(n = Inf)
+# all present and accounted for
+
+
+temp_monthly = dat |> 
+  group_by(year, month) |> 
+  summarize(avgtemp = mean(AVGTEMP, na.rm = TRUE),
+            low = mean(LOW, na.rm = TRUE),
+            high = mean(HIGH, na.rm = TRUE),
+            navgtemp = length(!is.na(AVGTEMP)),
+            .groups = 'drop')
+
+# check for significant trends
+temp_monthly |> split(temp_monthly$month) |> 
+  purrr::map(\(df) lm(avgtemp ~ year, data = df)) |> 
+  purrr::map(summary)
+# Jan: sig+ (p = 0.00493)
+# Feb: +, NS
+# Mar: +, NS
+# Apr: -, NS
+# May: -, NS
+# Jun: -, NS
+# Jul: -, NS
+# Aug: -, NS
+# Sep: +, NS
+# Oct: +, NS
+# Nov: +, p = 0.0532
+# Dec: +, NS
+
+temp_monthly |> split(temp_monthly$month) |> 
+  purrr::map(\(df) lm(high ~ year, data = df)) |> 
+  purrr::map(summary)
+# Jan: sig+ 
+# Feb: +, NS
+# Mar: +, NS
+# Apr: -, NS
+# May: sig-
+# Jun: -, NS
+# Jul: sig-
+# Aug: sig-
+# Sep: +, NS
+# Oct: +, NS
+# Nov: sig+
+# Dec: +, NS
+
+temp_monthly |> split(temp_monthly$month) |> 
+  purrr::map(\(df) lm(low ~ year, data = df)) |> 
+  purrr::map(summary)
+# Jan: +, NS 
+# Feb: -, NS
+# Mar: +, NS
+# Apr: -, NS
+# May: +, NS
+# Jun: +, NS
+# Jul: +, NS
+# Aug: +, NS
+# Sep: +, NS
+# Oct: +, NS
+# Nov: +, NS
+# Dec: +, NS
+# >> no significant linear trends in low temps
+
+
+ggplot(temp_monthly, aes(year, avgtemp, color = as.factor(month))) + 
+  geom_point() + geom_smooth(method = 'lm', se = FALSE) 
+ggplot(temp_monthly, aes(year, avgtemp)) + geom_point() + 
+  geom_smooth(method = 'lm') +
+  facet_wrap(~month)
+# overall WARMING trend in Sep-Mar
+# COOLING in Apr-Aug
+
+ggplot(temp_monthly, aes(year, high, color = as.factor(month))) + 
+  geom_smooth(method = 'lm', se = FALSE) 
+ggplot(temp_monthly, aes(year, high)) + geom_point() + 
+  geom_smooth(method = 'lm') +
+  facet_wrap(~month)
+
+## seasonal---------
+# seasonal average temps (different season definitions than capture stats)
+
+tempseasonal = dat |> 
+  mutate(
+    season = case_when(month >= 5 & month <= 8 ~ "Summer (May - Aug)", # 4 months
+                       month >= 11 | month <= 1 ~ 'Winter (Nov - Jan)', # 4 months
+                       month >= 2 & month <= 4 ~ 'Spring (Feb - Apr)',
+                       TRUE ~ "Fall (Sep - Oct)"),  # 2 months
+    # group Jan-Feb with the previous Nov-Dec
+    year = case_when(month <= 2 ~ year - 1,
+                     TRUE ~ year))
+
+tempseasonal |> group_by(year, season) |> count() |> 
+  pivot_wider(names_from = season, values_from = n) |> print(n = Inf)
+# >> missing most 1975 (includes only Jan 1976) and part of winter 2023 (Jan 2024 missing)
+
+temp_seas = tempseasonal |> 
+  filter(year > 1975) |> 
+  filter(!(year == 2023 & season == 'Winter (Nov - Jan)')) |> 
+  group_by(year, season) |> 
+  summarize(avgtemp = mean(AVGTEMP, na.rm = TRUE),
+            low = mean(LOW, na.rm = TRUE),
+            high = mean(HIGH, na.rm = TRUE),
+            navgtemp = length(!is.na(AVGTEMP)),
+            .groups = 'drop')
+
+# check for seasonal trends
+temp_seas |> split(temp_seas$season) |> 
+  purrr::map(\(df) lm(avgtemp ~ year, data = df)) |> 
+  purrr::map(summary)
+# Sep-Oct: NS (pos trend)
+# Feb-Apr: NS (neg trend)
+# May-Aug: NS (neg trend)
+# Nov-Jan: sig +
+
+temp_seas |> split(temp_seas$season) |> 
+  purrr::map(\(df) lm(high ~ year, data = df)) |> 
+  purrr::map(summary)
+# Sep-Oct: NS (pos trend)
+# Feb-Apr: NS (neg trend)
+# May-Aug: sig -
+# Nov-Jan: sig +
+ggplot(temp_seas, aes(year, high)) + geom_point() + 
+  geom_smooth(method = 'gam') +
+  facet_wrap(~season)
+
+bind_rows(tempdat |> mutate(season = 'Annual'), 
+          temp_seas |> filter(grepl('Summer|Winter', season))) |> 
+  ggplot(aes(year, high, color = season)) + 
+  geom_smooth(method = 'gam', se = FALSE)
+
+bind_rows(tempdat |> mutate(season = 'Annual'), 
+          temp_seas |> filter(grepl('Summer|Winter', season))) |> 
+  ggplot(aes(year, avgtemp, color = season)) + 
+  geom_smooth(method = 'gam', se = FALSE)
+
+
+
+# PLOTLY ------------------------------------------------------------------
+# build interactive plots
+
+
+## Annual and seasonal temp------
+alltemp = bind_rows(
+  tempdat |> mutate(season = 'Annual'),
+  temp_seas |> filter(grepl('Summer|Winter', season))) |> 
+  mutate(
+    lab = format(round(avgtemp, digits = 2), nsmall = 2))
+
+g1 <- ggplot(alltemp, aes(year, avgtemp, color = season)) +
   geom_smooth(method = "gam", method.args = list(family = "gaussian"), 
               formula = y ~ s(x), se = FALSE)
+g1
+
 
 # build plot object for rendering 
 gg1 <- ggplot_build(g1)
 
-# extract data for the loess lines from the 'data' slot
-dat2 <- data.frame(x = gg1$data[[1]]$x,
+# extract data for the loess lines from the 'data' slot to use with plotly
+pdat1 <- data.frame(x = gg1$data[[1]]$x,
                    smooth = gg1$data[[1]]$y,
-                   name = rep(levels(sdat$name), each = 80)) 
+                   season = rep(unique(alltemp$season), each = 80)) 
 
-# PLOTLY ------------------------------------------------------------------
+# color palette: Apr-Aug are cooling; Sep-Mar warming
+pal <- setNames(pointblue.palette[c(4,3,2)],
+                unique(alltemp$season))
 
-# build interactive plot
-pal <- setNames(pointblue.palette[c(2, 1, 3, 4)], 
-                c('Annual average temperature (\u00B0C)', 
-                  'Annual average low temperature (\u00B0C)',
-                  'Annual average high temperature (\u00B0C)',
-                  'Total precipitation (mm)'))
 
 graph1 <- plot_ly() |> 
   # smoothed trend line for avgtemp
-  add_trace(data = dat2 |>  filter(name == 'Annual average temperature (\u00B0C)'),
+  add_trace(data = pdat1 |>  filter(season == 'Annual'),
             x = ~x,
             y = ~smooth,
-            color = ~name,
+            color = ~season,
             colors = pal,
-            line = list(width = 3),
+            line = list(width = 4),
             hoverinfo = 'none',
             type = 'scatter',
             mode = 'lines',
-            legendgroup = ~name,
-            showlegend = FALSE) |> 
-  # # smoothed trend line for avg low temp
-  # add_trace(data = dat2 |>  filter(name == 'Annual average low temperature (\u00B0C)'),
-  #           x = ~x,
-  #           y = ~smooth,
-  #           color = ~name,
-  #           colors = pal,
-  #           line = list(width = 3),
-  #           hoverinfo = 'none',
-  #           type = 'scatter',
-  #           mode = 'lines',
-  #           legendgroup = ~name,
-  #           showlegend = FALSE) |>
-  # # smoothed trend line for avg high temp
-  # add_trace(data = dat2 |>  filter(name == 'Annual average high temperature (\u00B0C)'),
-  #           x = ~x,
-  #           y = ~smooth,
-  #           color = ~name,
-  #           colors = pal,
-  #           line = list(width = 3),
-  #           hoverinfo = 'none',
-  #           type = 'scatter',
-  #           mode = 'lines',
-  #           legendgroup = ~name,
-  #           showlegend = FALSE) |>
-  # smoothed trend line for precip on second y axis
-  add_trace(data = dat2 |>  filter(name == 'Total precipitation (mm)'),
+            legendgroup = ~season,
+            showlegend = TRUE) |> 
+  # smoothed trend line for seasonal avgtemps
+  add_trace(data = pdat1 |>  filter(season != 'Annual'),
             x = ~x,
             y = ~smooth,
-            yaxis = 'y2',
-            color = ~name,
+            color = ~season,
             colors = pal,
-            line = list(width = 3),
             hoverinfo = 'none',
             type = 'scatter',
             mode = 'lines',
-            legendgroup = ~name,
-            showlegend = FALSE) |> 
-  # annual points and connecting lines for avg temp
-  add_trace(data = sdat |>  filter(name == 'Annual average temperature (\u00B0C)'),
+            legendgroup = ~season,
+            visible = 'legendonly',
+            showlegend = TRUE) |>
+  # annual points 
+  add_markers(data = alltemp |>  filter(season == 'Annual'),
             x = ~year,
-            y = ~value,
-            color = ~name,
+            y = ~avgtemp,
+            color = ~season,
             colors = pal,
-            line = list(width = 1),
+            #line = list(width = 1),
             hoverinfo = 'text',
             text = ~paste0(year, ': ', lab),
             type = 'scatter',
-            mode = 'markers+lines',
+            #mode = 'markers+lines',
             marker = list(size = 8),
-            legendgroup = ~name) |> 
-  # # annual points and connecting lines for avg low temp
-  # add_trace(data = sdat |>  filter(name == 'Annual average low temperature (\u00B0C)'),
-  #           x = ~year,
-  #           y = ~value,
-  #           color = ~name,
-  #           colors = pal,
-  #           line = list(width = 1),
-  #           hoverinfo = 'text',
-  #           text = ~paste0(year, ': ', lab),
-  #           type = 'scatter',
-  #           mode = 'markers+lines',
-  #           marker = list(size = 8),
-  #           legendgroup = ~name) |> 
-  # # annual points and connecting lines for avg high temp
-  # add_trace(data = sdat |>  filter(name == 'Annual average high temperature (\u00B0C)'),
-  #           x = ~year,
-  #           y = ~value,
-  #           color = ~name,
-  #           colors = pal,
-  #           line = list(width = 1),
-  #           hoverinfo = 'text',
-  #           text = ~paste0(year, ': ', lab),
-  #           type = 'scatter',
-  #           mode = 'markers+lines',
-  #           marker = list(size = 8),
-  #           legendgroup = ~name) |> 
-  # annual points and connecting lines for precip on second y axis
-  add_trace(data = sdat %>% filter(name == 'Total precipitation (mm)'),
+            legendgroup = ~season,
+            showlegend = FALSE) |> 
+  # annual points and connecting lines for avg low temp
+  add_markers(data = alltemp |> filter(season != 'Annual'),
             x = ~year,
-            y = ~value,
-            yaxis = 'y2',
-            color = ~name,
+            y = ~avgtemp,
+            color = ~season,
             colors = pal,
-            line = list(width = 1),
+            #line = list(width = 1),
             hoverinfo = 'text',
-            text = ~paste0(bioyear, ': ', lab),
+            text = ~paste0(year, ': ', lab),
             type = 'scatter',
-            mode = 'markers+lines',
-            marker = list(size = 8),
-            legendgroup = ~name) |> 
-  layout(yaxis = list(title = 'Temperature (\u00B0C)\n\n\n',
-                      font = list(size = 14),
-                      showline = TRUE,
-                      ticks = 'outside',
-                      tick0 = 0,
-                      range = c(0, 16),
-                      showgrid = FALSE,
-                      automargin = TRUE,
-                      hoverformat = '.2f'),
-         yaxis2 = list(title = 'Precipitation (mm)',
-                       overlaying = 'y',
-                       side = 'right',
-                       font = list(size = 14),
-                       showline = TRUE,
-                       ticks = 'outside',
-                       tick0 = 0,
-                       ticksuffix = '  ',
-                       range = c(0, 2000),
-                       showgrid = FALSE,
-                       automargin = TRUE,
-                       hoverformat = '.2f'),
-         xaxis = list(title = NA,
-                      showline = TRUE,
-                      # ticks = 'outside',
-                      # tickmode = 'array',
-                      # tickvals = seq(1975, 2015, 5),
-                      # ticktext = unique(sdat$bioyear)[seq(1, 41, 5)],
-                      showgrid = FALSE),
-         hovermode = 'x',
-         legend = list(x = 0.01, xanchor = 'left', y = 1, yanchor = 'top', 
-                       bgcolor = NA),
-         margin = list(r = 0, b = 0, t = 0, l = 50, pad = 0)) %>%
+            #mode = 'markers+lines',
+            #marker = list(size = 8),
+            legendgroup = ~season,
+            visible = 'legendonly',
+            showlegend = FALSE) |>
+  layout(
+    yaxis = list(title = 'Daily Average Temperature (\u00B0C)\n\n\n',
+                 font = list(size = 14),
+                 showline = TRUE,
+                 ticks = 'outside',
+                 tick0 = 0,
+                 range = c(5, 20),
+                 showgrid = FALSE,
+                 automargin = TRUE,
+                 hoverformat = '.2f'),
+    xaxis = list(title = NA,
+                 showline = TRUE,
+                 # ticks = 'outside',
+                 # tickmode = 'array',
+                 # tickvals = seq(1975, 2015, 5),
+                 # ticktext = unique(sdat$bioyear)[seq(1, 41, 5)],
+                 showgrid = FALSE),
+    hovermode = 'x',
+    legend = list(x = 0.01, xanchor = 'left', y = 1, yanchor = 'top', 
+                  bgcolor = NA),
+    margin = list(r = 0, b = 0, t = 0, l = 50, pad = 0)) |> 
   config(displaylogo = FALSE, showTips = FALSE,
          modeBarButtonsToRemove = list('zoom2d', 'select2d', 'lasso2d',
                                        'zoomIn2d', 'zoomOut2d',
                                        'pan2d', 'toggleSpikelines'))
+
+graph1
 
 graph1$dependencies <- c(graph1$dependencies,
                          list(
@@ -283,10 +375,99 @@ graph1$dependencies <- c(graph1$dependencies,
                            )
                          ))
 
-graph1
+
 
 htmlwidgets::saveWidget(graph1,
-                        here::here(out),
+                        here::here(out1),
                         selfcontained = FALSE,
                         libdir = 'lib',
-                        title = 'Annual weather stats')
+                        title = 'Average temperature stats')
+
+
+## Annual precip data----------
+
+raindat |> filter(nrain < 365)
+# >> missing half of 1975-76 and half of 2023-24
+
+allrain = raindat |> 
+  filter(bioyearx > 1975 & bioyearx < 2023) |> 
+  mutate(
+    lab = paste0(format(round(rain, digits = 0), nsmall = 0), ' mm'))
+
+g2 <- ggplot(allrain, aes(bioyearx, rain)) +
+  geom_smooth(method = "gam", method.args = list(family = "gaussian"), 
+              formula = y ~ s(x), se = FALSE)
+g2
+
+# build plot object for rendering 
+gg2 <- ggplot_build(g2)
+
+# extract data for the loess lines from the 'data' slot to use with plotly
+pdat2 <- data.frame(x = gg2$data[[1]]$x,
+                    smooth = gg2$data[[1]]$y) 
+
+
+graph2 <- plot_ly() |> 
+  # smoothed trend line for precip
+  add_trace(data = pdat2,
+            x = ~x,
+            y = ~smooth,
+            color = I(pointblue.palette[4]),
+            line = list(width = 4),
+            hoverinfo = 'none',
+            type = 'scatter',
+            mode = 'lines',
+            showlegend = FALSE) |>
+  # annual points and connecting lines 
+  add_trace(data = sdat %>% filter(name == 'Total precipitation (mm)'),
+            x = ~year,
+            y = ~value,
+            color = I(pointblue.palette[4]),
+            line = list(width = 1),
+            hoverinfo = 'text',
+            text = ~paste0(bioyear, ': ', lab),
+            type = 'scatter',
+            mode = 'markers+lines',
+            marker = list(size = 8),
+            showlegend = FALSE) |>
+  layout(yaxis = list(title = 'Total Precipitation (mm) by Bioyear (July-June)',
+                       font = list(size = 14),
+                       showline = TRUE,
+                       ticks = 'outside',
+                       tick0 = 0,
+                       #ticksuffix = '  ',
+                       range = c(0, 2000),
+                       showgrid = FALSE,
+                       automargin = TRUE,
+                       hoverformat = '.2f'),
+         xaxis = list(title = NA,
+                      showline = TRUE,
+                      showgrid = FALSE),
+         hovermode = 'x',
+         legend = list(x = 0.01, xanchor = 'left', y = 1, yanchor = 'top', 
+                       bgcolor = NA),
+         margin = list(r = 0, b = 0, t = 0, l = 50, pad = 0)) %>%
+  config(displaylogo = FALSE, showTips = FALSE,
+         modeBarButtonsToRemove = list('zoom2d', 'select2d', 'lasso2d',
+                                       'zoomIn2d', 'zoomOut2d',
+                                       'pan2d', 'toggleSpikelines'))
+
+graph2
+
+graph2$dependencies <- c(graph2$dependencies,
+                         list(
+                           htmltools::htmlDependency(
+                             name = 'plotly_style_nomargin',
+                             version = '1.0.0',
+                             src = 'docs/widget/lib',
+                             stylesheet = 'plotly_style.css'
+                           )
+                         ))
+
+
+
+htmlwidgets::saveWidget(graph2,
+                        here::here(out2),
+                        selfcontained = FALSE,
+                        libdir = 'lib',
+                        title = 'Annual precipitation')
