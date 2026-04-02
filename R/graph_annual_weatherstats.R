@@ -92,32 +92,42 @@ raindat |> filter(bioyearx > 1975 & bioyearx < 2023) |> pull(rain) |> mean()
 # annual (calendar) mean of daily average temperatures, low temps, high temps
 tempdat <- dat |> 
   group_by(year) |> 
-  summarize(avgtemp = mean(AVGTEMP, na.rm = TRUE),
+  summarize(navgtemp = sum(!is.na(AVGTEMP)),
+            avgtemp = mean(AVGTEMP, na.rm = TRUE),
             low = mean(LOW, na.rm = TRUE),
             high = mean(HIGH, na.rm = TRUE),
-            navgtemp = length(!is.na(AVGTEMP)),
             .groups = 'drop')
 str(tempdat)
 summary(tempdat)
+hist(tempdat$navgtemp) # some years with a lot of missing data
+tempdat |> filter(navgtemp > 0.9*365) |> nrow()
+# 38 years (out of 48) with >90% of daily avg temp data
+tempdat |> filter(navgtemp > 0.8*365) |> nrow()
+# 42 years with >80%
+tempdat |> filter(navgtemp < 0.8*365)
+# 1978, 1983, 1984, 2002, 2003, 2006
 
-summary(lm(avgtemp ~ year, tempdat)) # + NS
-summary(lm(high ~ year, tempdat)) # + NS
-summary(lm(low ~ year, tempdat)) # + NS
+tempdat_clean = tempdat |> 
+  mutate(across(c(avgtemp, low, high),
+                ~if_else(navgtemp < 0.8*365, NA_real_, .)))
 
-ggplot(tempdat, aes(year, avgtemp)) + geom_point() + geom_smooth()
-ggplot(tempdat, aes(year, high)) + geom_point() + geom_smooth()
-ggplot(tempdat, aes(year, low)) + geom_point() + geom_smooth()
+summary(lm(avgtemp ~ year, tempdat_clean)) # 0 NS
+summary(lm(high ~ year, tempdat_clean)) # 0 NS
+summary(lm(low ~ year, tempdat_clean)) # + NS
+
+ggplot(tempdat_clean, aes(year, avgtemp)) + geom_point() + geom_smooth()
+ggplot(tempdat_clean, aes(year, high)) + geom_point() + geom_smooth()
+ggplot(tempdat_clean, aes(year, low)) + geom_point() + geom_smooth()
 # >> all have a strong warming trend 1980-2000, then flatter
 
-summary(lm(avgtemp ~ year, tempdat |> filter(year <= 2000))) # +, p = 0.00763
-summary(lm(avgtemp ~ year, tempdat |> filter(year > 2000))) # -, NS
-
-summary(lm(high ~ year, tempdat |> filter(year <= 2000))) # +, p = 0.00339
-summary(lm(high ~ year, tempdat |> filter(year > 2000))) # -, NS
-
-summary(lm(low ~ year, tempdat |> filter(year <= 2000))) # +, p = 0.0388
-summary(lm(low ~ year, tempdat |> filter(year > 2000))) # -, NS
-
+summary(lm(avgtemp ~ year, tempdat_clean |> filter(year <= 2000))) 
+summary(lm(high ~ year, tempdat_clean |> filter(year <= 2000))) 
+summary(lm(low ~ year, tempdat_clean |> filter(year <= 2000))) 
+# all sig+
+summary(lm(avgtemp ~ year, tempdat_clean |> filter(year > 2000))) 
+summary(lm(high ~ year, tempdat_clean |> filter(year > 2000))) 
+summary(lm(low ~ year, tempdat_clean |> filter(year > 2000))) 
+# all +NS
 
 ## monthly--------
 dat |> group_by(year, month) |> count() |> 
@@ -127,74 +137,87 @@ dat |> group_by(year, month) |> count() |>
 
 temp_monthly = dat |> 
   group_by(year, month) |> 
-  summarize(avgtemp = mean(AVGTEMP, na.rm = TRUE),
+  summarize(navgtemp = sum(!is.na(AVGTEMP)),
+            avgtemp = mean(AVGTEMP, na.rm = TRUE),
             low = mean(LOW, na.rm = TRUE),
             high = mean(HIGH, na.rm = TRUE),
-            navgtemp = length(!is.na(AVGTEMP)),
             .groups = 'drop')
+summary(temp_monthly)
+temp_monthly |> filter(is.na(avgtemp)) 
+# missing all data in Nov-Dec 1978; Oct 1983; Jul-Aug 1984
+# missing all low data in Nov-Dec 2002; Jan-Feb 2003
+temp_monthly |> filter(navgtemp < 27 & navgtemp > 0)
+# 65 months with < 90% of daily data
+temp_monthly |> filter(navgtemp < 24 & navgtemp > 0)
+# 31 months with < 80% of daily data
+
+temp_monthly_clean = temp_monthly |> 
+  mutate(
+    across(c(avgtemp, low, high),
+           ~if_else(navgtemp < 0.8*30, NA_real_, .))
+  )
 
 # check for significant trends
-temp_monthly |> split(temp_monthly$month) |> 
+temp_monthly_clean |> split(temp_monthly_clean$month) |> 
   purrr::map(\(df) lm(avgtemp ~ year, data = df)) |> 
   purrr::map(summary)
-# Jan: sig+ (p = 0.00493)
-# Feb: +, NS
-# Mar: +, NS
+# Jan: sig+
+# Feb: 0, NS
+# Mar: 0, NS
 # Apr: -, NS
 # May: -, NS
 # Jun: -, NS
 # Jul: -, NS
-# Aug: -, NS
+# Aug: 0, NS
 # Sep: +, NS
 # Oct: +, NS
-# Nov: +, p = 0.0532
+# Nov: +, NS
 # Dec: +, NS
+# >> only significant change in january
 
-temp_monthly |> split(temp_monthly$month) |> 
+# HIGH TEMPS
+temp_monthly_clean |> split(temp_monthly_clean$month) |> 
   purrr::map(\(df) lm(high ~ year, data = df)) |> 
   purrr::map(summary)
 # Jan: sig+ 
 # Feb: +, NS
-# Mar: +, NS
+# Mar: 0, NS
 # Apr: -, NS
 # May: sig-
-# Jun: -, NS
+# Jun: sig-
 # Jul: sig-
-# Aug: sig-
+# Aug: -, p = 0.0812
 # Sep: +, NS
 # Oct: +, NS
 # Nov: sig+
 # Dec: +, NS
 
-temp_monthly |> split(temp_monthly$month) |> 
+# >> most of the significant changes happening in high temps; increasing Nov-Jan
+# (and trending positive in Sep-Oct and Feb too) and decreasing May-July (and
+# trending negative in Apr and Aug)
+
+# LOW TEMPS
+temp_monthly_clean |> split(temp_monthly_clean$month) |> 
   purrr::map(\(df) lm(low ~ year, data = df)) |> 
   purrr::map(summary)
-# Jan: +, NS 
-# Feb: -, NS
-# Mar: +, NS
-# Apr: -, NS
+# Jan: sig+
+# Feb: 0, NS
+# Mar: 0, NS
+# Apr: 0, NS
 # May: +, NS
-# Jun: +, NS
+# Jun: 0, NS
 # Jul: +, NS
 # Aug: +, NS
-# Sep: +, NS
+# Sep: 0, NS
 # Oct: +, NS
-# Nov: +, NS
+# Nov: 0, NS
 # Dec: +, NS
-# >> no significant linear trends in low temps
+# >> only significant change in January
 
-
-ggplot(temp_monthly, aes(year, avgtemp, color = as.factor(month))) + 
-  geom_point() + geom_smooth(method = 'lm', se = FALSE) 
-ggplot(temp_monthly, aes(year, avgtemp)) + geom_point() + 
+ggplot(temp_monthly_clean, aes(year, avgtemp)) + geom_point() + 
   geom_smooth(method = 'lm') +
   facet_wrap(~month)
-# overall WARMING trend in Sep-Mar
-# COOLING in Apr-Aug
-
-ggplot(temp_monthly, aes(year, high, color = as.factor(month))) + 
-  geom_smooth(method = 'lm', se = FALSE) 
-ggplot(temp_monthly, aes(year, high)) + geom_point() + 
+ggplot(temp_monthly_clean, aes(year, high)) + geom_point() + 
   geom_smooth(method = 'lm') +
   facet_wrap(~month)
 
@@ -203,12 +226,12 @@ ggplot(temp_monthly, aes(year, high)) + geom_point() +
 
 tempseasonal = dat |> 
   mutate(
-    season = case_when(month >= 5 & month <= 8 ~ "Summer (May - Aug)", # 4 months
-                       month >= 11 | month <= 1 ~ 'Winter (Nov - Jan)', # 4 months
+    season = case_when(month >= 5 & month <= 7 ~ "Summer (May - Jul)", # 3 months
+                       month >= 11 | month == 1 ~ 'Winter (Nov - Jan)', # 3 months
                        month >= 2 & month <= 4 ~ 'Spring (Feb - Apr)',
-                       TRUE ~ "Fall (Sep - Oct)"),  # 2 months
-    # group Jan-Feb with the previous Nov-Dec
-    year = case_when(month <= 2 ~ year - 1,
+                       TRUE ~ "Fall (Aug - Oct)"),  # 3 months
+    # group Jan with the previous Nov-Dec
+    year = case_when(month <= 1 ~ year - 1,
                      TRUE ~ year))
 
 tempseasonal |> group_by(year, season) |> count() |> 
@@ -219,42 +242,52 @@ temp_seas = tempseasonal |>
   filter(year > 1975) |> 
   filter(!(year == 2023 & season == 'Winter (Nov - Jan)')) |> 
   group_by(year, season) |> 
-  summarize(avgtemp = mean(AVGTEMP, na.rm = TRUE),
+  summarize(navgtemp = sum(!is.na(AVGTEMP)),
+            avgtemp = mean(AVGTEMP, na.rm = TRUE),
             low = mean(LOW, na.rm = TRUE),
             high = mean(HIGH, na.rm = TRUE),
-            navgtemp = length(!is.na(AVGTEMP)),
             .groups = 'drop')
+summary(temp_seas)
+temp_seas |> filter(is.na(avgtemp)) # Winter 2002 missing all data
+
+temp_seas |> group_by(season) |> summarize(n = max(navgtemp))
+# fall: 92 (Aug, Sep, Oct)
+# spring: 90 (Feb, Mar, Apr)
+# summar: 92 (May, Jun, Jul)
+# winter: 92 (Nov-Jan)
+
+temp_seas |> group_by(season) |> 
+  filter(navgtemp < 0.8*max(navgtemp))
+# 19 seasons with < 80% of days accounted for
+
+temp_seas_clean = temp_seas |> 
+  mutate(
+    across(c(avgtemp, low, high),
+           ~if_else(navgtemp < 0.8*92, NA_real_, .))
+  )
 
 # check for seasonal trends
-temp_seas |> split(temp_seas$season) |> 
+temp_seas_clean |> split(temp_seas_clean$season) |> 
   purrr::map(\(df) lm(avgtemp ~ year, data = df)) |> 
   purrr::map(summary)
-# Sep-Oct: NS (pos trend)
-# Feb-Apr: NS (neg trend)
-# May-Aug: NS (neg trend)
-# Nov-Jan: sig +
+# Fall: NS
+# Spring: NS
+# Summer: NS
+# Winter: nearly sig +
 
-temp_seas |> split(temp_seas$season) |> 
+temp_seas_clean |> split(temp_seas_clean$season) |> 
   purrr::map(\(df) lm(high ~ year, data = df)) |> 
   purrr::map(summary)
-# Sep-Oct: NS (pos trend)
-# Feb-Apr: NS (neg trend)
-# May-Aug: sig -
-# Nov-Jan: sig +
-ggplot(temp_seas, aes(year, high)) + geom_point() + 
+# Fall: NS
+# Spring: NS
+# Summer: sig -
+# Winter: sig +
+ggplot(temp_seas_clean, aes(year, high)) + geom_point() + 
   geom_smooth(method = 'gam') +
   facet_wrap(~season)
-
-bind_rows(tempdat |> mutate(season = 'Annual'), 
-          temp_seas |> filter(grepl('Summer|Winter', season))) |> 
-  ggplot(aes(year, high, color = season)) + 
-  geom_smooth(method = 'gam', se = FALSE)
-
-bind_rows(tempdat |> mutate(season = 'Annual'), 
-          temp_seas |> filter(grepl('Summer|Winter', season))) |> 
-  ggplot(aes(year, avgtemp, color = season)) + 
-  geom_smooth(method = 'gam', se = FALSE)
-
+ggplot(temp_seas_clean, aes(year, high)) + geom_point() + 
+  geom_smooth(method = 'lm') +
+  facet_wrap(~season)
 
 
 # PLOTLY ------------------------------------------------------------------
@@ -263,8 +296,8 @@ bind_rows(tempdat |> mutate(season = 'Annual'),
 
 ## Annual and seasonal temp------
 alltemp = bind_rows(
-  tempdat |> mutate(season = 'Annual'),
-  temp_seas |> filter(grepl('Summer|Winter', season))) |> 
+  tempdat_clean |> mutate(season = 'Annual'),
+  temp_seas_clean |> filter(grepl('Summer|Winter', season))) |> 
   mutate(
     lab = format(round(avgtemp, digits = 2), nsmall = 2))
 
@@ -347,7 +380,7 @@ graph1 <- plot_ly() |>
                  showline = TRUE,
                  ticks = 'outside',
                  tick0 = 0,
-                 range = c(5, 20),
+                 #range = c(5, 20),
                  showgrid = FALSE,
                  automargin = TRUE,
                  hoverformat = '.2f'),
