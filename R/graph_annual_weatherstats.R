@@ -76,17 +76,22 @@ summary(dat)
 # annual precip totals by bioyear
 raindat <- dat |> 
   group_by(bioyear, bioyearx) |> 
-  summarize(rain = sum(RAIN, na.rm = TRUE),
-            nrain = length(!is.na(RAIN)),
+  summarize(nrain = sum(!is.na(RAIN)),
+            rain = sum(RAIN, na.rm = TRUE),
             .groups = 'drop') |>  
   filter(bioyearx >= 1975)
 str(raindat)
 summary(raindat)
+raindat |> filter(nrain < 365)
+# >> missing half of 1975-76 and half of 2023-24
 
-summary(lm(rain ~ bioyearx, raindat |> filter(bioyearx > 1975 & bioyearx < 2023))) 
+raindat_clean = raindat |> 
+  mutate(rain = if_else(nrain < 0.8*365, NA_real_, rain))
+
+summary(lm(rain ~ bioyearx, raindat_clean)) 
 # NS but negative trend overall
 
-raindat |> filter(bioyearx > 1975 & bioyearx < 2023) |> pull(rain) |> mean()
+raindat_clean |> pull(rain) |> mean(na.rm = TRUE)
 # 846mm
 
 # annual (calendar) mean of daily average temperatures, low temps, high temps
@@ -423,11 +428,7 @@ htmlwidgets::saveWidget(graph1,
 
 ## Annual precip data----------
 
-raindat |> filter(nrain < 365)
-# >> missing half of 1975-76 and half of 2023-24
-
-allrain = raindat |> 
-  filter(bioyearx > 1975 & bioyearx < 2023) |> 
+allrain = raindat_clean |> 
   mutate(
     lab = paste0(format(round(rain, digits = 0), nsmall = 0), ' mm'))
 
