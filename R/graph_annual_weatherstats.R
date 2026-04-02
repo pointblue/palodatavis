@@ -351,7 +351,7 @@ graph1 <- plot_ly() |>
             #visible = 'legendonly',
             showlegend = TRUE) |>
   # annual points 
-  add_markers(data = alltemp |>  filter(season == 'Annual'),
+  add_markers(data = alltemp |> filter(season == 'Annual') |> filter(!is.na(avgtemp)),
             x = ~year,
             y = ~avgtemp,
             color = ~season,
@@ -365,7 +365,7 @@ graph1 <- plot_ly() |>
             legendgroup = ~season,
             showlegend = FALSE) |> 
   # annual points and connecting lines for avg low temp
-  add_markers(data = alltemp |> filter(season != 'Annual'),
+  add_markers(data = alltemp |> filter(season != 'Annual') |> filter(!is.na(avgtemp)),
             x = ~year,
             y = ~avgtemp,
             color = ~season,
@@ -385,21 +385,16 @@ graph1 <- plot_ly() |>
                  showline = TRUE,
                  ticks = 'outside',
                  tick0 = 0,
-                 #range = c(5, 20),
+                 range = c(6, 18),
                  showgrid = FALSE,
                  automargin = TRUE,
                  hoverformat = '.2f'),
     xaxis = list(title = NA,
                  showline = TRUE,
-                 # ticks = 'outside',
-                 # tickmode = 'array',
-                 # tickvals = seq(1975, 2015, 5),
-                 # ticktext = unique(sdat$bioyear)[seq(1, 41, 5)],
                  showgrid = FALSE),
     hovermode = 'x',
     legend = list(x = 1, xanchor = 'right', y = 1, yanchor = 'top', 
-                  bgcolor = NA),
-    margin = list(r = 0, b = 0, t = 0, l = 50, pad = 0)) |> 
+                  bgcolor = NA)) |> 
   config(displaylogo = FALSE, showTips = FALSE,
          modeBarButtonsToRemove = list('zoom2d', 'select2d', 'lasso2d',
                                        'zoomIn2d', 'zoomOut2d',
