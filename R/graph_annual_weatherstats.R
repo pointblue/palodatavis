@@ -338,6 +338,12 @@ graph1 <- plot_ly() |>
             mode = 'lines',
             legendgroup = ~season,
             showlegend = TRUE) |> 
+  add_segments(x = 1976, xend = 2023, 
+               y = mean(alltemp$avgtemp[alltemp$season == 'Annual'], na.rm = TRUE),
+               yend = mean(alltemp$avgtemp[alltemp$season == 'Annual'], na.rm = TRUE),
+               line = list(dash = 'dash'), 
+               color = I(pointblue.palette[6]),
+               showlegend = FALSE) |> 
   # smoothed trend line for seasonal avgtemps
   add_trace(data = pdat1 |>  filter(season != 'Annual'),
             x = ~x,
