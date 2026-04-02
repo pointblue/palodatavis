@@ -83,7 +83,11 @@ raindat <- dat |>
 str(raindat)
 summary(raindat)
 
-summary(lm(rain ~ bioyearx, raindat)) # NS
+summary(lm(rain ~ bioyearx, raindat |> filter(bioyearx > 1975 & bioyearx < 2023))) 
+# NS but negative trend overall
+
+raindat |> filter(bioyearx > 1975 & bioyearx < 2023) |> pull(rain) |> mean()
+# 846mm
 
 # annual (calendar) mean of daily average temperatures, low temps, high temps
 tempdat <- dat |> 
@@ -306,7 +310,7 @@ graph1 <- plot_ly() |>
             type = 'scatter',
             mode = 'lines',
             legendgroup = ~season,
-            visible = 'legendonly',
+            #visible = 'legendonly',
             showlegend = TRUE) |>
   # annual points 
   add_markers(data = alltemp |>  filter(season == 'Annual'),
@@ -335,10 +339,10 @@ graph1 <- plot_ly() |>
             #mode = 'markers+lines',
             #marker = list(size = 8),
             legendgroup = ~season,
-            visible = 'legendonly',
+            #visible = 'legendonly',
             showlegend = FALSE) |>
   layout(
-    yaxis = list(title = 'Daily Average Temperature (\u00B0C)\n\n\n',
+    yaxis = list(title = 'Average Temperature (\u00B0C)\n\n\n',
                  font = list(size = 14),
                  showline = TRUE,
                  ticks = 'outside',
@@ -355,7 +359,7 @@ graph1 <- plot_ly() |>
                  # ticktext = unique(sdat$bioyear)[seq(1, 41, 5)],
                  showgrid = FALSE),
     hovermode = 'x',
-    legend = list(x = 0.01, xanchor = 'left', y = 1, yanchor = 'top', 
+    legend = list(x = 1, xanchor = 'right', y = 1, yanchor = 'top', 
                   bgcolor = NA),
     margin = list(r = 0, b = 0, t = 0, l = 50, pad = 0)) |> 
   config(displaylogo = FALSE, showTips = FALSE,
